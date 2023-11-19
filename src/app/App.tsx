@@ -1,15 +1,8 @@
-import React, {
-    Suspense,
-} from 'react';
-import {
-    Route,
-    Routes,
-} from 'react-router-dom';
-import { Header } from 'app/ui/Header';
+import React from 'react';
+import { Header } from 'widgets/Header/ui/Header';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { AboutPage } from 'pages/AboutPage';
-import { MainPage } from 'pages/MainPage';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { AppRouter } from 'app/providers/router';
 
 export const App = () => {
     const {
@@ -20,18 +13,7 @@ export const App = () => {
     return (
         <div className={classNames('app', {hovered:true}, [theme])}>
             <Header toggleTheme={toggleTheme} />
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    <Route
-                        path={'/about'}
-                        element={<AboutPage />}
-                    />
-                    <Route
-                        path={'/'}
-                        element={<MainPage />}
-                    />
-                </Routes>
-            </Suspense>
+            <AppRouter />
         </div>
     );
 };

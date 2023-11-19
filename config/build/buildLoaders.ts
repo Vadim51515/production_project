@@ -32,8 +32,14 @@ export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
         ],
     };
 
+    const fileLoader =   {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: "file-loader"
+    }
+
     return [
         typescriptLoader,
+        fileLoader,
         cssLoader,
     ];
 }

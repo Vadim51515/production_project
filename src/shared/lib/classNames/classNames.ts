@@ -1,5 +1,5 @@
 type Mods = Record<string, boolean | string>
-export const classNames = (cls: string, mods: any, additional: Array<string>): string => {
+export const classNames = (cls: string, mods: Mods = {}, additional: Array<string> = []): string => {
     console.log('Object.entries(mods)', Object.entries(mods));
     console.log('Object.entries(mods)', Object.entries(mods));
 
