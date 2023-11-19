@@ -23,8 +23,8 @@ export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
                     modules: {
                         auto: (resPath: string) => Boolean(resPath.includes('.module.')),
                         localIdentName: isDev
-                            ?'[path][name]__[local]--[hash:base64:5]'
-                            :'[hash:base64:8]',
+                            ? '[path][name]__[local]--[hash:base64:5]'
+                            : '[hash:base64:8]',
                     },
                 },
             },
@@ -32,14 +32,25 @@ export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
         ],
     };
 
-    const fileLoader =   {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: "file-loader"
-    }
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    };
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff|woff2|eot|ttf|otf)$/i,
+        // test: /\.(png|jpe?g|gif)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    };
 
     return [
-        typescriptLoader,
         fileLoader,
+        svgLoader,
+        typescriptLoader,
         cssLoader,
     ];
 }

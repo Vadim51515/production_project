@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Theme } from '../../../../enum';
+import { Theme } from './enum';
 import {
     LOCAL_STORAGE_THEME_KEY,
     ThemeContext,

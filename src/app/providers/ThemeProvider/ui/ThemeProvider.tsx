@@ -2,7 +2,7 @@ import React, {
     useMemo,
     useState,
 } from 'react';
-import { Theme } from 'enum';
+import { Theme } from '../lib/enum';
 import { CFC } from 'types';
 import {
     LOCAL_STORAGE_THEME_KEY,

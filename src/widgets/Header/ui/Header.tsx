@@ -1,14 +1,12 @@
 import React, { FC } from 'react';
 import { Navbar } from '../../Navbar';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import styles from './Header.module.scss'
-import {
-    IHeaderProps,
-} from './types';
-export const Header: FC<IHeaderProps> = ({toggleTheme}) => {
+export const Header: FC = () => {
     return (
         <div className={styles.container}>
             <Navbar />
-            <button onClick={() => toggleTheme()}>Сменить тему</button>
+            <ThemeSwitcher />
         </div>
     );
 };
