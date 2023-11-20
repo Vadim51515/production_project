@@ -3,10 +3,12 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 import {
     IBuildOptions,
-    IBuildPaths,
 } from './types/config';
 
-export function buildPlugins({ paths }: IBuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({
+    paths,
+    isDev,
+}: IBuildOptions): webpack.WebpackPluginInstance[] {
 
     let progressPlugins = [
         new HTMLWebpackPlugin({
@@ -16,7 +18,10 @@ export function buildPlugins({ paths }: IBuildOptions): webpack.WebpackPluginIns
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
-        })
+        }),
+        new webpack.DefinePlugin({
+            __IS_DEV__: isDev,
+        }),
     ];
 
     return progressPlugins;

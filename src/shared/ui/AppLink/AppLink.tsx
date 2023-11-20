@@ -6,7 +6,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './AppLink.module.scss';
 
-type TAppLinkPattern = 'primary'
+type TAppLinkPattern = 'primary' | 'button'
 
 interface IAppLinkProps extends LinkProps {
     className?: string;

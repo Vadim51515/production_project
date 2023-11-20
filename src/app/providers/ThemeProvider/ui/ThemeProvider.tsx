@@ -2,8 +2,8 @@ import React, {
     useMemo,
     useState,
 } from 'react';
+import { CFC } from 'app/types';
 import { Theme } from '../lib/enum';
-import { CFC } from 'types';
 import {
     LOCAL_STORAGE_THEME_KEY,
     ThemeContext,

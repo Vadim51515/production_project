@@ -9,3 +9,11 @@
         color: var(--primary-color);
     }
 }
+
+.button{
+    padding: 10px;
+    border-radius:var(--small-border-radius);
+    &:hover {
+        background: var(--detailed-bg-color);
+    }
+}

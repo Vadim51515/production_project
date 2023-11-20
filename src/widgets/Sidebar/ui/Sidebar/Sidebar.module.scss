@@ -1,0 +1,14 @@
+.sidebar{
+    position: relative;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height) - 40px);
+    margin-right: 20px;
+    padding: 20px;
+    transition: width 0.5s;
+    background: var(--additional-bg-color);
+    border-radius: 8px;
+}
+
+.collapsed{
+    width: var(--sidebar-width-collapsed);
+}
