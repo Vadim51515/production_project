@@ -1,10 +1,10 @@
 import {
-    createContext,
-} from 'react';
-import { Theme } from './enum';
+    createContext
+} from 'react'
+import { type Theme } from './enum'
 
 export interface TThemeContextProps {
-    theme?: Theme;
+    theme?: Theme
     setTheme?: (theme: Theme) => void
 }
 

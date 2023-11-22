@@ -1,11 +1,9 @@
-import React, { Suspense } from 'react';
+import React, { Suspense } from 'react'
 import {
     Route,
-    Routes,
-} from 'react-router-dom';
-import { AboutPage } from '../../../../pages/AboutPage';
-import { MainPage } from '../../../../pages/MainPage';
-import { routeConfig } from '../../../../shared/config/routeConfig/routeConfig';
+    Routes
+} from 'react-router-dom'
+import { routeConfig } from '../../../../shared/config/routeConfig/routeConfig'
 
 export const AppRouter = () => {
     return (
@@ -14,7 +12,7 @@ export const AppRouter = () => {
                 {Object.values(routeConfig)
                     .map(({
                         path,
-                        element,
+                        element
                     }) => (
                         <Route
                             key={path}
@@ -24,6 +22,5 @@ export const AppRouter = () => {
                     ))}
             </Routes>
         </Suspense>
-    );
-};
-
+    )
+}

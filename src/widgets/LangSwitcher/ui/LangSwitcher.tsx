@@ -1,25 +1,25 @@
-import React, { FC } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { type FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface ILangSwitcherProps {
-    className?: string;
+    className?: string
 }
 
 export const LangSwitcher: FC<ILangSwitcherProps> = ({ className }) => {
     const {
         t,
-        i18n,
-    } = useTranslation();
+        i18n
+    } = useTranslation()
 
     const changeLanguage = () => {
         i18n.changeLanguage(i18n.language === 'ru'
             ? 'en'
-            : 'ru');
-    };
+            : 'ru')
+    }
 
     return (
         <div>
             <button onClick={changeLanguage}>{t('Язык')}</button>
         </div>
-    );
-};
+    )
+}

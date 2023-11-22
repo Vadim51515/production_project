@@ -1,15 +1,14 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import webpack from 'webpack';
-import { IBuildOptions } from './types/config';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import type webpack from 'webpack'
+import { type IBuildOptions } from './types/config'
 
-export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
-
-    //Если не используем typescript - нужен babel-loader
+export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
+    // Если не используем typescript - нужен babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
-    };
+        exclude: /node_modules/
+    }
 
     const cssLoader: webpack.RuleSetRule = {
         test: /\.s[ac]ss$/i,
@@ -24,28 +23,28 @@ export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
                         auto: (resPath: string) => Boolean(resPath.includes('.module.')),
                         localIdentName: isDev
                             ? '[path][name]__[locales]--[hash:base64:5]'
-                            : '[hash:base64:8]',
-                    },
-                },
+                            : '[hash:base64:8]'
+                    }
+                }
             },
-            'sass-loader',
-        ],
-    };
+            'sass-loader'
+        ]
+    }
 
     const svgLoader = {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
-    };
+        use: ['@svgr/webpack']
+    }
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff|woff2|eot|ttf|otf)$/i,
         // test: /\.(png|jpe?g|gif)$/i,
         use: [
             {
-                loader: 'file-loader',
-            },
-        ],
-    };
+                loader: 'file-loader'
+            }
+        ]
+    }
 
     const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
@@ -60,21 +59,21 @@ export function buildLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
                         {
                             locales: [
                                 'ru',
-                                'en',
+                                'en'
                             ],
-                            keyAsDefaultValue: true,
-                        },
-                    ],
-                ],
-            },
-        },
-    };
+                            keyAsDefaultValue: true
+                        }
+                    ]
+                ]
+            }
+        }
+    }
 
     return [
         fileLoader,
         svgLoader,
         babelLoader,
         typescriptLoader,
-        cssLoader,
-    ];
+        cssLoader
+    ]
 }
