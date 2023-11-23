@@ -6,6 +6,7 @@ module.exports = {
     extends: [
         'standard-with-typescript',
         'plugin:react/recommended',
+        "plugin:i18next/recommended"
     ],
     overrides: [
         {
@@ -23,15 +24,16 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: ['./tsconfig.json'],
+        project: ['./tsconfig.json']
     },
     plugins: [
         'react',
         "unused-imports", // TODO Удалят неиспользуемые импорты. Можно удалить тут и в rules после добавления prettier
+        'i18next'
     ],
     rules: {
         'react/jsx-indent': [2, 4],
-        indent: [2, 4],
+        'indent': [2, 4],
         "@typescript-eslint/indent": 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         'no-unused-vars': 'error',
@@ -39,5 +41,6 @@ module.exports = {
         "unused-imports/no-unused-vars":["error", { "argsIgnorePattern": "^_$" }],
         "@typescript-eslint/prefer-nullish-coalescing": "off",
         "@typescript-eslint/strict-boolean-expressions": 'off',
+        'i18next/no-literal-string': ['error', { markupOnly: true }],
     },
 };
