@@ -36,8 +36,8 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 'off',
         'no-unused-vars': 'error',
         "unused-imports/no-unused-imports": "error",
-        "unused-imports/no-unused-vars":"error",
+        "unused-imports/no-unused-vars":["error", { "argsIgnorePattern": "^_$" }],
         "@typescript-eslint/prefer-nullish-coalescing": "off",
-        "@typescript-eslint/strict-boolean-expressions": 'off'
+        "@typescript-eslint/strict-boolean-expressions": 'off',
     },
 };
