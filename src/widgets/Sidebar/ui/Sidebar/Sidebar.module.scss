@@ -1,7 +1,8 @@
-.sidebar{
+.sidebar {
     position: relative;
     width: var(--sidebar-width);
-    height: calc(100vh - var(--header-height) - 40px);
+    // * 2, так как padding сверху и снизу
+    height: calc(100vh - var(--header-height) - calc(var(--content-page-padding) * 2));
     margin-right: 20px;
     padding: 20px;
     transition: width 0.5s;
@@ -9,6 +10,6 @@
     border-radius: 8px;
 }
 
-.collapsed{
+.collapsed {
     width: var(--sidebar-width-collapsed);
 }

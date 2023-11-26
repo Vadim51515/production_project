@@ -16,7 +16,6 @@ export const App = () => {
                     <div className='pageWrapper'>
                         <AppRouter />
                     </div>
-                    asdasd
                 </div>
             </Suspense>
         </div>
