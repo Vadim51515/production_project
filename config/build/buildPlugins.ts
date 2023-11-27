@@ -26,7 +26,9 @@ export function buildPlugins ({
     ]
 
     if (isDev) {
-        progressPlugins.push(new ReactRefreshPlugin())
+        progressPlugins.push(new ReactRefreshPlugin({
+            overlay: false // Отключение overlay
+        }))
         progressPlugins.push(new webpack.HotModuleReplacementPlugin())
     }
 

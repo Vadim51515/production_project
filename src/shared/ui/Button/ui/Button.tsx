@@ -5,7 +5,7 @@ import React, {
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './Button.module.scss'
 
-type TButtonPattern = 'clear' | ''
+type TButtonPattern = 'clear' | 'primary'
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
@@ -14,7 +14,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button: FC<IButtonProps> = ({
     className,
-    pattern = 'clear',
+    pattern = 'primary',
     ...buttonProps
 }) => {
     return (
