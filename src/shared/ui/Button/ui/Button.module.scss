@@ -8,3 +8,9 @@
     border: 0;
     padding: 0;
 }
+
+.outline{
+    background: 0;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}

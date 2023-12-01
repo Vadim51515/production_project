@@ -5,7 +5,7 @@ import React, {
 import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './Button.module.scss'
 
-type TButtonPattern = 'clear' | 'primary'
+type TButtonPattern = 'clear' | 'primary' | 'outline'
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
