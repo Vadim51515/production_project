@@ -1,28 +1,29 @@
-import path from 'path';
-import webpack, { RuleSetRule }  from 'webpack';
-import { buildCssLoader } from '../build/loaders/buildCssLoader';
-import { IBuildPaths } from '../build/types/config';
+import path from 'path'
+import { type RuleSetRule } from 'webpack'
+import type webpack from 'webpack'
+import { buildCssLoader } from '../build/loaders/buildCssLoader'
+import { type IBuildPaths } from '../build/types/config'
 
 export default ({ config }: { config: webpack.Configuration }) => {
-
     const paths: IBuildPaths = {
         src: path.resolve(__dirname, '..', '..', 'src'),
         html: '',
         build: '',
-        entry: '',
-    };
+        entry: ''
+    }
 
-    config?.resolve?.modules?.push(paths.src);
-    config?.resolve?.modules?.push('.ts', '.tsx');
+    config?.resolve?.modules?.push(paths.src)
+    config?.resolve?.modules?.push('.ts', '.tsx')
 
     if (config.module?.rules) {
-        config.module.rules = config.module?.rules?.map((rule: RuleSetRule | null | undefined | false | 0 | "" | "...") => {
-            if (rule && rule !== "..." && /svg/.test(rule.test as string)) {
-                return { ...rule, exclude: /\.svg$/i };
-            }
+        config.module.rules = config.module?.rules
+            ?.map((rule: RuleSetRule | null | undefined | false | 0 | '' | '...') => {
+                if (rule && rule !== '...' && (rule.test as string).includes('svg')) {
+                    return { ...rule, exclude: /\.svg$/i }
+                }
 
-            return rule;
-        });
+                return rule
+            })
     }
     config?.module?.rules?.push({
         test: /\.svg$/,
@@ -31,5 +32,5 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
     config?.module?.rules?.push(buildCssLoader(true))
 
-    return config;
+    return config
 }

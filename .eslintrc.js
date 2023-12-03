@@ -3,7 +3,12 @@ module.exports = {
         browser: true,
         es2021: true,
     },
-    extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+    extends: [
+        'standard-with-typescript',
+        'plugin:react/recommended',
+        'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
+    ],
     overrides: [
         {
             env: {
@@ -20,37 +25,58 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: ['./tsconfig.json']
+        project: ['./tsconfig.json'],
     },
     plugins: [
         'react',
         'unused-imports',
-        'i18next'
+        'i18next',
     ],
     rules: {
-        'react/jsx-indent': [2, 4],
-        'indent': [2, 4],
-        "@typescript-eslint/indent": 'off',
+        'react/jsx-indent': [
+            2,
+            4,
+        ],
+        'indent': [
+            2,
+            4,
+        ],
+        '@typescript-eslint/indent': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         'no-unused-vars': 'error',
-        "unused-imports/no-unused-imports": "error",
-        "unused-imports/no-unused-vars":["error", { "argsIgnorePattern": "^_$" }],
-        "@typescript-eslint/prefer-nullish-coalescing": "off",
-        "@typescript-eslint/strict-boolean-expressions": 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute:['data-testid'] }],
-        'max-len': ['error', { ignoreComments: true, code: 120 }],
+        'unused-imports/no-unused-imports': 'error',
+        'unused-imports/no-unused-vars': [
+            'error',
+            { 'argsIgnorePattern': '^_$' },
+        ],
+        '@typescript-eslint/prefer-nullish-coalescing': 'off',
+        '@typescript-eslint/strict-boolean-expressions': 'off',
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid'],
+            },
+        ],
+        'max-len': [
+            'error',
+            {
+                ignoreComments: true,
+                code: 120,
+            },
+        ],
         'react/prop-types': 'off',
-        "react/react-in-jsx-scope": "error",
-        "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/no-floating-promises": "off",
-        "react/display-name": "off",
+        'react/react-in-jsx-scope': 'error',
+        'react/react-in-jsx-scope': 'off',
+        '@typescript-eslint/no-floating-promises': 'off',
+        'react/display-name': 'off',
     },
-    overrides:[
+    overrides: [
         {
             files: ['**/src/**/*.test.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
             },
-        }
-    ]
+        },
+    ],
 };

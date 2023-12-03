@@ -1,15 +1,15 @@
-import type { Preview } from '@storybook/react';
-import { Theme } from '../../src/app/providers/ThemeProvider';
-import { routerDecorator } from '../../src/shared/config/storybook/decorators/routerDecorator';
-import { styleDecorator } from '../../src/shared/config/storybook/decorators/styleDecorator';
-import { themeDecorator } from '../../src/shared/config/storybook/decorators/themeDecorator';
+import type { Preview } from '@storybook/react'
+import { Theme } from '../../src/app/providers/ThemeProvider'
+import { routerDecorator } from '../../src/shared/config/storybook/decorators/routerDecorator'
+import { styleDecorator } from '../../src/shared/config/storybook/decorators/styleDecorator'
+import { themeDecorator } from '../../src/shared/config/storybook/decorators/themeDecorator'
 
 const preview: Preview = {
     decorators: [
-        //TODO Разобраться со стилями
+        // TODO Разобраться со стилями
         (Story) => styleDecorator(Story),
         (Story) => themeDecorator(Theme.Dark)(Story),
-        (Story) => routerDecorator(Story),
+        (Story) => routerDecorator(Story)
 
     ],
     parameters: {
@@ -17,11 +17,10 @@ const preview: Preview = {
         controls: {
             matchers: {
                 color: /(background|color)$/i,
-                date: /Date$/i,
-            },
-        },
-    },
-};
+                date: /Date$/i
+            }
+        }
+    }
+}
 
-export default preview;
-
+export default preview
