@@ -18,7 +18,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
     if (config.module?.rules) {
         config.module.rules = config.module?.rules
             ?.map((rule: RuleSetRule | null | undefined | false | 0 | '' | '...') => {
-                if (rule && rule !== '...' && (rule.test as string)?.includes?.('svg')) {
+                // TODO Если убрать игнор, авто еслинт меняет строку, и код перестает работать
+                // eslint-disable-next-line
+                if (rule && rule !== "..." && /svg/.test(rule.test as string)) {
                     return { ...rule, exclude: /\.svg$/i }
                 }
 
