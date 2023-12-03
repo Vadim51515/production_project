@@ -18,13 +18,14 @@ export default ({ config }: { config: webpack.Configuration }) => {
     if (config.module?.rules) {
         config.module.rules = config.module?.rules
             ?.map((rule: RuleSetRule | null | undefined | false | 0 | '' | '...') => {
-                if (rule && rule !== '...' && (rule.test as string).includes('svg')) {
+                if (rule && rule !== '...' && (rule.test as string)?.includes?.('svg')) {
                     return { ...rule, exclude: /\.svg$/i }
                 }
 
                 return rule
             })
     }
+
     config?.module?.rules?.push({
         test: /\.svg$/,
         use: ['@svgr/webpack']
