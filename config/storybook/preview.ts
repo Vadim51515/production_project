@@ -6,11 +6,9 @@ import { themeDecorator } from '../../src/shared/config/storybook/decorators/the
 
 const preview: Preview = {
     decorators: [
-        // TODO Разобраться со стилями
         (Story) => styleDecorator(Story),
         (Story) => themeDecorator(Theme.Dark)(Story),
         (Story) => routerDecorator(Story)
-
     ],
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
