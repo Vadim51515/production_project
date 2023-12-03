@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { Theme } from '../../../../app/providers/ThemeProvider'
+import { themeDecorator } from '../../../config/storybook/decorators/themeDecorator'
 import { Button } from './Button'
 
 const meta = {
@@ -36,3 +38,5 @@ export const Outline: Story = {
         pattern: 'outline'
     }
 }
+
+Outline.decorators = [themeDecorator(Theme.Light)]
