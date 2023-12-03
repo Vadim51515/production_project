@@ -39,23 +39,23 @@ export const PrimaryLight: Story = {
     }
 }
 PrimaryLight.decorators = [themeDecorator(Theme.Light)]
+//
+// export const Button: Story = {
+//     args: {
+//         to: '/',
+//         pattern: 'button',
+//         children: 'Текст ссылки'
+//     }
+// }
+//
+// Button.decorators = [themeDecorator(Theme.Dark)]
+//
+// export const ButtonLight: Story = {
+//     args: {
+//         to: '/',
+//         pattern: 'button',
+//         children: 'Текст ссылки'
+//     }
+// }
 
-export const Button: Story = {
-    args: {
-        to: '/',
-        pattern: 'button',
-        children: 'Текст ссылки'
-    }
-}
-
-Button.decorators = [themeDecorator(Theme.Dark)]
-
-export const ButtonLight: Story = {
-    args: {
-        to: '/',
-        pattern: 'button',
-        children: 'Текст ссылки'
-    }
-}
-
-ButtonLight.decorators = [themeDecorator(Theme.Light)]
+// ButtonLight.decorators = [themeDecorator(Theme.Light)]
