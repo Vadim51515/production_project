@@ -5,7 +5,7 @@ import type {
 import { Theme } from '../../../app/providers/ThemeProvider'
 import { themeDecorator } from '../../config/storybook/decorators/themeDecorator'
 import { AppLink } from './AppLink'
-import React from 'react'
+
 export default { component: AppLink }
 const meta = {
     title: 'shared/AppLink',
@@ -16,8 +16,6 @@ const meta = {
     tags: ['autodocs'],
     argTypes: {},
     args: {
-        to: '/',
-        children: 'Тестовый текст ссылки'
     }
 
 } satisfies Meta<typeof AppLink>
@@ -25,16 +23,17 @@ const meta = {
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-    render: () => {
-        return (
-            <AppLink pattern={'primary'} to='/'>
-                {'Текст ссылки'}
-            </AppLink>)
+    args: {
+        to: '/',
+        pattern: 'primary',
+        children: 'Текст ссылки'
     }
 }
+Primary.decorators = [themeDecorator(Theme.Dark)]
 
 export const PrimaryLight: Story = {
     args: {
+        to: '/',
         pattern: 'primary',
         children: 'Текст ссылки'
     }
@@ -43,13 +42,17 @@ PrimaryLight.decorators = [themeDecorator(Theme.Light)]
 
 export const Button: Story = {
     args: {
+        to: '/',
         pattern: 'button',
         children: 'Текст ссылки'
     }
 }
 
+Button.decorators = [themeDecorator(Theme.Dark)]
+
 export const ButtonLight: Story = {
     args: {
+        to: '/',
         pattern: 'button',
         children: 'Текст ссылки'
     }
