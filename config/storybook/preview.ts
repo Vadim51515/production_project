@@ -6,6 +6,8 @@ import { themeDecorator } from '../../src/shared/config/storybook/decorators/the
 
 const preview: Preview = {
     decorators: [
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
         (Story) => styleDecorator(Story),
         (Story) => themeDecorator(Theme.Dark)(Story),
         (Story) => routerDecorator(Story)
