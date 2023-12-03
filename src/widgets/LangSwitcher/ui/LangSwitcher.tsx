@@ -5,7 +5,7 @@ interface ILangSwitcherProps {
     className?: string
 }
 
-export const LangSwitcher: FC<ILangSwitcherProps> = ({ className }) => {
+export const LangSwitcher: FC<ILangSwitcherProps> = () => {
     const {
         t,
         i18n

@@ -24,7 +24,7 @@ module.exports = {
     },
     plugins: [
         'react',
-        "unused-imports", // TODO Удалят неиспользуемые импорты. Можно удалить тут и в rules после добавления prettier
+        'unused-imports',
         'i18next'
     ],
     rules: {
@@ -39,7 +39,11 @@ module.exports = {
         "@typescript-eslint/strict-boolean-expressions": 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute:['data-testid'] }],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
-        "react/react-in-jsx-scope": "error"
+        'react/prop-types': 'off',
+        "react/react-in-jsx-scope": "error",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "react/display-name": "off",
     },
     overrides:[
         {

@@ -10,7 +10,7 @@ interface IBugButtonProps {
     className?: string
 }
 
-export const BugButton: FC<IBugButtonProps> = ({ className }) => {
+export const BugButton: FC<IBugButtonProps> = () => {
     const [error, setError] = useState(false)
     const { t } = useTranslation()
 

@@ -2,7 +2,7 @@ import React, {
     useMemo,
     useState
 } from 'react'
-import { type CFC } from 'app/types'
+import { type CFC } from '../../../types'
 import { Theme } from '../lib/enum'
 import {
     LOCAL_STORAGE_THEME_KEY,
@@ -10,6 +10,7 @@ import {
 } from '../lib/ThemeContext'
 
 const defaultItem = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme ?? Theme.Dark
+
 const ThemeProvider: CFC = ({ children }) => {
     const [theme, setTheme] = useState<Theme>(defaultItem)
 
