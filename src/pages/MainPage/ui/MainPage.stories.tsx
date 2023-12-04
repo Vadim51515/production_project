@@ -2,8 +2,6 @@ import type {
     Meta,
     StoryObj
 } from '@storybook/react'
-import { Theme } from '../../../app/providers/ThemeProvider'
-import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator'
 import { MainPage } from '../index'
 
 export default { component: MainPage }
@@ -29,4 +27,4 @@ export const Light: Story = {
     args: {}
 }
 
-Light.decorators = [themeDecorator(Theme.Light)]
+// Light.decorators = [themeDecorator(Theme.Light)]
