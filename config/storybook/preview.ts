@@ -9,7 +9,7 @@ const preview: Preview = {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         (Story) => styleDecorator(Story),
-        (Story) => themeDecorator(Theme.Dark)(Story),
+        (Story) => themeDecorator(Theme.Light)(Story),
         (Story) => routerDecorator(Story)
     ],
     parameters: {
