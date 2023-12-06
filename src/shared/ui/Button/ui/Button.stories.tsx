@@ -34,7 +34,7 @@ export const Clear: Story = {
 
 export const Outline: Story = {
     args: {
-        children: 'Test text',
+        children: 'Test text outline button',
         pattern: 'outline'
     }
 }

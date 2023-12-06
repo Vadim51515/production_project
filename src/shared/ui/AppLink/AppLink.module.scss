@@ -1,7 +1,8 @@
 .appLink {
+    display: flex;
+    align-items: center;
     color: var(--link-color);
     text-decoration: none;
-
 }
 
 .primary {
@@ -17,4 +18,13 @@
     &:hover {
         background: var(--detailed-bg-color);
     }
+}
+
+.prefix{
+    margin-right: 5px;
+
+}
+
+.postfix{
+    margin-left: 5px;
 }

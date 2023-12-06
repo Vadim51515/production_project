@@ -14,3 +14,27 @@
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
 }
+
+.sm{
+    width: 100px;
+}
+
+.md{
+    width: 200px;
+}
+
+.lg{
+    width: 300px;
+}
+
+.xl{
+    width: 400px;
+}
+
+.sizeContent{
+    width: auto;
+}
+
+.fullWidth{
+    width: 100%;
+}

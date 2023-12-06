@@ -6,22 +6,31 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import styles from './Button.module.scss'
 
 type TButtonPattern = 'clear' | 'primary' | 'outline'
+type TButtonSize = ('sm' | 'md' | 'lg' | 'xl' | 'sizeContent')
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     pattern?: TButtonPattern
+    size?: TButtonSize
+    isFullWidth?: boolean
 }
 
 export const Button: FC<IButtonProps> = ({
     className,
     pattern = 'primary',
+    size = 'sizeContent',
+    isFullWidth,
     ...buttonProps
 }) => {
+    const mods = {
+        [styles[size]]: size,
+        [styles.fullWidth]: isFullWidth
+    }
     return (
         <button
             className={classNames(
                 styles.button,
-                {},
+                mods,
                 [
                     className,
                     styles[pattern]

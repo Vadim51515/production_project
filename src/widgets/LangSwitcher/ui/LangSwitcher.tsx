@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next'
 
 interface ILangSwitcherProps {
     className?: string
+    isShortName?: boolean
 }
 
-export const LangSwitcher: FC<ILangSwitcherProps> = () => {
+export const LangSwitcher: FC<ILangSwitcherProps> = ({ isShortName }) => {
     const {
         t,
         i18n
@@ -17,9 +18,13 @@ export const LangSwitcher: FC<ILangSwitcherProps> = () => {
             : 'ru')
     }
 
+    console.log('isShortName', isShortName)
+
     return (
         <div>
-            <button onClick={changeLanguage}>{t('Язык')}</button>
+            <button onClick={changeLanguage}>{t(isShortName
+                ? 'Короткий язык'
+                : 'Язык')}</button>
         </div>
     )
 }

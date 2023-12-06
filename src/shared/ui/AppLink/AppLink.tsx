@@ -1,4 +1,7 @@
-import React, { type FC } from 'react'
+import React, {
+    type FC,
+    type ReactElement
+} from 'react'
 import {
     Link,
     type LinkProps
@@ -8,16 +11,22 @@ import styles from './AppLink.module.scss'
 
 type TAppLinkPattern = 'primary' | 'button'
 
-interface IAppLinkProps extends LinkProps {
+interface IAppLinkProps extends Omit<LinkProps, 'prefix'> {
     className?: string
+    classNameContent?: string
     pattern?: TAppLinkPattern
+    postfix?: ReactElement
+    prefix?: ReactElement
 }
 
 export const AppLink: FC<IAppLinkProps> = ({
     className,
     to,
     children,
-    pattern = 'primary'
+    pattern = 'primary',
+    postfix,
+    prefix,
+    classNameContent
 }) => {
     return (
         <Link
@@ -31,7 +40,9 @@ export const AppLink: FC<IAppLinkProps> = ({
                 ]
             )}
         >
-            {children}
+            <span className={styles.prefix}>{prefix}</span>
+            <span className={classNames(styles.appLinkContent, {}, [classNameContent])}>{children}</span>
+            <span className={styles.postfix}>{postfix}</span>
         </Link>
     )
 }

@@ -1,0 +1,26 @@
+.btn {
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: 0;
+    background: var(--primary-color);
+
+
+    & > svg {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.open{
+    & > svg {
+        transform: rotate(180deg);
+    }
+}
