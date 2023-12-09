@@ -4,6 +4,7 @@ import React, {
     useState,
     useCallback
 } from 'react'
+import { useTheme } from '../../../../app/providers/ThemeProvider'
 import { useClickOutside } from '../../../hooks/useClickOutside'
 import { classNames } from '../../../lib/classNames/classNames'
 import {
@@ -29,7 +30,7 @@ export const Modal: CFC<IModalProps> = ({
     const [isClosing, setIsClosing] = useState(false)
 
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
-    console.log('isOpen', isOpen)
+
     const closeHandler = useCallback((callback = onClose) => {
         console.log('callback', callback)
         setIsClosing(true)
@@ -42,6 +43,8 @@ export const Modal: CFC<IModalProps> = ({
     const onKeyDown = useCallback((event: KeyboardEvent) => {
         if (event.key === 'Escape') closeHandler()
     }, [closeHandler])
+
+    const { theme } = useTheme()
 
     useEffect(() => {
         if (isOpen && closeOnPressEsc) {
