@@ -30,7 +30,7 @@ const ThemeProvider: CFC<IThemeProvider> = ({ children, initialTheme }) => {
 
     useEffect(() => {
         document.body.className = theme
-    }, [])
+    }, [theme])
 
     return (
         <ThemeContext.Provider value={defaultProps}>
