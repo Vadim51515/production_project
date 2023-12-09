@@ -1,4 +1,5 @@
 module.exports = {
+    chromeSelector: 'body',
     configurations: {
         'chrome.laptop': {
             target: 'chrome.app',

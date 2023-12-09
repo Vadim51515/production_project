@@ -19,4 +19,10 @@
     --small-border-radius: 4px;
     --normal-border-radius: 8px;
     --big-border-radius: 16px;
+
+    // z - Индексы
+    --modal-z-index: 10;
+
+    // Общие цвета, независемые от темы
+    --overlay-color: rgba(0 0 0 / 60%)
 }

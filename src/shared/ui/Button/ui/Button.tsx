@@ -13,6 +13,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     pattern?: TButtonPattern
     size?: TButtonSize
     isFullWidth?: boolean
+    isRound?: boolean
 }
 
 export const Button: FC<IButtonProps> = ({
@@ -20,11 +21,13 @@ export const Button: FC<IButtonProps> = ({
     pattern = 'primary',
     size = 'sizeContent',
     isFullWidth,
+    isRound,
     ...buttonProps
 }) => {
     const mods = {
         [styles[size]]: size,
-        [styles.fullWidth]: isFullWidth
+        [styles.fullWidth]: isFullWidth,
+        [styles.round]: isRound
     }
     return (
         <button

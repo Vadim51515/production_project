@@ -4,6 +4,8 @@
 
     // * 2, так как padding сверху и снизу
     height: calc(100vh - var(--header-height) - calc(var(--content-page-padding) * 2));
+    display: flex;
+    flex-direction: column;
     margin-right: 20px;
     padding: 20px;
     transition: width 0.5s;

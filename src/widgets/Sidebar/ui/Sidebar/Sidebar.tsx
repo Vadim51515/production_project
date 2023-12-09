@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { BugButton } from 'app/providers/ErrorBoundary/ui/BugButton'
 import { LangSwitcher } from '../../../LangSwitcher'
 import { Navbar } from '../../../Navbar'
+import { ProfileButton } from '../../../ProfileButton'
 import { HideBtn } from './HideBtn'
 import styles from './Sidebar.module.scss'
 
@@ -24,6 +25,7 @@ export const Sidebar: FC<ISidebarProps> = ({ className }) => {
             <Navbar isCollapsedNavbar={!isOpen} />
             <LangSwitcher isShortName={!isOpen}/>
             <BugButton />
+            <ProfileButton />
         </div>
     )
 }

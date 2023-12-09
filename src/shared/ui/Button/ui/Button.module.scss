@@ -1,6 +1,8 @@
 .button{
+    border: 0;
     margin: 0;
     padding: 10px;
+    border-radius: 4px;
 }
 
 .clear{
@@ -12,7 +14,12 @@
 .outline{
     background: 0;
     border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    color: var(--for-primary-color);
+}
+
+.primary{
+    background: var(--primary-color);
+    color: var(--for-primary-color);
 }
 
 .sm{
@@ -37,4 +44,19 @@
 
 .fullWidth{
     width: 100%;
+}
+
+.round{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    & > svg{
+        width:20px;
+        height:20px;
+    }
 }

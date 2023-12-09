@@ -31,6 +31,7 @@ module.exports = {
         'react',
         'unused-imports',
         'i18next',
+        'react-hooks',
     ],
     rules: {
         'react/jsx-indent': [
@@ -70,6 +71,8 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         'react/display-name': 'off',
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error"
     },
     overrides: [
         {

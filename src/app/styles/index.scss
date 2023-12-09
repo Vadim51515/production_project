@@ -3,12 +3,14 @@
 @import 'themes/dark';
 @import 'themes/light';
 
-.app {
+body{
     font: var(--font-m);
-    background: var(--main-bg-color);
-    color: var(--primary-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
+}
 
+.app {
+    background: var(--main-bg-color);
     // min-height: 100vh; // TODO В сторибуке, эта строчка ломает верстку
 }
 

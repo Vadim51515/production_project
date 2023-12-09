@@ -11,8 +11,11 @@ import {
 
 const defaultItem = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme ?? Theme.Dark
 
-const ThemeProvider: CFC = ({ children }) => {
-    const [theme, setTheme] = useState<Theme>(defaultItem)
+interface IThemeProvider {
+    initialTheme?: Theme
+}
+const ThemeProvider: CFC<IThemeProvider> = ({ children, initialTheme }) => {
+    const [theme, setTheme] = useState<Theme>(initialTheme || defaultItem)
 
     const defaultProps = useMemo(
         () => ({
