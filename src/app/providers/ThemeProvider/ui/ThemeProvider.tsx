@@ -1,4 +1,5 @@
 import React, {
+    useEffect,
     useMemo,
     useState
 } from 'react'
@@ -26,6 +27,10 @@ const ThemeProvider: CFC<IThemeProvider> = ({ children, initialTheme }) => {
             theme
         ]
     )
+
+    useEffect(() => {
+        document.body.className = theme
+    }, [])
 
     return (
         <ThemeContext.Provider value={defaultProps}>
