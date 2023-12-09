@@ -14,7 +14,6 @@ export const ModalFooter: FC<IFooterProps> = ({
     onConfirm,
     cancelText = 'Отмена',
     onCancel,
-    customAction,
     onCloseModal
 }) => {
     return (

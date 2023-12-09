@@ -7,7 +7,7 @@ interface ILoginButtonProps {
     className?: string
 }
 
-export const LoginButton: FC<ILoginButtonProps> = ({ className }) => {
+export const LoginButton: FC<ILoginButtonProps> = () => {
     const [isVisibleAuthModal, setIsVisibleAuthModal] = useState(true)
     const { t } = useTranslation()
 
@@ -28,13 +28,15 @@ export const LoginButton: FC<ILoginButtonProps> = ({ className }) => {
                 onConfirm: onCloseModal
             }}
         >
-            <p>В будущем тут будет экран логина</p>
-            <p>В будущем тут будет экран логина</p>
-            <p>В будущем тут будет экран логина</p>
-            <p>В будущем тут будет экран логина</p>
-            <p>В будущем тут будет экран логина</p>
-            <p>В будущем тут будет экран логина</p>
-            <p>В будущем тут будет экран логина</p>
+            <p>{t('В будущем тут будет экран логина')}</p>
+            <p>{t('В будущем тут будет экран логина')}</p>
+            <p>{t('В будущем тут будет экран логина')}</p>
+            <p>{t('В будущем тут будет экран логина')}</p>
+            <p>{t('В будущем тут будет экран логина')}</p>
+            <p>{t('В будущем тут будет экран логина')}</p>
+            <p>{t('В будущем тут будет экран логина')}</p>
+            <p>{t('В будущем тут будет экран логина')}</p>
+            <p>{t('В будущем тут будет экран логина')}</p>
         </Modal>
     </>
 }

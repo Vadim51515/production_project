@@ -9,7 +9,7 @@ export interface IModalFooterProps {
     onConfirm?: Func
     cancelText?: string
     onCancel?: Func
-    customAction?: string
+    customAction?: Func
 }
 
 export interface IModalProps {
