@@ -7,5 +7,7 @@
     "Произошла непредвиденная ошибка": "An unexpected error occurred",
     "Перезагрузить страницу": "Reload page",
     "Короткий язык": "En",
-    "Войти": "Enter"
+    "Войти": "Enter",
+    "Добавить ": "Increment",
+    "Убавить": "Decrement"
 }

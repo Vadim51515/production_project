@@ -2,7 +2,7 @@ import React, {
     type ButtonHTMLAttributes,
     type FC
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '../../../lib/classNames/classNames'
 import styles from './Button.module.scss'
 
 type TButtonPattern = 'clear' | 'primary' | 'outline'

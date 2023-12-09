@@ -72,7 +72,7 @@ module.exports = {
         '@typescript-eslint/no-floating-promises': 'off',
         'react/display-name': 'off',
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "error"
+        "react-hooks/exhaustive-deps": "error",
     },
     overrides: [
         {

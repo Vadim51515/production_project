@@ -8,7 +8,7 @@ interface ILoginButtonProps {
 }
 
 export const LoginButton: FC<ILoginButtonProps> = () => {
-    const [isVisibleAuthModal, setIsVisibleAuthModal] = useState(true)
+    const [isVisibleAuthModal, setIsVisibleAuthModal] = useState(false)
     const { t } = useTranslation()
 
     const onCloseModal = useCallback(() => {
