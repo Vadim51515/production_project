@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { type IUserState } from '../types'
 
-const initialState: IUserState = {
-    value: 0
-}
+const initialState: IUserState = {}
 
 export const {
     reducer: userReducer,
@@ -13,10 +11,8 @@ export const {
     initialState,
     reducers: {
         increment (state) {
-            state.value++
         },
         decrement (state) {
-            state.value--
         }
     }
 })
