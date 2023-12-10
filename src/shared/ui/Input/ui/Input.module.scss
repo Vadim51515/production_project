@@ -1,0 +1,35 @@
+.input{
+    height: var(--height-field);
+    padding: 0 10px;
+    border: 1px solid var(--border-color);
+    outline: 0;
+}
+
+.input:focus-visible{
+
+}
+
+.sm{
+    width: 100px;
+}
+
+.md{
+    width: 200px;
+}
+
+.lg{
+    width: 300px;
+}
+
+.xl{
+    width: 400px;
+}
+
+.sizeContent{
+    width: auto;
+}
+
+
+.fullWidth{
+    width: 100%;
+}

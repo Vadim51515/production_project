@@ -20,4 +20,5 @@ export interface IModalProps {
     closeOnPressEsc?: boolean
     footerProps?: IModalFooterProps
     headerProps?: IModalHeaderProps
+    isLazy?: boolean
 }

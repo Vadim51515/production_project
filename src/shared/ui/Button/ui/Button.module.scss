@@ -1,4 +1,5 @@
 .button{
+    height: var(--height-field);
     border: 0;
     margin: 0;
     padding: 10px;
@@ -20,26 +21,6 @@
 .primary{
     background: var(--primary-color);
     color: var(--for-primary-color);
-}
-
-.sm{
-    width: 100px;
-}
-
-.md{
-    width: 200px;
-}
-
-.lg{
-    width: 300px;
-}
-
-.xl{
-    width: 400px;
-}
-
-.sizeContent{
-    width: auto;
 }
 
 .fullWidth{

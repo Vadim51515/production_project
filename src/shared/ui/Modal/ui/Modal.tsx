@@ -24,9 +24,11 @@ export const Modal: CFC<IModalProps> = ({
     closeOnOutsideClick = true,
     closeOnPressEsc = true,
     footerProps,
-    headerProps
+    headerProps,
+    isLazy
 }) => {
     const [isClosing, setIsClosing] = useState(false)
+    const [isMounted, setIsMounted] = useState(false)
 
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
@@ -54,6 +56,10 @@ export const Modal: CFC<IModalProps> = ({
         }
     }, [closeOnPressEsc, isOpen, onKeyDown])
 
+    useEffect(() => {
+        if (isOpen) setIsMounted(true)
+    }, [isOpen])
+
     const isUseClickOutside = isOpen && closeOnOutsideClick
 
     const refForContent = useClickOutside(isUseClickOutside
@@ -65,13 +71,15 @@ export const Modal: CFC<IModalProps> = ({
         [styles.closing]: isClosing
     }
 
+    if (isLazy && !isMounted) return null
+
     return (
         <Portal>
-            <div className={classNames(styles.modal, mods, [className])}>
+            <div className={classNames(styles.modal, mods)}>
                 <div className={styles.overlay}>
                     <div
                         ref={refForContent}
-                        className={styles.container}
+                        className={classNames(styles.container, {}, [className])}
                     >
                         <ModalHeader onCloseModal={closeHandler} {...headerProps} />
                         <div className={styles.content}>
