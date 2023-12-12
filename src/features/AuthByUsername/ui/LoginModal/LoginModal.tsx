@@ -6,6 +6,7 @@ import React, {
 import { useTranslation } from 'react-i18next'
 import { Button } from '../../../../shared/ui/Button'
 import { Modal } from '../../../../shared/ui/Modal'
+
 import styles from './LoginModal.module.scss'
 import { LoginForm } from '../LoginForm/LoginForm'
 
@@ -20,25 +21,16 @@ export const LoginModal: FC<ILoginModalProps> = () => {
     const onCloseModal = useCallback(() => {
         setIsVisibleAuthModal(false)
     }, [])
-
-    const onConfirm = () => {
-
-    }
-
     return (
         <>
             <Button className={styles.loginBtn} onClick={() => { setIsVisibleAuthModal(true) }}>{t('Войти')}</Button>
             <Modal
                 headerProps={{
-                    title: t('Аутентификация')
+                    title: t('Форма авторизации')
                 }}
                 isOpen={isVisibleAuthModal}
                 onClose={onCloseModal}
                 className={styles.loginModal}
-                footerProps={{
-                    onConfirm,
-                    confirmText: t('Войти')
-                }}
                 isLazy
             >
                 <LoginForm />

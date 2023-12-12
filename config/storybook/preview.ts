@@ -11,6 +11,8 @@ const preview: Preview = {
         (Story) => styleDecorator(Story),
         (Story) => themeDecorator(Theme.Dark)(Story),
         (Story) => routerDecorator(Story)
+        // (Story) => translationDecorator(Story)
+
     ],
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },

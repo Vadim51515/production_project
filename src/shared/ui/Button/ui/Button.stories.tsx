@@ -39,4 +39,11 @@ export const Outline: Story = {
     }
 }
 
+export const Disabled: Story = {
+    args: {
+        children: 'Test text disabled button',
+        isDisabled: true
+    }
+}
+
 Outline.decorators = [themeDecorator(Theme.Light)]

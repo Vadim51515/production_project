@@ -12,6 +12,8 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     pattern?: TButtonPattern
     isFullWidth?: boolean
     isRound?: boolean
+    isDisabled?: boolean
+    isLoading?: boolean
 }
 
 export const Button: FC<IButtonProps> = ({
@@ -19,14 +21,18 @@ export const Button: FC<IButtonProps> = ({
     pattern = 'primary',
     isFullWidth,
     isRound,
+    isDisabled,
     ...buttonProps
 }) => {
     const mods = {
         [styles.fullWidth]: isFullWidth,
-        [styles.round]: isRound
+        [styles.round]: isRound,
+        [styles.disabled]: isDisabled
     }
+
     return (
         <button
+            disabled={isDisabled}
             className={classNames(
                 styles.button,
                 mods,

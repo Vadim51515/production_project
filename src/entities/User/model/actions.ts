@@ -1,2 +1,1 @@
-export { userReducer } from './slices/userSlice'
-export const userActions = {}
+export { userActions } from './slices/userSlice'
