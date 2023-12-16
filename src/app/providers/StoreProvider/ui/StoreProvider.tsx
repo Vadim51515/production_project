@@ -1,3 +1,4 @@
+import { type ReducersMapObject } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import {
     type CFC,
@@ -9,9 +10,18 @@ import { createReduxStore } from '../config/store'
 
 interface IStoreProvider {
     initialState?: DeepPartial<IStateSchema>
+    asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>
 }
-export const StoreProvider: CFC<IStoreProvider> = ({ children, initialState }) => {
-    const store = createReduxStore(initialState as IStateSchema)
+
+export const StoreProvider: CFC<IStoreProvider> = ({
+    children,
+    initialState,
+    asyncReducers
+}) => {
+    const store = createReduxStore(
+        initialState as IStateSchema,
+        asyncReducers
+    )
 
     return (
         <Provider store={store}>

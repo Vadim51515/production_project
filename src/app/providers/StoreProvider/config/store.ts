@@ -4,11 +4,16 @@ import {
 } from '@reduxjs/toolkit'
 import { counterReducer } from '../../../../entities/Counter'
 import { userReducer } from '../../../../entities/User'
+import type { DeepPartial } from '../../../types'
 import { createReducerManager } from './reducerManager'
 import { type IStateSchema } from './stateSchema'
 
-export const createReduxStore = (preloadedState?: IStateSchema) => {
+export const createReduxStore = (
+    preloadedState?: IStateSchema,
+    asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>
+) => {
     const rootReducers: ReducersMapObject<IStateSchema> = {
+        ...asyncReducers,
         counter: counterReducer,
         user: userReducer
     }
