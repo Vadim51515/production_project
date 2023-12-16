@@ -74,7 +74,9 @@ module.exports = {
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",
         "@typescript-eslint/no-dynamic-delete": "off",
-        "react-hooks/exhaustive-deps": "off"
+        "react-hooks/exhaustive-deps": "off",
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "@typescript-eslint/unbound-method": "off"
     },
     overrides: [
         {
