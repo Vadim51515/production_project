@@ -2,6 +2,7 @@ import React, {
     type ButtonHTMLAttributes,
     type FC
 } from 'react'
+import { type Func } from '../../../../app/types'
 import { classNames } from '../../../lib/classNames/classNames'
 import styles from './Button.module.scss'
 
@@ -14,6 +15,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     isRound?: boolean
     isDisabled?: boolean
     isLoading?: boolean
+    onClick?: Func
 }
 
 export const Button: FC<IButtonProps> = ({
