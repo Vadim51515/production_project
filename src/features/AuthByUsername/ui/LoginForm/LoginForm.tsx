@@ -1,28 +1,40 @@
-import React, { type FC } from 'react'
+import React, {
+    type FC
+} from 'react'
 import { useTranslation } from 'react-i18next'
+import {
+    useSelector
+} from 'react-redux'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useActions } from '../../../../shared/hooks/useActions'
-import { useParamSelector } from '../../../../shared/hooks/useParamSelector'
+import { useAsyncReducer } from '../../../../shared/hooks/useAsyncReducer'
 import { Button } from '../../../../shared/ui/Button'
 import { Input } from '../../../../shared/ui/Input'
 import { Text } from '../../../../shared/ui/Text'
 import { loginActions } from '../../model/actions'
 import {
-    loginSelector
+    loginErrorSelector,
+    loginIsLoadingSelector,
+    loginPasswordSelector,
+    loginUsernameSelector
 } from '../../model/selectors/selectors'
+import { loginReducer } from '../../model/slice/loginSlice'
 import styles from './LoginForm.module.scss'
 
-interface ILoginFormProps {
+export interface ILoginFormProps {
     className?: string
 }
 
-export const LoginForm: FC<ILoginFormProps> = () => {
-    const {
-        username,
-        password,
-        isLoading,
-        error
-    } = useParamSelector(loginSelector)
+const initialReducers = {
+    login: loginReducer
+}
+const LoginForm: FC<ILoginFormProps> = () => {
+    useAsyncReducer(initialReducers, true)
+
+    const username = useSelector(loginUsernameSelector)
+    const password = useSelector(loginPasswordSelector)
+    const isLoading = useSelector(loginIsLoadingSelector)
+    const error = useSelector(loginErrorSelector)
 
     const {
         setPassword,
@@ -38,6 +50,8 @@ export const LoginForm: FC<ILoginFormProps> = () => {
             password
         })
     }
+
+    console.log('username', username)
 
     return (
         <div className={classNames(styles.container, {})}>
@@ -68,3 +82,4 @@ export const LoginForm: FC<ILoginFormProps> = () => {
         </div>
     )
 }
+export default LoginForm

@@ -17,7 +17,6 @@ export const loginByUsername = createAsyncThunk<IUser, ILoginByUsernameProps>(
     async (authData, thunkAPI) => {
         try {
             const response = await axios.post('http://localhost:8000/login', authData)
-            console.log('response', response)
             const { data } = response
             if (!data) {
                 throw new Error('Нет данных')
@@ -26,7 +25,6 @@ export const loginByUsername = createAsyncThunk<IUser, ILoginByUsernameProps>(
             thunkAPI.dispatch(userActions.setAuthData(data))
             return data
         } catch (e) {
-            console.log('e', e)
             return thunkAPI.rejectWithValue(i18n.t('Вы ввели неверный логин или пароль'))
             // return thunkAPI.rejectWithValue('Вы ввели неверный логин или пароль')
         }

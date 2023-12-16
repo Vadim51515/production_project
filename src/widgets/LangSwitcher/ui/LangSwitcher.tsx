@@ -18,8 +18,6 @@ export const LangSwitcher: FC<ILangSwitcherProps> = ({ isShortName }) => {
             : 'ru')
     }
 
-    console.log('isShortName', isShortName)
-
     return (
         <div>
             <button onClick={changeLanguage}>{t(isShortName

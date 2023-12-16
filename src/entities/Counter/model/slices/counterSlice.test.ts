@@ -1,3 +1,4 @@
+import { type DeepPartial } from '../../../../app/types'
 import { counterActions } from '../actions'
 import {
     counterReducer,
@@ -5,7 +6,7 @@ import {
 } from './counterSlice'
 
 describe('counterSlice', () => {
-    const state: Partial<ICounterState> = {
+    const state: DeepPartial<ICounterState> = {
         value: 10
     }
 

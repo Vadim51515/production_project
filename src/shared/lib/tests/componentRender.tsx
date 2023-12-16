@@ -4,11 +4,12 @@ import { I18nextProvider } from 'react-i18next'
 import { MemoryRouter } from 'react-router-dom'
 import { StoreProvider } from '../../../app/providers/StoreProvider'
 import { type IStateSchema } from '../../../app/providers/StoreProvider/config/stateSchema'
+import { type DeepPartial } from '../../../app/types'
 import i18nForTests from '../../config/i18n/i18nForTests'
 
 export interface IComponentRender {
     route?: string
-    initialState?: Partial<IStateSchema>
+    initialState?: DeepPartial<IStateSchema>
 }
 
 const initialOptions: IComponentRender = {

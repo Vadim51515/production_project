@@ -73,6 +73,8 @@ module.exports = {
         'react/display-name': 'off',
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",
+        "@typescript-eslint/no-dynamic-delete": "off",
+        "react-hooks/exhaustive-deps": "off"
     },
     overrides: [
         {

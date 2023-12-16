@@ -14,7 +14,6 @@ interface INavbarProps {
 
 export const Navbar: FC<INavbarProps> = ({ className, isCollapsedNavbar }) => {
     const { t } = useTranslation()
-    console.log('isCollapsedNavbar', isCollapsedNavbar)
     return (
         <div className={classNames(styles.container, {}, [className])}>
             <AppLink

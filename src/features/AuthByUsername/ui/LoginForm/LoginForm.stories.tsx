@@ -4,7 +4,7 @@ import { Theme } from '../../../../app/providers/ThemeProvider'
 import { type DeepPartial } from '../../../../app/types'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator'
-import { LoginForm } from './LoginForm'
+import LoginForm from './LoginForm'
 
 const meta = {
     title: 'features/LoginForm',

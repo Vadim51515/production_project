@@ -1,6 +1,6 @@
 export interface ILoginState {
     username: string
     password: string
-    isLoading: boolean
+    isLoading?: boolean
     error?: string
 }

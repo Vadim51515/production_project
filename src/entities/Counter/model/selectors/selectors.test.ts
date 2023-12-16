@@ -1,11 +1,12 @@
 import { type IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
+import { type DeepPartial } from '../../../../app/types'
 import {
     counterSelector,
     counterValueSelector
 } from './selectors'
 
 describe('counter selectors', () => {
-    const state: Partial<IStateSchema> = {
+    const state: DeepPartial<IStateSchema> = {
         counter: {
             value: 10
         }

@@ -33,7 +33,6 @@ export const Modal: CFC<IModalProps> = ({
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
     const closeHandler = useCallback((callback = onClose) => {
-        console.log('callback', callback)
         setIsClosing(true)
         timerRef.current = setTimeout(() => {
             callback()
