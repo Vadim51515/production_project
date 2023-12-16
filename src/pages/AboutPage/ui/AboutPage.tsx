@@ -1,12 +1,13 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { Text } from '../../../shared/ui/Text'
 
 const AboutPage = () => {
     const { t } = useTranslation('about')
 
     return (
         <div>
-            <h1>{t('О сайте')}</h1>
+            <Text tag={'h1'}>{t('О сайте')}</Text>
         </div>
     )
 }

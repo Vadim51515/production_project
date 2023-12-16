@@ -2,6 +2,7 @@ import React, { type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import type { Func } from '../../../../app/types'
 import { Button } from '../../Button'
+import { Text } from '../../Text'
 import { type IModalHeaderProps } from '../types'
 import styles from './Modal.module.scss'
 import CloseIcon from 'shared/assets/icons/close.svg'
@@ -16,7 +17,7 @@ export const ModalHeader: FC<IHeaderProps> = ({
 }) => {
     return (
         <div className={classNames(styles.header, {}, [])}>
-            <h1 className={styles.title}>{title}</h1>
+            <Text tag='h1' className={styles.title}>{title}</Text>
             <Button
                 isRound
                 className={styles.closeBtn}

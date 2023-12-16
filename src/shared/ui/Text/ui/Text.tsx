@@ -11,7 +11,6 @@ interface ITextProps {
     isPrimary?: boolean
 }
 
-// TODO Переделать текст во всем приложении на Text
 export const Text: CFC<ITextProps> = ({
     className,
     tag = 'p',

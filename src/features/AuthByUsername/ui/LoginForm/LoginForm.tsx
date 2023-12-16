@@ -56,7 +56,7 @@ const LoginForm: FC<ILoginFormProps> = () => {
     return (
         <div className={classNames(styles.container, {})}>
             <div className={styles.loginContainer}>
-                <p>{t('Логин')}</p>
+                <Text>{t('Логин')}</Text>
                 <Input
                     onChange={setUsername}
                     isFullWidth
@@ -66,7 +66,7 @@ const LoginForm: FC<ILoginFormProps> = () => {
             </div>
 
             <div className={styles.passwordContainer}>
-                <p>{t('Пароль')}</p>
+                <Text>{t('Пароль')}</Text>
                 <Input
                     onChange={setPassword}
                     isFullWidth
