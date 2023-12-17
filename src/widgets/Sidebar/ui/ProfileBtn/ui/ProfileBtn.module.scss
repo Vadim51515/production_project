@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    &:hover{
+        background: var(--detailed-bg-color);
+    }
+}
+
+.collapsedContainer{
+    justify-content: center;
+}
+
+.avatar{
+    border-radius: 50%;
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.name{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.role{
+    text-align: start;
+    margin-left: 10px;
+}

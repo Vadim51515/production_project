@@ -1,5 +1,6 @@
 import React, {
-    type FC
+    type FC,
+    memo
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
@@ -28,7 +29,7 @@ export interface ILoginFormProps {
 const initialReducers = {
     login: loginReducer
 }
-const LoginForm: FC<ILoginFormProps> = () => {
+const LoginForm: FC<ILoginFormProps> = memo(() => {
     useAsyncReducer(initialReducers, true)
 
     const username = useSelector(loginUsernameSelector)
@@ -44,7 +45,7 @@ const LoginForm: FC<ILoginFormProps> = () => {
 
     const { t } = useTranslation()
 
-    const onSubmit = () => {
+    const onSubmit = async () => {
         loginByUsername({
             username,
             password
@@ -81,5 +82,5 @@ const LoginForm: FC<ILoginFormProps> = () => {
             >{t('Войти')}</Button>
         </div>
     )
-}
+})
 export default LoginForm

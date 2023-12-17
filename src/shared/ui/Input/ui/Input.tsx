@@ -1,7 +1,8 @@
 import React, {
     type ChangeEvent,
     type FC,
-    type InputHTMLAttributes
+    type InputHTMLAttributes,
+    memo
 } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { type Func } from '../../../../app/types'
@@ -27,7 +28,7 @@ type InputPropsWithString = BaseInputProps & {
 
 type IInputProps = InputPropsWithEvent | InputPropsWithString
 
-export const Input: FC<IInputProps> = ({
+export const Input: FC<IInputProps> = memo(({
     className,
     size = 'sizeContent',
     isFullWidth,
@@ -53,4 +54,4 @@ export const Input: FC<IInputProps> = ({
             {...props}
         />
     )
-}
+})

@@ -1,4 +1,7 @@
-import React, { type FC } from 'react'
+import React, {
+    type FC,
+    memo
+} from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import type { Func } from '../../../../app/types'
 import { Button } from '../../Button'
@@ -11,7 +14,7 @@ interface IHeaderProps extends IModalHeaderProps {
     onCloseModal: Func
 }
 
-export const ModalHeader: FC<IHeaderProps> = ({
+export const ModalHeader: FC<IHeaderProps> = memo(({
     title,
     onCloseModal
 }) => {
@@ -27,4 +30,4 @@ export const ModalHeader: FC<IHeaderProps> = ({
             </Button>
         </div>
     )
-}
+})

@@ -8,6 +8,8 @@ import type { DeepPartial } from '../../../types'
 import { createReducerManager } from './reducerManager'
 import { type IStateSchema } from './stateSchema'
 
+export type TAppDispatch = ReturnType<typeof createReduxStore>['dispatch']
+
 export const createReduxStore = (
     preloadedState?: IStateSchema,
     asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>

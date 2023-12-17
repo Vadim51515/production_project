@@ -1,37 +1,24 @@
-import React, { type FC } from 'react'
-import { useTranslation } from 'react-i18next'
+import React, {
+    type FC,
+    memo
+} from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { RoutePath } from '../../../shared/config/routeConfig/routeConfig'
-import { AppLink } from '../../../shared/ui/AppLink/AppLink'
+import { navbarItemsList } from '../model/items'
 import styles from './Navbar.module.scss'
-import AboutIcon from 'shared/assets/icons/AboutIcon.svg'
-import MainIcon from 'shared/assets/icons/MainIcon.svg'
+import { NavbarItem } from './NavbarItem/NavbarItem'
 
 interface INavbarProps {
     className?: string
     isCollapsedNavbar?: boolean
 }
 
-export const Navbar: FC<INavbarProps> = ({ className, isCollapsedNavbar }) => {
-    const { t } = useTranslation()
+export const Navbar: FC<INavbarProps> = memo(({ className, isCollapsedNavbar }) => {
+    console.log('Navbar')
     return (
         <div className={classNames(styles.container, {}, [className])}>
-            <AppLink
-                className={styles.appLink}
-                classNameContent={classNames('', { [styles.appLinkContent]: isCollapsedNavbar })}
-                to={RoutePath.main}
-                pattern={'button'}
-                postfix={<AboutIcon />}
-            >
-                {t('Главная')}</AppLink>
-
-            <AppLink
-                className={styles.appLink}
-                classNameContent={classNames('', { [styles.appLinkContent]: isCollapsedNavbar })}
-                to={RoutePath.about}
-                pattern={'button'}
-                postfix={<MainIcon />}
-            >{t('О сайте')}</AppLink>
+            {navbarItemsList.map(item => (
+                <NavbarItem key={item.path} item={item} isCollapsedNavbar={isCollapsedNavbar}/>
+            ))}
         </div>
     )
-}
+})

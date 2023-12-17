@@ -71,12 +71,13 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         'react/display-name': 'off',
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "error",
-        "@typescript-eslint/no-dynamic-delete": "off",
-        "react-hooks/exhaustive-deps": "off",
-        "@typescript-eslint/consistent-type-assertions": "off",
-        "@typescript-eslint/unbound-method": "off"
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
+        '@typescript-eslint/no-dynamic-delete': 'off',
+        'react-hooks/exhaustive-deps': 'off',
+        '@typescript-eslint/consistent-type-assertions': 'off',
+        '@typescript-eslint/unbound-method': 'off',
+        '@typescript-eslint/no-misused-promises': 'off',
     },
     overrides: [
         {

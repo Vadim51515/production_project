@@ -2,34 +2,5 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-left: auto;
-}
-
-.appLink{
-    & svg{
-        fill: var(--auxiliary-color);
-    }
-}
-
-.appLinkContent{
-    width: 0;
-    opacity: 0;
-    animation: removing-link-text 0.5s;
-}
-
-
-@keyframes removing-link-text {
-    0% {
-        opacity: 1;
-        width: 100%;
-    }
-
-    90% {
-        opacity: 0;
-    }
-
-    100% {
-        width: 0;
-    }
 }
 

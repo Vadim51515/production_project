@@ -1,11 +1,12 @@
-.p{
-    color: var(--text-color );
+.p {
+    color: var(--text-color);
+    font: var(--font-m);
 }
 
-.primary{
+.primary {
     color: var(--primary-color);
 }
 
-.error{
+.error {
     color: var(--error-color);
 }

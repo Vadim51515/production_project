@@ -1,0 +1,14 @@
+.appLink{
+    & svg{
+        fill: var(--auxiliary-color);
+    }
+}
+
+.currentLink{
+    background: var(--detailed-bg-color);
+
+    & svg{
+        fill: var(--primary-color);
+    }
+}
+

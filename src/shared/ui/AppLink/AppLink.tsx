@@ -1,5 +1,6 @@
 import React, {
     type FC,
+    memo,
     type ReactElement
 } from 'react'
 import {
@@ -19,7 +20,7 @@ interface IAppLinkProps extends Omit<LinkProps, 'prefix'> {
     prefix?: ReactElement
 }
 
-export const AppLink: FC<IAppLinkProps> = ({
+export const AppLink: FC<IAppLinkProps> = memo(({
     className,
     to,
     children,
@@ -45,4 +46,4 @@ export const AppLink: FC<IAppLinkProps> = ({
             <span className={styles.postfix}>{postfix}</span>
         </Link>
     )
-}
+})

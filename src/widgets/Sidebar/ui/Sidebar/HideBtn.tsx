@@ -1,4 +1,7 @@
-import React, { type FC } from 'react'
+import React, {
+    type FC,
+    memo
+} from 'react'
 import { type Func } from '../../../../app/types'
 import RightArrow from 'shared/assets/icons/right-arrow.svg'
 import { classNames } from '../../../../shared/lib/classNames/classNames'
@@ -8,7 +11,7 @@ interface IHideBtnProps {
     isOpen: boolean
 }
 
-export const HideBtn: FC<IHideBtnProps> = ({ onClick, isOpen }) => {
+export const HideBtn: FC<IHideBtnProps> = memo(({ onClick, isOpen }) => {
     return (
         <button
             onClick={onClick}
@@ -18,4 +21,4 @@ export const HideBtn: FC<IHideBtnProps> = ({ onClick, isOpen }) => {
             <RightArrow />
         </button>
     )
-}
+})

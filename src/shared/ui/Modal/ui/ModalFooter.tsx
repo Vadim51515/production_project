@@ -1,4 +1,7 @@
-import React, { type FC } from 'react'
+import React, {
+    type FC,
+    memo
+} from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { type Func } from '../../../../app/types'
 import { Button } from '../../Button'
@@ -9,7 +12,7 @@ interface IFooterProps extends IModalFooterProps {
     onCloseModal: Func<[Func]>
 }
 
-export const ModalFooter: FC<IFooterProps> = ({
+export const ModalFooter: FC<IFooterProps> = memo(({
     confirmText = 'Принять',
     onConfirm,
     cancelText = 'Отмена',
@@ -22,4 +25,4 @@ export const ModalFooter: FC<IFooterProps> = ({
             {onConfirm && <Button onClick={() => { onCloseModal(onConfirm) }}>{confirmText}</Button>}
         </div>
     )
-}
+})

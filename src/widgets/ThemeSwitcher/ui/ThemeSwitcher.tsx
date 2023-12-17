@@ -1,4 +1,7 @@
-import React, { type FC } from 'react'
+import React, {
+    type FC,
+    memo
+} from 'react'
 import DarkIcon from 'shared/assets/icons/theme-dark.svg'
 import LightIcon from 'shared/assets/icons/theme-light.svg'
 import {
@@ -11,15 +14,20 @@ interface IThemeSwitcherProps {
     className?: string
 }
 
-export const ThemeSwitcher: FC<IThemeSwitcherProps> = () => {
+export const ThemeSwitcher: FC<IThemeSwitcherProps> = memo(() => {
     const {
         toggleTheme,
         theme
     } = useTheme()
 
     return (
-        <Button pattern='clear' onClick={() => { toggleTheme() }}>
-            {theme === Theme.Dark ? <DarkIcon /> : <LightIcon />}
+        <Button
+            pattern='clear'
+            onClick={() => { toggleTheme() }}
+        >
+            {theme === Theme.Dark
+                ? <DarkIcon />
+                : <LightIcon />}
         </Button>
     )
-}
+})

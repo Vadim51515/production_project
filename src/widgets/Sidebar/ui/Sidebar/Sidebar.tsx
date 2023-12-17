@@ -1,18 +1,16 @@
 import React, {
     type FC,
+    memo,
     useState
 } from 'react'
-import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { BugButton } from 'app/providers/ErrorBoundary/ui/BugButton'
-import { userActions } from '../../../../entities/User'
 import { userAuthDataSelector } from '../../../../entities/User/model/selectors/selectors'
 import { LoginModal } from '../../../../features/AuthByUsername'
-import { useActions } from '../../../../shared/hooks/useActions'
 import { useParamSelector } from '../../../../shared/hooks/useParamSelector'
-import { Button } from '../../../../shared/ui/Button'
 import { LangSwitcher } from '../../../LangSwitcher'
 import { Navbar } from '../../../Navbar'
+import { ProfileBtn } from '../ProfileBtn'
 import { HideBtn } from './HideBtn'
 import styles from './Sidebar.module.scss'
 
@@ -20,14 +18,10 @@ interface ISidebarProps {
     className?: string
 }
 
-export const Sidebar: FC<ISidebarProps> = ({ className }) => {
+export const Sidebar: FC<ISidebarProps> = memo(({ className }) => {
     const userAuthData = useParamSelector(userAuthDataSelector)
 
-    const { logout } = useActions(userActions)
-
     const [isOpen, setIsOpen] = useState(true)
-
-    const { t } = useTranslation()
 
     return (
         <div
@@ -44,7 +38,7 @@ export const Sidebar: FC<ISidebarProps> = ({ className }) => {
             <div className={styles.bottomBlock}>
 
             </div>
-            {userAuthData ? <Button onClick={logout}>{t('Выйти из аккаунта')}</Button> : <LoginModal /> }
+            {!userAuthData ? <ProfileBtn isCollapsedNavbar={!isOpen} /> : <LoginModal /> }
         </div>
     )
-}
+})

@@ -1,4 +1,7 @@
-import React, { type FC } from 'react'
+import React, {
+    type FC,
+    memo
+} from 'react'
 import { useTranslation } from 'react-i18next'
 
 interface ILangSwitcherProps {
@@ -6,7 +9,7 @@ interface ILangSwitcherProps {
     isShortName?: boolean
 }
 
-export const LangSwitcher: FC<ILangSwitcherProps> = ({ isShortName }) => {
+export const LangSwitcher: FC<ILangSwitcherProps> = memo(({ isShortName }) => {
     const {
         t,
         i18n
@@ -25,4 +28,4 @@ export const LangSwitcher: FC<ILangSwitcherProps> = ({ isShortName }) => {
                 : 'Язык')}</button>
         </div>
     )
-}
+})

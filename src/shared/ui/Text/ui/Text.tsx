@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { type CFC } from '../../../../app/types'
 import { classNames } from '../../../lib/classNames/classNames'
 import styles from './Text.module.scss'
@@ -11,7 +11,7 @@ interface ITextProps {
     isPrimary?: boolean
 }
 
-export const Text: CFC<ITextProps> = ({
+export const Text: CFC<ITextProps> = memo(({
     className,
     tag = 'p',
     isError,
@@ -28,4 +28,4 @@ export const Text: CFC<ITextProps> = ({
             {children}
         </Tag>
     )
-}
+})

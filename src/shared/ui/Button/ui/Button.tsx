@@ -1,6 +1,7 @@
 import React, {
     type ButtonHTMLAttributes,
-    type FC
+    type FC,
+    memo
 } from 'react'
 import { type Func } from '../../../../app/types'
 import { classNames } from '../../../lib/classNames/classNames'
@@ -18,7 +19,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     onClick?: Func
 }
 
-export const Button: FC<IButtonProps> = ({
+export const Button: FC<IButtonProps> = memo(({
     className,
     pattern = 'primary',
     isFullWidth,
@@ -46,4 +47,4 @@ export const Button: FC<IButtonProps> = ({
             {...buttonProps}
         />
     )
-}
+})
