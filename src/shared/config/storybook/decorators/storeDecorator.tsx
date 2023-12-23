@@ -3,10 +3,10 @@ import React from 'react'
 import { type Story } from '@storybook/react'
 import { StoreProvider } from '../../../../app/providers/StoreProvider'
 import { type IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
-import type { DeepPartial } from '../../../../app/types'
 import { loginReducer } from '../../../../features/AuthByUsername/model/slice/loginSlice'
+import { type TReducersList } from '../../../hooks/useAsyncReducer'
 
-const defaultAsyncReducer: DeepPartial<ReducersMapObject<IStateSchema>> = {
+const defaultAsyncReducer: TReducersList = {
     login: loginReducer
 }
 export const storeDecorator = (

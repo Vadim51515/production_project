@@ -4,6 +4,9 @@ import {
     type ReducersMapObject,
     type UnknownAction
 } from '@reduxjs/toolkit'
+import type { To } from '@remix-run/router'
+import { type AxiosInstance } from 'axios'
+import type { NavigateOptions } from 'react-router/dist/lib/context'
 import { type ICounterState } from '../../../../entities/Counter'
 import { type IProfileState } from '../../../../entities/Profile'
 import { type IUserState } from '../../../../entities/User'
@@ -24,7 +27,7 @@ export type IStateKey = keyof IStateSchema
 
 export interface IReducerManager {
     getReducerMap: Func<[], ReducersMapObject<IStateSchema>>
-    reduce: Func<[IStateSchema, UnknownAction], IStateSchema>
+    reduce: Func<[IStateSchema?, UnknownAction?], IStateSchema>
     add: Func<[IStateKey, Reducer]>
     remove: Func<[IStateKey]>
 }
@@ -39,4 +42,14 @@ export interface IReduxStoreWithManager extends EnhancedStore<IStateSchema> {
 export interface ISharedState {
     status: RuntimeStatuses
     error?: string
+}
+
+export interface IThunkExtraArg {
+    api: AxiosInstance
+    navigate?: Func<[To, NavigateOptions?]>
+}
+
+export interface IThunkConfig<T> {
+    rejectValue: T
+    extra: IThunkExtraArg
 }

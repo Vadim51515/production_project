@@ -1,5 +1,4 @@
 import { type IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
-import { type DeepPartial } from '../../../../app/types'
 import {
     counterSelector,
     counterValueSelector

@@ -4,7 +4,6 @@ import type {
 } from '@storybook/react'
 import type { IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
 import { Theme } from '../../../../app/providers/ThemeProvider'
-import type { DeepPartial } from '../../../../app/types'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator'
 import { Sidebar } from './Sidebar'

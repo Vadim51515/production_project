@@ -10,7 +10,7 @@ export const lStorage = (() => {
     return {
         dispatchEvent (
             key: string,
-            oldValue: string,
+            oldValue: string | null,
             newValue: string
         ) {
             const event = new StorageEvent('storage', {

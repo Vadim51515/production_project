@@ -78,6 +78,11 @@ module.exports = {
         '@typescript-eslint/consistent-type-assertions': 'off',
         '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
+        "@typescript-eslint/no-invalid-void-type": "off"
+    },
+    globals: {
+        __IS_DEV__: true,
+        __API__: true,
     },
     overrides: [
         {

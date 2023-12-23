@@ -9,6 +9,7 @@ interface ITextProps {
     tag?: ITextTag
     isError?: boolean
     isPrimary?: boolean
+    isPlaceholder?: boolean
 }
 
 export const Text: CFC<ITextProps> = memo(({
@@ -16,12 +17,14 @@ export const Text: CFC<ITextProps> = memo(({
     tag = 'p',
     isError,
     isPrimary,
+    isPlaceholder,
     children
 }) => {
     const Tag = tag // Используем span, если тип тега не передан
     const mods = {
         [styles.error]: isError,
-        [styles.primary]: isPrimary
+        [styles.primary]: isPrimary,
+        [styles.placeholder]: isPlaceholder
     }
     return (
         <Tag className={classNames(styles.text, mods, [className, styles[tag]])}>

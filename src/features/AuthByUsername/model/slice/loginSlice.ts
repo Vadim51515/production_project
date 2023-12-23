@@ -6,6 +6,7 @@ import { loginByUsername } from '../services/loginByUsername/loginByUsername'
 import { type ILoginState } from '../types'
 
 const initialState: ILoginState = {
+    // TODO Переделать на структуру со статусом
     isLoading: false,
     password: '',
     username: ''

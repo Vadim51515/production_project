@@ -6,12 +6,13 @@ import React, {
 } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { type Func } from '../../../../app/types'
+import { type ISharedFieldComponentProps } from '../../../types'
+import { Text } from '../../Text'
 import styles from './Input.module.scss'
 
 type TInputSize = ('sm' | 'md' | 'lg' | 'xl' | 'sizeContent')
 
-type BaseInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'onChange'> & {
-    className?: string
+type BaseInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'onChange'> & ISharedFieldComponentProps & {
     size?: TInputSize
     isFullWidth?: boolean
 }
@@ -26,7 +27,7 @@ type InputPropsWithString = BaseInputProps & {
     onChange: Func<[string]>
 }
 
-type IInputProps = InputPropsWithEvent | InputPropsWithString
+export type IInputProps = InputPropsWithEvent | InputPropsWithString
 
 export const Input: FC<IInputProps> = memo(({
     className,
@@ -34,17 +35,19 @@ export const Input: FC<IInputProps> = memo(({
     isFullWidth,
     withEventChange,
     onChange,
+    isReadOnly,
     ...props
 }) => {
     const mods = {
         [styles.fullWidth]: isFullWidth,
         [styles[size]]: size
     }
-
     const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
         if (withEventChange) onChange(event)
         else onChange(event.target.value)
     }
+
+    if (isReadOnly) return <Text>{props.value}</Text>
 
     return (
         <input

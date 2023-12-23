@@ -25,6 +25,16 @@ body{
     flex-grow: 1;
 }
 
+.row{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.pageTitleContainer{
+    margin-bottom: 20px;
+}
+
 
 .animationHideText {
     width: 0;

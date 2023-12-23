@@ -1,4 +1,3 @@
-import { type DeepPartial } from '../../../../app/types'
 import { counterActions } from '../actions'
 import {
     counterReducer,

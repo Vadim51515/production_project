@@ -1,0 +1,7 @@
+.profileAvatarContainer{
+    display: flex;
+
+    & > img{
+        width: 180px;
+    }
+}

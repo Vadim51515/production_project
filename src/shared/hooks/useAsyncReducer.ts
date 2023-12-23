@@ -15,9 +15,13 @@ export const useAsyncReducer = (reducers: TReducersList, removeAfterUnmount = fa
     const store = useStore() as IReduxStoreWithManager
 
     useEffect(() => {
+        console.log('useAsyncReducer', reducers)
         Object.entries(reducers).forEach(([reducerName, reducer]) => {
+            console.log('reducerName', reducerName)
+            console.log('reducer', reducer)
             store.reducerManager.add(reducerName as IStateKey, reducer)
             dispatch({ type: `@INIT ${reducerName} reducer` })
+            console.log('dispatch')
         })
 
         if (removeAfterUnmount) {

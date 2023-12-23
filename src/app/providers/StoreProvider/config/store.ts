@@ -2,17 +2,27 @@ import {
     configureStore,
     type ReducersMapObject
 } from '@reduxjs/toolkit'
+import type { To } from '@remix-run/router'
+import type { NavigateOptions } from 'react-router/dist/lib/context'
 import { counterReducer } from '../../../../entities/Counter'
 import { userReducer } from '../../../../entities/User'
-import type { DeepPartial } from '../../../types'
+import { $api } from '../../../../shared/api/api'
+import type {
+    DeepPartial,
+    Func
+} from '../../../types'
 import { createReducerManager } from './reducerManager'
-import { type IStateSchema } from './stateSchema'
+import {
+    type IStateSchema,
+    type IThunkExtraArg
+} from './stateSchema'
 
 export type TAppDispatch = ReturnType<typeof createReduxStore>['dispatch']
 
 export const createReduxStore = (
     preloadedState?: IStateSchema,
-    asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>
+    asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>,
+    navigate?: Func<[To, NavigateOptions?]>
 ) => {
     const rootReducers: ReducersMapObject<IStateSchema> = {
         ...asyncReducers,
@@ -22,10 +32,20 @@ export const createReduxStore = (
 
     const reducerManager = createReducerManager(rootReducers)
 
-    const store = configureStore<IStateSchema>({
+    const extraArg: IThunkExtraArg = {
+        api: $api,
+        navigate
+    }
+
+    const store = configureStore({
         reducer: reducerManager.reduce,
         devTools: true,
-        preloadedState
+        preloadedState,
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+            thunk: {
+                extraArgument: extraArg
+            }
+        })
     })
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

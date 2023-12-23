@@ -38,7 +38,7 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }) => {
             <div className={styles.bottomBlock}>
 
             </div>
-            {!userAuthData ? <ProfileBtn isCollapsedNavbar={!isOpen} /> : <LoginModal /> }
+            {userAuthData ? <ProfileBtn isCollapsedNavbar={!isOpen} /> : <LoginModal /> }
         </div>
     )
 })

@@ -3,10 +3,18 @@
     font: var(--font-m);
 }
 
+.h2{
+    margin-bottom: 20px;
+}
+
 .primary {
     color: var(--primary-color);
 }
 
 .error {
     color: var(--error-color);
+}
+
+.placeholder{
+    color: var(--placeholder-text-color);
 }
