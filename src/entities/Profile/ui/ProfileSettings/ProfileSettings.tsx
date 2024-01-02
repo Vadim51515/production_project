@@ -1,51 +1,38 @@
 import React, { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Field } from '../../../../shared/ui/Field/Field'
+import { CURRENCIES } from '../../../../app/constans'
 import { Text } from '../../../../shared/ui/Text'
-import styles from './ProfileSettings.module.scss'
+import { ProfileField } from '../ProfileField/ProfileField'
 
 interface IProfileSettingsProps {
     className?: string
 }
 
-export const ProfileSettings: FC<IProfileSettingsProps> = ({ className }) => {
+export const ProfileSettings: FC<IProfileSettingsProps> = () => {
     const { t } = useTranslation()
 
     return (
-        <div className={classNames(styles.profileSettings, {}, [className])}>
-            <Text
-                className={styles.personalDataTitle}
-                tag='h2'
-            >{t('Настройки профиля')}</Text>
+        <div>
+            <Text tag='h2'>{t('Настройки профиля')}</Text>
             <div className={'row'}>
-                <Field
-                    fieldType={'input'}
-                    label={'Имя пользователя'}
+                <ProfileField
+                    fieldName={'username'}
+                    label={t('Имя пользователя')}
                     isRequired
-                    isFullWidth
-                    isReadOnly
-                    onChange={() => {}}
-                />
-                <Field
-                    fieldType={'input'}
-                    label={'Ссылка на аватар'}
-                    isRequired
-                    isFullWidth
-                    isReadOnly
-                    onChange={() => {}}
-                />
-                <Field
-                    fieldType={'input'}
-                    label={'Валюта'}
-                    isRequired
-                    isFullWidth
-                    isReadOnly
-                    onChange={() => {}}
                 />
 
+                <ProfileField
+                    fieldName={'avatar'}
+                    label={t('Ссылка на аватар')}
+                />
+
+                <ProfileField
+                    fieldName={'currency'}
+                    fieldType={'select'}
+                    label={t('Валюта')}
+                    options={CURRENCIES}
+                />
             </div>
-
         </div>
     )
 }

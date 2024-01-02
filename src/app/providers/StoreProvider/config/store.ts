@@ -8,7 +8,6 @@ import { counterReducer } from '../../../../entities/Counter'
 import { userReducer } from '../../../../entities/User'
 import { $api } from '../../../../shared/api/api'
 import type {
-    DeepPartial,
     Func
 } from '../../../types'
 import { createReducerManager } from './reducerManager'

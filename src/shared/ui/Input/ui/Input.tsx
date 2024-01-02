@@ -17,7 +17,7 @@ type BaseInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'onCh
     isFullWidth?: boolean
 }
 
-type InputPropsWithEvent = BaseInputProps & {
+export type InputPropsWithEvent = BaseInputProps & {
     withEventChange: true
     onChange: Func<[ChangeEvent<HTMLInputElement>]>
 }

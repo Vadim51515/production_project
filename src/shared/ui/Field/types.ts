@@ -1,33 +1,32 @@
-import { type Func } from '../../../app/types'
+import {
+    type Func,
+    type IOption
+} from '../../../app/types'
 import { type ISharedFieldComponentProps } from '../../types'
-import { type IInputProps } from '../Input/ui/Input'
+import { type InputPropsWithEvent } from '../Input'
+import { type ISelectProps } from '../Select'
 
-type TFieldType =
+export type TFieldType =
     'input'
     | 'select'
 
 interface IBaseFieldProps extends ISharedFieldComponentProps {
     fieldType: TFieldType
+    fieldName: string
     label: string
-    onChange: Func<[unknown]>
     isRequired?: boolean
     error?: string
 }
 
-export type TFieldInputProps =
-    IBaseFieldProps
-    & IInputProps & {
+interface IFieldInputProps extends Omit<InputPropsWithEvent, 'onChange'> {
     fieldType: 'input'
-    isFullWidth: boolean
+    value?: string | number
+    onChange: Func<[string, string]>
 }
 
-export type TFieldInputSelect =
-    IBaseFieldProps
-    & {
+interface IFieldSelectProps extends Omit<ISelectProps, 'onChange'> {
     fieldType: 'select'
-    isMinWidth: boolean
+    onChange: Func<[string, IOption]>
 }
 
-export type TFieldProps =
-    TFieldInputProps
-    | TFieldInputSelect
+export type TFieldProps = IBaseFieldProps & (IFieldInputProps | IFieldSelectProps)

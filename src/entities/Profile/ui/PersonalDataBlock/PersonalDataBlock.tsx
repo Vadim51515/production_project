@@ -2,13 +2,16 @@ import React, { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Field } from '../../../../shared/ui/Field/Field'
+import {
+    COUNTRIES
+} from '../../../../app/constans'
+import { Loader } from '../../../../shared/ui/Loader'
 import { Text } from '../../../../shared/ui/Text'
 import {
-    profileFirstNameSelector,
-    profileSurnameSelector
+    profileIsLoadingSelector
 } from '../../model/selectors/selectors'
 import { ProfileAvatar } from '../ProfileAvatar/ProfileAvatar'
+import { ProfileField } from '../ProfileField/ProfileField'
 import styles from './PersonalDataBlock.module.scss'
 
 interface IPersonalDataBlockProps {
@@ -16,54 +19,63 @@ interface IPersonalDataBlockProps {
 }
 
 export const PersonalDataBlock: FC<IPersonalDataBlockProps> = ({ className }) => {
-    const firstName = useSelector(profileFirstNameSelector)
-    const surname = useSelector(profileSurnameSelector)
+    const isLoading = useSelector(profileIsLoadingSelector)
 
     const { t } = useTranslation()
 
     return (
-        <div className={classNames(styles.personalData, {}, [className])}>
+        <div
+            className={classNames(
+                styles.personalData,
+                {},
+                [
+                    'box',
+                    className
+                ]
+            )}
+        >
+            {isLoading && <Loader />}
             <ProfileAvatar />
             <div className={styles.personalDataContainer}>
                 <Text
                     className={styles.personalDataTitle}
                     tag='h2'
                 >{t('Личные данные')}</Text>
-                <div className={styles.nameContainer}>
-                    <Field
-                        fieldType={'input'}
-                        label={'Имя'}
-                        isRequired
-                        isFullWidth
-                        isReadOnly
-                        onChange={() => {}}
-                        value={firstName}
-                    />
+                <div className={styles.personalDataFieldContainer}>
 
-                    <Field
-                        fieldType={'input'}
-                        label={'Фамилия'}
-                        isFullWidth
-                        onChange={() => {}}
-                        value={surname}
-                    />
-                </div>
-                <div className={styles.nameContainer}>
-                    <Field
-                        fieldType={'input'}
-                        label={'Дата рождения'}
-                        isRequired
-                        isFullWidth
-                        onChange={() => {}}
-                    />
+                    <div className={styles.nameContainer}>
+                        <ProfileField
+                            fieldName={'firstName'}
+                            label={'Имя'}
+                            isRequired
+                        />
 
-                    <Field
-                        fieldType={'input'}
-                        label={'Город'}
-                        isFullWidth
-                        onChange={() => {}}
-                    />
+                        <ProfileField
+                            fieldName={'surname'}
+                            label={'Фамилия'}
+                            isRequired
+                        />
+                    </div>
+                    <div className={styles.nameContainer}>
+                        <ProfileField
+                            fieldName={'age'}
+                            label={'Возраст'}
+                        />
+
+                        <ProfileField
+                            fieldName={'currency'}
+                            fieldType={'select'}
+                            label={t('Страна')}
+                            options={COUNTRIES}
+                        />
+
+                        <ProfileField
+                            fieldName={'city'}
+                            label={'Город'}
+                        />
+                    </div>
                 </div>
+
             </div>
         </div>
     )

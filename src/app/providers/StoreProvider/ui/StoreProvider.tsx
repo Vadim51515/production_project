@@ -2,8 +2,7 @@ import { type ReducersMapObject } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import { useNavigate } from 'react-router'
 import {
-    type CFC,
-    type DeepPartial
+    type CFC
 } from '../../../types'
 import { type IStateSchema } from '../config/stateSchema'
 import React from 'react'

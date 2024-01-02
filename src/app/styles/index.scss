@@ -11,8 +11,7 @@ body{
 
 .app {
     background: var(--main-bg-color);
-
-    // min-height: 100vh; // TODO В сторибуке, эта строчка ломает верстку
+    min-height: 100vh; // TODO В сторибуке, эта строчка ломает верстку
 }
 
 .contentPage {
@@ -22,6 +21,7 @@ body{
 }
 
 .pageWrapper {
+    position: relative;
     flex-grow: 1;
 }
 
@@ -33,6 +33,13 @@ body{
 
 .pageTitleContainer{
     margin-bottom: 20px;
+}
+
+.box{
+    position: relative;
+    padding: 20px;
+    border-radius: 4px;
+    background: var(--additional-bg-color);
 }
 
 

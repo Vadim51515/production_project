@@ -9,6 +9,12 @@
     max-width: 800px;
 }
 
+.personalDataFieldContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .personalDataTitle{
     margin-bottom: 20px;
 }

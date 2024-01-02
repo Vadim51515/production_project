@@ -1,4 +1,7 @@
-export { ProfileEditBtn } from './ui/ProfileEditBtn/ProfileEditBtn'
+export { profileAvatarSelector } from './model/selectors/selectors'
+export { updateProfileData } from './model/services/updateProfileData'
+export { ProfileActionControls } from './ui/ProfileActionControls/ProfileActionControls'
+export { ProfileErrorModal } from './ui/ProfileErrorModal/ProfileErrorModal'
 export { ProfileCard } from './ui/ProfileCard/ProfileCard'
 export { fetchProfileData } from './model/services/fetchProfileData'
 export {

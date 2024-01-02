@@ -10,3 +10,10 @@ export type CFC<P = unknown> = FC<PropsWithChildren<P>>
 export type DeepPartial<T> = {
     [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
 }
+
+export interface IOption {
+    value: string | number
+    label: string | number
+}
+
+export type TOptions = IOption[]

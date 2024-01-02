@@ -1,0 +1,70 @@
+.selectContainer{
+    position: relative;
+}
+
+.select{
+    display: flex;
+    width: 100%;
+    height: var(--height-field);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--field-background-color);
+    outline: 0;
+    border-radius: 4px;
+    cursor: pointer;
+
+    & > svg {
+        animation: close-select-options 0.3s;
+        width: 12px;
+        height: 12px;
+        margin-left: auto;
+        rotate: 90deg;
+    }
+}
+
+.openSelect{
+    & > svg {
+        animation: open-select-options 0.3s;
+        rotate: 270deg;
+    }
+}
+
+.closeSelect{
+    & > svg {
+        rotate: 90deg;
+        animation: close-select-options 0.3s;
+    }
+}
+
+.optionsContainer{
+    position: absolute;
+    overflow-y: auto;
+    width: 100%;
+    max-height: 200px;
+    top: calc(var(--height-field) + 2px);
+    left: 0;
+    border-radius: 4px;
+    background: var(--field-background-color);
+    z-index: var(--select-z-index);
+
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    /* фон скролла */
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* цвет самого скролла */
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* цвет скролла при наведении */
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-color);
+    }
+
+}

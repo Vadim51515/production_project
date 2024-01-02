@@ -6,8 +6,9 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 
 import {
+    ProfileActionControls,
     ProfileCard,
-    ProfileEditBtn,
+    ProfileErrorModal,
     profileReducer
 } from '../../../entities/Profile'
 import { profileActions } from '../../../entities/Profile/model/actions'
@@ -42,12 +43,14 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
         <div className={classNames('', {}, [className])}>
             <div className={ classNames('pageTitleContainer', {}, [styles.titleContainer])}>
                 <Text tag='h1'>{t('Профиль')}</Text>
-                <ProfileEditBtn />
+                <ProfileActionControls />
             </div>
 
             <ProfileCard />
 
             <Button onClick={logout}>{t('Выйти из аккаунта')}</Button>
+
+            <ProfileErrorModal />
         </div>
     )
 }
