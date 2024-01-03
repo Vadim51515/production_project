@@ -9,7 +9,8 @@ import {
 export function buildPlugins ({
     paths,
     isDev,
-    apiUrl
+    apiUrl,
+    project
 }: IBuildOptions): webpack.WebpackPluginInstance[] {
     const progressPlugins = [
         new HTMLWebpackPlugin({
@@ -22,7 +23,8 @@ export function buildPlugins ({
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: isDev,
-            __API__: JSON.stringify(apiUrl)
+            __API__: JSON.stringify(apiUrl),
+            __PROJECT__: JSON.stringify(project)
         })
     ]
 

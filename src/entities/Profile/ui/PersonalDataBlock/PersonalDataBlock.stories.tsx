@@ -1,22 +1,21 @@
-import type {
-    Meta,
-    StoryObj
+import {
+    type Meta,
+    type StoryObj
 } from '@storybook/react'
-import type { IStateSchema } from '../../../app/providers/StoreProvider/config/stateSchema'
-import { Theme } from '../../../app/providers/ThemeProvider'
-import { storeDecorator } from '../../../shared/config/storybook/decorators/storeDecorator'
-import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator'
+import { type IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
+import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import {
     Contry,
     Currency,
     RuntimeStatuses
-} from '../../../shared/const/common'
-import ProfilePage from './ProfilePage'
+} from '../../../../shared/const/common'
 
-export default { component: ProfilePage }
+import { PersonalDataBlock } from './PersonalDataBlock'
+
+export default { component: PersonalDataBlock }
 const meta = {
-    title: 'pages/ProfilePage',
-    component: ProfilePage,
+    title: 'entities/PersonalDataBlock',
+    component: PersonalDataBlock,
     parameters: {
         layout: 'centered'
     },
@@ -24,13 +23,13 @@ const meta = {
     argTypes: {},
     args: {}
 
-} satisfies Meta<typeof ProfilePage>
+} satisfies Meta<typeof PersonalDataBlock>
 
 type Story = StoryObj<typeof meta>
 
 const state: Partial<IStateSchema> = {
     profile: {
-        isReadonly: true,
+        isReadonly: false,
         status: RuntimeStatuses.Loading,
         data: {
             firstName: 'Вадим',
@@ -54,12 +53,8 @@ const state: Partial<IStateSchema> = {
         }
     }
 }
-export const Dark: Story = {
-    args: {}
-}
-Dark.decorators = (storeDecorator(state))
 
-export const Light: Story = {
+export const Default: Story = {
     args: {}
 }
-Light.decorators = [storeDecorator(state), themeDecorator(Theme.Light)]
+Default.decorators = [storeDecorator(state)]

@@ -5,6 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import {
     COUNTRIES
 } from '../../../../app/constans'
+
 import { Loader } from '../../../../shared/ui/Loader'
 import { Text } from '../../../../shared/ui/Text'
 import {
@@ -22,7 +23,6 @@ export const PersonalDataBlock: FC<IPersonalDataBlockProps> = ({ className }) =>
     const isLoading = useSelector(profileIsLoadingSelector)
 
     const { t } = useTranslation()
-
     return (
         <div
             className={classNames(

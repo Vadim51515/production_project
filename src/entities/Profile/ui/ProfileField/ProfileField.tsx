@@ -8,9 +8,10 @@ import { useActions } from '../../../../shared/hooks/useActions'
 import { useParamSelector } from '../../../../shared/hooks/useParamSelector'
 import { type TFieldType } from '../../../../shared/ui/Field'
 
-import { Field } from '../../../../shared/ui/Field/ui/Field'
+import { Field } from 'shared/ui/Field/ui/Field'
 import { profileActions } from '../../model/actions'
 import {
+    profileFieldErrorSelector,
     profileFieldValue,
     profileIsReadonlySelector
 } from '../../model/selectors/selectors'
@@ -42,7 +43,9 @@ export const ProfileField: FC<TProfileFieldProps> = ({
     ...props
 }) => {
     const fieldValue = useParamSelector(profileFieldValue, fieldName)
+    console.log('fieldValue', fieldValue)
     const isReadonly = useSelector(profileIsReadonlySelector)
+    const error = useParamSelector(profileFieldErrorSelector, fieldName)
 
     const { setFormField } = useActions(profileActions)
 
@@ -70,6 +73,7 @@ export const ProfileField: FC<TProfileFieldProps> = ({
             isReadOnly={isReadonly}
             onChange={onChangeField}
             value={fieldValue}
+            error={error}
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-expect-error
             options={props.options}

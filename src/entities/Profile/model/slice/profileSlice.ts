@@ -36,6 +36,12 @@ export const {
         setError (state, { payload }: PayloadAction<IProfileState['error']>) {
             state.error = payload
             state.status = payload ? RuntimeStatuses.Error : RuntimeStatuses.Ready
+        },
+
+        cancelEdit (state) {
+            state.isReadonly = true
+            state.form = undefined
+            state.formErrors = undefined
         }
     },
     extraReducers: (builder) => {
@@ -50,11 +56,12 @@ export const {
             })
             .addCase(fetchProfileData.rejected, (state, { payload }) => {
                 state.status = RuntimeStatuses.Error
-                state.error = payload as string
+                state.error = payload
             })
 
             .addCase(updateProfileData.pending, (state) => {
                 state.error = undefined
+                state.formErrors = undefined
                 state.status = RuntimeStatuses.Loading
             })
             .addCase(updateProfileData.fulfilled, (state, { payload }) => {
@@ -64,7 +71,11 @@ export const {
             })
             .addCase(updateProfileData.rejected, (state, { payload }) => {
                 state.status = RuntimeStatuses.Error
-                state.error = payload as string
+                if (typeof payload === 'string') {
+                    state.error = payload
+                } else {
+                    state.formErrors = payload
+                }
             })
     }
 

@@ -17,3 +17,5 @@ export interface IOption {
 }
 
 export type TOptions = IOption[]
+
+export type TFormErrors<T extends string> = Partial<Record<T, string>>

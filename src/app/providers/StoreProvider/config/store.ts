@@ -29,6 +29,8 @@ export const createReduxStore = (
         user: userReducer
     }
 
+    console.log('rootReducers', rootReducers)
+
     const reducerManager = createReducerManager(rootReducers)
 
     const extraArg: IThunkExtraArg = {

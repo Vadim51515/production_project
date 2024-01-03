@@ -12,7 +12,10 @@ import { type IProfileState } from '../../../../entities/Profile'
 import { type IUserState } from '../../../../entities/User'
 import { type ILoginState } from '../../../../features/AuthByUsername'
 import { type RuntimeStatuses } from '../../../../shared/const/common'
-import type { Func } from '../../../types'
+import type {
+    Func,
+    TFormErrors
+} from '../../../types'
 
 export interface IStateSchema {
     counter: ICounterState
@@ -42,6 +45,7 @@ export interface IReduxStoreWithManager extends EnhancedStore<IStateSchema> {
 export interface ISharedState {
     status: RuntimeStatuses
     error?: string
+    formErrors?: TFormErrors<string>
 }
 
 export interface IThunkExtraArg {

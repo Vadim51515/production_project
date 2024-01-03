@@ -39,4 +39,24 @@ export const Light: Story = {
     args: {}
 }
 
-Light.decorators = [themeDecorator(Theme.Light), storeDecorator(state)]
+Light.decorators = [
+    themeDecorator(Theme.Light),
+    storeDecorator(state)
+]
+
+export const isAuth: Story = {
+    args: {}
+}
+
+isAuth.decorators = [
+    themeDecorator(Theme.Light),
+    storeDecorator({
+        ...state,
+        user: {
+            authData: {
+                username: 'test',
+                id: 1
+            }
+        }
+    })
+]

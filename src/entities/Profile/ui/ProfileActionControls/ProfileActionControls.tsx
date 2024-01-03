@@ -21,12 +21,12 @@ export const ProfileActionControls: FC<IProfileEditBtnProps> = () => {
     const {
         setIsReadonly,
         setForm,
-        updateProfileData
+        updateProfileData,
+        cancelEdit
     } = useActions(profileActions)
 
     const onCancel = () => {
-        setIsReadonly(true)
-        setForm()
+        cancelEdit()
     }
 
     const onEdit = () => {

@@ -18,3 +18,8 @@ export enum RuntimeStatuses {
     Loading = 'loading',
     Error = 'error',
 }
+
+export const ErrorsStatuses = {
+    FieldRequired: 'Поле обязательно для заполнения',
+    ServerError: 'Серверная ошибка'
+}

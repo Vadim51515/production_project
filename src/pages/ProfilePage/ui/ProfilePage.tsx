@@ -36,7 +36,9 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
     const { t } = useTranslation()
 
     useEffect(() => {
-        fetchProfileData()
+        if (__PROJECT__ !== 'storybook') {
+            fetchProfileData()
+        }
     }, [])
 
     return (
