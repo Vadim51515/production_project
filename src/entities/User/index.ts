@@ -1,3 +1,4 @@
+export { isInitSelector } from './model/selectors/selectors'
 export { userReducer } from './model/slices/userSlice'
 export type {
     IUser,

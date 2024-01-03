@@ -8,7 +8,9 @@ import {
     type IUserState
 } from '../types'
 
-const initialState: IUserState = {}
+const initialState: IUserState = {
+    isInit: false
+}
 
 export const {
     reducer: userReducer,
@@ -26,6 +28,7 @@ export const {
             if (user) {
                 state.authData = JSON.parse(user)
             }
+            state.isInit = true
         },
 
         logout (state) {

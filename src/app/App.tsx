@@ -2,14 +2,20 @@ import React, {
     Suspense,
     useEffect
 } from 'react'
+import { useSelector } from 'react-redux'
 import { Header } from 'widgets/Header/ui/Header'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { AppRouter } from 'app/providers/router'
 import { Sidebar } from 'widgets/Sidebar'
-import { userActions } from '../entities/User'
+import {
+    isInitSelector,
+    userActions
+} from '../entities/User'
 import { useActions } from '../shared/hooks/useActions'
 
 export const App = () => {
+    const isInit = useSelector(isInitSelector)
+
     const { initAuthData } = useActions(userActions)
 
     useEffect(() => {
@@ -23,7 +29,7 @@ export const App = () => {
                 <div className='contentPage'>
                     <Sidebar />
                     <div className='pageWrapper'>
-                        <AppRouter />
+                        {isInit && <AppRouter />}
                     </div>
                 </div>
             </Suspense>
