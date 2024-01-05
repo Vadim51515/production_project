@@ -16,6 +16,7 @@ export const useAsyncReducer = (reducers: TReducersList, removeAfterUnmount = fa
 
     useEffect(() => {
         console.log('useAsyncReducer', reducers)
+
         Object.entries(reducers).forEach(([reducerName, reducer]) => {
             console.log('reducerName', reducerName)
             console.log('reducer', reducer)

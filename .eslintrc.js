@@ -78,7 +78,8 @@ module.exports = {
         '@typescript-eslint/consistent-type-assertions': 'off',
         '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
-        "@typescript-eslint/no-invalid-void-type": "off"
+        "@typescript-eslint/no-invalid-void-type": "off",
+        "storybook/prefer-pascal-case": "off"
     },
     globals: {
         __IS_DEV__: true,

@@ -1,4 +1,7 @@
-import React, { memo } from 'react'
+import React, {
+    type CSSProperties,
+    memo
+} from 'react'
 import { type CFC } from '../../../../app/types'
 import { classNames } from '../../../lib/classNames/classNames'
 import styles from './Text.module.scss'
@@ -11,6 +14,9 @@ interface ITextProps {
     isPrimary?: boolean
     isPlaceholder?: boolean
     isFieldText?: boolean
+    withMarginBottom?: boolean
+    isCenter?: boolean
+    marginBottom?: number
 }
 
 export const Text: CFC<ITextProps> = memo(({
@@ -20,17 +26,26 @@ export const Text: CFC<ITextProps> = memo(({
     isPrimary,
     isPlaceholder,
     isFieldText,
-    children
+    children,
+    withMarginBottom,
+    isCenter,
+    marginBottom = 10
 }) => {
     const Tag = tag // Используем span, если тип тега не передан
     const mods = {
         [styles.error]: isError,
         [styles.primary]: isPrimary,
         [styles.placeholder]: isPlaceholder,
-        [styles.fieldText]: isFieldText
+        [styles.fieldText]: isFieldText,
+        [styles.centerText]: isCenter
     }
+
+    const style: CSSProperties = {
+        marginBottom: withMarginBottom ? marginBottom : undefined
+    }
+
     return (
-        <Tag className={classNames(styles.text, mods, [className, styles[tag]])}>
+        <Tag style={style} className={classNames(styles.text, mods, [className, styles[tag]])}>
             {children}
         </Tag>
     )

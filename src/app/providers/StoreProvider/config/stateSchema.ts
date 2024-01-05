@@ -7,6 +7,7 @@ import {
 import type { To } from '@remix-run/router'
 import { type AxiosInstance } from 'axios'
 import type { NavigateOptions } from 'react-router/dist/lib/context'
+import { type IArticleDetailsState } from '../../../../entities/Article/model/types'
 import { type ICounterState } from '../../../../entities/Counter'
 import { type IProfileState } from '../../../../entities/Profile'
 import { type IUserState } from '../../../../entities/User'
@@ -24,6 +25,7 @@ export interface IStateSchema {
     // Асинхронные редюсеры
     login?: ILoginState
     profile?: IProfileState
+    articleDetails?: IArticleDetailsState
 }
 
 export type IStateKey = keyof IStateSchema

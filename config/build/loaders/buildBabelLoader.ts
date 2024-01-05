@@ -1,4 +1,6 @@
-export const babelLoader = {
+import { type IBuildOptions } from '../types/config'
+
+export const babelLoaderFunc = ({ isDev }: IBuildOptions) => ({
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
@@ -9,14 +11,12 @@ export const babelLoader = {
                 [
                     'i18next-extract',
                     {
-                        locales: [
-                            'ru',
-                            'en'
-                        ],
+                        locales: ['ru', 'en'],
                         keyAsDefaultValue: true
                     }
-                ]
-            ]
+                ],
+                isDev && require.resolve('react-refresh/babel')
+            ].filter(Boolean)
         }
     }
-}
+})

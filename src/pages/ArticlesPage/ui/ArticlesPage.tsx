@@ -13,7 +13,7 @@ const ArticlesPage: FC<IArticlesPageProps> = ({ className }) => {
 
     return (
         <div className={classNames(styles.ArticlesPage, {}, [className])}>
-            <Text>ArticlesPage</Text>
+            <Text>{t('ArticlesPage')}</Text>
         </div>
     )
 }

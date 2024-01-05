@@ -2,10 +2,16 @@ import type {
     Meta,
     StoryObj
 } from '@storybook/react'
-import { ArticleDetailsPage } from './ArticleDetailsPage'
+import {
+    mockArticle
+} from '../../../../entities/Article'
+
+import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
+import { RuntimeStatuses } from '../../../../shared/const/common'
+import ArticleDetailsPage from './ArticleDetailsPage'
 
 const meta = {
-    title: 'example_test/ArticleDetailsPage',
+    title: 'pages/ArticleDetailsPage',
     component: ArticleDetailsPage,
     parameters: {
         layout: 'centered'
@@ -21,3 +27,10 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
     args: {}
 }
+
+Default.decorators = [storeDecorator({
+    articleDetails: {
+        status: RuntimeStatuses.Ready,
+        data: mockArticle
+    }
+})]

@@ -1,9 +1,9 @@
 import type webpack from 'webpack'
-import { babelLoader } from './loaders/buildBabelLoader'
+import { babelLoaderFunc } from './loaders/buildBabelLoader'
 import { buildCssLoader } from './loaders/buildCssLoader'
 import { type IBuildOptions } from './types/config'
 
-export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders (options: IBuildOptions): webpack.RuleSetRule[] {
     // Если не используем typescript - нужен babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
@@ -11,7 +11,7 @@ export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/
     }
 
-    const cssLoader: webpack.RuleSetRule = buildCssLoader(isDev)
+    const cssLoader: webpack.RuleSetRule = buildCssLoader(options.isDev)
 
     const svgLoader = {
         test: /\.svg$/,
@@ -27,6 +27,8 @@ export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
             }
         ]
     }
+
+    const babelLoader = babelLoaderFunc(options)
 
     return [
         fileLoader,
