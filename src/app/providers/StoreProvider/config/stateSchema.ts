@@ -12,6 +12,7 @@ import { type ICounterState } from '../../../../entities/Counter'
 import { type IProfileState } from '../../../../entities/Profile'
 import { type IUserState } from '../../../../entities/User'
 import { type ILoginState } from '../../../../features/AuthByUsername'
+import { type IArticleCommentsState } from '../../../../pages/ArticleDetailsPage'
 import { type RuntimeStatuses } from '../../../../shared/const/common'
 import type {
     Func,
@@ -26,6 +27,7 @@ export interface IStateSchema {
     login?: ILoginState
     profile?: IProfileState
     articleDetails?: IArticleDetailsState
+    articleDetailsComments?: IArticleCommentsState
 }
 
 export type IStateKey = keyof IStateSchema

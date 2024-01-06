@@ -87,19 +87,19 @@
     "comments": [
         {
             "id": "1",
-            "body": "some comment",
+            "text": "some comment",
             "articleId": 1,
             "userId": 1
         },
         {
             "id": "2",
-            "body": "some comment 1",
+            "text": "some comment 1",
             "articleId": 1,
             "userId": 1
         },
         {
             "id": "3",
-            "body": "some comment 2",
+            "text": "some comment 2",
             "articleId": 1,
             "userId": 1
         }
@@ -109,13 +109,15 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "role": "admin"
+            "role": "admin",
+            "avatar": "https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg"
         },
         {
             "id": "2",
             "username": "test_client",
             "password": "testpass1",
-            "role": "admin"
+            "role": "admin",
+            "avatar": "https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg"
         }
     ],
     "profile": {
