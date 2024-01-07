@@ -1,0 +1,12 @@
+.articleList {
+    display: flex;
+    gap: 20px;
+}
+
+.tile {
+    flex-flow: column nowrap;
+}
+
+.list {
+    flex-wrap: wrap;
+}

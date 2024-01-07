@@ -1,19 +1,23 @@
 import React, { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { ArticleList } from '../../../entities/Article'
 import { Text } from '../../../shared/ui/Text'
-import styles from './ArticlesPage.module.scss'
 
 interface IArticlesPageProps {
     className?: string
 }
 
-const ArticlesPage: FC<IArticlesPageProps> = ({ className }) => {
+const ArticlesPage: FC<IArticlesPageProps> = () => {
     const { t } = useTranslation()
 
     return (
-        <div className={classNames(styles.ArticlesPage, {}, [className])}>
+        <div>
             <Text>{t('ArticlesPage')}</Text>
+            <ArticleList
+                view={'list'}
+                isLoading
+                articles={[]}
+            />
         </div>
     )
 }

@@ -1,0 +1,82 @@
+
+.viewsContainer{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.img{
+    object-fit: cover;
+}
+
+.listContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 250px;
+    background-color: var(--additional-bg-color);
+    border-radius:0 0 4px 4px;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover{
+        scale: 1.01;
+    }
+
+    .img{
+        width: 100%;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .infoContainer{
+        padding: 10px;
+    }
+
+    .additionalInfoContainer{
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+
+    .createdAt{
+        margin-left: auto;
+    }
+}
+
+.tileContainer{
+    width: 100%;
+
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .headerUserData{
+        display: flex;
+        align-items: center;
+    }
+
+    .avatar{
+        margin-right: 10px;
+    }
+
+    .img{
+        width: 100%;
+        height: 200px;
+    }
+
+    .textBlock{
+        max-height: 200px;
+        overflow-y: hidden;
+        margin-bottom: 20px;
+    }
+
+    .footer{
+        display: flex;
+        justify-content: space-between;
+    }
+}

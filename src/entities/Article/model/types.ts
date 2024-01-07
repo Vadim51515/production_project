@@ -1,4 +1,5 @@
 import { type ISharedState } from '../../../app/providers/StoreProvider'
+import { type IUser } from '../../User'
 
 export enum ArticleBlockTypes {
     TEXT = 'TEXT',
@@ -43,8 +44,10 @@ export interface IArticle {
     createdAt: string
     type: ArticleType[]
     blocks: TArticleBlock[]
+    user: IUser
 }
 
 export interface IArticleDetailsState extends ISharedState {
     data?: IArticle
 }
+export type TArticleViewType = 'list' | 'tile'

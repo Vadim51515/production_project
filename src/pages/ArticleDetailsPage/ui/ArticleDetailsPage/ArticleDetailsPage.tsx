@@ -1,10 +1,14 @@
 import React, { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router'
+import {
+    useParams
+} from 'react-router-dom'
 import { ArticleDetails } from '../../../../entities/Article'
 import { CommentList } from '../../../../entities/Comment'
 import { AddCommentForm } from '../../../../features/addCommentForm'
+import { RoutePath } from '../../../../shared/config/routeConfig/routeConfig'
 import { useActions } from '../../../../shared/hooks/useActions'
 import {
     type TReducersList,
@@ -12,6 +16,7 @@ import {
 } from '../../../../shared/hooks/useAsyncReducer'
 import { useInitialEffect } from '../../../../shared/hooks/useInitialEffect'
 import { classNames } from '../../../../shared/lib/classNames/classNames'
+import { Button } from '../../../../shared/ui/Button'
 import { Text } from '../../../../shared/ui/Text'
 import { articleDetailsCommentsActions } from '../../model/actions'
 import {
@@ -47,11 +52,16 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
         if (id) fetchCommentsByArticleId(id)
     })
 
-    console.log('comments', comments)
+    const navigate = useNavigate()
+
+    const onBackToList = () => {
+        navigate(RoutePath.articles)
+    }
 
     const renderContent = () => {
         if (!id && __PROJECT__ !== 'storybook') return <Text>{t('Статья не найдена')}</Text>
         return <>
+            <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
             <ArticleDetails id={id ?? ''} />
             <AddCommentForm sendComment={addCommentForArticle}/>
             <CommentList

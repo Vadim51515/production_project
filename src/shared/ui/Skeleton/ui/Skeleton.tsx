@@ -9,18 +9,21 @@ interface ISkeletonProps {
     height?: string | number
     width?: string | number
     borderRadius?: string
+    marginBottom?: string | number
 }
 
 export const Skeleton: FC<ISkeletonProps> = ({
     className,
     height,
     borderRadius,
-    width
+    width,
+    marginBottom
 }) => {
     const style: CSSProperties = {
         width,
         height,
-        borderRadius
+        borderRadius,
+        marginBottom
     }
 
     return (
