@@ -9,10 +9,10 @@ import {
 import { profileFormSelector } from '../selectors/selectors'
 import { validateProfileData } from './validateProfileData'
 
-export const updateProfileData = createAsyncThunk<IProfile, void, IThunkConfig<string | TFormErrors<string>>>(
+export const updateProfileData = createAsyncThunk<IProfile, string, IThunkConfig<string | TFormErrors<string>>>(
     'profile/updateProfileData',
     async (
-        _,
+        profileId,
         {
             extra,
             rejectWithValue,
@@ -28,7 +28,7 @@ export const updateProfileData = createAsyncThunk<IProfile, void, IThunkConfig<s
                 return rejectWithValue(formErrors)
             }
 
-            const response = await extra.api.put<IProfile>('/profile', form)
+            const response = await extra.api.put<IProfile>('/profile/' + profileId, form)
 
             if (!response.data) {
                 throw new Error()

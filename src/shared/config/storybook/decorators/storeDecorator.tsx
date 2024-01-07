@@ -5,6 +5,7 @@ import { StoreProvider } from '../../../../app/providers/StoreProvider'
 import { type IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
 import { articleDetailsReducer } from '../../../../entities/Article'
 import { profileReducer } from '../../../../entities/Profile'
+import { addCommentReducer } from '../../../../features/addCommentForm/model/slices/addCommentFormSlice'
 import { loginReducer } from '../../../../features/AuthByUsername/model/slice/loginSlice'
 import { articleDetailsCommentsReducer } from '../../../../pages/ArticleDetailsPage'
 import { type TReducersList } from '../../../hooks/useAsyncReducer'
@@ -13,7 +14,8 @@ const defaultAsyncReducer: TReducersList = {
     login: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
-    articleDetailsComments: articleDetailsCommentsReducer
+    articleDetailsComments: articleDetailsCommentsReducer,
+    addCommentForm: addCommentReducer
 }
 export const storeDecorator = (
     state: DeepPartial<IStateSchema>,

@@ -11,6 +11,7 @@ import { type IArticleDetailsState } from '../../../../entities/Article/model/ty
 import { type ICounterState } from '../../../../entities/Counter'
 import { type IProfileState } from '../../../../entities/Profile'
 import { type IUserState } from '../../../../entities/User'
+import { type ICommentFormState } from '../../../../features/addCommentForm'
 import { type ILoginState } from '../../../../features/AuthByUsername'
 import { type IArticleCommentsState } from '../../../../pages/ArticleDetailsPage'
 import { type RuntimeStatuses } from '../../../../shared/const/common'
@@ -28,6 +29,8 @@ export interface IStateSchema {
     profile?: IProfileState
     articleDetails?: IArticleDetailsState
     articleDetailsComments?: IArticleCommentsState
+    addCommentForm?: ICommentFormState
+
 }
 
 export type IStateKey = keyof IStateSchema

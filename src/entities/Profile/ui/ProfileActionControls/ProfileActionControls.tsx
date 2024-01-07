@@ -4,6 +4,7 @@ import React, {
 import { useSelector } from 'react-redux'
 import { useActions } from '../../../../shared/hooks/useActions'
 import { ActionControls } from '../../../../widgets/ActionControls'
+import { userAuthDataSelector } from '../../../User'
 import { profileActions } from '../../model/actions'
 import {
     profileDataSelector,
@@ -17,6 +18,7 @@ interface IProfileEditBtnProps {
 export const ProfileActionControls: FC<IProfileEditBtnProps> = () => {
     const isReadonly = useSelector(profileIsReadonlySelector)
     const data = useSelector(profileDataSelector)
+    const authData = useSelector(userAuthDataSelector)
 
     const {
         setIsReadonly,
@@ -34,8 +36,10 @@ export const ProfileActionControls: FC<IProfileEditBtnProps> = () => {
         setForm(data)
     }
     const onSave = () => {
-        updateProfileData()
+        updateProfileData(data?.id || '')
     }
+
+    if (authData?.id !== data?.id) return null
 
     return (
         <ActionControls

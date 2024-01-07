@@ -6,7 +6,7 @@ import {
 } from '../../shared/const/common'
 
 export interface IProfile {
-    id: number
+    id: string
     firstName?: string
     surname?: string
     age?: number

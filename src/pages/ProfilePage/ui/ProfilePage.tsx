@@ -1,8 +1,8 @@
 import React, {
-    type FC,
-    useEffect
+    type FC
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
 
 import {
@@ -18,6 +18,7 @@ import {
     type TReducersList,
     useAsyncReducer
 } from '../../../shared/hooks/useAsyncReducer'
+import { useInitialEffect } from '../../../shared/hooks/useInitialEffect'
 import { Button } from '../../../shared/ui/Button'
 import { Text } from '../../../shared/ui/Text'
 import styles from './ProfilePage.module.scss'
@@ -33,13 +34,13 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
     const { logout } = useActions(userActions)
     const { fetchProfileData } = useActions(profileActions)
 
-    const { t } = useTranslation()
+    const { id } = useParams<{ id: string }>()
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            fetchProfileData()
-        }
-    }, [])
+    const { t } = useTranslation()
+    useInitialEffect(() => {
+        console.log('id', id)
+        if (id) fetchProfileData(id)
+    })
 
     return (
         <div className={classNames('', {}, [className])}>

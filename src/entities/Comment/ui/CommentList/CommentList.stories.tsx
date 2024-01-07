@@ -5,7 +5,7 @@ import type {
 import { CommentList } from './CommentList'
 
 const meta = {
-    title: 'example_test/CommentList',
+    title: 'entities/CommentList',
     component: CommentList,
     parameters: {
         layout: 'centered'
@@ -19,5 +19,25 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-    args: {}
+    args: {
+        comments: [
+            {
+                id: '1',
+                text: 'hello world',
+                user: { id: '1', username: 'Vasya' }
+            },
+            {
+                id: '2',
+                text: 'Comment 2',
+                user: { id: '1', username: 'Petya' }
+            }
+        ]
+    }
+}
+
+export const Loading: Story = {
+    args: {
+        isLoading: true,
+        comments: []
+    }
 }

@@ -1,5 +1,7 @@
 import React, { type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
+import { RoutePath } from '../../../../shared/config/routeConfig/routeConfig'
+import { AppLink } from '../../../../shared/ui/AppLink/AppLink'
 import { Avatar } from '../../../../shared/ui/Avatar/ui/Avatar'
 import { Skeleton } from '../../../../shared/ui/Skeleton/ui/Skeleton'
 import { Text } from '../../../../shared/ui/Text'
@@ -8,7 +10,7 @@ import styles from './CommentCard.module.scss'
 
 interface ICommentCardProps {
     className?: string
-    comment: IComment
+    comment?: IComment
     isLoading?: boolean
 }
 
@@ -41,15 +43,23 @@ export const CommentCard: FC<ICommentCardProps> = ({
         )
     }
 
+    if (!comment) {
+        return null
+    }
+
     return (
         <div className={classNames(styles.commentCard, {}, [className])}>
-            <div className={styles.header}>
-                <Avatar
-                    image={comment.user.avatar}
-                    size={30}
-                />
-                <Text>{comment.user.username}</Text>
-            </div>
+            <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
+
+                <div className={styles.header}>
+                    <Avatar
+                        image={comment.user.avatar}
+                        size={30}
+                    />
+                    <Text>{comment.user.username}</Text>
+                </div>
+            </AppLink>
+
             <Text>{comment.text}</Text>
         </div>
     )

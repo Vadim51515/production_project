@@ -38,7 +38,7 @@ describe('updateProfileData', () => {
     test('Функция отработала корректно', async () => {
         const thunk = new TestAsyncThunk(updateProfileData, state)
         thunk.api.put.mockReturnValue(Promise.resolve({ data: mockResponse }))
-        const result = await thunk.callThunk()
+        const result = await thunk.callThunk('1')
 
         console.log('result', result)
         // Проверяем что диспатч был вызван
@@ -52,7 +52,7 @@ describe('updateProfileData', () => {
     test('Функция отработала с ошибкой авторизации', async () => {
         const thunk = new TestAsyncThunk(updateProfileData, state)
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }))
-        const result = await thunk.callThunk()
+        const result = await thunk.callThunk('1')
 
         // Проверяем что запрос был завершен со статусом rejected
         expect(result.meta.requestStatus).toBe('rejected')
@@ -64,7 +64,7 @@ describe('updateProfileData', () => {
     test('Функция обработала валидационную ошибку', async () => {
         const thunk = new TestAsyncThunk(updateProfileData, stateWithEmptyField)
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }))
-        const result = await thunk.callThunk()
+        const result = await thunk.callThunk('1')
 
         // Проверяем что запрос был завершен со статусом rejected
         expect(result.meta.requestStatus).toBe('rejected')

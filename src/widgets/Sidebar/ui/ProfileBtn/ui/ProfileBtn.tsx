@@ -3,8 +3,10 @@ import React, {
     memo
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { classNames } from 'shared/lib/classNames/classNames'
+import { userAuthDataSelector } from '../../../../../entities/User'
 import { RoutePath } from '../../../../../shared/config/routeConfig/routeConfig'
 import { Button } from '../../../../../shared/ui/Button'
 import { Text } from '../../../../../shared/ui/Text'
@@ -20,6 +22,8 @@ export const ProfileBtn: FC<IProfileBtnProps> = memo(({ className, isCollapsedNa
     const { t } = useTranslation()
     const navigate = useNavigate()
 
+    const authData = useSelector(userAuthDataSelector)
+
     const modsForText = {
         animationHideText: isCollapsedNavbar,
         animationShowText: !isCollapsedNavbar
@@ -27,7 +31,7 @@ export const ProfileBtn: FC<IProfileBtnProps> = memo(({ className, isCollapsedNa
 
     return (
         <Button
-            onClick={() => { navigate(RoutePath.profile) }}
+            onClick={() => { navigate(RoutePath.profile + authData?.id) }}
             pattern='clear'
             className={classNames(styles.container, { [styles.collapsedContainer]: isCollapsedNavbar }, [className])}
         >

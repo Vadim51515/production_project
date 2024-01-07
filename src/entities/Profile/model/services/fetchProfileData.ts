@@ -5,17 +5,17 @@ import {
     type IProfile
 } from '../../types'
 
-export const fetchProfileData = createAsyncThunk<IProfile, void, IThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<IProfile, string, IThunkConfig<string>>(
     'profile/fetchProfileData',
     async (
-        _,
+        profileId,
         {
             extra,
             rejectWithValue
         }
     ) => {
         try {
-            const response = await extra.api.get<IProfile>('/profile')
+            const response = await extra.api.get<IProfile>('/profile/' + profileId)
 
             if (!response.data) {
                 throw new Error()

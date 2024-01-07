@@ -21,6 +21,16 @@ export const CommentList: FC<ICommentListProps> = ({
 }) => {
     const { t } = useTranslation()
 
+    if (isLoading) {
+        return (
+            <div>
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+            </div>
+        )
+    }
+
     return (
         <div className={classNames(styles.CommentList, {}, [className])}>
             <Text

@@ -19,5 +19,15 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-    args: {}
+    args: {
+        comment: {
+            id: '1',
+            text: 'test text',
+            user: {
+                id: 1,
+                avatar: '',
+                username: 'inhellim-Test'
+            }
+        }
+    }
 }

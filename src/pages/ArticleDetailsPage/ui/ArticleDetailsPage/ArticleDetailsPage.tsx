@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { ArticleDetails } from '../../../../entities/Article'
 import { CommentList } from '../../../../entities/Comment'
+import { AddCommentForm } from '../../../../features/addCommentForm'
 import { useActions } from '../../../../shared/hooks/useActions'
 import {
     type TReducersList,
@@ -36,7 +37,7 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
     const isLoading = useSelector(articleDetailsCommentsIsLoadingSelector)
     // const error = useSelector(articleDetailsCommentsErrorSelector)
 
-    const { fetchCommentsByArticleId } = useActions(articleDetailsCommentsActions)
+    const { fetchCommentsByArticleId, addCommentForArticle } = useActions(articleDetailsCommentsActions)
 
     const { t } = useTranslation('article-details')
 
@@ -52,7 +53,7 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
         if (!id && __PROJECT__ !== 'storybook') return <Text>{t('Статья не найдена')}</Text>
         return <>
             <ArticleDetails id={id ?? ''} />
-
+            <AddCommentForm sendComment={addCommentForArticle}/>
             <CommentList
                 isLoading={isLoading}
                 comments={comments}
