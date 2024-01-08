@@ -1,3 +1,4 @@
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'
 export { ArticleList } from './ui/ArticleList/ArticleList'
 export type { TArticleViewType } from './model/types'
 export { articleDataSelector } from './model/selectors/selectors'

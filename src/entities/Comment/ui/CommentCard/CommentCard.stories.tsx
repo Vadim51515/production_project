@@ -24,7 +24,7 @@ export const Default: Story = {
             id: '1',
             text: 'test text',
             user: {
-                id: 1,
+                id: '1',
                 avatar: '',
                 username: 'inhellim-Test'
             }

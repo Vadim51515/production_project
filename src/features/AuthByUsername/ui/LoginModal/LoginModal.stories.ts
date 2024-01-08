@@ -3,6 +3,7 @@ import type { IStateSchema } from '../../../../app/providers/StoreProvider/confi
 import { Theme } from '../../../../app/providers/ThemeProvider'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator'
+import { RuntimeStatuses } from '../../../../shared/const/common'
 import { LoginModal } from './LoginModal'
 
 const meta = {
@@ -21,6 +22,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 const state: DeepPartial<IStateSchema> = {
     login: {
+        status: RuntimeStatuses.Ready,
         username: 'admin',
         password: '123'
     }

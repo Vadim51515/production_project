@@ -39,7 +39,7 @@ const state: Partial<IStateSchema> = {
             avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg',
             country: Contry.Russia,
             currency: Currency.RUB,
-            id: 1
+            id: '1'
         },
         form: {
             firstName: 'Вадим',
@@ -49,7 +49,7 @@ const state: Partial<IStateSchema> = {
             avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg',
             country: Contry.Russia,
             currency: Currency.RUB,
-            id: 1
+            id: '1'
         }
     }
 }

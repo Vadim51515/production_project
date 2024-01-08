@@ -6,6 +6,7 @@ import type { IStateSchema } from '../../../../app/providers/StoreProvider/confi
 import { Theme } from '../../../../app/providers/ThemeProvider'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator'
+import { RuntimeStatuses } from '../../../../shared/const/common'
 import { Sidebar } from './Sidebar'
 
 const meta = {
@@ -24,6 +25,7 @@ type Story = StoryObj<typeof meta>
 
 const state: DeepPartial<IStateSchema> = {
     login: {
+        status: RuntimeStatuses.Ready,
         username: 'admin',
         password: '123'
     }
@@ -55,7 +57,7 @@ isAuth.decorators = [
         user: {
             authData: {
                 username: 'test',
-                id: 1
+                id: '1'
             }
         }
     })

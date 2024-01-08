@@ -8,6 +8,7 @@ import { profileReducer } from '../../../../entities/Profile'
 import { addCommentReducer } from '../../../../features/addCommentForm/model/slices/addCommentFormSlice'
 import { loginReducer } from '../../../../features/AuthByUsername/model/slice/loginSlice'
 import { articleDetailsCommentsReducer } from '../../../../pages/ArticleDetailsPage'
+import { articlesPageReducer } from '../../../../pages/ArticlesPage'
 import { type TReducersList } from '../../../hooks/useAsyncReducer'
 
 const defaultAsyncReducer: TReducersList = {
@@ -15,7 +16,8 @@ const defaultAsyncReducer: TReducersList = {
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     articleDetailsComments: articleDetailsCommentsReducer,
-    addCommentForm: addCommentReducer
+    addCommentForm: addCommentReducer,
+    articlesPage: articlesPageReducer
 }
 export const storeDecorator = (
     state: DeepPartial<IStateSchema>,

@@ -14,7 +14,7 @@ describe('validateProfileData', () => {
         avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg',
         country: Contry.Russia,
         currency: Currency.RUB,
-        id: 1
+        id: '1'
     }
 
     test('Все значения корректны, валидация не выдала ошибку', async () => {

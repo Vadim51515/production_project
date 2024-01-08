@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '../../../../app/providers/ThemeProvider'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator'
+import { RuntimeStatuses } from '../../../../shared/const/common'
 import LoginForm from './LoginForm'
 
 const meta = {
@@ -20,6 +21,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 const state = {
     login: {
+        status: RuntimeStatuses.Ready,
         username: 'admin',
         password: '123'
     }
