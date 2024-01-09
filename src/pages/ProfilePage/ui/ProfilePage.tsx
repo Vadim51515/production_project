@@ -20,6 +20,7 @@ import {
 } from '../../../shared/hooks/useAsyncReducer'
 import { useInitialEffect } from '../../../shared/hooks/useInitialEffect'
 import { Button } from '../../../shared/ui/Button'
+import { Page } from '../../../shared/ui/Page'
 import { Text } from '../../../shared/ui/Text'
 import styles from './ProfilePage.module.scss'
 interface IProfilePageProps {
@@ -43,7 +44,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
     })
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <Page className={classNames('', {}, [className])}>
             <div className={ classNames('pageTitleContainer', {}, [styles.titleContainer])}>
                 <Text tag='h1'>{t('Профиль')}</Text>
                 <ProfileActionControls />
@@ -54,7 +55,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
             <Button onClick={logout}>{t('Выйти из аккаунта')}</Button>
 
             <ProfileErrorModal />
-        </div>
+        </Page>
     )
 }
 

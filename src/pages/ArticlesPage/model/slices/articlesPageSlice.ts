@@ -28,15 +28,22 @@ export const {
         status: RuntimeStatuses.BeforeInitial,
         view: 'list',
         ids: [],
-        entities: {}
+        entities: {},
+        page: 1,
+        hasMore: true
     }),
     reducers: {
         setView (state, { payload }: PayloadAction<TArticleViewType>) {
             state.view = payload
             lStorage.set(ARTICLES_VIEW_LOCAL_STORAGE_KEY, payload)
         },
+        setPage (state, { payload }: PayloadAction<number>) {
+            state.page = payload
+        },
         initState (state) {
-            state.view = lStorage.get(ARTICLES_VIEW_LOCAL_STORAGE_KEY) as TArticleViewType
+            const view = lStorage.get(ARTICLES_VIEW_LOCAL_STORAGE_KEY) as TArticleViewType
+            state.view = view
+            state.limit = view === 'list' ? 9 : 4
         }
     },
     extraReducers: (builder) => {
@@ -47,7 +54,8 @@ export const {
             })
             .addCase(fetchArticleList.fulfilled, (state, { payload }) => {
                 state.status = RuntimeStatuses.Ready
-                articlesAdapter.setAll(state, payload)
+                articlesAdapter.setMany(state, payload)
+                state.hasMore = payload.length > 0
             })
             .addCase(fetchArticleList.rejected, (state, { payload }) => {
                 state.status = RuntimeStatuses.Error

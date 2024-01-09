@@ -8,4 +8,9 @@ export interface IArticlesPageState extends ISharedState {
     view: TArticleViewType
     ids: string[]
     entities: Record<string, IArticle>
+
+    // pagination
+    page: number
+    limit?: number
+    hasMore: boolean
 }

@@ -12,6 +12,7 @@ import {
     useAsyncReducer
 } from '../../../shared/hooks/useAsyncReducer'
 import { useInitialEffect } from '../../../shared/hooks/useInitialEffect'
+import { Page } from '../../../shared/ui/Page'
 import { Text } from '../../../shared/ui/Text'
 import { articlesPageActions } from '../model/actions'
 import {
@@ -37,11 +38,18 @@ const ArticlesPage: FC<IArticlesPageProps> = () => {
     const isLoading = useSelector(articlesPageLoadingSelector)
     const view = useSelector(articlesPageViewSelector)
 
-    const { fetchArticleList, setView, initState } = useActions(articlesPageActions)
+    const {
+        fetchArticleList,
+        setView,
+        initState,
+        fetchNextArticlePage
+    } = useActions(articlesPageActions)
 
     useInitialEffect(() => {
-        fetchArticleList()
         initState()
+        fetchArticleList({
+            page: 1
+        })
     })
 
     const { t } = useTranslation()
@@ -50,16 +58,23 @@ const ArticlesPage: FC<IArticlesPageProps> = () => {
         setView(newView)
     }
 
+    const onLoadNextPart = () => {
+        fetchNextArticlePage()
+    }
+
     return (
-        <div>
+        <Page onScrollEnd={onLoadNextPart}>
             <Text>{t('ArticlesPage')}</Text>
-            <ArticleViewSelector view={view} onViewClick={onChangeView}/>
+            <ArticleViewSelector
+                view={view}
+                onViewClick={onChangeView}
+            />
             <ArticleList
                 isLoading={isLoading}
                 view={view}
                 articles={articles}
             />
-        </div>
+        </Page>
     )
 }
 export default ArticlesPage

@@ -29,7 +29,6 @@ export const NavbarItem: FC<INavbarItemProps> = memo(({
     const { t } = useTranslation()
 
     const getActiveItem = useCallback(() => {
-        console.log('useCallback')
         return '/' + location.pathname.split('/')[1] === path
     }, [location.pathname])
 

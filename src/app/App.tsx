@@ -28,9 +28,7 @@ export const App = () => {
                 <Header />
                 <div className='contentPage'>
                     <Sidebar />
-                    <div className='pageWrapper'>
-                        {isInit && <AppRouter />}
-                    </div>
+                    {isInit && <AppRouter />}
                 </div>
             </Suspense>
         </div>

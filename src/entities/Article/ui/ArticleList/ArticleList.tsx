@@ -1,7 +1,5 @@
 import React, { type FC } from 'react'
-import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Text } from '../../../../shared/ui/Text'
 import {
     type IArticle,
     type TArticleViewType
@@ -17,10 +15,16 @@ interface IArticleListProps {
     view: TArticleViewType
 }
 
-const getSkeletons = (view: TArticleViewType) => new Array(view === 'list' ? 9 : 3)
+const getSkeletons = (view: TArticleViewType) => new Array(view === 'list'
+    ? 9
+    : 3)
     .fill(0)
     .map((item, index) => (
-        <ArticleListItemSkeleton className={styles.card} key={index} view={view} />
+        <ArticleListItemSkeleton
+            className={styles.card}
+            key={index}
+            view={view}
+        />
     ))
 
 export const ArticleList: FC<IArticleListProps> = ({
@@ -29,25 +33,40 @@ export const ArticleList: FC<IArticleListProps> = ({
     view = 'tile',
     isLoading
 }) => {
-    const { t } = useTranslation('article')
-
-    if (isLoading) {
-        return (
-            <div className={classNames(styles.articleList, {}, [className, styles[view]])}>
-                {getSkeletons(view)}
-            </div>
-        )
-    }
-
     const renderArticle = (article: IArticle) => (
-        <ArticleListItem key={article.id} article={article} view={view}/>
+        <ArticleListItem
+            key={article.id}
+            article={article}
+            view={view}
+        />
     )
 
     return (
-        <div className={classNames(styles.articleList, {}, [className, styles[view]])}>
+        <div
+            className={classNames(
+                styles.articleList,
+                {},
+                [
+                    className,
+                    styles[view]
+                ]
+            )}
+        >
             {articles.length > 0
                 ? articles.map(renderArticle)
-                : <Text>{t('Не было найденно ни одной статьи')}</Text>}
+                : null}
+            {isLoading && (<div
+                className={classNames(
+                    styles.articleList,
+                    {},
+                    [
+                        className,
+                        styles[view]
+                    ]
+                )}
+            >
+                {getSkeletons(view)}
+            </div>)}
         </div>
     )
 }

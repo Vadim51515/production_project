@@ -17,6 +17,7 @@ import {
 import { useInitialEffect } from '../../../../shared/hooks/useInitialEffect'
 import { classNames } from '../../../../shared/lib/classNames/classNames'
 import { Button } from '../../../../shared/ui/Button'
+import { Page } from '../../../../shared/ui/Page'
 import { Text } from '../../../../shared/ui/Text'
 import { articleDetailsCommentsActions } from '../../model/actions'
 import {
@@ -72,9 +73,9 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
     }
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <Page className={classNames('', {}, [className])}>
             {renderContent()}
-        </div>
+        </Page>
     )
 }
 

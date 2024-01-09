@@ -1,17 +1,18 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Counter } from '../../../entities/Counter'
+import { Page } from '../../../shared/ui/Page'
 import { Text } from '../../../shared/ui/Text'
 
 const MainPage = () => {
     const { t } = useTranslation('main')
 
     return (
-        <div>
+        <Page>
             <Text tag='h1'>{t('Главная страница')}</Text>
 
             <Counter />
-        </div>
+        </Page>
     )
 }
 export default MainPage
