@@ -16,13 +16,15 @@ export const useAsyncReducer = (reducers: TReducersList, removeAfterUnmount = fa
 
     useEffect(() => {
         console.log('useAsyncReducer', reducers)
-
         Object.entries(reducers).forEach(([reducerName, reducer]) => {
-            console.log('reducerName', reducerName)
-            console.log('reducer', reducer)
-            store.reducerManager.add(reducerName as IStateKey, reducer)
-            dispatch({ type: `@INIT ${reducerName} reducer` })
-            console.log('dispatch')
+            const reducersMap = store.reducerManager.getReducerMap()
+            const hasMountedReducer = reducersMap[reducerName as IStateKey]
+
+            if (!hasMountedReducer) {
+                store.reducerManager.add(reducerName as IStateKey, reducer)
+                dispatch({ type: `@INIT ${reducerName} reducer` })
+                console.log('dispatch')
+            }
         })
 
         if (removeAfterUnmount) {

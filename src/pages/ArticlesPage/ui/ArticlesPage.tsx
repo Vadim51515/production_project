@@ -16,6 +16,7 @@ import { Page } from '../../../shared/ui/Page'
 import { Text } from '../../../shared/ui/Text'
 import { articlesPageActions } from '../model/actions'
 import {
+    articlesPageIsInitSelector,
     articlesPageLoadingSelector,
     articlesPageViewSelector
 } from '../model/selectors/articlesPage'
@@ -32,11 +33,12 @@ const initialReducers: TReducersList = {
     articlesPage: articlesPageReducer
 }
 const ArticlesPage: FC<IArticlesPageProps> = () => {
-    useAsyncReducer(initialReducers, true)
+    useAsyncReducer(initialReducers, false)
 
     const articles = useSelector(getArticles.selectAll)
     const isLoading = useSelector(articlesPageLoadingSelector)
     const view = useSelector(articlesPageViewSelector)
+    const isInit = useSelector(articlesPageIsInitSelector)
 
     const {
         fetchArticleList,
@@ -46,10 +48,12 @@ const ArticlesPage: FC<IArticlesPageProps> = () => {
     } = useActions(articlesPageActions)
 
     useInitialEffect(() => {
-        initState()
-        fetchArticleList({
-            page: 1
-        })
+        if (!isInit) {
+            initState()
+            fetchArticleList({
+                page: 1
+            })
+        }
     })
 
     const { t } = useTranslation()

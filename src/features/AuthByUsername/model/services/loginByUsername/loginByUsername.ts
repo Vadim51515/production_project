@@ -37,7 +37,6 @@ export const loginByUsername = createAsyncThunk<IUser, ILoginByUsernameProps, IT
             lStorage.set(USER_LOCAL_STORAGE_KEY, JSON.stringify(data))
             dispatch(userActions.setAuthData(data))
 
-            extra.navigate?.('/profile')
             return data
         } catch (e) {
             console.log('e', e)

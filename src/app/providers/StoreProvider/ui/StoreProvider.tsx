@@ -1,6 +1,5 @@
 import { type ReducersMapObject } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
-import { useNavigate } from 'react-router'
 import {
     type CFC
 } from '../../../types'
@@ -18,12 +17,9 @@ export const StoreProvider: CFC<IStoreProvider> = ({
     initialState,
     asyncReducers
 }) => {
-    const navigate = useNavigate()
-
     const store = createReduxStore(
         initialState as IStateSchema,
-        asyncReducers,
-        navigate
+        asyncReducers
     )
 
     return (

@@ -2,14 +2,10 @@ import {
     configureStore,
     type ReducersMapObject
 } from '@reduxjs/toolkit'
-import type { To } from '@remix-run/router'
-import type { NavigateOptions } from 'react-router/dist/lib/context'
 import { counterReducer } from '../../../../entities/Counter'
 import { userReducer } from '../../../../entities/User'
 import { $api } from '../../../../shared/api/api'
-import type {
-    Func
-} from '../../../types'
+
 import { createReducerManager } from './reducerManager'
 import {
     type IStateSchema,
@@ -20,8 +16,7 @@ export type TAppDispatch = ReturnType<typeof createReduxStore>['dispatch']
 
 export const createReduxStore = (
     preloadedState?: IStateSchema,
-    asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>,
-    navigate?: Func<[To, NavigateOptions?]>
+    asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>
 ) => {
     const rootReducers: ReducersMapObject<IStateSchema> = {
         ...asyncReducers,
@@ -34,8 +29,7 @@ export const createReduxStore = (
     const reducerManager = createReducerManager(rootReducers)
 
     const extraArg: IThunkExtraArg = {
-        api: $api,
-        navigate
+        api: $api
     }
 
     const store = configureStore({

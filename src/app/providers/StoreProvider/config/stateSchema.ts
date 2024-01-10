@@ -4,9 +4,7 @@ import {
     type ReducersMapObject,
     type UnknownAction
 } from '@reduxjs/toolkit'
-import type { To } from '@remix-run/router'
 import { type AxiosInstance } from 'axios'
-import type { NavigateOptions } from 'react-router/dist/lib/context'
 import { type IArticleDetailsState } from '../../../../entities/Article/model/types'
 import { type ICounterState } from '../../../../entities/Counter'
 import { type IProfileState } from '../../../../entities/Profile'
@@ -59,7 +57,6 @@ export interface ISharedState {
 
 export interface IThunkExtraArg {
     api: AxiosInstance
-    navigate?: Func<[To, NavigateOptions?]>
 }
 
 export interface IThunkConfig<T> {

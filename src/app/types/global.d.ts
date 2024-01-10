@@ -22,3 +22,7 @@ declare const __PROJECT__: TProject
 type DeepPartial<T> = {
     [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
 }
+
+type TOptionalRecord<K extends keyof any, T> = {
+    [P in K]?: T;
+}
