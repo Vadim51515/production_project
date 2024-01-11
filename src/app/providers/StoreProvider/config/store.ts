@@ -5,6 +5,9 @@ import {
 import { counterReducer } from '../../../../entities/Counter'
 import { userReducer } from '../../../../entities/User'
 import { $api } from '../../../../shared/api/api'
+import {
+    uiPageReducer
+} from '../../../../widgets/Page'
 
 import { createReducerManager } from './reducerManager'
 import {
@@ -21,7 +24,8 @@ export const createReduxStore = (
     const rootReducers: ReducersMapObject<IStateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
-        user: userReducer
+        user: userReducer,
+        uiPage: uiPageReducer
     }
 
     console.log('rootReducers', rootReducers)

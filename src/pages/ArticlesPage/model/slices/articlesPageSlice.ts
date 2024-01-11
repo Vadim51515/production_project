@@ -26,7 +26,7 @@ export const {
     name: 'articlesPage',
     initialState: articlesAdapter.getInitialState<IArticlesPageState>({
         status: RuntimeStatuses.BeforeInitial,
-        view: 'list',
+        view: lStorage.get(ARTICLES_VIEW_LOCAL_STORAGE_KEY) as TArticleViewType ?? 'tile',
         ids: [],
         entities: {},
         page: 1,

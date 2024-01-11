@@ -16,5 +16,8 @@ export const articlesPagePaginationLimitSelector = (state: IStateSchema) => (
 export const articlesPagePaginationHasMoreSelector = (state: IStateSchema) => (
     state.articlesPage?.hasMore)
 
-export const articlesPageIsInitSelector = (state: IStateSchema) => (
-    state.articlesPage?.status !== RuntimeStatuses.BeforeInitial)
+export const articlesPageIsInitSelector = (state: IStateSchema) => {
+    if (state.articlesPage?.status) return state.articlesPage?.status !== RuntimeStatuses.BeforeInitial
+
+    return false
+}

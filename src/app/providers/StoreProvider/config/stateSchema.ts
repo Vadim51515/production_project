@@ -14,6 +14,7 @@ import { type ILoginState } from '../../../../features/AuthByUsername'
 import { type IArticleCommentsState } from '../../../../pages/ArticleDetailsPage'
 import { type IArticlesPageState } from '../../../../pages/ArticlesPage'
 import { type RuntimeStatuses } from '../../../../shared/const/common'
+import { type IUIPageState } from '../../../../widgets/Page'
 import type {
     Func,
     TFormErrors
@@ -22,7 +23,7 @@ import type {
 export interface IStateSchema {
     counter: ICounterState
     user: IUserState
-
+    uiPage: IUIPageState
     // Асинхронные редюсеры
     login?: ILoginState
     profile?: IProfileState

@@ -17,7 +17,7 @@ import {
 import { useInitialEffect } from '../../../../shared/hooks/useInitialEffect'
 import { classNames } from '../../../../shared/lib/classNames/classNames'
 import { Button } from '../../../../shared/ui/Button'
-import { Page } from '../../../../shared/ui/Page'
+import { Page } from '../../../../widgets/Page'
 import { Text } from '../../../../shared/ui/Text'
 import { articleDetailsCommentsActions } from '../../model/actions'
 import {

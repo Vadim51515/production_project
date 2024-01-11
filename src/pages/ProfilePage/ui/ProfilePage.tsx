@@ -20,7 +20,7 @@ import {
 } from '../../../shared/hooks/useAsyncReducer'
 import { useInitialEffect } from '../../../shared/hooks/useInitialEffect'
 import { Button } from '../../../shared/ui/Button'
-import { Page } from '../../../shared/ui/Page'
+import { Page } from '../../../widgets/Page'
 import { Text } from '../../../shared/ui/Text'
 import styles from './ProfilePage.module.scss'
 interface IProfilePageProps {

@@ -12,7 +12,7 @@ import {
     useAsyncReducer
 } from '../../../shared/hooks/useAsyncReducer'
 import { useInitialEffect } from '../../../shared/hooks/useInitialEffect'
-import { Page } from '../../../shared/ui/Page'
+import { Page } from '../../../widgets/Page'
 import { Text } from '../../../shared/ui/Text'
 import { articlesPageActions } from '../model/actions'
 import {
@@ -46,8 +46,10 @@ const ArticlesPage: FC<IArticlesPageProps> = () => {
         initState,
         fetchNextArticlePage
     } = useActions(articlesPageActions)
+    console.log('isInit', isInit)
 
     useInitialEffect(() => {
+        console.log('isInit', isInit)
         if (!isInit) {
             initState()
             fetchArticleList({
@@ -63,7 +65,7 @@ const ArticlesPage: FC<IArticlesPageProps> = () => {
     }
 
     const onLoadNextPart = () => {
-        fetchNextArticlePage()
+        if (isInit) fetchNextArticlePage()
     }
 
     return (
