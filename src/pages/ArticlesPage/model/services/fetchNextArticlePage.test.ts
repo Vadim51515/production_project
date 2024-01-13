@@ -1,3 +1,4 @@
+import { ArticleType } from '../../../../entities/Article'
 import { RuntimeStatuses } from '../../../../shared/const/common'
 import { TestAsyncThunk } from '../../../../shared/lib/TestAsyncThunk'
 import { type IArticlesPageState } from '../types'
@@ -15,7 +16,11 @@ describe('fetchNextArticlePage', () => {
             isLoading: false,
             hasMore: true,
             status: RuntimeStatuses.Ready,
-            view: 'list'
+            view: 'list',
+            type: ArticleType.All,
+            order: 'asc',
+            search: '',
+            sortFieldName: 'createdAt'
         } as IArticlesPageState
     }
 
@@ -44,6 +49,6 @@ describe('fetchNextArticlePage', () => {
         expect(thunk.dispatch).toBeCalledTimes(4)
 
         // Проверяем что диспатч был вызван с правильными параметрами
-        expect(fetchArticleList).toHaveBeenCalledWith({ page: 3 })
+        expect(fetchArticleList).toHaveBeenCalledWith({ })
     })
 })

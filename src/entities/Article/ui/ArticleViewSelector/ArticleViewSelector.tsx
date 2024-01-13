@@ -34,7 +34,7 @@ export const ArticleViewSelector: FC<IArticleViewSelectorProps> = ({
     view
 }) => {
     return (
-        <div className={classNames(styles.ArticleViewSelector, {}, [className])}>
+        <div className={classNames(styles.articleViewSelector, {}, [className])}>
             {viewTypes.map((viewType => (
                 <Button
                     onClick={() => {

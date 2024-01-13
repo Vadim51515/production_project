@@ -30,9 +30,13 @@ export interface IArticleImageBlock {
 export type TArticleBlock = IArticleImageBlock | IArticleTextBlock | IArticleCodeBlock
 
 export enum ArticleType {
+    All = 'All',
     IT = 'IT',
-    SCIENCE = 'SCIENCE',
-    ECONOMICS = 'ECONOMICS',
+    Weapons = 'Weapons',
+    Politics = 'Politics',
+    Medicine = 'Medicine',
+    Economics = 'Economics',
+    Cryptocurrency = 'Cryptocurrency',
 }
 
 export interface IArticle {
@@ -51,3 +55,10 @@ export interface IArticleDetailsState extends ISharedState {
     data?: IArticle
 }
 export type TArticleViewType = 'list' | 'tile'
+
+export type TArticleSortField = 'views' | 'title' | 'createdAt'
+
+export interface ISortFieldNameOption {
+    value: TArticleSortField
+    label: string
+}

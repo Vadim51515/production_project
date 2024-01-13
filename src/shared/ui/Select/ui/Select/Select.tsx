@@ -1,5 +1,4 @@
 import React, {
-    type FC,
     useState
 } from 'react'
 import {
@@ -14,27 +13,29 @@ import { Option } from '../Option/Option'
 import styles from './Select.module.scss'
 import RightArrow from 'shared/assets/icons/right-arrow.svg'
 
-export interface ISelectProps extends ISharedFieldComponentProps {
+export interface ISelectProps<T extends string> extends ISharedFieldComponentProps {
     className?: string
-    options: TOptions
-    onChange: Func<[IOption]>
-    value?: string
+    options: TOptions<T>
+    onChange: Func<[IOption<T>]>
+    value?: T
+    placeholder?: string
 }
 
-export const Select: FC<ISelectProps> = ({
+export const Select = <T extends string>({
     className,
     options,
     onChange,
     isReadOnly,
-    value
-}) => {
+    value,
+    placeholder
+}: ISelectProps<T>) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const currentValueObj = options.find(option => option.value === value)
 
     if (isReadOnly) return <Text>{currentValueObj?.label}</Text>
 
-    const onChangeSelect = (newValue: IOption) => {
+    const onChangeSelect = (newValue: IOption<T>) => {
         setIsOpen(false)
         onChange(newValue)
     }
@@ -50,7 +51,11 @@ export const Select: FC<ISelectProps> = ({
                 className={classNames(styles.select, selectMods, [className])}
                 onClick={() => { setIsOpen(state => !state) }}
             >
-                {value && <Text isFieldText>{currentValueObj?.label}</Text>}
+                <div className={styles.content}>
+                    {value
+                        ? <Text isFieldText>{currentValueObj?.label}</Text>
+                        : <Text isPlaceholder>{placeholder}</Text>}
+                </div>
                 <RightArrow />
             </div>
 

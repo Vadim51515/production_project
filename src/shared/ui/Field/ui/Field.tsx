@@ -32,13 +32,13 @@ export const Field: FC<TFieldProps> = (props) => {
         Component = Select
         break
     }
-    const onChangeField = (e: ChangeEvent<HTMLInputElement> | IOption) => {
+    const onChangeField = (e: ChangeEvent<HTMLInputElement> | IOption<string>) => {
         switch (fieldType) {
         case 'input':
             if ('target' in e) props.onChange(fieldName, e.target.value)
             break
         case 'select':
-            props.onChange(fieldName, e as IOption)
+            props.onChange(fieldName, e as IOption<string>)
             break
         }
     }

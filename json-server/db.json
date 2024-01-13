@@ -89,8 +89,8 @@
             "title": "Python news",
             "subtitle": "Что нового в JS за 2022 год?",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
-            "views": 1022,
-            "createdAt": "26.02.2022",
+            "views": 1072,
+            "createdAt": "26.11.2022",
             "userId": "1",
             "type": [
                 "IT"
@@ -161,8 +161,8 @@
             "title": "Kotlin news",
             "subtitle": "Что нового в JS за 2022 год?",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
-            "views": 1022,
-            "createdAt": "26.02.2022",
+            "views": 1512,
+            "createdAt": "25.02.2021",
             "userId": "1",
             "type": [
                 "IT"
@@ -230,11 +230,11 @@
         },
         {
             "id": "4",
-            "title": "Javascript",
-            "subtitle": "Почему для него нужен Typescript?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-            "views": 1023,
-            "createdAt": "26.02.2022",
+            "title": "Typescript",
+            "subtitle": "Почему Typescript это Пушка, гонка, самолет",
+            "img": "https://static-00.iconduck.com/assets.00/typescript-icon-icon-1024x1024-vh3pfez8.png",
+            "views": 1034,
+            "createdAt": "12.01.2024",
             "userId": "1",
             "type": [
                 "IT"
@@ -254,14 +254,14 @@
         },
         {
             "id": "5",
-            "title": "Python news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
+            "title": "Медицина в жизни человека",
+            "subtitle": "Что нового в Медицине за 2022 год?",
+            "img": "https://static-cse.canva.com/blob/786646/vk1912.png",
             "views": 1022,
-            "createdAt": "26.02.2022",
+            "createdAt": "10.07.2023",
             "userId": "1",
             "type": [
-                "IT"
+                "Medicine"
             ],
             "blocks": [
                 {
@@ -279,9 +279,9 @@
         {
             "id": "6",
             "title": "Kotlin news",
-            "subtitle": "Что нового в JS за 2022 год?",
+            "subtitle": "Что нового в Kotlin за 2022 год?",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
-            "views": 1022,
+            "views": 1062,
             "createdAt": "26.02.2022",
             "userId": "1",
             "type": [
@@ -302,14 +302,15 @@
         },
         {
             "id": "7",
-            "title": "Javascript",
-            "subtitle": "Почему для него нужен Typescript?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-            "views": 1023,
-            "createdAt": "26.02.2022",
+            "title": "ДМС",
+            "subtitle": "Какие новые услуги для IT-шников есть в ДМС?",
+            "img": "https://emcmo.mosreg.ru/upload/files/4/h/4hX1IMGaNHZeep1vEuhcDEmvziJe9qwzZBDy0IkruuT1dc1u8JT63cIa52XrLzmpKC5uTuhtOKV2Y0ZAFwxgHrkIdbZzOZL.jpeg",
+            "views": 1923,
+            "createdAt": "30.12.2022",
             "userId": "1",
             "type": [
-                "IT"
+                "IT",
+                "Medicine"
             ],
             "blocks": [
                 {
@@ -326,14 +327,15 @@
         },
         {
             "id": "8",
-            "title": "Python news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
-            "views": 1022,
-            "createdAt": "26.02.2022",
+            "title": "Bitcoin news",
+            "subtitle": "Как вложиться и все просрать?",
+            "img": "https://www.brookings.edu/wp-content/uploads/2021/06/shutterstock_1708749826_small.jpg?w=1500",
+            "views": 1522,
+            "createdAt": "25.12.2023",
             "userId": "1",
             "type": [
-                "IT"
+                "Economics",
+                "Cryptocurrency"
             ],
             "blocks": [
                 {
@@ -350,14 +352,14 @@
         },
         {
             "id": "9",
-            "title": "Kotlin news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
-            "views": 1022,
-            "createdAt": "26.02.2022",
+            "title": "COVID-19",
+            "subtitle": "Куда пропал ковид в 22 году?",
+            "img": "https://lh3.googleusercontent.com/proxy/mBRW_blXkHem4pgO6QFCwlh4YB9IqjauDpUffJggIad-OCz2NSZRNHne5GPdHfmZ8VQQ85aNeDv6TSLjDMkzevHiUuyHZgODLcKe2e58Ig",
+            "views": 2022,
+            "createdAt": "26.10.2022",
             "userId": "1",
             "type": [
-                "IT"
+                "Medicine"
             ],
             "blocks": [
                 {
@@ -374,14 +376,15 @@
         },
         {
             "id": "10",
-            "title": "Python news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
-            "views": 1022,
-            "createdAt": "26.02.2022",
+            "title": "Новости с СВО",
+            "subtitle": "Ну как там хваленный контрнаступ?)",
+            "img": "https://icg-prod.s3.amazonaws.com/s3fs-public/2023-07/ukaine-hero-resized.JPG",
+            "views": 1671,
+            "createdAt": "10.09.2023",
             "userId": "1",
             "type": [
-                "IT"
+                "Politics",
+                "Weapons"
             ],
             "blocks": [
                 {
@@ -398,14 +401,14 @@
         },
         {
             "id": "11",
-            "title": "Kotlin news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
-            "views": 1022,
+            "title": "Самая быстрая ракета в мире",
+            "subtitle": "Насколько быстр этот Кинжал?",
+            "img": "https://cdnn21.img.ria.ru/images/07e6/03/13/1778984813_0:0:5206:2928_1920x0_80_0_0_5733e329e2419a4bcc819bfd231e586a.jpg",
+            "views": 987,
             "createdAt": "26.02.2022",
             "userId": "1",
             "type": [
-                "IT"
+                "Weapons"
             ],
             "blocks": [
                 {
@@ -422,11 +425,11 @@
         },
         {
             "id": "12",
-            "title": "Python news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
-            "views": 1022,
-            "createdAt": "26.02.2022",
+            "title": "Webpack",
+            "subtitle": "Устарел, или еще ничего?",
+            "img": "https://cpng.pikpng.com/pngl/s/263-2630591_webpack-sprite-png-webpack-icon-clipart.png",
+            "views": 1333,
+            "createdAt": "26.12.2023",
             "userId": "1",
             "type": [
                 "IT"
@@ -446,11 +449,11 @@
         },
         {
             "id": "13",
-            "title": "Kotlin news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
-            "views": 1022,
-            "createdAt": "26.02.2022",
+            "title": "SCSS - полная замена старичка? ",
+            "subtitle": "Является SCSS заменой CSS?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1200px-Sass_Logo_Color.svg.png",
+            "views": 1544,
+            "createdAt": "02.04.2023",
             "userId": "1",
             "type": [
                 "IT"
@@ -470,11 +473,11 @@
         },
         {
             "id": "14",
-            "title": "Python news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
-            "views": 1022,
-            "createdAt": "26.02.2022",
+            "title": "React Native в 2023 году",
+            "subtitle": "Ужас или полное \uD83D\uDCA9?",
+            "img": "https://devtop.io/wp-content/uploads/2022/10/react-native-1.png",
+            "views": 1092,
+            "createdAt": "12.01.2024",
             "userId": "1",
             "type": [
                 "IT"
@@ -494,11 +497,11 @@
         },
         {
             "id": "15",
-            "title": "Kotlin news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
-            "views": 1022,
-            "createdAt": "26.02.2022",
+            "title": "Electron.js",
+            "subtitle": "Засяду ли я в 24 году за его изучение?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/1200px-Electron_Software_Framework_Logo.svg.png",
+            "views": 999,
+            "createdAt": "13.01.2024",
             "userId": "1",
             "type": [
                 "IT"
@@ -518,11 +521,11 @@
         },
         {
             "id": "16",
-            "title": "Python news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
-            "views": 1022,
-            "createdAt": "26.02.2022",
+            "title": "Node.js",
+            "subtitle": "А дойдут ли руки до него?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+            "views": 1876,
+            "createdAt": "13.01.2024",
             "userId": "1",
             "type": [
                 "IT"
@@ -542,11 +545,11 @@
         },
         {
             "id": "17",
-            "title": "Kotlin news",
-            "subtitle": "Что нового в JS за 2022 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
+            "title": "PHP news",
+            "subtitle": "Боже, спасибо что не PHP",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png",
             "views": 1022,
-            "createdAt": "26.02.2022",
+            "createdAt": "12.04.2021",
             "userId": "1",
             "type": [
                 "IT"

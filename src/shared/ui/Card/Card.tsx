@@ -5,15 +5,20 @@ import styles from './Card.module.scss'
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string
+    pattern?: 'normal' | 'outline'
 }
 
 export const Card: CFC<ICardProps> = ({
     className,
     children,
+    pattern = 'normal',
     ...props
 }) => {
+    const mods = {
+        [styles.outline]: pattern === 'outline'
+    }
     return (
-        <div className={classNames(styles.card, {}, [className])} {...props}>
+        <div className={classNames(styles.card, mods, [className])} {...props}>
             {children}
         </div>
     )

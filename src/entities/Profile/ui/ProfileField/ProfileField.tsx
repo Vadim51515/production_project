@@ -30,7 +30,7 @@ interface IInputProfileField {
 
 interface ISelectProfileField {
     fieldType: 'select'
-    options: TOptions
+    options: TOptions<string>
 }
 
 type TProfileFieldProps = IBaseProfileFieldProps & (IInputProfileField | ISelectProfileField)
@@ -49,7 +49,7 @@ export const ProfileField: FC<TProfileFieldProps> = ({
 
     const { setFormField } = useActions(profileActions)
 
-    const onChangeField = (fieldKey: string, propValue: string | IOption) => {
+    const onChangeField = (fieldKey: string, propValue: string | IOption<string>) => {
         // TODO Пофиксить типы
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error

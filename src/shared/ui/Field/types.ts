@@ -24,9 +24,9 @@ interface IFieldInputProps extends Omit<InputPropsWithEvent, 'onChange'> {
     onChange: Func<[string, string]>
 }
 
-interface IFieldSelectProps extends Omit<ISelectProps, 'onChange'> {
+interface IFieldSelectProps extends Omit<ISelectProps<string>, 'onChange'> {
     fieldType: 'select'
-    onChange: Func<[string, IOption]>
+    onChange: Func<[string, IOption<string>]>
 }
 
 export type TFieldProps = IBaseFieldProps & (IFieldInputProps | IFieldSelectProps)

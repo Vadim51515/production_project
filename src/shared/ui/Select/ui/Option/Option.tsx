@@ -1,7 +1,4 @@
-import React, {
-    type FC,
-    memo
-} from 'react'
+import React from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import {
     type Func,
@@ -10,12 +7,12 @@ import {
 import { Text } from '../../../Text'
 import styles from './Option.module.scss'
 
-interface IOptionProps {
-    option: IOption
-    onPressOption: Func<[IOption]>
+interface IOptionProps<T extends string> {
+    option: IOption<T>
+    onPressOption: Func<[IOption<T>]>
 }
 
-export const Option: FC<IOptionProps> = memo(({ option, onPressOption }) => {
+export const Option = <T extends string> ({ option, onPressOption }: IOptionProps<T>) => {
     const { label } = option
 
     return (
@@ -23,4 +20,4 @@ export const Option: FC<IOptionProps> = memo(({ option, onPressOption }) => {
             <Text isFieldText>{label}</Text>
         </div>
     )
-})
+}
