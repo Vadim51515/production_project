@@ -1,7 +1,6 @@
 import React, { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router'
 import {
     useParams
 } from 'react-router-dom'
@@ -11,7 +10,6 @@ import {
 } from '../../../../entities/Article'
 import { CommentList } from '../../../../entities/Comment'
 import { AddCommentForm } from '../../../../features/addCommentForm'
-import { RoutePath } from '../../../../shared/config/routeConfig/routeConfig'
 import { useActions } from '../../../../shared/hooks/useActions'
 import {
     type TReducersList,
@@ -19,7 +17,6 @@ import {
 } from '../../../../shared/hooks/useAsyncReducer'
 import { useInitialEffect } from '../../../../shared/hooks/useInitialEffect'
 import { classNames } from '../../../../shared/lib/classNames/classNames'
-import { Button } from '../../../../shared/ui/Button'
 import { Page } from '../../../../widgets/Page'
 import { Text } from '../../../../shared/ui/Text'
 import { articleDetailsCommentsActions } from '../../model/actions'
@@ -34,6 +31,7 @@ import {
     articleDetailsRecommendationReducer,
     getArticleRecommendation
 } from '../../model/slices/articleDetailsRecommendation'
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import styles from './ArticleDetailsPage.module.scss'
 interface IArticleDetailsPageProps {
     className?: string
@@ -66,16 +64,10 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
         fetchArticleRecommendations()
     })
 
-    const navigate = useNavigate()
-
-    const onBackToList = () => {
-        navigate(RoutePath.articles)
-    }
-
     const renderContent = () => {
         if (!id && __PROJECT__ !== 'storybook') return <Text>{t('Статья не найдена')}</Text>
         return <>
-            <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
+            <ArticleDetailsPageHeader />
             <ArticleDetails id={id ?? ''} />
             <AddCommentForm sendComment={addCommentForArticle} />
             <Text>{'Рекомендуемые:'}</Text>
