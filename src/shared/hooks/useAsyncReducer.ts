@@ -5,10 +5,13 @@ import {
     useStore
 } from 'react-redux'
 import { type IReduxStoreWithManager } from '../../app/providers/StoreProvider'
-import { type IStateKey } from '../../app/providers/StoreProvider/config/stateSchema'
+import {
+    type IStateKey,
+    type IStateSchema
+} from '../../app/providers/StoreProvider/config/stateSchema'
 
 export type TReducersList = {
-    [key in IStateKey]?: Reducer
+    [name in IStateKey]?: Reducer<NonNullable<IStateSchema[name]>>
 }
 export const useAsyncReducer = (reducers: TReducersList, removeAfterUnmount = false) => {
     const dispatch = useDispatch()

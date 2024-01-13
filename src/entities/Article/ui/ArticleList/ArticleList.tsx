@@ -13,6 +13,7 @@ interface IArticleListProps {
     articles: IArticle[]
     isLoading?: boolean
     view: TArticleViewType
+    target?: React.HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: TArticleViewType) => new Array(view === 'list'
@@ -31,10 +32,12 @@ export const ArticleList: FC<IArticleListProps> = ({
     className,
     articles,
     view = 'tile',
-    isLoading
+    isLoading,
+    target
 }) => {
     const renderArticle = (article: IArticle) => (
         <ArticleListItem
+            target={target}
             key={article.id}
             article={article}
             view={view}

@@ -27,7 +27,8 @@ export const AppLink: FC<IAppLinkProps> = memo(({
     pattern = 'primary',
     postfix,
     prefix,
-    classNameContent
+    classNameContent,
+    ...props
 }) => {
     return (
         <Link
@@ -40,6 +41,7 @@ export const AppLink: FC<IAppLinkProps> = memo(({
                     styles[pattern]
                 ]
             )}
+            {...props}
         >
             <span className={styles.prefix}>{prefix}</span>
             <span className={classNames(styles.appLinkContent, {}, [classNameContent])}>{children}</span>

@@ -11,7 +11,10 @@ import { type IProfileState } from '../../../../entities/Profile'
 import { type IUserState } from '../../../../entities/User'
 import { type ICommentFormState } from '../../../../features/addCommentForm'
 import { type ILoginState } from '../../../../features/AuthByUsername'
-import { type IArticleCommentsState } from '../../../../pages/ArticleDetailsPage'
+import {
+    type IArticleCommentsState,
+    type IArticleRecommendationState
+} from '../../../../pages/ArticleDetailsPage'
 import { type IArticlesPageState } from '../../../../pages/ArticlesPage'
 import { type RuntimeStatuses } from '../../../../shared/const/common'
 import { type IUIPageState } from '../../../../widgets/Page'
@@ -31,7 +34,7 @@ export interface IStateSchema {
     articleDetailsComments?: IArticleCommentsState
     addCommentForm?: ICommentFormState
     articlesPage?: IArticlesPageState
-
+    articleRecommendation?: IArticleRecommendationState
 }
 
 export type IStateKey = keyof IStateSchema

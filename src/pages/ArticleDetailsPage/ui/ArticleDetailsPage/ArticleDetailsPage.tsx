@@ -5,7 +5,10 @@ import { useNavigate } from 'react-router'
 import {
     useParams
 } from 'react-router-dom'
-import { ArticleDetails } from '../../../../entities/Article'
+import {
+    ArticleDetails,
+    ArticleList
+} from '../../../../entities/Article'
 import { CommentList } from '../../../../entities/Comment'
 import { AddCommentForm } from '../../../../features/addCommentForm'
 import { RoutePath } from '../../../../shared/config/routeConfig/routeConfig'
@@ -27,13 +30,18 @@ import {
     articleDetailsCommentsReducer,
     getArticleComments
 } from '../../model/slices/articleDetailsCommentsSlice'
-
+import {
+    articleDetailsRecommendationReducer,
+    getArticleRecommendation
+} from '../../model/slices/articleDetailsRecommendation'
+import styles from './ArticleDetailsPage.module.scss'
 interface IArticleDetailsPageProps {
     className?: string
 }
 
 const initialReducers: TReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer
+    articleDetailsComments: articleDetailsCommentsReducer,
+    articleRecommendation: articleDetailsRecommendationReducer
 }
 
 const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
@@ -41,9 +49,13 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
 
     const comments = useSelector(getArticleComments.selectAll)
     const isLoading = useSelector(articleDetailsCommentsIsLoadingSelector)
-    // const error = useSelector(articleDetailsCommentsErrorSelector)
+    const recommendations = useSelector(getArticleRecommendation.selectAll)
 
-    const { fetchCommentsByArticleId, addCommentForArticle } = useActions(articleDetailsCommentsActions)
+    const {
+        fetchCommentsByArticleId,
+        addCommentForArticle,
+        fetchArticleRecommendations
+    } = useActions(articleDetailsCommentsActions)
 
     const { t } = useTranslation('article-details')
 
@@ -51,6 +63,7 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
 
     useInitialEffect(() => {
         if (id) fetchCommentsByArticleId(id)
+        fetchArticleRecommendations()
     })
 
     const navigate = useNavigate()
@@ -64,7 +77,14 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
         return <>
             <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
             <ArticleDetails id={id ?? ''} />
-            <AddCommentForm sendComment={addCommentForArticle}/>
+            <AddCommentForm sendComment={addCommentForArticle} />
+            <Text>{'Рекомендуемые:'}</Text>
+            <ArticleList
+                articles={recommendations}
+                view={'list'}
+                className={styles.recommendationsContainer}
+                target={'_blank'}
+            />
             <CommentList
                 isLoading={isLoading}
                 comments={comments}

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router'
 import EyeIcon from 'shared/assets/icons/Eye.svg'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { RoutePath } from '../../../../shared/config/routeConfig/routeConfig'
+import { AppLink } from '../../../../shared/ui/AppLink/AppLink'
 import { Avatar } from '../../../../shared/ui/Avatar/ui/Avatar'
 import { Button } from '../../../../shared/ui/Button'
 import { Card } from '../../../../shared/ui/Card/Card'
@@ -22,12 +23,14 @@ interface IArticleListItemProps {
     className?: string
     article: IArticle
     view: TArticleViewType
+    target?: React.HTMLAttributeAnchorTarget
 }
 
 export const ArticleListItem: FC<IArticleListItemProps> = ({
     className,
     article,
-    view
+    view,
+    target
 }) => {
     const { t } = useTranslation('article')
 
@@ -47,28 +50,30 @@ export const ArticleListItem: FC<IArticleListItemProps> = ({
     const renderContent = () => {
         if (view === 'list') {
             return (
-                <Card className={styles.listContainer} onClick={onOpenArticle}>
-                    <div className={styles.imgContainer}>
-                        <img
-                            className={styles.img}
-                            src={article.img}
-                        />
-                    </div>
-                    <div className={styles.infoContainer}>
-                        <div>
-                            <Text
-                                tag={'h3'}
-                                withMarginBottom
-                            > {article.title}</Text>
-                            <Text withMarginBottom> {article.type.join(', ')}</Text>
+                <AppLink target={target} to={RoutePath.article_details + article.id}>
+                    <Card className={styles.listContainer} onClick={onOpenArticle}>
+                        <div className={styles.imgContainer}>
+                            <img
+                                className={styles.img}
+                                src={article.img}
+                            />
                         </div>
-                        <div className={styles.additionalInfoContainer}>
-                            {views}
+                        <div className={styles.infoContainer}>
+                            <div>
+                                <Text
+                                    tag={'h3'}
+                                    withMarginBottom
+                                > {article.title}</Text>
+                                <Text withMarginBottom> {article.type.join(', ')}</Text>
+                            </div>
+                            <div className={styles.additionalInfoContainer}>
+                                {views}
 
-                            <Text className={styles.createdAt}>{article.createdAt}</Text>
+                                <Text className={styles.createdAt}>{article.createdAt}</Text>
+                            </div>
                         </div>
-                    </div>
-                </Card>
+                    </Card>
+                </AppLink>
             )
         }
 
@@ -102,7 +107,9 @@ export const ArticleListItem: FC<IArticleListItemProps> = ({
                 {textBlock && <ArticleTextBlock className={styles.textBlock} block={textBlock} />}
 
                 <div className={styles.footer}>
-                    <Button onClick={onOpenArticle} pattern={'outline'}>{t('Читать далее') + '...'}</Button>
+                    <AppLink target={target} to={RoutePath.article_details + article.id}>
+                        <Button onClick={onOpenArticle} pattern={'outline'}>{t('Читать далее') + '...'}</Button>
+                    </AppLink>
                     {views}
                 </div>
 
