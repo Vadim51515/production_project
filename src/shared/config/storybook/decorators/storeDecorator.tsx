@@ -26,6 +26,8 @@ export const storeDecorator = (
     return (
         <StoreProvider
             initialState={state}
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
             asyncReducers={{ ...defaultAsyncReducer, ...asyncReducers }}
         >
             <StoryComponent />
