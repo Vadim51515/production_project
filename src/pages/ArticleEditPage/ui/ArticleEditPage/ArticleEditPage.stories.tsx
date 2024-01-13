@@ -2,7 +2,7 @@ import type {
     Meta,
     StoryObj
 } from '@storybook/react'
-import { ArticleEditPage } from './ArticleEditPage'
+import ArticleEditPage from './ArticleEditPage'
 
 const meta = {
     title: 'example_test/ArticleEditPage',

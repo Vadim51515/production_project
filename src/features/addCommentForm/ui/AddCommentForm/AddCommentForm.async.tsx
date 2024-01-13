@@ -6,6 +6,4 @@ import {
 import { type IAddCommentFormProps } from './AddCommentForm'
 
 export const LazyAddCommentForm: LazyExoticComponent<ComponentType<IAddCommentFormProps>> =
-    lazy(async () => await new Promise(resolve => {
-        setTimeout(() => { resolve(import('./AddCommentForm')) }, 500)
-    }))
+    lazy(async () => await import('./AddCommentForm'))
