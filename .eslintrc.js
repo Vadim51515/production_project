@@ -32,6 +32,7 @@ module.exports = {
         'unused-imports',
         'i18next',
         'react-hooks',
+        'inhellim',
     ],
     rules: {
         'react/jsx-indent': [
@@ -79,19 +80,12 @@ module.exports = {
         '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
         "@typescript-eslint/no-invalid-void-type": "off",
-        "storybook/prefer-pascal-case": "off"
+        "storybook/prefer-pascal-case": "off",
+        'inhellim/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
         __API__: true,
         __PROJECT__: true,
     },
-    overrides: [
-        {
-            files: ['**/src/**/*.test.{ts,tsx}'],
-            rules: {
-                'i18next/no-literal-string': 'off',
-            },
-        },
-    ],
 };

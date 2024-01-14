@@ -32,7 +32,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = ({
     view,
     target
 }) => {
-    const { t } = useTranslation('article')
+    const { t } = useTranslation()
 
     const navigate = useNavigate()
 
