@@ -1,4 +1,7 @@
 import React, { type FC } from 'react'
+import {
+    Virtuoso
+} from 'react-virtuoso'
 import { classNames } from 'shared/lib/classNames/classNames'
 import {
     type IArticle,
@@ -35,29 +38,27 @@ export const ArticleList: FC<IArticleListProps> = ({
     isLoading,
     target
 }) => {
-    const renderArticle = (article: IArticle) => (
-        <ArticleListItem
-            target={target}
-            key={article.id}
-            article={article}
-            view={view}
-        />
+    const renderArticle = (index: number) => (
+        <div style={{ paddingBottom: 20 }}>
+            <ArticleListItem
+                target={target}
+                key={articles[index].id}
+                article={articles[index]}
+                view={view}
+            />
+        </div>
+
     )
 
     return (
-        <div
-            className={classNames(
-                styles.articleList,
-                {},
-                [
-                    className,
-                    styles[view]
-                ]
-            )}
-        >
-            {articles.length > 0
-                ? articles.map(renderArticle)
-                : null}
+        <div>
+            <Virtuoso
+                useWindowScroll
+                totalCount={articles.length}
+                itemContent={renderArticle}
+                overscan={5}
+                className={styles.articleList}
+            />
             {isLoading && (<div
                 className={classNames(
                     styles.articleList,
