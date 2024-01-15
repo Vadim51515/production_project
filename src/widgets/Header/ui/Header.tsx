@@ -4,10 +4,10 @@ import styles from './Header.module.scss'
 
 export const Header: FC = () => {
     return (
-        <div
+        <header
             data-testid='header'
             className={styles.container}>
             <ThemeSwitcher />
-        </div>
+        </header>
     )
 }

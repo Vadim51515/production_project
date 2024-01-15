@@ -2,9 +2,8 @@ import React, {
     type FC,
     memo
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { VStack } from '../../../shared/ui/Stack'
 import { navbarItemsList } from '../model/items'
-import styles from './Navbar.module.scss'
 import { NavbarItem } from './NavbarItem/NavbarItem'
 
 interface INavbarProps {
@@ -12,13 +11,12 @@ interface INavbarProps {
     isCollapsedNavbar?: boolean
 }
 
-export const Navbar: FC<INavbarProps> = memo(({ className, isCollapsedNavbar }) => {
-    console.log('Navbar')
+export const Navbar: FC<INavbarProps> = memo(({ isCollapsedNavbar }) => {
     return (
-        <div className={classNames(styles.container, {}, [className])}>
+        <VStack role={''} gap={'10'}>
             {navbarItemsList.map(item => (
                 <NavbarItem key={item.path} item={item} isCollapsedNavbar={isCollapsedNavbar}/>
             ))}
-        </div>
+        </VStack>
     )
 })

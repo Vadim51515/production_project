@@ -1,10 +1,8 @@
 import React, { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
 import { type Func } from '../../../app/types'
 import { Button } from '../../../shared/ui/Button'
-import styles from './ActionControls.module.scss'
-
+import { HStack } from '../../../shared/ui/Stack'
 interface IActionControlsProps {
     className?: string
     onEdit: Func
@@ -17,7 +15,6 @@ interface IActionControlsProps {
 }
 
 export const ActionControls: FC<IActionControlsProps> = ({
-    className,
     editButtonText,
     cancelButtonText,
     onEdit,
@@ -29,13 +26,7 @@ export const ActionControls: FC<IActionControlsProps> = ({
     const { t } = useTranslation()
 
     return (
-        <div
-            className={classNames(
-                styles.actionControls,
-                {},
-                [className]
-            )}
-        >
+        <HStack>
             {isReadonly && (<Button onClick={onEdit}>{editButtonText ?? t('Редактировать')}</Button>)}
             {!isReadonly && <div className='row'>
                 {onCancel && <Button
@@ -44,6 +35,6 @@ export const ActionControls: FC<IActionControlsProps> = ({
                 >{cancelButtonText ?? t('Отменить')}</Button>}
                 {onSave && <Button onClick={onSave}>{saveButtonText ?? t('Сохранить')}</Button>}
             </div>}
-        </div>
+        </HStack>
     )
 }

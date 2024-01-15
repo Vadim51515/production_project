@@ -24,7 +24,7 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }) => {
     const [isOpen, setIsOpen] = useState(true)
 
     return (
-        <div
+        <aside
             data-testid='sidebar'
             className={classNames(styles.sidebar, { [styles.collapsed]: !isOpen }, [className])}
         >
@@ -39,6 +39,6 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }) => {
 
             </div>
             {userAuthData ? <ProfileBtn isCollapsedNavbar={!isOpen} /> : <LoginModal /> }
-        </div>
+        </aside>
     )
 })
