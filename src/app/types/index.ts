@@ -11,12 +11,12 @@ export type DeepPartial<T> = {
     [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
 }
 
-export interface IOption<T extends string> {
+export interface IOption<T> {
     value: T
     label: string | number
 }
 
-export type TOptions<T extends string> = Array<IOption<T>>
+export type TOptions<T> = Array<IOption<T>>
 
 export type TFormErrors<T extends string> = Partial<Record<T, string>>
 
