@@ -1,5 +1,8 @@
 .container{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
     height: var(--header-height);
     background: var(--additional-bg-color);
 }

@@ -14,6 +14,7 @@ export type DeepPartial<T> = {
 export interface IOption<T> {
     value: T
     label: string | number
+    isDisabled?: boolean
 }
 
 export type TOptions<T> = Array<IOption<T>>

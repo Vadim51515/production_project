@@ -1,8 +1,7 @@
 import React, {
     type FC,
     memo,
-    useCallback,
-    useEffect
+    useCallback
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -31,10 +30,6 @@ export const NavbarItem: FC<INavbarItemProps> = memo(({
     const getActiveItem = useCallback(() => {
         return '/' + location.pathname.split('/')[1] === path
     }, [location.pathname])
-
-    useEffect(() => {
-        console.log('useEffect')
-    }, [location.host])
 
     const modsContent = {
         animationHideText: isCollapsedNavbar,

@@ -28,8 +28,6 @@ export const createReduxStore = (
         uiPage: uiPageReducer
     }
 
-    console.log('rootReducers', rootReducers)
-
     const reducerManager = createReducerManager(rootReducers)
 
     const extraArg: IThunkExtraArg = {

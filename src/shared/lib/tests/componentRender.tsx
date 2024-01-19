@@ -22,8 +22,6 @@ export const componentRender = (component: ReactNode, options = initialOptions) 
         initialState
     } = options
 
-    console.log('initialState', initialState)
-
     return render(
         <MemoryRouter initialEntries={[route]}>
             <StoreProvider initialState={initialState}>
