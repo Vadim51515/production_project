@@ -1,27 +1,25 @@
-module.exports = (layer, componentName) => `import React from 'react';
 import type {
     Meta,
     StoryObj
 } from '@storybook/react'
-import { ${componentName} } from './${componentName}'
+import { ArticleDetailsComments } from './ArticleDetailsComments'
 
 const meta = {
-    title: 'example_test/${componentName}',
-    component: ${componentName},
+    title: 'example_test/ArticleDetailsComments',
+    component: ArticleDetailsComments,
     parameters: {
         layout: 'centered'
     },
     tags: ['autodocs'],
     argTypes: {}
 
-} satisfies Meta<typeof ${componentName}>
+} satisfies Meta<typeof ArticleDetailsComments>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-    args: {}
+    args: {
+        id: '1'
     }
 }
-
-};`

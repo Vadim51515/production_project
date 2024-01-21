@@ -1,27 +1,23 @@
-module.exports = (layer, componentName) => `import React from 'react';
 import type {
     Meta,
     StoryObj
 } from '@storybook/react'
-import { ${componentName} } from './${componentName}'
+import { ArticleInfinityList } from './ArticleInfinityList'
 
 const meta = {
-    title: 'example_test/${componentName}',
-    component: ${componentName},
+    title: 'example_test/ArticleInfinityList',
+    component: ArticleInfinityList,
     parameters: {
         layout: 'centered'
     },
     tags: ['autodocs'],
     argTypes: {}
 
-} satisfies Meta<typeof ${componentName}>
+} satisfies Meta<typeof ArticleInfinityList>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
     args: {}
-    }
 }
-
-};`

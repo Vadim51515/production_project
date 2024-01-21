@@ -1,3 +1,5 @@
-module.exports = (componentName) => `.${componentName} {
+const firstCharLowerrCase = require('../firstCharLowerCase')
 
-}`;
+module.exports = (componentName) => `.${firstCharLowerrCase(componentName)} {
+
+}`

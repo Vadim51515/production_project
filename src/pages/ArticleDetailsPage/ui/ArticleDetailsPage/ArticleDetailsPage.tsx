@@ -1,38 +1,28 @@
 import React, { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
 import {
     useParams
 } from 'react-router-dom'
 import {
-    ArticleDetails,
-    ArticleList
+    ArticleDetails
 } from '../../../../entities/Article'
-import { CommentList } from '../../../../entities/Comment'
-import { AddCommentForm } from '../../../../features/addCommentForm'
-import { useActions } from '../../../../shared/hooks/useActions'
+import { ArticleRecommendationsList } from '../../../../features/articleRecommendationsList'
 import {
     type TReducersList,
     useAsyncReducer
 } from '../../../../shared/hooks/useAsyncReducer'
-import { useInitialEffect } from '../../../../shared/hooks/useInitialEffect'
 import { classNames } from '../../../../shared/lib/classNames/classNames'
 import { Page } from '../../../../widgets/Page'
 import { Text } from '../../../../shared/ui/Text'
-import { articleDetailsCommentsActions } from '../../model/actions'
+
 import {
-    articleDetailsCommentsIsLoadingSelector
-} from '../../model/selectors/comments'
-import {
-    articleDetailsCommentsReducer,
-    getArticleComments
+    articleDetailsCommentsReducer
 } from '../../model/slices/articleDetailsCommentsSlice'
 import {
-    articleDetailsRecommendationReducer,
-    getArticleRecommendation
+    articleDetailsRecommendationReducer
 } from '../../model/slices/articleDetailsRecommendation'
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
-import styles from './ArticleDetailsPage.module.scss'
 interface IArticleDetailsPageProps {
     className?: string
 }
@@ -45,48 +35,18 @@ const initialReducers: TReducersList = {
 const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
     useAsyncReducer(initialReducers, true)
 
-    const comments = useSelector(getArticleComments.selectAll)
-    const isLoading = useSelector(articleDetailsCommentsIsLoadingSelector)
-    const recommendations = useSelector(getArticleRecommendation.selectAll)
-
-    const {
-        fetchCommentsByArticleId,
-        addCommentForArticle,
-        fetchArticleRecommendations
-    } = useActions(articleDetailsCommentsActions)
-
     const { t } = useTranslation('article-details')
 
     const { id } = useParams<{ id: string }>()
 
-    useInitialEffect(() => {
-        if (id) fetchCommentsByArticleId(id)
-        fetchArticleRecommendations()
-    })
-
-    const renderContent = () => {
-        if (!id && __PROJECT__ !== 'storybook') return <Text>{t('Статья не найдена')}</Text>
-        return <>
-            <ArticleDetailsPageHeader />
-            <ArticleDetails id={id ?? ''} />
-            <AddCommentForm sendComment={addCommentForArticle} />
-            <Text>{'Рекомендуемые:'}</Text>
-            <ArticleList
-                articles={recommendations}
-                view={'list'}
-                className={styles.recommendationsContainer}
-                target={'_blank'}
-            />
-            <CommentList
-                isLoading={isLoading}
-                comments={comments}
-            />
-        </>
-    }
+    if (!id && __PROJECT__ !== 'storybook') return <Text>{t('Статья не найдена')}</Text>
 
     return (
         <Page className={classNames('', {}, [className])}>
-            {renderContent()}
+            <ArticleDetailsPageHeader />
+            <ArticleDetails id={id ?? ''} />
+            <ArticleRecommendationsList />
+            <ArticleDetailsComments id={id ?? ''} />
         </Page>
     )
 }

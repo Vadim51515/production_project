@@ -4,7 +4,10 @@ import {
 } from '@reduxjs/toolkit'
 import { counterReducer } from '../../../../entities/Counter'
 import { userReducer } from '../../../../entities/User'
-import { $api } from '../../../../shared/api/api'
+import {
+    $api,
+    rtkApi
+} from '../../../../shared/api'
 import {
     uiPageReducer
 } from '../../../../widgets/Page'
@@ -25,7 +28,8 @@ export const createReduxStore = (
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
-        uiPage: uiPageReducer
+        uiPage: uiPageReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer
     }
 
     const reducerManager = createReducerManager(rootReducers)
@@ -42,7 +46,7 @@ export const createReduxStore = (
             thunk: {
                 extraArgument: extraArg
             }
-        })
+        }).concat(rtkApi.middleware)
     })
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

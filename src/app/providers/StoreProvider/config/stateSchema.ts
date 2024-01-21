@@ -16,6 +16,7 @@ import {
     type IArticleRecommendationState
 } from '../../../../pages/ArticleDetailsPage'
 import { type IArticlesPageState } from '../../../../pages/ArticlesPage'
+import { type rtkApi } from '../../../../shared/api'
 import { type RuntimeStatuses } from '../../../../shared/const/common'
 import { type IUIPageState } from '../../../../widgets/Page'
 import type {
@@ -27,6 +28,7 @@ export interface IStateSchema {
     counter: ICounterState
     user: IUserState
     uiPage: IUIPageState
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
     // Асинхронные редюсеры
     login?: ILoginState
     profile?: IProfileState

@@ -19,5 +19,28 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-    args: {}
+    args: {
+        items: [
+            {
+                value: 1,
+                label: 'Durward Reynolds'
+            },
+            {
+                value: 2,
+                label: 'Kenton Towne'
+            },
+            {
+                value: 3,
+                label: 'Therese Wunsch'
+            },
+            {
+                value: 4,
+                label: 'Benedict Kessler'
+            },
+            {
+                value: 5,
+                label: 'Katelyn Rohan'
+            }
+        ]
+    }
 }

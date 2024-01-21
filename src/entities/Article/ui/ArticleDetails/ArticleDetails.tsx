@@ -60,8 +60,6 @@ export const ArticleDetails: FC<IArticleDetailsProps> = ({
         >{t('При загрузке статьи произошла ошибка: ') + error}</Text>
     }
 
-    console.log('isLoading', isLoading)
-
     if (isLoading) return <ArticleDetailsSkeleton />
 
     return (

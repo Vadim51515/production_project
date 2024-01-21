@@ -1,3 +1,5 @@
+export { ProfileHeader } from './ui/ProfileHeader/ProfileHeader'
+export { ProfileLogoutBtn } from './ui/ProfileLogoutBtn/ProfileLogoutBtn'
 export { profileAvatarSelector } from './model/selectors/selectors'
 export { updateProfileData } from './model/services/updateProfileData'
 export { ProfileActionControls } from './ui/ProfileActionControls/ProfileActionControls'
