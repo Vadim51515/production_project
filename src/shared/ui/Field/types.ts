@@ -14,6 +14,7 @@ interface IBaseFieldProps extends ISharedFieldComponentProps {
     fieldType: TFieldType
     fieldName: string
     label: string
+    dataTestId?: string
     isRequired?: boolean
     error?: string
 }

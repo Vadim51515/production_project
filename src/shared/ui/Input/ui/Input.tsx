@@ -36,6 +36,7 @@ export const Input: FC<IInputProps> = memo(({
     withEventChange,
     onChange,
     isReadOnly,
+    dataTestId,
     ...props
 }) => {
     const mods = {
@@ -47,10 +48,11 @@ export const Input: FC<IInputProps> = memo(({
         else onChange(event.target.value)
     }
 
-    if (isReadOnly) return <Text>{props.value}</Text>
+    if (isReadOnly) return <Text dataTestId={`${dataTestId}ReadonlyText`}>{props.value}</Text>
 
     return (
         <input
+            data-testid={`${dataTestId}Input`}
             className={classNames(styles.input, mods, [className])}
             type='text'
             onChange={onChangeInput}

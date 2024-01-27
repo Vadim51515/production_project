@@ -1,3 +1,9 @@
+export { getUserRolesSelector } from './model/selectors/selectors'
+export {
+    isUserAdminSelector,
+    isUserManagerSelector
+} from './model/selectors/selectors'
+export { UserRole } from './model/types'
 export { userAuthDataSelector } from './model/selectors/selectors'
 export { isInitSelector } from './model/selectors/selectors'
 export { userReducer } from './model/slices/userSlice'

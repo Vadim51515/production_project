@@ -19,7 +19,8 @@ export const Field: FC<TFieldProps> = (props) => {
         isRequired,
         error,
         fieldName,
-        fieldType
+        fieldType,
+        dataTestId
     } = props
 
     let Component = null
@@ -56,9 +57,10 @@ export const Field: FC<TFieldProps> = (props) => {
                 {...props}
                 withEventChange
                 onChange={onChangeField}
+                dataTestId={dataTestId}
             />
 
-            {error && <Text className={styles.error}>{error}</Text>}
+            {error && <Text className={styles.error} dataTestId={`${dataTestId}ErrorText`}>{error}</Text>}
         </div>
     )
 }

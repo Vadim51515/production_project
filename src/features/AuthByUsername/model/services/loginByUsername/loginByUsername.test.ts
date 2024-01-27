@@ -10,7 +10,8 @@ describe('loginByUsername', () => {
 
     const loginResponse = {
         username: 'admin',
-        id: '1'
+        id: '1',
+        role: 'admin'
     }
 
     test('Функция отработала корректно', async () => {

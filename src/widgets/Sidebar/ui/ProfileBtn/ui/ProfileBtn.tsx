@@ -2,7 +2,6 @@ import React, {
     type FC,
     memo
 } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -19,10 +18,11 @@ interface IProfileBtnProps {
 }
 
 export const ProfileBtn: FC<IProfileBtnProps> = memo(({ className, isCollapsedNavbar }) => {
-    const { t } = useTranslation()
     const navigate = useNavigate()
 
     const authData = useSelector(userAuthDataSelector)
+
+    console.log('authData', authData)
 
     const modsForText = {
         animationHideText: isCollapsedNavbar,
@@ -40,8 +40,8 @@ export const ProfileBtn: FC<IProfileBtnProps> = memo(({ className, isCollapsedNa
                 src={defaultUserIcon}
             />
             <div className={styles.textContainer}>
-                <Text className={classNames(styles.name, modsForText)}>{t('Пушкин Вадим')}</Text>
-                <Text className={classNames(styles.role, modsForText)}>{t('Владелец')}</Text>
+                <Text className={classNames(styles.name, modsForText)}>{authData?.username}</Text>
+                <Text className={classNames(styles.role, modsForText)}>{authData?.roles?.[0]}</Text>
             </div>
         </Button>
     )

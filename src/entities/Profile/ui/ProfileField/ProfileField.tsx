@@ -43,7 +43,6 @@ export const ProfileField: FC<TProfileFieldProps> = ({
     ...props
 }) => {
     const fieldValue = useParamSelector(profileFieldValue, fieldName)
-    console.log('fieldValue', fieldValue)
     const isReadonly = useSelector(profileIsReadonlySelector)
     const error = useParamSelector(profileFieldErrorSelector, fieldName)
 
@@ -74,6 +73,7 @@ export const ProfileField: FC<TProfileFieldProps> = ({
             onChange={onChangeField}
             value={fieldValue}
             error={error}
+            dataTestId={fieldName}
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-expect-error
             options={props.options}

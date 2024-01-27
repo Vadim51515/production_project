@@ -17,6 +17,7 @@ interface ITextProps {
     withMarginBottom?: boolean
     isCenter?: boolean
     marginBottom?: number
+    dataTestId?: string
 }
 
 export const Text: CFC<ITextProps> = memo(({
@@ -29,7 +30,8 @@ export const Text: CFC<ITextProps> = memo(({
     children,
     withMarginBottom,
     isCenter,
-    marginBottom = 10
+    marginBottom = 10,
+    dataTestId
 }) => {
     const Tag = tag // Используем span, если тип тега не передан
     const mods = {
@@ -45,7 +47,7 @@ export const Text: CFC<ITextProps> = memo(({
     }
 
     return (
-        <Tag style={style} className={classNames(styles.text, mods, [className, styles[tag]])}>
+        <Tag data-testid={dataTestId} style={style} className={classNames(styles.text, mods, [className, styles[tag]])}>
             {children}
         </Tag>
     )

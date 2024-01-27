@@ -17,14 +17,15 @@ export const AppRouter = () => {
     const renderWithWrapper = useCallback(({
         path,
         element,
-        isAuthOnly
+        isAuthOnly,
+        roles
     }: TAppRoutesProps) => {
         return (
             <Route
                 key={path}
                 path={path}
                 element={isAuthOnly
-                    ? <RequireAuth>{element}</RequireAuth>
+                    ? <RequireAuth roles={roles}>{element}</RequireAuth>
                     : element}
             />
         )

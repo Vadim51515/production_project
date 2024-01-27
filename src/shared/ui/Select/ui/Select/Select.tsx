@@ -19,6 +19,7 @@ export interface ISelectProps<T extends string> extends ISharedFieldComponentPro
     onChange: Func<[IOption<T>]>
     value?: T
     placeholder?: string
+    dataTestId?: string
 }
 
 export const Select = <T extends string>({
@@ -27,7 +28,8 @@ export const Select = <T extends string>({
     onChange,
     isReadOnly,
     value,
-    placeholder
+    placeholder,
+    dataTestId
 }: ISelectProps<T>) => {
     const [isOpen, setIsOpen] = useState(false)
 
@@ -48,6 +50,7 @@ export const Select = <T extends string>({
     return (
         <div className={styles.selectContainer}>
             <div
+                data-testid={`${dataTestId}Select`}
                 className={classNames(styles.select, selectMods, [className])}
                 onClick={() => { setIsOpen(state => !state) }}
             >
