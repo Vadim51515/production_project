@@ -13,6 +13,7 @@
 
 .menu{
     position: absolute;
+    min-width: 180px;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border-color);
@@ -21,6 +22,7 @@
     border-radius: 4px;
     cursor: pointer;
     z-index: var(--select-z-index);
+    right: 0;
 }
 
 .option {

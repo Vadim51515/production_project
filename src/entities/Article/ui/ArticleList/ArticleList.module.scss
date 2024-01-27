@@ -4,9 +4,11 @@
 }
 
 .tile {
+    display: flex;
     flex-flow: column nowrap;
 }
 
 .list {
+    display: flex;
     flex-wrap: wrap;
 }

@@ -19,12 +19,12 @@ interface IArticleViewSelectorProps {
 
 const viewTypes: Array<{ view: TArticleViewType, icon: FC<SVGProps<SVGSVGElement>> }> = [
     {
-        view: 'tile',
-        icon: TileIcon
-    },
-    {
         view: 'list',
         icon: ListIcon
+    },
+    {
+        view: 'tile',
+        icon: TileIcon
     }
 ]
 

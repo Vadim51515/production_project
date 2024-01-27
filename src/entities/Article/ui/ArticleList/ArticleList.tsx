@@ -1,6 +1,6 @@
 import React, { type FC } from 'react'
 import {
-    Virtuoso
+    VirtuosoGrid
 } from 'react-virtuoso'
 import { classNames } from 'shared/lib/classNames/classNames'
 import {
@@ -52,12 +52,14 @@ export const ArticleList: FC<IArticleListProps> = ({
 
     return (
         <div>
-            <Virtuoso
+            <VirtuosoGrid
+                style={{ height: 500 }}
                 useWindowScroll
                 totalCount={articles.length}
                 itemContent={renderArticle}
                 overscan={5}
                 className={styles.articleList}
+                listClassName={styles[view]}
             />
             {isLoading && (<div
                 className={classNames(
