@@ -4,8 +4,8 @@ import React, {
     useState
 } from 'react'
 import { Listbox as HListbox } from '@headlessui/react'
-import { type TOptions } from '../../../app/types'
-import { classNames } from '../../lib/classNames/classNames'
+import { type TOptions } from '../../../../../app/types'
+import { classNames } from '../../../../lib/classNames/classNames'
 import styles from './ListBox.module.scss'
 const people = [
     {

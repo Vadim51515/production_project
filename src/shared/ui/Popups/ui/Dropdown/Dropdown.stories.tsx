@@ -2,7 +2,7 @@ import type {
     Meta,
     StoryObj
 } from '@storybook/react'
-import { Text } from '../Text'
+import { Text } from '../../../Text'
 import { Dropdown } from './Dropdown'
 import React from 'react'
 

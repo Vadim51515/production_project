@@ -3,10 +3,10 @@ import React, { type ReactNode } from 'react'
 import {
     type Func,
     type TOptions
-} from '../../../app/types'
-import { classNames } from '../../lib/classNames/classNames'
-import { Button } from '../Button'
-import styles from './Dropdown.module.scss'
+} from '../../../../../app/types'
+import { classNames } from '../../../../lib/classNames/classNames'
+import { Button } from '../../../Button'
+import sharedStyles from '../../styles.module.scss'
 
 interface IDropdownProps<T> {
     className?: string
@@ -24,12 +24,12 @@ export const Dropdown = <T extends string>({
     return (
         <Menu
             as={'div'}
-            className={classNames(styles.container, {}, [className])}
+            className={classNames(sharedStyles.container, {}, [className])}
         >
-            <Menu.Button className={styles.btn}>
+            <Menu.Button className={sharedStyles.trigger}>
                 {children}
             </Menu.Button>
-            <Menu.Items className={styles.menu}>
+            <Menu.Items className={sharedStyles.menu}>
                 {options.map((option) => (
                     <Menu.Item key={option.value} disabled={option.isDisabled}>
                         {({ active }) => (
@@ -37,7 +37,7 @@ export const Dropdown = <T extends string>({
                                 <Button
                                     isDisabled={option.isDisabled}
                                     pattern={'clear'}
-                                    className={classNames(styles.option, { [styles.active]: active })}
+                                    className={classNames(sharedStyles.option, { [sharedStyles.active]: active })}
                                     onClick={() => { onClick(option.value) }}
                                 >
                                     {option.label}
