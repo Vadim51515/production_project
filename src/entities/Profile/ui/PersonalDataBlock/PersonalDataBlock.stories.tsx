@@ -2,13 +2,11 @@ import {
     type Meta,
     type StoryObj
 } from '@storybook/react'
-import { type IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import {
-    Contry,
-    Currency,
     RuntimeStatuses
 } from '../../../../shared/const/common'
+import { mockStore } from '../../../../shared/const/mockStore'
 
 import { PersonalDataBlock } from './PersonalDataBlock'
 
@@ -27,34 +25,17 @@ const meta = {
 
 type Story = StoryObj<typeof meta>
 
-const state: Partial<IStateSchema> = {
-    profile: {
-        isReadonly: false,
-        status: RuntimeStatuses.Loading,
-        data: {
-            firstName: 'Вадим',
-            surname: 'Пушкин',
-            age: 22,
-            city: 'Екатеринбург',
-            avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg',
-            country: Contry.Russia,
-            currency: Currency.RUB,
-            id: '1'
-        },
-        form: {
-            firstName: 'Вадим',
-            surname: 'Пушкин',
-            age: 22,
-            city: 'Екатеринбург',
-            avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg',
-            country: Contry.Russia,
-            currency: Currency.RUB,
-            id: '1'
-        }
-    }
-}
-
 export const Default: Story = {
     args: {}
 }
-Default.decorators = [storeDecorator(state)]
+Default.decorators = [storeDecorator({
+    ...mockStore,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    profile: {
+        ...mockStore.profile,
+        status: RuntimeStatuses.Ready,
+        isReadonly: true
+    }
+})
+]

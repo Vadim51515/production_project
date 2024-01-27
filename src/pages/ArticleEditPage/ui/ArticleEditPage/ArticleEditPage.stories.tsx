@@ -2,10 +2,12 @@ import type {
     Meta,
     StoryObj
 } from '@storybook/react'
+import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
+import { mockStore } from '../../../../shared/const/mockStore'
 import ArticleEditPage from './ArticleEditPage'
 
 const meta = {
-    title: 'example_test/ArticleEditPage',
+    title: 'page/ArticleEditPage',
     component: ArticleEditPage,
     parameters: {
         layout: 'centered'
@@ -21,3 +23,4 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
     args: {}
 }
+Default.decorators = (storeDecorator(mockStore))

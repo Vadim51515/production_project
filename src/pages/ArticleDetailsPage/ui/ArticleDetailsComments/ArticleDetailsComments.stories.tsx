@@ -2,6 +2,8 @@ import type {
     Meta,
     StoryObj
 } from '@storybook/react'
+import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
+import { mockStore } from '../../../../shared/const/mockStore'
 import { ArticleDetailsComments } from './ArticleDetailsComments'
 
 const meta = {
@@ -23,3 +25,4 @@ export const Default: Story = {
         id: '1'
     }
 }
+Default.decorators = (storeDecorator(mockStore))

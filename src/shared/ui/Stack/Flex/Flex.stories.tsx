@@ -3,6 +3,7 @@ import type {
     StoryObj
 } from '@storybook/react'
 import { Flex } from './Flex'
+import React from 'react'
 
 const meta = {
     title: 'example_test/Flex',

@@ -1,34 +1,13 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
+import type { IStateSchema } from '../../app/providers/StoreProvider/config/stateSchema'
 import {
     Contry,
     Currency,
     RuntimeStatuses
-} from '../../../../shared/const/common'
-import { ProfileHeader } from './ProfileHeader'
+} from './common'
 
-const meta = {
-    title: 'example_test/ProfileHeader',
-    component: ProfileHeader,
-    parameters: {
-        layout: 'centered'
-    },
-    tags: ['autodocs'],
-    argTypes: {}
-
-} satisfies Meta<typeof ProfileHeader>
-
-export default meta
-type Story = StoryObj<typeof meta>
-
-export const Default: Story = {
-    args: {}
-}
-
-Default.decorators = [storeDecorator({
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+export const mockStore: IStateSchema = {
     profile: {
         isReadonly: true,
         status: RuntimeStatuses.Loading,
@@ -52,5 +31,12 @@ Default.decorators = [storeDecorator({
             currency: Currency.RUB,
             id: '1'
         }
+    },
+    user: {
+        isInit: true,
+        authData: {
+            id: '1',
+            username: 'inhellim 123'
+        }
     }
-})]
+}

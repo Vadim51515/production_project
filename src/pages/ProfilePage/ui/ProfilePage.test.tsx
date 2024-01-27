@@ -10,50 +10,14 @@ import {
     profileReducer
 } from '../../../entities/Profile'
 import { $api } from '../../../shared/api'
-import {
-    Contry,
-    Currency,
-    RuntimeStatuses
-} from '../../../shared/const/common'
+
+import { mockStore } from '../../../shared/const/mockStore'
 import { componentRender } from '../../../shared/lib/tests/componentRender'
 import ProfilePage from './ProfilePage'
 
 describe('ProfilePage', () => {
-    const state: DeepPartial<IStateSchema> = {
-        profile: {
-            isReadonly: true,
-            status: RuntimeStatuses.Loading,
-            data: {
-                firstName: 'Вадим',
-                surname: 'Пушкин',
-                age: 22,
-                city: 'Екатеринбург',
-                avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg',
-                country: Contry.Russia,
-                currency: Currency.RUB,
-                id: '1'
-            },
-            form: {
-                firstName: 'Вадим',
-                surname: 'Пушкин',
-                age: 22,
-                city: 'Екатеринбург',
-                avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg',
-                country: Contry.Russia,
-                currency: Currency.RUB,
-                id: '1'
-            }
-        },
-        user: {
-            authData: {
-                id: '1',
-                username: 'inhellim 123'
-            }
-        }
-    }
-
     const options = {
-        initialState: state,
+        initialState: mockStore,
         asyncReducers: {
             profile: profileReducer
         } as DeepPartial<ReducersMapObject<IStateSchema>>
@@ -72,8 +36,8 @@ describe('ProfilePage', () => {
             componentRender(<ProfilePage />, options)
             await userEvent.click(screen.getByTestId('ProfileEditBtn'))
 
-            expect(screen.getByTestId('firstNameInput')).toHaveValue(state.profile?.form?.firstName)
-            expect(screen.getByTestId('surnameInput')).toHaveValue(state.profile?.form?.surname)
+            expect(screen.getByTestId('firstNameInput')).toHaveValue(mockStore.profile?.form?.firstName)
+            expect(screen.getByTestId('surnameInput')).toHaveValue(mockStore.profile?.form?.surname)
 
             await userEvent.clear(screen.getByTestId('firstNameInput'))
             await userEvent.clear(screen.getByTestId('surnameInput'))
