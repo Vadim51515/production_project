@@ -1,5 +1,6 @@
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack from 'webpack'
@@ -7,7 +8,6 @@ import {
     type IBuildOptions
 } from './types/config'
 import CircularDependencyPlugin from 'circular-dependency-plugin'
-CircularDependencyPlugin
 export function buildPlugins ({
     paths,
     isDev,
@@ -45,6 +45,15 @@ export function buildPlugins ({
             allowAsyncCycles: false,
             // set the current working directory for displaying module paths
             cwd: process.cwd()
+        }),
+        new ForkTsCheckerWebpackPlugin({
+            typescript: {
+                diagnosticOptions: {
+                    semantic: true,
+                    syntactic: true
+                },
+                mode: 'write-references'
+            }
         })
     ]
 

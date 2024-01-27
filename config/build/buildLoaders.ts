@@ -5,11 +5,11 @@ import { type IBuildOptions } from './types/config'
 
 export function buildLoaders (options: IBuildOptions): webpack.RuleSetRule[] {
     // Если не используем typescript - нужен babel-loader
-    const typescriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-    }
+    // const typescriptLoader = {
+    //     test: /\.tsx?$/,
+    //     use: 'ts-loader',
+    //     exclude: /node_modules/
+    // }
 
     const cssLoader: webpack.RuleSetRule = buildCssLoader(options.isDev)
 
@@ -28,13 +28,15 @@ export function buildLoaders (options: IBuildOptions): webpack.RuleSetRule[] {
         ]
     }
 
-    const babelLoader = babelLoaderFunc(options)
+    const codeBabelLoader = babelLoaderFunc({ ...options, isTsx: false })
+    const tsxCodeBabelLoader = babelLoaderFunc({ ...options, isTsx: true })
 
     return [
         fileLoader,
         svgLoader,
-        babelLoader,
-        typescriptLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
+        // typescriptLoader,
         cssLoader
     ]
 }
