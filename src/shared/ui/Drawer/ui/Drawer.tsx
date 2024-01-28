@@ -11,7 +11,10 @@ import {
     type Func
 } from '../../../../app/types'
 import { useModal } from '../../../hooks/useModal'
-import { useAnimationLibs } from '../../../lib/components/AnimationProvider'
+import {
+    AnimationProvider,
+    useAnimationLibs
+} from '../../../lib/components/AnimationProvider'
 import { Overlay } from '../../Overlay/ui/Overlay'
 import { Portal } from '../../Portal/ui/Portal'
 import styles from './Drawer.module.scss'
@@ -109,7 +112,7 @@ const DrawerContent: CFC<IDrawerProps> = ({
     )
 }
 
-export const Drawer = memo <IDrawerProps & { children: ReactNode }>((props) => {
+const DrawerAsync: CFC<IDrawerProps> = (props) => {
     const { isLoaded } = useAnimationLibs()
 
     if (!isLoaded) {
@@ -117,4 +120,18 @@ export const Drawer = memo <IDrawerProps & { children: ReactNode }>((props) => {
     }
 
     return <DrawerContent {...props} />
+}
+
+export const Drawer = memo <IDrawerProps & { children: ReactNode }>((props) => {
+    const { isLoaded } = useAnimationLibs()
+
+    if (!isLoaded) {
+        return null
+    }
+
+    return (
+        <AnimationProvider>
+            <DrawerAsync {...props} />
+        </AnimationProvider>
+    )
 })
