@@ -25,7 +25,7 @@
     transition: 0.3s transform;
     transform: translateY(100%);
     overflow: hidden auto;
-    z-index: 10000;
+    z-index: var(--modal-z-index);
 }
 
 .content::before {
@@ -49,3 +49,10 @@
         transform: translateY(0%);
     }
 }
+
+.closing {
+    .content {
+        transform: translateY(100%);
+    }
+}
+

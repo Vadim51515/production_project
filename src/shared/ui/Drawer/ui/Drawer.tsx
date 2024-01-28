@@ -5,7 +5,7 @@ import {
     type CFC,
     type Func
 } from '../../../../app/types'
-import { useClickOutside } from '../../../hooks/useClickOutside'
+import { useModal } from '../../../hooks/useModal'
 import { Overlay } from '../../Overlay/ui/Overlay'
 import { Portal } from '../../Portal/ui/Portal'
 import styles from './Drawer.module.scss'
@@ -14,25 +14,27 @@ interface IDrawerProps {
     className?: string
     isOpen: boolean
     closeOnOutsideClick?: boolean
-    onClose?: Func
+    onClose: Func
 }
 
 export const Drawer: CFC<IDrawerProps> = ({
     className,
     isOpen,
     children,
-    closeOnOutsideClick = true,
     onClose
 }) => {
-    const isUseClickOutside = isOpen && closeOnOutsideClick
     const { theme } = useTheme()
-
-    const refForContent = useClickOutside(isUseClickOutside
-        ? onClose
-        : () => {})
+    const {
+        refForContent,
+        isClosing
+    } = useModal({
+        onClose,
+        isOpen
+    })
 
     const mods = {
-        [styles.opened]: isOpen
+        [styles.opened]: isOpen,
+        [styles.closing]: isClosing
     }
 
     return (
