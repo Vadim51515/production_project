@@ -9,6 +9,7 @@ import { classNames } from '../../../lib/classNames/classNames'
 import {
     type CFC
 } from '../../../../app/types'
+import { Overlay } from '../../Overlay/ui/Overlay'
 import { Portal } from '../../Portal/ui/Portal'
 import { type IModalProps } from '../types'
 import styles from './Modal.module.scss'
@@ -75,7 +76,7 @@ export const Modal: CFC<IModalProps> = ({
     return (
         <Portal>
             <div className={classNames(styles.modal, mods)}>
-                <div className={styles.overlay}>
+                <Overlay>
                     <div
                         ref={refForContent}
                         className={classNames(styles.container, {}, [className])}
@@ -86,7 +87,7 @@ export const Modal: CFC<IModalProps> = ({
                         </div>
                         {footerProps && <ModalFooter onCloseModal={closeHandler} {...footerProps} />}
                     </div>
-                </div>
+                </Overlay>
             </div>
         </Portal>
     )
