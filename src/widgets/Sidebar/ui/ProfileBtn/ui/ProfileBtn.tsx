@@ -4,13 +4,13 @@ import React, {
 } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { userAuthDataSelector } from '../../../../../entities/User'
 import { RoutePath } from '../../../../../shared/config/routeConfig/routeConfig'
 import { Button } from '../../../../../shared/ui/Button'
 import { Text } from '../../../../../shared/ui/Text'
 import styles from './ProfileBtn.module.scss'
-import defaultUserIcon from 'shared/assets/icons/defaultUserIcon.png'
+import defaultUserIcon from '@/shared/assets/icons/defaultUserIcon.png'
 
 interface IProfileBtnProps {
     className?: string

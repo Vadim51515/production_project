@@ -3,10 +3,10 @@ import React, {
     useEffect
 } from 'react'
 import { useSelector } from 'react-redux'
-import { Header } from 'widgets/Header/ui/Header'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { AppRouter } from 'app/providers/router'
-import { Sidebar } from 'widgets/Sidebar'
+import { Header } from '@/widgets/Header/ui/Header'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { AppRouter } from '@/app/providers/router'
+import { Sidebar } from '@/widgets/Sidebar'
 import {
     isInitSelector,
     userActions

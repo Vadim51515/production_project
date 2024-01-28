@@ -4,7 +4,7 @@ import React, {
     useCallback
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '../../../../shared/ui/AppLink/AppLink'
 import { type INavbarItem } from '../../model/items'
 import styles from './NavbarItem.module.scss'

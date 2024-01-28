@@ -1,4 +1,4 @@
-import type { IStateSchema } from 'app/providers/StoreProvider/config/stateSchema'
+import type { IStateSchema } from '@/app/providers/StoreProvider/config/stateSchema'
 import { ArticleType } from '../../../../entities/Article'
 import { RuntimeStatuses } from '../../../../shared/const/common'
 

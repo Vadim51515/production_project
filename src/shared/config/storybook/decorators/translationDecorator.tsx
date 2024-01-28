@@ -1,4 +1,4 @@
-import 'app/styles/index.scss'
+import '@/app/styles/index.scss'
 import { type Story } from '@storybook/react'
 import { Suspense } from 'react'
 import { I18nextProvider } from 'react-i18next'

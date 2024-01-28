@@ -2,7 +2,7 @@ import {
     createSlice,
     type PayloadAction
 } from '@reduxjs/toolkit'
-import { RuntimeStatuses } from 'shared/const/common'
+import { RuntimeStatuses } from '@/shared/const/common'
 import { type IUIPageState } from '../types'
 
 const initialState: IUIPageState = {

@@ -11,7 +11,7 @@ import { type ISharedFieldComponentProps } from '../../../../types'
 import { Text } from '../../../Text'
 import { Option } from '../Option/Option'
 import styles from './Select.module.scss'
-import RightArrow from 'shared/assets/icons/right-arrow.svg'
+import RightArrow from '@/shared/assets/icons/right-arrow.svg'
 
 export interface ISelectProps<T extends string> extends ISharedFieldComponentProps {
     className?: string

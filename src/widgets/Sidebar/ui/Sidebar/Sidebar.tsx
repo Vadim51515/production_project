@@ -3,8 +3,8 @@ import React, {
     memo,
     useState
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { BugButton } from 'app/providers/ErrorBoundary/ui/BugButton'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { BugButton } from '@/app/providers/ErrorBoundary/ui/BugButton'
 import { userAuthDataSelector } from '../../../../entities/User/model/selectors/selectors'
 import { LoginModal } from '../../../../features/AuthByUsername'
 import { useParamSelector } from '../../../../shared/hooks/useParamSelector'

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import {
     useSelector
 } from 'react-redux'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useActions } from '../../../../shared/hooks/useActions'
 import { useAsyncReducer } from '../../../../shared/hooks/useAsyncReducer'
 import { Button } from '../../../../shared/ui/Button'

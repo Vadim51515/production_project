@@ -1,6 +1,6 @@
 import React, { type FC } from 'react'
 import { useSelector } from 'react-redux'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { CommentList } from '../../../../entities/Comment'
 import { AddCommentForm } from '../../../../features/addCommentForm'
 import { useActions } from '../../../../shared/hooks/useActions'

@@ -4,7 +4,7 @@ import React, {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useActions } from '../../../../shared/hooks/useActions'
 import {
     type TReducersList,
@@ -23,8 +23,8 @@ import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { ArticleBlocks } from '../ArticleBlocks/ArticleBlocks'
 import styles from './ArticleDetails.module.scss'
 import { ArticleDetailsSkeleton } from './ArticleDetailsSkeleton'
-import EyeIcon from 'shared/assets/icons/Eye.svg'
-import CalendarIcon from 'shared/assets/icons/Calendar.svg'
+import EyeIcon from '@/shared/assets/icons/Eye.svg'
+import CalendarIcon from '@/shared/assets/icons/Calendar.svg'
 
 interface IArticleDetailsProps {
     className?: string

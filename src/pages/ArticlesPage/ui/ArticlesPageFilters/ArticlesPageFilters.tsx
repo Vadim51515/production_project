@@ -3,7 +3,7 @@ import React, {
     useMemo
 } from 'react'
 import { useSelector } from 'react-redux'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     type IOption,
     type TOptions,

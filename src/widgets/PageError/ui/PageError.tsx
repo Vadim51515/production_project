@@ -1,6 +1,6 @@
 import React, { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button } from '../../../shared/ui/Button'
 import { Text } from '../../../shared/ui/Text'
 import styles from './PageError.module.scss'

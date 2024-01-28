@@ -4,7 +4,7 @@ import React, {
 } from 'react'
 import { classNames } from '../../../lib/classNames/classNames'
 import styles from './Avatar.module.scss'
-import defaultUserIcon from 'shared/assets/icons/defaultUserIcon.png'
+import defaultUserIcon from '@/shared/assets/icons/defaultUserIcon.png'
 
 interface IAvatarProps {
     className?: string

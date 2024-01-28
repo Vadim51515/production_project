@@ -1,5 +1,5 @@
 import React, { type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { Text } from '../../../../shared/ui/Text'
 import type {
     IArticleImageBlock

@@ -2,14 +2,14 @@ import React, {
     type FC,
     type SVGProps
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { type Func } from '../../../../app/types'
 import { Button } from '../../../../shared/ui/Button'
 import { Icon } from '../../../../shared/ui/Icon/Icon'
 import { type TArticleViewType } from '../../model/types'
 import styles from './ArticleViewSelector.module.scss'
-import TileIcon from 'shared/assets/icons/Tile.svg'
-import ListIcon from 'shared/assets/icons/List.svg'
+import TileIcon from '@/shared/assets/icons/Tile.svg'
+import ListIcon from '@/shared/assets/icons/List.svg'
 
 interface IArticleViewSelectorProps {
     className?: string

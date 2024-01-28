@@ -2,13 +2,13 @@ import React, {
     type FC,
     memo
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import type { Func } from '../../../../app/types'
 import { Button } from '../../Button'
 import { Text } from '../../Text'
 import { type IModalHeaderProps } from '../types'
 import styles from './Modal.module.scss'
-import CloseIcon from 'shared/assets/icons/close.svg'
+import CloseIcon from '@/shared/assets/icons/close.svg'
 
 interface IHeaderProps extends IModalHeaderProps {
     onCloseModal: Func

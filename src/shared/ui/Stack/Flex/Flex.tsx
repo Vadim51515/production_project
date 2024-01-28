@@ -2,7 +2,7 @@ import React, {
     type DetailedHTMLProps,
     type HTMLAttributes
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { type CFC } from '../../../../app/types'
 import styles from './Flex.module.scss'
 

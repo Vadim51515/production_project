@@ -2,7 +2,7 @@ import React, { type FC } from 'react'
 import {
     VirtuosoGrid
 } from 'react-virtuoso'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     type IArticle,
     type TArticleViewType

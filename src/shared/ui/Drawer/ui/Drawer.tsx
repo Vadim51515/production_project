@@ -4,7 +4,7 @@ import React, {
     useCallback,
     useEffect
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTheme } from '../../../../app/providers/ThemeProvider'
 import {
     type CFC,
@@ -20,7 +20,7 @@ interface IDrawerProps {
     className?: string
     isOpen: boolean
     closeOnOutsideClick?: boolean
-    onClose: Func
+    onClose: Func<[]>
 }
 
 const height = window.innerHeight - 100

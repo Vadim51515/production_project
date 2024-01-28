@@ -2,7 +2,7 @@ import React, {
     type FC,
     memo
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { type Func } from '../../../../app/types'
 import { Button } from '../../Button'
 import { type IModalFooterProps } from '../types'

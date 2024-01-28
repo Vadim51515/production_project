@@ -4,7 +4,7 @@ import React, {
     type InputHTMLAttributes,
     memo
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { type Func } from '../../../../app/types'
 import { type ISharedFieldComponentProps } from '../../../types'
 import { Text } from '../../Text'

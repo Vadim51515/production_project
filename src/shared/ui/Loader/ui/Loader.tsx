@@ -1,5 +1,5 @@
 import React, { type FC } from 'react'
-import IconLoader from 'shared/assets/icons/loader.svg'
+import IconLoader from '@/shared/assets/icons/loader.svg'
 import { classNames } from '../../../lib/classNames/classNames'
 import styles from './Loader.module.scss'
 

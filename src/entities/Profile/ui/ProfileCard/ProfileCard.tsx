@@ -1,5 +1,5 @@
 import React, { type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useActions } from '../../../../shared/hooks/useActions'
 import { useInitialEffect } from '../../../../shared/hooks/useInitialEffect'
 import { profileActions } from '../../model/actions'

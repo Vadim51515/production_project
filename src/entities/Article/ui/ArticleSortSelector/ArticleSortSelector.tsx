@@ -3,7 +3,7 @@ import React, {
     useMemo
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     type Func,
     type IOption,

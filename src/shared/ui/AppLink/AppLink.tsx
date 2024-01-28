@@ -7,7 +7,7 @@ import {
     Link,
     type LinkProps
 } from 'react-router-dom'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import styles from './AppLink.module.scss'
 
 type TAppLinkPattern = 'primary' | 'button'

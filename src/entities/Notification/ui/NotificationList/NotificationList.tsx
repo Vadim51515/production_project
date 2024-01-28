@@ -1,5 +1,5 @@
 import React, { type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { Skeleton } from '../../../../shared/ui/Skeleton/ui/Skeleton'
 import { VStack } from '../../../../shared/ui/Stack'
 import { useGetNotificationQuery } from '../../api/notificationApi'
