@@ -26,7 +26,6 @@ export const Page: CFC<IPageProps> = ({
     children,
     onScrollEnd
 }) => {
-    console.log('Page')
     const [wrapperRef, triggerRef] = useInfiniteScroll<HTMLDivElement>(onScrollEnd)
 
     const { pathname } = useLocation()
@@ -38,7 +37,6 @@ export const Page: CFC<IPageProps> = ({
     })
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        console.log('onScroll')
         setScrollPosition({
             position: e.currentTarget.scrollTop,
             path: pathname

@@ -37,6 +37,7 @@ export const Input: FC<IInputProps> = memo(({
     onChange,
     isReadOnly,
     dataTestId,
+    value = '',
     ...props
 }) => {
     const mods = {
@@ -56,6 +57,7 @@ export const Input: FC<IInputProps> = memo(({
             className={classNames(styles.input, mods, [className])}
             type='text'
             onChange={onChangeInput}
+            value={value}
             {...props}
         />
     )

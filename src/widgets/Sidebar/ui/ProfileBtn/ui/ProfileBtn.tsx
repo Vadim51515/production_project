@@ -22,8 +22,6 @@ export const ProfileBtn: FC<IProfileBtnProps> = memo(({ className, isCollapsedNa
 
     const authData = useSelector(userAuthDataSelector)
 
-    console.log('authData', authData)
-
     const modsForText = {
         animationHideText: isCollapsedNavbar,
         animationShowText: !isCollapsedNavbar

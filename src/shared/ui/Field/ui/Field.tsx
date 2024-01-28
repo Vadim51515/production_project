@@ -12,14 +12,16 @@ import {
     type TFieldProps
 } from '../types'
 
-export const Field: FC<TFieldProps> = (props) => {
+export const Field: FC<TFieldProps> = ({
+    fieldType,
+    fieldName,
+    isRequired,
+    ...props
+}) => {
     const {
         className,
         label,
-        isRequired,
         error,
-        fieldName,
-        fieldType,
         dataTestId
     } = props
 
@@ -39,7 +41,7 @@ export const Field: FC<TFieldProps> = (props) => {
             if ('target' in e) props.onChange(fieldName, e.target.value)
             break
         case 'select':
-            props.onChange(fieldName, e as IOption<string>)
+            props.onChange(fieldName, e as IOption)
             break
         }
     }
@@ -49,7 +51,10 @@ export const Field: FC<TFieldProps> = (props) => {
             <div className={styles.labelContainer}>
                 <Text isPlaceholder>{label}{' '}</Text>
 
-                {isRequired && <Text className={styles.requiredSymbol} tag='span'>*</Text>}
+                {isRequired && <Text
+                    className={styles.requiredSymbol}
+                    tag='span'
+                >*</Text>}
             </div>
             {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
             {/* @ts-expect-error */}
@@ -60,7 +65,10 @@ export const Field: FC<TFieldProps> = (props) => {
                 dataTestId={dataTestId}
             />
 
-            {error && <Text className={styles.error} dataTestId={`${dataTestId}ErrorText`}>{error}</Text>}
+            {error && <Text
+                className={styles.error}
+                dataTestId={`${dataTestId}ErrorText`}
+            >{error}</Text>}
         </div>
     )
 }

@@ -40,7 +40,6 @@ describe('updateProfileData', () => {
         thunk.api.put.mockReturnValue(Promise.resolve({ data: mockResponse }))
         const result = await thunk.callThunk('1')
 
-        console.log('result', result)
         // Проверяем что диспатч был вызван
         expect(thunk.api.put).toHaveBeenCalled()
 

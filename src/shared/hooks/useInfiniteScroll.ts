@@ -14,11 +14,7 @@ export const useInfiniteScroll = <T extends HTMLElement = HTMLElement>
 
     useEffect(
         () => {
-            const wrapperElement = wrapperRef.current
             const triggerElement = triggerRef.current
-
-            console.log('wrapperElement', wrapperElement)
-            console.log('triggerRef', triggerRef)
 
             if (callback) {
                 const options = {

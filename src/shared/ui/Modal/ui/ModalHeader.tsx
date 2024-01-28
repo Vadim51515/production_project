@@ -18,6 +18,8 @@ export const ModalHeader: FC<IHeaderProps> = memo(({
     title,
     onCloseModal
 }) => {
+    console.log('onCloseModal', onCloseModal)
+
     return (
         <div className={classNames(styles.header, {}, [])}>
             <Text tag='h1' className={styles.title}>{title}</Text>

@@ -29,9 +29,9 @@ export const Dropdown = <T extends string>({
             <Menu.Button className={sharedStyles.trigger}>
                 {children}
             </Menu.Button>
-            <Menu.Items className={sharedStyles.menu}>
+            <Menu.Items as={'div'} className={sharedStyles.menu}>
                 {options.map((option) => (
-                    <Menu.Item key={option.value} disabled={option.isDisabled}>
+                    <Menu.Item as={'div'} key={option.value} disabled={option.isDisabled}>
                         {({ active }) => (
                             <>
                                 <Button

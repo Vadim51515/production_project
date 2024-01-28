@@ -26,8 +26,6 @@ export const loginByUsername = createAsyncThunk<IUser, ILoginByUsernameProps, IT
     ) => {
         try {
             const response = await extra.api.post('/login', authData)
-            console.log('response', response)
-
             const { data } = response
 
             if (!data) {
@@ -39,7 +37,6 @@ export const loginByUsername = createAsyncThunk<IUser, ILoginByUsernameProps, IT
 
             return data
         } catch (e) {
-            console.log('e', e)
             return rejectWithValue('Вы ввели неверный логин или пароль')
         }
     }

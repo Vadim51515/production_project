@@ -19,7 +19,6 @@ describe('loginByUsername', () => {
         thunk.api.post.mockReturnValue(Promise.resolve({ data: loginResponse }))
         const result = await thunk.callThunk(loginData)
 
-        console.log('result', result)
         // Проверяем что action был вызван с данными которые мы получили из запроса
         expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(loginResponse))
 

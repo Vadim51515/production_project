@@ -34,12 +34,12 @@ const DrawerContent: CFC<IDrawerProps> = ({
     children,
     onClose
 }) => {
-    console.log('DrawerContent')
     const { theme } = useTheme()
     const {} = useModal({
         onClose,
         isOpen
     })
+    console.log('DrawerContent')
 
     const { Spring, Gesture } = useAnimationLibs()
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }))
@@ -114,6 +114,7 @@ const DrawerContent: CFC<IDrawerProps> = ({
 
 const DrawerAsync: CFC<IDrawerProps> = (props) => {
     const { isLoaded } = useAnimationLibs()
+    console.log('DrawerAsync isLoaded', isLoaded)
 
     if (!isLoaded) {
         return null
@@ -123,12 +124,6 @@ const DrawerAsync: CFC<IDrawerProps> = (props) => {
 }
 
 export const Drawer = memo <IDrawerProps & { children: ReactNode }>((props) => {
-    const { isLoaded } = useAnimationLibs()
-
-    if (!isLoaded) {
-        return null
-    }
-
     return (
         <AnimationProvider>
             <DrawerAsync {...props} />

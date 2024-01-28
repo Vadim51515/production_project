@@ -16,7 +16,7 @@ export const Popover: CFC<IPopoverProps> = ({
 }) => {
     return (
         <HPopover className={sharedStyles.container}>
-            <HPopover.Button className={sharedStyles.trigger}> {trigger}</HPopover.Button>
+            <HPopover.Button as={'div'} className={sharedStyles.trigger}> {trigger}</HPopover.Button>
 
             <HPopover.Panel className={classNames(sharedStyles.menu, {}, [className])}>
                 {children}

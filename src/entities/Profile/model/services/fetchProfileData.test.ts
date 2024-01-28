@@ -22,7 +22,6 @@ describe('fetchProfileData', () => {
         thunk.api.get.mockReturnValue(Promise.resolve({ data: getResponse }))
         const result = await thunk.callThunk('1')
 
-        console.log('result', result)
         // Проверяем что диспатч был вызван
         expect(thunk.api.get).toHaveBeenCalled()
 

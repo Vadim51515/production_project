@@ -39,8 +39,6 @@ export const ProfileActionControls: FC<IProfileEditBtnProps> = () => {
         updateProfileData(data?.id || '')
     }
 
-    console.log('authData', authData)
-    console.log('data', data)
     if (authData?.id !== data?.id) return null
 
     return (

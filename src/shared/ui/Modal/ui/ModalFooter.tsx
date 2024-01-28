@@ -19,6 +19,7 @@ export const ModalFooter: FC<IFooterProps> = memo(({
     onCancel,
     onCloseModal
 }) => {
+    console.log('onCloseModal', onCloseModal)
     return (
         <div className={classNames(styles.footer, {}, [])}>
             {onCancel && <Button onClick={() => { onCloseModal(onCancel) }} pattern='outline'>{cancelText}</Button>}

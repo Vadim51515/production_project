@@ -23,7 +23,6 @@ export const fetchProfileData = createAsyncThunk<IProfile, string, IThunkConfig<
 
             return response.data
         } catch (e) {
-            console.log('e', e)
             return rejectWithValue('Вы ввели неверный логин или пароль')
         }
     }

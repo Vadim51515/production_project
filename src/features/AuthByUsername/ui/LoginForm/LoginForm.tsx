@@ -52,8 +52,6 @@ const LoginForm: FC<ILoginFormProps> = memo(() => {
         })
     }
 
-    console.log('username', username)
-
     return (
         <div className={classNames(styles.container, {})}>
             <div className={styles.loginContainer}>

@@ -6,7 +6,6 @@ export const useClickOutside = (action: any) => {
     useEffect(() => {
         const handleClickOutside = (event: any) => {
             if (ref.current && !ref.current.contains(event.target)) {
-                console.log('action')
                 action()
             }
         }

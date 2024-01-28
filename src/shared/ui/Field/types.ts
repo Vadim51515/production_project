@@ -19,7 +19,7 @@ interface IBaseFieldProps extends ISharedFieldComponentProps {
     error?: string
 }
 
-interface IFieldInputProps extends Omit<InputPropsWithEvent, 'onChange'> {
+interface IFieldInputProps extends Omit<InputPropsWithEvent, 'onChange' | 'withEventChange'> {
     fieldType: 'input'
     value?: string | number
     onChange: Func<[string, string]>

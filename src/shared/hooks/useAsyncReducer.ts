@@ -18,7 +18,6 @@ export const useAsyncReducer = (reducers: TReducersList, removeAfterUnmount = fa
     const store = useStore() as IReduxStoreWithManager
 
     useEffect(() => {
-        console.log('useAsyncReducer', reducers)
         Object.entries(reducers).forEach(([reducerName, reducer]) => {
             const reducersMap = store.reducerManager.getReducerMap()
             const hasMountedReducer = reducersMap[reducerName as IStateKey]
@@ -26,7 +25,6 @@ export const useAsyncReducer = (reducers: TReducersList, removeAfterUnmount = fa
             if (!hasMountedReducer) {
                 store.reducerManager.add(reducerName as IStateKey, reducer)
                 dispatch({ type: `@INIT ${reducerName} reducer` })
-                console.log('dispatch')
             }
         })
 
