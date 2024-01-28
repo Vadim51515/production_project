@@ -4,6 +4,7 @@ import React, {
 } from 'react'
 import { NotificationList } from '../../../entities/Notification'
 import NotificationIcon from '../../../shared/assets/icons/Notification.svg'
+import { AnimationProvider } from '../../../shared/lib/components/AnimationProvider'
 import { Button } from '../../../shared/ui/Button'
 import { Drawer } from '../../../shared/ui/Drawer'
 import { Icon } from '../../../shared/ui/Icon/Icon'
@@ -29,9 +30,11 @@ export const NotificationButton: FC = () => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <Drawer isOpen={isOpen} onClose={() => { setIsOpen(false) }}>
-                    <NotificationList />
-                </Drawer>
+                <AnimationProvider>
+                    <Drawer isOpen={isOpen} onClose={() => { setIsOpen(false) }}>
+                        <NotificationList />
+                    </Drawer>
+                </AnimationProvider>
             </MobileView>
         </>
     )

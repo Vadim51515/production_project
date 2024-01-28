@@ -5,10 +5,10 @@ import {
     useDispatch,
     useStore
 } from 'react-redux'
-import { type IReduxStoreWithManager } from '../../../app/providers/StoreProvider'
-import { type IStateKey } from '../../../app/providers/StoreProvider/config/stateSchema'
-import { type CFC } from '../../../app/types'
-import { type TReducersList } from '../../hooks/useAsyncReducer'
+import { type IReduxStoreWithManager } from '../../../../app/providers/StoreProvider'
+import { type IStateKey } from '../../../../app/providers/StoreProvider/config/stateSchema'
+import { type CFC } from '../../../../app/types'
+import { type TReducersList } from '../../../hooks/useAsyncReducer'
 
 interface DynamicModuleLoaderProps {
     reducers: TReducersList
