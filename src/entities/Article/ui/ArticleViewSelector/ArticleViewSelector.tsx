@@ -8,8 +8,8 @@ import { Button } from '../../../../shared/ui/Button'
 import { Icon } from '../../../../shared/ui/Icon/Icon'
 import { type TArticleViewType } from '../../model/types'
 import styles from './ArticleViewSelector.module.scss'
-import TileIcon from '@/shared/assets/icons/Tile.svg'
-import ListIcon from '@/shared/assets/icons/List.svg'
+import TileIcon from '@/shared/assets/icons/Tile.svg?react'
+import ListIcon from '@/shared/assets/icons/List.svg?react'
 
 interface IArticleViewSelectorProps {
     className?: string

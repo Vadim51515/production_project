@@ -3,7 +3,7 @@ import React, {
     useState
 } from 'react'
 import { NotificationList } from '../../../entities/Notification'
-import NotificationIcon from '../../../shared/assets/icons/Notification.svg'
+import NotificationIcon from '../../../shared/assets/icons/Notification.svg?react'
 import { Button } from '../../../shared/ui/Button'
 import { Drawer } from '../../../shared/ui/Drawer'
 import { Icon } from '../../../shared/ui/Icon/Icon'

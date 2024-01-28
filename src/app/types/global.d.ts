@@ -1,5 +1,6 @@
 // declaration.d.ts
-
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference types="vite-plugin-svgr/client" />
 declare module '*.scss';
 declare module '*.jpg'
 declare module '*.jpeg'

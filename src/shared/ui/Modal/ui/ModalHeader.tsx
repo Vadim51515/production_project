@@ -8,7 +8,7 @@ import { Button } from '../../Button'
 import { Text } from '../../Text'
 import { type IModalHeaderProps } from '../types'
 import styles from './Modal.module.scss'
-import CloseIcon from '@/shared/assets/icons/close.svg'
+import CloseIcon from '@/shared/assets/icons/close.svg?react'
 
 interface IHeaderProps extends IModalHeaderProps {
     onCloseModal: Func

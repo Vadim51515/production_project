@@ -23,8 +23,8 @@ import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { ArticleBlocks } from '../ArticleBlocks/ArticleBlocks'
 import styles from './ArticleDetails.module.scss'
 import { ArticleDetailsSkeleton } from './ArticleDetailsSkeleton'
-import EyeIcon from '@/shared/assets/icons/Eye.svg'
-import CalendarIcon from '@/shared/assets/icons/Calendar.svg'
+import EyeIcon from '@/shared/assets/icons/Eye.svg?react'
+import CalendarIcon from '@/shared/assets/icons/Calendar.svg?react'
 
 interface IArticleDetailsProps {
     className?: string

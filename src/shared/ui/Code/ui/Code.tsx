@@ -5,7 +5,7 @@ import React, {
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button } from '../../Button'
 import styles from './Code.module.scss'
-import CopyIcon from '@/shared/assets/icons/Copy.svg'
+import CopyIcon from '@/shared/assets/icons/Copy.svg?react'
 
 interface ICodeProps {
     className?: string

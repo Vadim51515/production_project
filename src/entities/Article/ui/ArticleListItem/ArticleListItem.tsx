@@ -1,7 +1,7 @@
 import React, { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
-import EyeIcon from '@/shared/assets/icons/Eye.svg'
+import EyeIcon from '@/shared/assets/icons/Eye.svg?react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { RoutePath } from '../../../../shared/config/routeConfig/routeConfig'
 import { AppLink } from '../../../../shared/ui/AppLink/AppLink'
