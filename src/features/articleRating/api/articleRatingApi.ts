@@ -1,14 +1,14 @@
-import { type IRating } from '../../../../entities/Rating'
-import { rtkApi } from '../../../../shared/api'
+import { type IRating } from '../../../entities/Rating'
+import { rtkApi } from '../../../shared/api'
 
 interface IGetArticleArg {
     userId: string
-    articleId: string
+    profileId: string
 }
 
 interface IRateArticleArg {
     userId: string
-    articleId: string
+    profileId: string
     rate: number
     feedback?: string
 }
@@ -16,11 +16,11 @@ interface IRateArticleArg {
 const articleRatingApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({
         getArticleRating: build.query<IRating[], IGetArticleArg>({
-            query: ({ userId, articleId }) => ({
+            query: ({ userId, profileId }) => ({
                 url: '/article-ratings',
                 params: {
                     userId,
-                    articleId
+                    profileId
                 }
             })
         }),

@@ -768,6 +768,13 @@
       "feedback": "Хорошая статья",
       "userId": "1",
       "profileId": "1"
+    },
+    {
+      "userId": "2",
+      "profileId": "1",
+      "rate": 5,
+      "feedback": "asdfasdf",
+      "id": "mXkwPGo"
     }
   ]
 }

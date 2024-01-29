@@ -11,6 +11,7 @@ import {
     ProfileLogoutBtn,
     profileReducer
 } from '../../../entities/Profile'
+import { ProfileRating } from '../../../features/profileRating'
 import {
     type TReducersList,
     useAsyncReducer
@@ -18,6 +19,7 @@ import {
 import { classNames } from '../../../shared/lib/classNames/classNames'
 import { Text } from '../../../shared/ui/Text'
 import { Page } from '../../../widgets/Page'
+
 interface IProfilePageProps {
     className?: string
 }
@@ -38,6 +40,8 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
             <ProfileHeader />
 
             <ProfileCard id={id ?? ''} />
+
+            <ProfileRating id={id ?? ''} />
 
             <ProfileLogoutBtn />
 

@@ -7,31 +7,33 @@ import { useSelector } from 'react-redux'
 import { Rating } from '../../../../entities/Rating'
 import { userAuthDataSelector } from '../../../../entities/User'
 import { Skeleton } from '../../../../shared/ui/Skeleton/ui/Skeleton'
+
 import {
-    useGetArticleRatingQuery,
-    useRateArticleMutation
-} from '../../api/articleRatingApi'
-import styles from './ArticleRating.module.scss'
-export interface IArticleRatingProps {
+    useGetProfileRatingQuery,
+    useRateProfileMutation
+} from '../../api/profileRatingApi'
+import styles from './ProfileRating.module.scss'
+
+export interface IProfileRatingProps {
     className?: string
-    articleId: string
+    id: string
 }
 
-const ArticleRating: FC<IArticleRatingProps> = ({ className, articleId }) => {
+const ProfileRating: FC<IProfileRatingProps> = ({ id: profileId }) => {
     const authData = useSelector(userAuthDataSelector)
     const { t } = useTranslation()
 
-    const { data, isLoading } = useGetArticleRatingQuery({
+    const { data, isLoading } = useGetProfileRatingQuery({
         userId: authData?.id ?? '',
-        articleId
+        profileId
     })
-    const [rateArticle] = useRateArticleMutation()
+    const [rateArticle] = useRateProfileMutation()
 
     const handleRateArticle = useCallback((starsCount: number, feedback?: string) => {
         try {
             rateArticle({
                 userId: authData?.id ?? '',
-                articleId,
+                profileId,
                 rate: starsCount,
                 feedback
             })
@@ -39,7 +41,7 @@ const ArticleRating: FC<IArticleRatingProps> = ({ className, articleId }) => {
             // handle error
             console.log(e)
         }
-    }, [articleId, authData?.id])
+    }, [profileId, authData?.id])
 
     const onConfirm = useCallback((starsCount: number, feedback?: string) => {
         handleRateArticle(starsCount, feedback)
@@ -50,6 +52,8 @@ const ArticleRating: FC<IArticleRatingProps> = ({ className, articleId }) => {
     }, [handleRateArticle])
 
     const rating = data?.[0]
+
+    if (profileId === authData?.id) return null
 
     if (isLoading) {
         return <Skeleton width={'100%'} height={'92px'}/>
@@ -67,4 +71,5 @@ const ArticleRating: FC<IArticleRatingProps> = ({ className, articleId }) => {
         />
     )
 }
-export default ArticleRating
+
+export default ProfileRating
