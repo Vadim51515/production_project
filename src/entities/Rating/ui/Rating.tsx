@@ -30,6 +30,7 @@ interface IRatingProps {
     hasFeedback?: boolean
     onCancel?: Func<[number]>
     onConfirm?: Func<[number, string?]>
+    rate?: number
 }
 
 export const Rating: FC<IRatingProps> = ({
@@ -38,10 +39,11 @@ export const Rating: FC<IRatingProps> = ({
     feedbackTitle,
     hasFeedback,
     onCancel,
-    onConfirm
+    onConfirm,
+    rate = 0
 }) => {
     const { t } = useTranslation()
-    const [starsCount, setStarsCount] = useState(0)
+    const [starsCount, setStarsCount] = useState(rate)
     const [feedback, setFeedback] = useState('')
     const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -69,7 +71,7 @@ export const Rating: FC<IRatingProps> = ({
             fieldType={'input'}
             fieldName={'modalReviewInput'}
             label={t('Ваш отзыв')}
-            onChange={setFeedback}
+            onChange={(_, value) => { setFeedback(value) }}
             value={feedback}
         />
     )
@@ -77,8 +79,8 @@ export const Rating: FC<IRatingProps> = ({
     return (
         <Card className={classNames(styles.Rating, {}, [className])}>
             <VStack gap={'16'}>
-                <Text tag={'h3'}>{title}</Text>
-                <StarRating onSelect={onSelectStars} />
+                <Text tag={'h3'}>{starsCount ? t('Cпасибо за оценку') + '!' : title}</Text>
+                <StarRating selectedStars={starsCount} onSelect={onSelectStars} />
             </VStack>
             <BrowserView>
                 <Modal

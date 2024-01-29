@@ -30,7 +30,7 @@ export const StarRating: FC<IStarRatingProps> = ({
     size = 30
 }) => {
     const [isHovered, setIsHovered] = useState(false)
-    const [currentStarsCount, setCurrentStarsCount] = useState(0)
+    const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 
     const onHover = (starsCount: number) => () => {
@@ -57,6 +57,7 @@ export const StarRating: FC<IStarRatingProps> = ({
         <div className={classNames(styles.StarRating, {}, [className])}>
             {stars.map((starNumber) => (
                 <Icon
+                    key={starNumber}
                     width={size}
                     height={size}
                     className={classNames(

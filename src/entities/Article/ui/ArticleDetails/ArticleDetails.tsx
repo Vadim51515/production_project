@@ -63,7 +63,7 @@ export const ArticleDetails: FC<IArticleDetailsProps> = ({
     if (isLoading) return <ArticleDetailsSkeleton />
 
     return (
-        <div className={classNames(styles.ArticleDetails, {}, [className])}>
+        <div className={classNames(styles.articleDetails, {}, [className])}>
             <div className={styles.avatarWrapper}>
                 <Avatar image={article?.img} />
             </div>

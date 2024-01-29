@@ -6,6 +6,7 @@ import {
 import {
     ArticleDetails
 } from '../../../../entities/Article'
+import { ArticleRating } from '../../../../features/articleRating'
 import { ArticleRecommendationsList } from '../../../../features/articleRecommendationsList'
 import {
     type TReducersList,
@@ -45,6 +46,7 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
         <Page className={classNames('', {}, [className])}>
             <ArticleDetailsPageHeader />
             <ArticleDetails id={id ?? ''} />
+            <ArticleRating articleId={id ?? ''}/>
             <ArticleRecommendationsList />
             <ArticleDetailsComments id={id ?? ''} />
         </Page>
