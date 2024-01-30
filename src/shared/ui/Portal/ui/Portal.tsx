@@ -1,5 +1,5 @@
+import type React from 'react'
 import {
-    type FC,
     type ReactNode
 } from 'react'
 import { createPortal } from 'react-dom'
@@ -8,7 +8,7 @@ interface IPortalProps {
     children: ReactNode
     element?: HTMLElement
 }
-export const Portal: FC<IPortalProps> = ({
+export const Portal: React.FC<IPortalProps> = ({
     children,
     element = document.body
 }) => {

@@ -3,11 +3,13 @@ import type {
     StoryObj
 } from '@storybook/react'
 import { Theme } from '../../../app/providers/ThemeProvider'
+import { storeDecorator } from '../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator'
+import { mockStore } from '../../../shared/const/mockStore'
 import { Header } from './Header'
 
 const meta = {
-    title: 'widget/Header',
+    title: 'widgets/Header',
     component: Header,
     parameters: {
         layout: 'centered'
@@ -28,4 +30,6 @@ export const Light: Story = {
     args: {}
 }
 
-Light.decorators = [themeDecorator(Theme.Light)]
+Dark.decorators = (storeDecorator(mockStore))
+
+Light.decorators = [themeDecorator(Theme.Light), storeDecorator(mockStore)]

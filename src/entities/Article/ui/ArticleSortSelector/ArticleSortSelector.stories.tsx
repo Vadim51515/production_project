@@ -5,7 +5,7 @@ import type {
 import { ArticleSortSelector } from './ArticleSortSelector'
 
 const meta = {
-    title: 'example_test/ArticleSortSelector',
+    title: 'entities/Article/ArticleSortSelector',
     component: ArticleSortSelector,
     parameters: {
         layout: 'centered'

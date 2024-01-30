@@ -5,7 +5,7 @@ import type {
 import { Overlay } from './Overlay'
 
 const meta = {
-    title: 'example_test/Overlay',
+    title: 'shared/Overlay',
     component: Overlay,
     parameters: {
         layout: 'centered'
@@ -19,5 +19,6 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-    args: {}
+    args: {
+    }
 }

@@ -7,7 +7,7 @@ import { themeDecorator } from '../../../shared/config/storybook/decorators/them
 import { Navbar } from './Navbar'
 
 const meta = {
-    title: 'widget/Navbar',
+    title: 'widgets/Navbar',
     component: Navbar,
     parameters: {
         layout: 'centered'

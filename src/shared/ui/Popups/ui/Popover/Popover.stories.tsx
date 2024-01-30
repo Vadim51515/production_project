@@ -5,7 +5,7 @@ import type {
 import { Popover } from './Popover'
 
 const meta = {
-    title: 'example_test/Popover',
+    title: 'shared/Popups/Popover',
     component: Popover,
     parameters: {
         layout: 'centered'

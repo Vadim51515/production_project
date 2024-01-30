@@ -5,7 +5,7 @@ import type {
 import { Drawer } from './Drawer'
 
 const meta = {
-    title: 'example_test/Drawer',
+    title: 'shared/Drawer',
     component: Drawer,
     parameters: {
         layout: 'centered'

@@ -7,7 +7,7 @@ import { Dropdown } from './Dropdown'
 import React from 'react'
 
 const meta = {
-    title: 'shared/Dropdown',
+    title: 'shared/Popups/Dropdown',
     component: Dropdown,
     parameters: {
         layout: 'centered'

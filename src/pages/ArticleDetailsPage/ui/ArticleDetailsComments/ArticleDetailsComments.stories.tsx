@@ -7,7 +7,7 @@ import { mockStore } from '../../../../shared/const/mockStore'
 import { ArticleDetailsComments } from './ArticleDetailsComments'
 
 const meta = {
-    title: 'example_test/ArticleDetailsComments',
+    title: 'pages/ArticleDetailsPage/ArticleDetailsComments',
     component: ArticleDetailsComments,
     parameters: {
         layout: 'centered'

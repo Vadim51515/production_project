@@ -11,7 +11,7 @@ import {
 import { ProfileHeader } from './ProfileHeader'
 
 const meta = {
-    title: 'example_test/ProfileHeader',
+    title: 'entities/Profile/ProfileHeader',
     component: ProfileHeader,
     parameters: {
         layout: 'centered'

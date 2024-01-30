@@ -5,7 +5,7 @@ import type {
 import { NotificationItem } from './NotificationItem'
 
 const meta = {
-    title: 'example_test/NotificationItem',
+    title: 'entities/Notification/NotificationItem',
     component: NotificationItem,
     parameters: {
         layout: 'centered'

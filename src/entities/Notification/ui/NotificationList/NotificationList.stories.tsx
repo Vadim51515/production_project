@@ -5,7 +5,7 @@ import type {
 import { NotificationList } from './NotificationList'
 
 const meta = {
-    title: 'example_test/NotificationList',
+    title: 'entities/Notification/NotificationList',
     component: NotificationList,
     parameters: {
         layout: 'centered'

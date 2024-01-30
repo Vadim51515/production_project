@@ -5,7 +5,7 @@ import type {
 import { ArticleViewSelector } from './ArticleViewSelector'
 
 const meta = {
-    title: 'example_test/ArticleViewSelector',
+    title: 'entities/Article/ArticleViewSelector',
     component: ArticleViewSelector,
     parameters: {
         layout: 'centered'

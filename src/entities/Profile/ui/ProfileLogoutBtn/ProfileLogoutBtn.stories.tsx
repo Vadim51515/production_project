@@ -2,10 +2,12 @@ import type {
     Meta,
     StoryObj
 } from '@storybook/react'
+import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
+import { mockStore } from '../../../../shared/const/mockStore'
 import { ProfileLogoutBtn } from './ProfileLogoutBtn'
 
 const meta = {
-    title: 'example_test/ProfileLogoutBtn',
+    title: 'entities/Profile/ProfileLogoutBtn',
     component: ProfileLogoutBtn,
     parameters: {
         layout: 'centered'
@@ -21,3 +23,5 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
     args: {}
 }
+
+Default.decorators = (storeDecorator(mockStore))

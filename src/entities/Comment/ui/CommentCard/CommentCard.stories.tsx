@@ -5,7 +5,7 @@ import type {
 import { CommentCard } from './CommentCard'
 
 const meta = {
-    title: 'example_test/CommentCard',
+    title: 'entities/Comment/CommentCard',
     component: CommentCard,
     parameters: {
         layout: 'centered'

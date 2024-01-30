@@ -5,7 +5,7 @@ import type {
 import { ListBox } from './ListBox'
 
 const meta = {
-    title: 'example_test/ListBox',
+    title: 'shared/Popups/ListBox',
     component: ListBox,
     parameters: {
         layout: 'centered'

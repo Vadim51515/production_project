@@ -5,7 +5,7 @@ import type {
 import AdminPanelPage from './AdminPanelPage'
 
 const meta = {
-    title: 'example_test/AdminPanelPage',
+    title: 'pages/AdminPanelPage',
     component: AdminPanelPage,
     parameters: {
         layout: 'centered'

@@ -6,7 +6,7 @@ import { Flex } from './Flex'
 import React from 'react'
 
 const meta = {
-    title: 'example_test/Flex',
+    title: 'shared/Stack/Flex',
     component: Flex,
     parameters: {
         layout: 'centered'

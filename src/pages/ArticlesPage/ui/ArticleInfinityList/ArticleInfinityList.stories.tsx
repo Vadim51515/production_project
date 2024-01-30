@@ -7,7 +7,7 @@ import { mockStore } from '../../../../shared/const/mockStore'
 import { ArticleInfinityList } from './ArticleInfinityList'
 
 const meta = {
-    title: 'page/ArticlesPage/ArticleInfinityList',
+    title: 'pages/ArticlesPage/ArticleInfinityList',
     component: ArticleInfinityList,
     parameters: {
         layout: 'centered'

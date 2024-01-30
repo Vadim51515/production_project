@@ -5,7 +5,7 @@ import type {
 import { StarRating } from './StarRating'
 
 const meta = {
-    title: 'example_test/StarRating',
+    title: 'shared/StarRating',
     component: StarRating,
     parameters: {
         layout: 'centered'

@@ -10,7 +10,7 @@ import { RuntimeStatuses } from '../../../../shared/const/common'
 import { Sidebar } from './Sidebar'
 
 const meta = {
-    title: 'widget/Sidebar',
+    title: 'widgets/Sidebar',
     component: Sidebar,
     parameters: {
         layout: 'centered'

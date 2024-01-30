@@ -5,7 +5,7 @@ import type {
 import ForbiddenPage from './ForbiddenPage'
 
 const meta = {
-    title: 'example_test/ForbiddenPage',
+    title: 'pages/ForbiddenPage',
     component: ForbiddenPage,
     parameters: {
         layout: 'centered'

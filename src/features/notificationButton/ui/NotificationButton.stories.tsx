@@ -5,7 +5,7 @@ import type {
 import { NotificationButton } from './NotificationButton'
 
 const meta = {
-    title: 'example_test/NotificationButton',
+    title: 'features/NotificationButton',
     component: NotificationButton,
     parameters: {
         layout: 'centered'
