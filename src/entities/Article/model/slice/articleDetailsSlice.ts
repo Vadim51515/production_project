@@ -1,7 +1,7 @@
 import {
     createSlice
 } from '@reduxjs/toolkit'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById'
 import { type IArticleDetailsState } from '../types'

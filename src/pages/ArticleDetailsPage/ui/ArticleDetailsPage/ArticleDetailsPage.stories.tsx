@@ -7,7 +7,7 @@ import {
 } from '../../../../entities/Article'
 
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 import ArticleDetailsPage from './ArticleDetailsPage'
 
 const meta = {

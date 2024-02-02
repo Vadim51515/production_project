@@ -3,7 +3,7 @@ import {
     fetchBaseQuery
 } from '@reduxjs/toolkit/query/react'
 import { lStorage } from '../../helpers/function/lStorage'
-import { USER_LOCAL_STORAGE_KEY } from '../const/localStorage'
+import { USER_LOCAL_STORAGE_KEY } from '../constants/localStorage'
 
 export const rtkApi = createApi({
     reducerPath: 'rtkApi',

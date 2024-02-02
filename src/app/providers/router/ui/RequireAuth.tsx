@@ -7,7 +7,7 @@ import {
     type UserRole
 } from '../../../../entities/User'
 import { userAuthDataSelector } from '../../../../entities/User/model/selectors/selectors'
-import { RoutePath } from '../../../../shared/config/routeConfig/routeConfig'
+import { RoutePath } from '../../../../shared/constants/common'
 import { type CFC } from '../../../types'
 
 interface IRequireAuth {

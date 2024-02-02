@@ -1,7 +1,7 @@
 import {
     Contry,
     Currency
-} from '../shared/const/common'
+} from '../shared/constants/common'
 
 export const CURRENCIES = [
     {

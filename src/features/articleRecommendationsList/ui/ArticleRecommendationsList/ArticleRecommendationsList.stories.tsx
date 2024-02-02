@@ -4,7 +4,7 @@ import type {
 } from '@storybook/react'
 import { mockArticle } from '../../../../entities/Article'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
-import { mockStore } from '../../../../shared/const/mockStore'
+import { mockStore } from '../../../../shared/constants/mockStore'
 import { ArticleRecommendationsList } from './ArticleRecommendationsList'
 
 const meta = {

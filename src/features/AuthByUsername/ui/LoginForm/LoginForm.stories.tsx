@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '../../../../app/providers/ThemeProvider'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 import LoginForm from './LoginForm'
 
 const meta = {

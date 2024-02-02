@@ -12,8 +12,8 @@ import {
 } from '../../../../entities/Article'
 import type { TArticleSortField } from '../../../../entities/Article/model/types'
 import { lStorage } from '../../../../helpers/function/lStorage'
-import { RuntimeStatuses } from '../../../../shared/const/common'
-import { ARTICLES_VIEW_LOCAL_STORAGE_KEY } from '../../../../shared/const/localStorage'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
+import { ARTICLES_VIEW_LOCAL_STORAGE_KEY } from '../../../../shared/constants/localStorage'
 import { fetchArticleList } from '../services/fetchArticleList'
 import { type IArticlesPageState } from '../types'
 

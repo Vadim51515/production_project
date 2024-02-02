@@ -2,7 +2,7 @@ import {
     createSlice,
     type PayloadAction
 } from '@reduxjs/toolkit'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 import { type IProfileState } from '../../types'
 import { fetchProfileData } from '../services/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData'

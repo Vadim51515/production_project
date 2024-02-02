@@ -2,7 +2,8 @@ import React, { type ReactElement } from 'react'
 import MainIcon from '@/shared/assets/icons/MainIcon.svg?react'
 import AboutIcon from '@/shared/assets/icons/AboutIcon.svg?react'
 import ArticleIcon from '@/shared/assets/icons/Article.svg?react'
-import { RoutePath } from '../../../shared/config/routeConfig/routeConfig'
+
+import { RoutePath } from '../../../shared/constants/common'
 export interface INavbarItem {
     path: string
     text: string

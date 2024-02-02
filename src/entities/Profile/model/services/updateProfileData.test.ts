@@ -3,7 +3,7 @@ import {
     Contry,
     Currency,
     ErrorsStatuses
-} from '../../../../shared/const/common'
+} from '../../../../shared/constants/common'
 import { TestAsyncThunk } from '../../../../shared/lib/TestAsyncThunk'
 import { updateProfileData } from './updateProfileData'
 

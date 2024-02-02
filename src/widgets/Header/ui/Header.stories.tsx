@@ -5,7 +5,7 @@ import type {
 import { Theme } from '../../../app/providers/ThemeProvider'
 import { storeDecorator } from '../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator'
-import { mockStore } from '../../../shared/const/mockStore'
+import { mockStore } from '../../../shared/constants/mockStore'
 import { Header } from './Header'
 
 const meta = {

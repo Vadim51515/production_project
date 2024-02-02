@@ -6,10 +6,10 @@ import {
     Route,
     Routes
 } from 'react-router-dom'
+import { type TAppRoutesProps } from '../../../../shared/types'
 import {
-    routeConfig,
-    type TAppRoutesProps
-} from '../../../../shared/config/routeConfig/routeConfig'
+    routeConfig
+} from '../config/routeConfig'
 import { PageLoader } from '../../../../widgets/PageLoader'
 import { RequireAuth } from './RequireAuth'
 

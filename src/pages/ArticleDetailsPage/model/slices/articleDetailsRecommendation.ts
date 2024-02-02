@@ -4,7 +4,7 @@ import {
 } from '@reduxjs/toolkit'
 import { type IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
 import { type IArticle } from '../../../../entities/Article'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations'
 import {
     type IArticleRecommendationState

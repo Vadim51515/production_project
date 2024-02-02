@@ -6,7 +6,7 @@ import { Theme } from '../../../app/providers/ThemeProvider'
 import { storeDecorator } from '../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator'
 
-import { mockStore } from '../../../shared/const/mockStore'
+import { mockStore } from '../../../shared/constants/mockStore'
 import ProfilePage from './ProfilePage'
 
 export default { component: ProfilePage }

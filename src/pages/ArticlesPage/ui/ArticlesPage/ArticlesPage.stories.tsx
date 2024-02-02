@@ -3,7 +3,7 @@ import type {
     StoryObj
 } from '@storybook/react'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
-import { mockStore } from '../../../../shared/const/mockStore'
+import { mockStore } from '../../../../shared/constants/mockStore'
 import ArticlesPage from './ArticlesPage'
 
 const meta = {

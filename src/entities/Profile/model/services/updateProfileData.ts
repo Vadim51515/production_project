@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type IThunkConfig } from '../../../../app/providers/StoreProvider'
 import { type TFormErrors } from '../../../../app/types'
-import { ErrorsStatuses } from '../../../../shared/const/common'
+import { ErrorsStatuses } from '../../../../shared/constants/common'
 
 import {
     type IProfile

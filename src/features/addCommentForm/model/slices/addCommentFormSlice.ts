@@ -2,7 +2,7 @@ import {
     createSlice,
     type PayloadAction
 } from '@reduxjs/toolkit'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 import { type ICommentFormState } from '../types'
 
 const initialState: ICommentFormState = {

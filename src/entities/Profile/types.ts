@@ -3,7 +3,7 @@ import { type ISharedState } from '../../app/providers/StoreProvider'
 import {
     type Contry,
     type Currency
-} from '../../shared/const/common'
+} from '../../shared/constants/common'
 
 export interface IProfile {
     id: string

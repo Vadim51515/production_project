@@ -3,7 +3,7 @@ import type {
     StoryObj
 } from '@storybook/react'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 import { mockArticle } from '../../model/constants'
 
 import { ArticleDetails } from './ArticleDetails'

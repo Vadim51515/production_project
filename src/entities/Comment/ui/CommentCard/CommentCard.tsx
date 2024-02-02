@@ -1,6 +1,7 @@
 import React, { type FC } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { RoutePath } from '../../../../shared/config/routeConfig/routeConfig'
+
+import { RoutePath } from '../../../../shared/constants/common'
 import { AppLink } from '../../../../shared/ui/AppLink/AppLink'
 import { Avatar } from '../../../../shared/ui/Avatar/ui/Avatar'
 import { Skeleton } from '../../../../shared/ui/Skeleton/ui/Skeleton'

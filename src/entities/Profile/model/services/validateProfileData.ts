@@ -1,6 +1,6 @@
 import { type Nullable } from '@vitest/utils'
 import { type TFormErrors } from '../../../../app/types'
-import { ErrorsStatuses } from '../../../../shared/const/common'
+import { ErrorsStatuses } from '../../../../shared/constants/common'
 import {
     type IProfile,
     type TKeysProfile

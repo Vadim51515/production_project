@@ -11,7 +11,7 @@ import {
 } from '../../../entities/Profile'
 import { $api } from '../../../shared/api'
 
-import { mockStore } from '../../../shared/const/mockStore'
+import { mockStore } from '../../../shared/constants/mockStore'
 import { componentRender } from '../../../shared/lib/tests/componentRender'
 import ProfilePage from './ProfilePage'
 

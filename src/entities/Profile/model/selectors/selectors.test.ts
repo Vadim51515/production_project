@@ -6,7 +6,7 @@ import {
     Contry,
     Currency,
     RuntimeStatuses
-} from '../../../../shared/const/common'
+} from '../../../../shared/constants/common'
 import { type IProfileState } from '../../types'
 import {
     profileAvatarSelector,

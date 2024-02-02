@@ -4,7 +4,7 @@ import {
 } from '@reduxjs/toolkit'
 import { type IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
 import { type IComment } from '../../../../entities/Comment'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { type IArticleCommentsState } from '../types'
 

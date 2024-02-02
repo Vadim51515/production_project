@@ -3,7 +3,7 @@ import {
     Currency,
     ErrorsStatuses,
     RuntimeStatuses
-} from '../../../../shared/const/common'
+} from '../../../../shared/constants/common'
 import {
     type IProfile,
     type IProfileState

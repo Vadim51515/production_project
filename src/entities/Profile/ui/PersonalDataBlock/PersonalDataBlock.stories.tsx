@@ -5,8 +5,8 @@ import {
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import {
     RuntimeStatuses
-} from '../../../../shared/const/common'
-import { mockStore } from '../../../../shared/const/mockStore'
+} from '../../../../shared/constants/common'
+import { mockStore } from '../../../../shared/constants/mockStore'
 
 import { PersonalDataBlock } from './PersonalDataBlock'
 

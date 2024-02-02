@@ -2,7 +2,7 @@ import {
     Contry,
     Currency,
     ErrorsStatuses
-} from '../../../../shared/const/common'
+} from '../../../../shared/constants/common'
 import { validateProfileData } from './validateProfileData'
 
 describe('validateProfileData', () => {

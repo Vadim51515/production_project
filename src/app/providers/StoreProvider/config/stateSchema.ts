@@ -17,7 +17,7 @@ import {
 } from '../../../../pages/ArticleDetailsPage'
 import { type IArticlesPageState } from '../../../../pages/ArticlesPage'
 import { type rtkApi } from '../../../../shared/api'
-import { type RuntimeStatuses } from '../../../../shared/const/common'
+import { type RuntimeStatuses } from '../../../../shared/constants/common'
 import { type IUIPageState } from '../../../../widgets/Page'
 import type {
     Func,

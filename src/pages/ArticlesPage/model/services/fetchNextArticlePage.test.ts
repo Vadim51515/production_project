@@ -1,5 +1,5 @@
 import { ArticleType } from '../../../../entities/Article'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 import { TestAsyncThunk } from '../../../../shared/lib/TestAsyncThunk'
 import { type IArticlesPageState } from '../types'
 import { fetchArticleList } from './fetchArticleList'

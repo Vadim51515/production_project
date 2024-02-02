@@ -1,5 +1,5 @@
 import type { IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 import { mockArticle } from '../constants'
 import {
     articleDataSelector,

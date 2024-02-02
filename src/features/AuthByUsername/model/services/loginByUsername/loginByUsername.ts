@@ -7,7 +7,7 @@ import {
     userActions
 } from '../../../../../entities/User'
 import { lStorage } from '../../../../../helpers/function/lStorage'
-import { USER_LOCAL_STORAGE_KEY } from '../../../../../shared/const/localStorage'
+import { USER_LOCAL_STORAGE_KEY } from '../../../../../shared/constants/localStorage'
 
 interface ILoginByUsernameProps {
     username: string

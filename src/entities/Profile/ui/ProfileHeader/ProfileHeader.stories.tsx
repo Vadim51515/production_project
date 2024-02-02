@@ -7,7 +7,7 @@ import {
     Contry,
     Currency,
     RuntimeStatuses
-} from '../../../../shared/const/common'
+} from '../../../../shared/constants/common'
 import { ProfileHeader } from './ProfileHeader'
 
 const meta = {

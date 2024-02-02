@@ -6,7 +6,7 @@ import type { IStateSchema } from '../../../../app/providers/StoreProvider/confi
 import { Theme } from '../../../../app/providers/ThemeProvider'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator'
-import { RuntimeStatuses } from '../../../../shared/const/common'
+import { RuntimeStatuses } from '../../../../shared/constants/common'
 import { Sidebar } from './Sidebar'
 
 const meta = {

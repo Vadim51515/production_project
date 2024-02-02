@@ -4,7 +4,7 @@ import { articleDataSelector } from '../../../../../entities/Article'
 import { type IComment } from '../../../../../entities/Comment'
 import { userAuthDataSelector } from '../../../../../entities/User'
 
-import { ErrorsStatuses } from '../../../../../shared/const/common'
+import { ErrorsStatuses } from '../../../../../shared/constants/common'
 import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId'
 
 export const addCommentForArticle = createAsyncThunk<IComment, string, IThunkConfig<string>>(

@@ -6,7 +6,8 @@ import {
     isUserManagerSelector,
     userAuthDataSelector
 } from '../../../entities/User'
-import { RoutePath } from '../../../shared/config/routeConfig/routeConfig'
+
+import { RoutePath } from '../../../shared/constants/common'
 import { Avatar } from '../../../shared/ui/Avatar/ui/Avatar'
 import { Dropdown } from '../../../shared/ui/Popups'
 
