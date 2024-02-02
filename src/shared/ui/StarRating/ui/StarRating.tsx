@@ -29,7 +29,6 @@ export const StarRating: FC<IStarRatingProps> = ({
     onSelect,
     size = 30
 }) => {
-    const [isHovered, setIsHovered] = useState(false)
     const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 

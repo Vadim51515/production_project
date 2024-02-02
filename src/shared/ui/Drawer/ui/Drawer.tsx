@@ -35,7 +35,7 @@ const DrawerContent: CFC<IDrawerProps> = ({
     onClose
 }) => {
     const { theme } = useTheme()
-    const {} = useModal({
+    useModal({
         onClose,
         isOpen
     })

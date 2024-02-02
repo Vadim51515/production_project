@@ -2,8 +2,8 @@ import type {
     Meta,
     StoryObj
 } from '@storybook/react'
-import { Theme } from '../../../../app/providers/ThemeProvider'
 import { themeDecorator } from '../../../config/storybook/decorators/themeDecorator'
+import { Theme } from '../../../enums'
 import { Loader } from './Loader'
 
 const meta = {

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
-import { Theme } from '../../../../app/providers/ThemeProvider'
 import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
 import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator'
 import { RuntimeStatuses } from '../../../../shared/constants/common'
+import { Theme } from '../../../../shared/enums'
 import { LoginModal } from './LoginModal'
 
 const meta = {

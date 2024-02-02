@@ -3,7 +3,6 @@ import React, {
     useEffect
 } from 'react'
 import { useSelector } from 'react-redux'
-import { Header } from '@/widgets/Header/ui/Header'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppRouter } from '@/app/providers/router'
 import { Sidebar } from '@/widgets/Sidebar'
@@ -12,6 +11,7 @@ import {
     userActions
 } from '../entities/User'
 import { useActions } from '../shared/hooks/useActions'
+import { Header } from '../widgets/Header'
 
 export const App = () => {
     const isInit = useSelector(isInitSelector)

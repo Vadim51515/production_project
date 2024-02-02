@@ -1,5 +1,5 @@
+import { Theme } from '@/shared/enums'
 import type { Preview } from '@storybook/react'
-import { Theme } from '../../src/app/providers/ThemeProvider'
 import { routerDecorator } from '../../src/shared/config/storybook/decorators/routerDecorator'
 import { styleDecorator } from '../../src/shared/config/storybook/decorators/styleDecorator'
 import { themeDecorator } from '../../src/shared/config/storybook/decorators/themeDecorator'

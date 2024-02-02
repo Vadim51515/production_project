@@ -2,8 +2,8 @@ import type {
     Meta,
     StoryObj
 } from '@storybook/react'
-import { Theme } from '../../../app/providers/ThemeProvider'
 import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator'
+import { Theme } from '../../../shared/enums'
 import { PageError } from './PageError'
 
 export default { component: PageError }

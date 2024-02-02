@@ -17,7 +17,7 @@ export interface IArticleRatingProps {
     articleId: string
 }
 
-const ArticleRating: FC<IArticleRatingProps> = ({ className, articleId }) => {
+const ArticleRating: FC<IArticleRatingProps> = ({ articleId }) => {
     const authData = useSelector(userAuthDataSelector)
     const { t } = useTranslation()
 

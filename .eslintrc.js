@@ -33,6 +33,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'inhellim',
+        'ulbi-tv-plugin',
     ],
     rules: {
         'react/jsx-indent': [
@@ -81,7 +82,21 @@ module.exports = {
         '@typescript-eslint/no-misused-promises': 'off',
         "@typescript-eslint/no-invalid-void-type": "off",
         "storybook/prefer-pascal-case": "off",
-        'inhellim/path-checker': 'error',
+        'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
+        'ulbi-tv-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
+        'ulbi-tv-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

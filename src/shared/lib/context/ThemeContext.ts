@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { Theme } from './enum'
+import { Theme } from '../../enums'
 
 export interface TThemeContextProps {
     theme: Theme
@@ -10,5 +10,3 @@ export const ThemeContext = createContext<TThemeContextProps>({
     theme: Theme.Dark,
     setTheme: () => {}
 })
-
-export const LOCAL_STORAGE_THEME_KEY = 'theme'

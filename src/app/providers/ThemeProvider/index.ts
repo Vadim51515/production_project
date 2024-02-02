@@ -1,5 +1,5 @@
-import { Theme } from './lib/enum'
-import { useTheme } from './lib/useTheme'
+import { Theme } from '../../../shared/enums'
+import { useTheme } from '../../../shared/hooks/useTheme'
 import ThemeProvider from './ui/ThemeProvider'
 export {
     ThemeProvider,

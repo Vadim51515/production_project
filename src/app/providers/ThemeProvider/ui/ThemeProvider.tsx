@@ -3,12 +3,12 @@ import React, {
     useMemo,
     useState
 } from 'react'
+import { LOCAL_STORAGE_THEME_KEY } from '../../../../shared/constants/localStorage'
+import { Theme } from '../../../../shared/enums'
 import { type CFC } from '../../../types'
-import { Theme } from '../lib/enum'
 import {
-    LOCAL_STORAGE_THEME_KEY,
     ThemeContext
-} from '../lib/ThemeContext'
+} from '../../../../shared/lib/context/ThemeContext'
 
 const defaultItem = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme ?? Theme.Dark
 

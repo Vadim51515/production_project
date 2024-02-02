@@ -3,7 +3,9 @@ import React, {
 } from 'react'
 import { type CFC } from '../../../../app/types'
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 type TSpringType = typeof import('@react-spring/web')
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 type TGestureType = typeof import('@use-gesture/react')
 
 interface IAnimationContextPayload {

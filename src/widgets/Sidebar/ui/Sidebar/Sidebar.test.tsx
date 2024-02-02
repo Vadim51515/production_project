@@ -4,7 +4,7 @@ import {
 } from '@testing-library/react'
 import React from 'react'
 import { componentRender } from '../../../../shared/lib/tests/componentRender'
-import { Sidebar } from '@/widgets/Sidebar/ui/Sidebar/Sidebar'
+import { Sidebar } from './Sidebar'
 
 describe('Sidebar', () => {
     test('Sidebar рендериться', () => {
