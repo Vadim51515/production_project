@@ -1,10 +1,6 @@
-import { createSelector } from 'reselect'
 import { type IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
-import type { ICounterState } from '../slices/counterSlice'
+import { buildSelector } from '../../../../shared/lib/store'
 
 export const counterSelector = (state: IStateSchema) => state.counter
 
-export const counterValueSelector = createSelector(
-    counterSelector,
-    (counter: ICounterState) => counter.value
-)
+export const [useCounterValue, getCounterValue] = buildSelector((state) => state.counter.value)

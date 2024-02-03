@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { buildSlice } from '../../../../shared/lib/store'
 
 export interface ICounterState {
     value: number
@@ -14,7 +14,7 @@ export const {
         increment,
         decrement
     }
-} = createSlice({
+} = buildSlice({
     name: 'counter',
     initialState,
     reducers: {

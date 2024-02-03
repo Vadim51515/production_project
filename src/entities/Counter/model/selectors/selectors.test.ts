@@ -1,7 +1,7 @@
 import { type IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
 import {
     counterSelector,
-    counterValueSelector
+    getCounterValue
 } from './selectors'
 
 describe('counter selectors', () => {
@@ -15,6 +15,6 @@ describe('counter selectors', () => {
     })
 
     test('counterValueSelector возвращает корректное значение', () => {
-        expect(counterValueSelector(state as IStateSchema)).toBe(10)
+        expect(getCounterValue(state as IStateSchema)).toBe(10)
     })
 })

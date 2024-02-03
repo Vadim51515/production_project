@@ -1,10 +1,11 @@
 import React, { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
 import { useActions } from '../../../shared/hooks/useActions'
 import { Button } from '../../../shared/ui/Button'
 import { counterActions } from '../model/actions'
-import { counterValueSelector } from '../model/selectors/selectors'
+import {
+    useCounterValue
+} from '../model/selectors/selectors'
 
 export const Counter: FC = () => {
     const {
@@ -12,7 +13,7 @@ export const Counter: FC = () => {
         decrement
     } = useActions(counterActions)
 
-    const value = useSelector(counterValueSelector)
+    const value = useCounterValue()
 
     const { t } = useTranslation()
 
