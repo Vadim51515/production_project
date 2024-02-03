@@ -1,7 +1,9 @@
 import React, { type FC } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-import { RoutePath } from '../../../../shared/constants/common'
+import {
+    getRouteProfile
+} from '../../../../shared/constants/common'
 import { AppLink } from '../../../../shared/ui/AppLink/AppLink'
 import { Avatar } from '../../../../shared/ui/Avatar/ui/Avatar'
 import { Skeleton } from '../../../../shared/ui/Skeleton/ui/Skeleton'
@@ -50,7 +52,7 @@ export const CommentCard: FC<ICommentCardProps> = ({
 
     return (
         <div className={classNames(styles.commentCard, {}, [className])}>
-            <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
+            <AppLink to={getRouteProfile(comment.user.id)}>
 
                 <div className={styles.header}>
                     <Avatar

@@ -5,7 +5,10 @@ import { useNavigate } from 'react-router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { articleDataSelector } from '../../../../entities/Article'
 
-import { RoutePath } from '../../../../shared/constants/common'
+import {
+    getRouteArticleEdit,
+    getRouteArticles
+} from '../../../../shared/constants/common'
 import { Button } from '../../../../shared/ui/Button'
 import { getCanEditArticleSelector } from '../../model/selectors/article'
 import styles from './ArticleDetailsPageHeader.module.scss'
@@ -23,11 +26,11 @@ export const ArticleDetailsPageHeader: FC<IArticleDetailsPageHeaderProps> = ({ c
     const { t } = useTranslation()
 
     const onBackToList = () => {
-        navigate(RoutePath.articles)
+        navigate(getRouteArticles())
     }
 
     const onEditArticle = () => {
-        navigate(RoutePath.article_details + article?.id + '/edit')
+        if (article?.id) navigate(getRouteArticleEdit(article?.id))
     }
 
     return (

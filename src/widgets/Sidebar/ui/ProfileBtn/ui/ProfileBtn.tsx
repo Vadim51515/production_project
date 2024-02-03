@@ -7,7 +7,9 @@ import { useNavigate } from 'react-router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { userAuthDataSelector } from '../../../../../entities/User'
 
-import { RoutePath } from '../../../../../shared/constants/common'
+import {
+    getRouteProfile
+} from '../../../../../shared/constants/common'
 import { Button } from '../../../../../shared/ui/Button'
 import { Text } from '../../../../../shared/ui/Text'
 import styles from './ProfileBtn.module.scss'
@@ -30,7 +32,11 @@ export const ProfileBtn: FC<IProfileBtnProps> = memo(({ className, isCollapsedNa
 
     return (
         <Button
-            onClick={() => { navigate(RoutePath.profile + authData?.id) }}
+            onClick={() => {
+                if (authData?.id) {
+                    navigate(getRouteProfile(authData?.id))
+                }
+            }}
             pattern='clear'
             className={classNames(styles.container, { [styles.collapsedContainer]: isCollapsedNavbar }, [className])}
         >

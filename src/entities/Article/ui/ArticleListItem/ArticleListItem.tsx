@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router'
 import EyeIcon from '@/shared/assets/icons/Eye.svg?react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-import { RoutePath } from '../../../../shared/constants/common'
+import {
+    getRouteArticleDetails
+} from '../../../../shared/constants/common'
 import { AppLink } from '../../../../shared/ui/AppLink/AppLink'
 import { Avatar } from '../../../../shared/ui/Avatar/ui/Avatar'
 import { Button } from '../../../../shared/ui/Button'
@@ -38,7 +40,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = ({
     const navigate = useNavigate()
 
     const onOpenArticle = () => {
-        navigate(RoutePath.article_details + article.id)
+        navigate(getRouteArticleDetails(article.id))
     }
 
     const views = (
@@ -51,7 +53,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = ({
     const renderContent = () => {
         if (view === 'list') {
             return (
-                <AppLink target={target} to={RoutePath.article_details + article.id}>
+                <AppLink target={target} to={getRouteArticleDetails(article.id)}>
                     <Card className={styles.listContainer} onClick={onOpenArticle}>
                         <div className={styles.imgContainer}>
                             <img
@@ -108,7 +110,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = ({
                 {textBlock && <ArticleTextBlock className={styles.textBlock} block={textBlock} />}
 
                 <div className={styles.footer}>
-                    <AppLink target={target} to={RoutePath.article_details + article.id}>
+                    <AppLink target={target} to={getRouteArticleDetails(article.id)}>
                         <Button onClick={onOpenArticle} pattern={'outline'}>{t('Читать далее') + '...'}</Button>
                     </AppLink>
                     {views}

@@ -7,7 +7,9 @@ import {
     userAuthDataSelector
 } from '../../../entities/User'
 
-import { RoutePath } from '../../../shared/constants/common'
+import {
+    getRouteAdmin
+} from '../../../shared/constants/common'
 import { Avatar } from '../../../shared/ui/Avatar/ui/Avatar'
 import { Dropdown } from '../../../shared/ui/Popups'
 
@@ -45,7 +47,7 @@ export const AvatarDropdown: FC<IAvatarDropdownProps> = () => {
                     label: 'Админка',
                     value: 'Админка',
                     onClick: () => {
-                        navigate(RoutePath.admin_panel)
+                        navigate(getRouteAdmin())
                     }
                 }
             ]

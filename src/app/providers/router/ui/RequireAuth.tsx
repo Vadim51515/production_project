@@ -7,7 +7,10 @@ import {
     type UserRole
 } from '../../../../entities/User'
 import { userAuthDataSelector } from '../../../../entities/User/model/selectors/selectors'
-import { RoutePath } from '../../../../shared/constants/common'
+import {
+    getRouteForbidden,
+    getRouteMain
+} from '../../../../shared/constants/common'
 import { type CFC } from '../../../types'
 
 interface IRequireAuth {
@@ -26,9 +29,9 @@ export const RequireAuth: CFC<IRequireAuth> = ({ children, roles }) => {
         })
     }, [roles, userRoles])
 
-    if (!isAuth) return <Navigate to={RoutePath.main} state={{ from: location }} replace />
+    if (!isAuth) return <Navigate to={getRouteMain()} state={{ from: location }} replace />
 
-    if (!hasRequiredRoles) return <Navigate to={RoutePath.forbidden} state={{ from: location }} replace />
+    if (!hasRequiredRoles) return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />
 
     return children
 }

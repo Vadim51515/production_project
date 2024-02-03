@@ -23,7 +23,7 @@ export const getArticles = articlesAdapter
     .getSelectors<IStateSchema>((state) => state.articlesPage || articlesAdapter.getInitialState())
 
 export const {
-    reducer: articlesPageReducer,
+    reducer: addCommentReducerarticlesPageReducer,
     actions: articlesPageSliceActions
 } = createSlice({
     name: 'articlesPage',
