@@ -25,7 +25,8 @@
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
         "storybook:build": "storybook build  -c ./config/storybook",
         "prepare": "husky install",
-        "generate:slice": "node ./scripts/createSlice/index.js"
+        "generate:slice": "node ./scripts/createSlice/index.js",
+        "postinstall": "rimraf ./node_modules/.cache"
     },
     "keywords": [],
     "author": "",
@@ -127,6 +128,7 @@
         "react-i18next": "^13.5.0",
         "react-redux": "^9.0.2",
         "react-router-dom": "^6.18.0",
-        "react-virtuoso": "^4.6.2"
+        "react-virtuoso": "^4.6.2",
+        "rimraf": "^5.0.5"
     }
 }

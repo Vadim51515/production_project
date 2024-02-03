@@ -26,7 +26,7 @@ export function buildWebpackConfig (options: IBuildOptions): webpack.Configurati
         },
         resolve: buildResolvers(options),
         devtool: isDev
-            ? 'inline-source-map'
+            ? 'eval-cheap-module-source-map'
             : undefined,
         devServer: isDev
             ? buildDevServer(options)

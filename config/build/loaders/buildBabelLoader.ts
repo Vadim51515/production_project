@@ -10,15 +10,16 @@ export const babelLoaderFunc = ({ isDev, isTsx }: IBabelLoader) => ({
     use: {
         loader: 'babel-loader',
         options: {
+            cacheDirectory: true,
             presets: ['@babel/preset-env'],
             plugins: [
-                [
-                    'i18next-extract',
-                    {
-                        locales: ['ru', 'en'],
-                        keyAsDefaultValue: true
-                    }
-                ],
+                // [
+                //     'i18next-extract',
+                //     {
+                //         locales: ['ru', 'en'],
+                //         keyAsDefaultValue: true
+                //     }
+                // ],
                 [
                     '@babel/plugin-transform-typescript',
                     {
@@ -26,7 +27,7 @@ export const babelLoaderFunc = ({ isDev, isTsx }: IBabelLoader) => ({
                     }
                 ],
                 '@babel/plugin-transform-runtime',
-                isTsx && [
+                isTsx && !isDev && [
                     babelRemovePropsPlugin,
                     {
                         props: ['data-testid']
