@@ -97,6 +97,10 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
             },
         ],
+
+        // "import/order": ["error", {
+        //     "newlines-between": "always"
+        // }]
     },
     globals: {
         __IS_DEV__: true,
