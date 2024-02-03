@@ -31,9 +31,7 @@ const config: Config = {
     ],
 
     // An array of directory names to be searched recursively up from the requiring module's location
-    moduleDirectories: [
-        'node_modules'
-    ],
+    moduleDirectories: ['node_modules', '<rootDir>'],
 
     modulePaths: [
         '<rootDir>src'
@@ -65,7 +63,8 @@ const config: Config = {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
             '<rootDir>/__mocks__/fileMock.js',
         '\\.s?css$': 'identity-obj-proxy',
-        '\\.svg': path.resolve(__dirname, 'styleMock.tsx')
+        '\\.svg': path.resolve(__dirname, 'styleMock.tsx'),
+        '^@/(.*)$': '<rootDir>/src/$1'
     },
 
     // A set of global variables that need to be available in all test environments
