@@ -8,9 +8,9 @@ import { RoutePath } from '../../../../shared/constants/common'
 import { AppLink } from '../../../../shared/ui/AppLink/AppLink'
 import { Avatar } from '../../../../shared/ui/Avatar/ui/Avatar'
 import { Button } from '../../../../shared/ui/Button'
-import { Card } from '../../../../shared/ui/Card/Card'
-import { Icon } from '../../../../shared/ui/Icon/Icon'
-import { Text } from '../../../../shared/ui/Text'
+import { Card } from '@/shared/ui/Card'
+import { Icon } from '@/shared/ui/Icon'
+import { Text } from '@/shared/ui/Text'
 import {
     ArticleBlockTypes,
     type IArticle,

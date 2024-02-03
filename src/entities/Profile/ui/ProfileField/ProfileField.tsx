@@ -8,7 +8,7 @@ import { useActions } from '../../../../shared/hooks/useActions'
 import { useParamSelector } from '../../../../shared/hooks/useParamSelector'
 import { type TFieldType } from '../../../../shared/ui/Field'
 
-import { Field } from '@/shared/ui/Field/ui/Field'
+import { Field } from '@/shared/ui/Field'
 import { profileActions } from '../../model/actions'
 import {
     profileFieldErrorSelector,
