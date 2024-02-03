@@ -3,18 +3,17 @@ import React, {
     useMemo
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
+import { classNames } from '../../../shared/lib/classNames/classNames'
 import {
     type Func,
     type IOption,
     type TOptions,
     type TSortOrder
-} from '../../../../app/types'
-import { Select } from '../../../../shared/ui/Select'
-import {
-    type ISortFieldNameOption,
-    type TArticleSortField
-} from '../../model/types'
+} from '../../../app/types'
+import { type TArticleSortField } from '../../../entities/Article'
+import { type ISortFieldNameOption } from '../../../entities/Article/model/types'
+import { Select } from '../../../shared/ui/Select'
+
 import styles from './ArticleSortSelector.module.scss'
 
 interface IArticleSortSelectorProps {

@@ -1,7 +1,5 @@
 export type { TArticleSortField } from './model/types'
 export { ArticleType } from './model/types'
-export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
-export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'
 export { ArticleList } from './ui/ArticleList/ArticleList'
 export type { TArticleViewType } from './model/types'
 export { articleDataSelector } from './model/selectors/selectors'

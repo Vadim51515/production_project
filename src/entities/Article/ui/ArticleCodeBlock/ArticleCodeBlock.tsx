@@ -1,18 +1,42 @@
-import React, { type FC } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Code } from '../../../../shared/ui/Code'
-import { type IArticleCodeBlock } from '../../model/types'
-import styles from './ArticleCodeBlock.module.scss'
+import React, {
+    type FC,
+    useMemo
+} from 'react'
+import { useSelector } from 'react-redux'
+import type { TOptions } from '../../../../app/types'
+import { articlesPageActions } from '../../../../pages/ArticlesPage'
+import { articlesPageTypeSelector } from '../../../../pages/ArticlesPage/model/selectors/articlesPage'
+import { fetchArticleList } from '../../../../pages/ArticlesPage/model/services/fetchArticleList'
+import { useActions } from '../../../../shared/hooks/useActions'
+import { Tabs } from '../../../../shared/ui/Tabs/ui/Tabs'
+import {
+    ArticleType
+} from '../../model/types'
 
-interface IArticleCodeBlockProps {
-    className?: string
-    block: IArticleCodeBlock
-}
+interface IArticleCodeBlockProps {}
 
-export const ArticleCodeBlock: FC<IArticleCodeBlockProps> = ({ className, block }) => {
+export const ArticleCodeBlock: FC<IArticleCodeBlockProps> = () => {
+    const type = useSelector(articlesPageTypeSelector)
+
+    const {
+        setPage,
+        setType
+    } = useActions(articlesPageActions)
+
+    const typeTubs = useMemo(() => Object.keys(ArticleType).map((label) => ({
+        label,
+        value: ArticleType[label as keyof typeof ArticleType]
+    })), [])
+
+    const fetchData = () => {
+        fetchArticleList({ hasReplace: true })
+    }
+    const onChangeType = (newType: ArticleType) => {
+        setType(newType)
+        setPage(1)
+        fetchData()
+    }
     return (
-        <div className={classNames(styles.articleCodeBlock, {}, [className])}>
-            <Code codeText={block.code} />
-        </div>
+        <Tabs tabs={typeTubs as TOptions<ArticleType>} value={type} onTabClick={onChangeType} />
     )
 }

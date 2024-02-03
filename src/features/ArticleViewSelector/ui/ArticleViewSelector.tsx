@@ -3,10 +3,10 @@ import React, {
     type SVGProps
 } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { type Func } from '../../../../app/types'
-import { Button } from '../../../../shared/ui/Button'
-import { Icon } from '../../../../shared/ui/Icon/Icon'
-import { type TArticleViewType } from '../../model/types'
+import { type Func } from '../../../app/types'
+import { type TArticleViewType } from '../../../entities/Article'
+import { Button } from '../../../shared/ui/Button'
+import { Icon } from '../../../shared/ui/Icon'
 import styles from './ArticleViewSelector.module.scss'
 import TileIcon from '@/shared/assets/icons/Tile.svg?react'
 import ListIcon from '@/shared/assets/icons/List.svg?react'
@@ -49,7 +49,6 @@ export const ArticleViewSelector: FC<IArticleViewSelectorProps> = ({
                     />
                 </Button>
             )))}
-
         </div>
     )
 }

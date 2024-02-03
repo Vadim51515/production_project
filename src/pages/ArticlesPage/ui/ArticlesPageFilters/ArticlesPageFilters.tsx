@@ -1,31 +1,27 @@
 import React, {
-    type FC,
-    useMemo
+    type FC
 } from 'react'
 import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     type IOption,
-    type TOptions,
     type TSortOrder
 } from '../../../../app/types'
 import {
-    ArticleSortSelector,
-    ArticleType,
-    ArticleViewSelector,
     type TArticleSortField,
     type TArticleViewType
 } from '../../../../entities/Article'
+import { ArticleSortSelector } from '../../../../features/ArticleSortSelector'
+import { ArticleTypeTabs } from '../../../../features/ArticleTypeTabs'
+import { ArticleViewSelector } from '../../../../features/ArticleViewSelector'
 import { useActions } from '../../../../shared/hooks/useActions'
 import { useDebounce } from '../../../../shared/hooks/useDebounce'
 import { Input } from '../../../../shared/ui/Input'
-import { Tabs } from '../../../../shared/ui/Tabs/ui/Tabs'
 import { articlesPageActions } from '../../model/actions'
 import {
     articlesPageOrderSelector,
     articlesPageSearchSelector,
     articlesPageSortFieldNameSelector,
-    articlesPageTypeSelector,
     articlesPageViewSelector
 } from '../../model/selectors/articlesPage'
 import styles from './ArticlesPageFilters.module.scss'
@@ -39,7 +35,6 @@ export const ArticlesPageFilters: FC<IArticlesPageFiltersProps> = ({ className }
     const order = useSelector(articlesPageOrderSelector)
     const sortFieldName = useSelector(articlesPageSortFieldNameSelector)
     const search = useSelector(articlesPageSearchSelector)
-    const type = useSelector(articlesPageTypeSelector)
 
     const {
         setView,
@@ -47,8 +42,7 @@ export const ArticlesPageFilters: FC<IArticlesPageFiltersProps> = ({ className }
         setSortFieldName,
         setSearch,
         setPage,
-        fetchArticleList,
-        setType
+        fetchArticleList
     } = useActions(articlesPageActions)
 
     const fetchData = () => {
@@ -56,11 +50,6 @@ export const ArticlesPageFilters: FC<IArticlesPageFiltersProps> = ({ className }
     }
 
     const debounceFetchData = useDebounce(fetchData, 300)
-
-    const typeTubs = useMemo(() => Object.keys(ArticleType).map((label) => ({
-        label,
-        value: ArticleType[label as keyof typeof ArticleType]
-    })), [])
 
     const onChangeView = (newView: TArticleViewType) => {
         setView(newView)
@@ -86,12 +75,6 @@ export const ArticlesPageFilters: FC<IArticlesPageFiltersProps> = ({ className }
         debounceFetchData()
     }
 
-    const onChangeType = (newType: ArticleType) => {
-        setType(newType)
-        setPage(1)
-        fetchData()
-    }
-
     return (
         <div className={classNames(styles.articlesPageFilters, {}, [className])}>
             <div className={styles.sortWrapper}>
@@ -107,7 +90,7 @@ export const ArticlesPageFilters: FC<IArticlesPageFiltersProps> = ({ className }
                 />
             </div>
             <Input className={styles.search} onChange={onChangeSearch} placeholder={'Поиск'} value={search}/>
-            <Tabs tabs={typeTubs as TOptions<ArticleType>} value={type} onTabClick={onChangeType} />
+            <ArticleTypeTabs />
         </div>
     )
 }
