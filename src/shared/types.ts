@@ -14,3 +14,7 @@ export type TAppRoutesProps =
     isAuthOnly?: boolean
     roles?: UserRole[]
 }
+
+export interface ITestProps {
+    dataTestId?: string
+}

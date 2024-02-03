@@ -9,7 +9,7 @@ const MainPage = () => {
     const { t } = useTranslation('main')
 
     return (
-        <Page>
+        <Page dataTestId={'MainPage'}>
             <Text tag='h1'>{t('Главная страница')}</Text>
 
             <Counter />

@@ -19,12 +19,14 @@ import styles from './Page.module.scss'
 interface IPageProps {
     className?: string
     onScrollEnd?: Func
+    dataTestId?: string
 }
 
 export const Page: CFC<IPageProps> = ({
     className,
     children,
-    onScrollEnd
+    onScrollEnd,
+    dataTestId
 }) => {
     const [wrapperRef, triggerRef] = useInfiniteScroll<HTMLDivElement>(onScrollEnd)
 
@@ -45,6 +47,7 @@ export const Page: CFC<IPageProps> = ({
 
     return (
         <section
+            data-testid={dataTestId}
             ref={wrapperRef}
             className={classNames(styles.page, {}, [className])}
             onScroll={onScroll}

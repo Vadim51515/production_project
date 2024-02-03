@@ -36,7 +36,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
     if (!id && __PROJECT__ === 'frontend') return <Text tag={'h1'}>{t('Профиль не найден')}</Text>
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page className={classNames('', {}, [className])} dataTestId={'ProfilePage'}>
             <ProfileHeader />
 
             <ProfileCard id={id ?? ''} />

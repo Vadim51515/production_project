@@ -36,7 +36,7 @@ const ArticlesPage: FC<IArticlesPageProps> = () => {
     }
 
     return (
-        <Page onScrollEnd={onLoadNextPart}>
+        <Page onScrollEnd={onLoadNextPart} dataTestId={'ArticlesPage'}>
             <ArticlesPageFilters />
             <ArticleInfinityList />
         </Page>

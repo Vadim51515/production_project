@@ -1,6 +1,7 @@
 import React, { type FC } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Text } from '../../../shared/ui/Text'
+import { Page } from '../../../widgets/Page'
 
 interface IAdminPanelPageProps {
     className?: string
@@ -8,9 +9,9 @@ interface IAdminPanelPageProps {
 
 const AdminPanelPage: FC<IAdminPanelPageProps> = ({ className }) => {
     return (
-        <div className={classNames('', {}, [className])}>
+        <Page dataTestId={'AdminPanelPage'} className={classNames('', {}, [className])}>
             <Text>{'AdminPanelPage'}</Text>
-        </div>
+        </Page>
     )
 }
 

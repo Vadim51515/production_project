@@ -43,7 +43,7 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
     if (!id && __PROJECT__ !== 'storybook') return <Text>{t('Статья не найдена')}</Text>
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page className={classNames('', {}, [className])} dataTestId={'ArticleDetailsPage'}>
             <ArticleDetailsPageHeader />
             <ArticleDetails id={id ?? ''} />
             <ArticleRating articleId={id ?? ''}/>

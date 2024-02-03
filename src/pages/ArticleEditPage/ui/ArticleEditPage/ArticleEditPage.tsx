@@ -14,7 +14,7 @@ const ArticleEditPage: FC<IArticleEditPageProps> = ({ className }) => {
     const isEdit = Boolean(id)
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page className={classNames('', {}, [className])} dataTestId={'ArticleEditPage'}>
             {isEdit
                 ? t('Редактирование статьи с ID = ') + id
                 : t('Создание новой статьи')}
