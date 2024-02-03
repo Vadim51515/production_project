@@ -113,6 +113,7 @@
         "@headlessui/react": "^1.7.18",
         "@react-spring/web": "^9.7.3",
         "@reduxjs/toolkit": "^2.0.1",
+        "@storybook/addon-themes": "^7.6.12",
         "@use-gesture/react": "^10.3.0",
         "axios": "^1.6.2",
         "concurrently": "8.2.2",
