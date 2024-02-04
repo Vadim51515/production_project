@@ -49,7 +49,7 @@ export const Input: FC<IInputProps> = memo(({
         else onChange(event.target.value)
     }
 
-    if (isReadOnly) return <Text dataTestId={`${dataTestId}ReadonlyText`}>{props.value}</Text>
+    if (isReadOnly) return <Text dataTestId={`${dataTestId}ReadonlyText`}>{String(props.value)}</Text>
 
     return (
         <input

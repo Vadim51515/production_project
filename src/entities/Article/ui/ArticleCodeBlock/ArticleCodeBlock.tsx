@@ -13,9 +13,7 @@ import {
     ArticleType
 } from '../../model/types'
 
-interface IArticleCodeBlockProps {}
-
-export const ArticleCodeBlock: FC<IArticleCodeBlockProps> = () => {
+export const ArticleCodeBlock: FC = () => {
     const type = useSelector(articlesPageTypeSelector)
 
     const {

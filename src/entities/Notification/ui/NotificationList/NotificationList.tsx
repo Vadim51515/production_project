@@ -4,7 +4,6 @@ import { Skeleton } from '../../../../shared/ui/Skeleton/ui/Skeleton'
 import { VStack } from '../../../../shared/ui/Stack'
 import { useGetNotificationQuery } from '../../api/notificationApi'
 import { NotificationItem } from '../NotificationItem/NotificationItem'
-import styles from './NotificationList.module.scss'
 
 interface INotificationListProps {
     className?: string
@@ -46,7 +45,7 @@ export const NotificationList: FC<INotificationListProps> = ({ className }) => {
     )
 
     return (
-        <VStack gap={'10'} className={classNames(styles.NotificationList, {}, [className])}>
+        <VStack gap={'10'} className={classNames('', {}, [className])}>
             {isLoading
                 ? loadingContent
                 : content}

@@ -21,7 +21,6 @@ import {
 } from '../../../shared/ui/Stack'
 import { StarRating } from '../../../shared/ui/StarRating/ui/StarRating'
 import { Text } from '../../../shared/ui/Text'
-import styles from './Rating.module.scss'
 
 interface IRatingProps {
     className?: string
@@ -77,7 +76,7 @@ export const Rating: FC<IRatingProps> = ({
     )
 
     return (
-        <Card className={classNames(styles.Rating, {}, [className])}>
+        <Card className={classNames('', {}, [className])}>
             <VStack gap={'16'}>
                 <Text tag={'h3'}>{starsCount ? t('Cпасибо за оценку') + '!' : title}</Text>
                 <StarRating selectedStars={starsCount} onSelect={onSelectStars} />

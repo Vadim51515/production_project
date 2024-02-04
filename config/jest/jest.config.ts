@@ -63,7 +63,7 @@ const config: Config = {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
             '<rootDir>/__mocks__/fileMock.js',
         '\\.s?css$': 'identity-obj-proxy',
-        '\\.svg': path.resolve(__dirname,  'jestEmptyComponent.tsx'),
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         '^@/(.*)$': '<rootDir>/src/$1'
     },
     // A set of global variables that need to be available in all test environments

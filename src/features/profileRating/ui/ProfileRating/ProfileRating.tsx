@@ -12,7 +12,6 @@ import {
     useGetProfileRatingQuery,
     useRateProfileMutation
 } from '../../api/profileRatingApi'
-import styles from './ProfileRating.module.scss'
 
 export interface IProfileRatingProps {
     className?: string
@@ -65,7 +64,6 @@ const ProfileRating: FC<IProfileRatingProps> = ({ id: profileId }) => {
             onConfirm={onConfirm}
             onCancel={onCancel}
             rate={rating?.rate}
-            className={styles.articleRating}
             title={t('Оцените статью')}
             feedbackTitle={t('Оставте обратную связь')}
         />

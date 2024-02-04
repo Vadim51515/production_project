@@ -41,7 +41,7 @@ export const Field: FC<TFieldProps> = ({
             if ('target' in e) props.onChange(fieldName, e.target.value)
             break
         case 'select':
-            props.onChange(fieldName, e as IOption)
+            props.onChange(fieldName, e as IOption<string>)
             break
         }
     }

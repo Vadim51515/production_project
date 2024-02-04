@@ -25,7 +25,7 @@ const stars = [
 
 export const StarRating: FC<IStarRatingProps> = ({
     className,
-    selectedStars,
+    selectedStars = 0,
     onSelect,
     size = 30
 }) => {
