@@ -2,28 +2,28 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference types="vite-plugin-svgr/client" />
 declare module '*.scss';
-declare module '*.jpg'
-declare module '*.jpeg'
-declare module '*.png'
+declare module '*.jpg';
+declare module '*.jpeg';
+declare module '*.png';
 declare module '*.svg' {
-    import type React from 'react'
-    const SVG: React.FC<React.SVGProps<SVGSVGElement>>
-    export default SVG
+    import type React from 'react';
+    const SVG: React.FC<React.SVGProps<SVGSVGElement>>;
+    export default SVG;
 }
 
-type TProject = 'storybook' | 'frontend' | 'jest'
+type TProject = 'storybook' | 'frontend' | 'jest';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
-declare const __IS_DEV__: boolean
+declare const __IS_DEV__: boolean;
 // eslint-disable-next-line @typescript-eslint/naming-convention
-declare const __API__: string
+declare const __API__: string;
 // eslint-disable-next-line @typescript-eslint/naming-convention
-declare const __PROJECT__: TProject
+declare const __PROJECT__: TProject;
 
 type DeepPartial<T> = {
     [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
-}
+};
 
 type TOptionalRecord<K extends keyof any, T> = {
     [P in K]?: T;
-}
+};

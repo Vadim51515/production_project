@@ -1,62 +1,53 @@
-import React, { type FC } from 'react'
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router'
-import {
-    isUserAdminSelector,
-    isUserManagerSelector,
-    userAuthDataSelector
-} from '../../../entities/User'
+import React, { type FC } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { isUserAdminSelector, isUserManagerSelector, userAuthDataSelector } from '../../../entities/User';
 
-import {
-    getRouteAdmin
-} from '../../../shared/constants/common'
-import { Avatar } from '../../../shared/ui/Avatar/ui/Avatar'
-import { Dropdown } from '../../../shared/ui/Popups'
+import { getRouteAdmin } from '../../../shared/constants/common';
+import { Avatar } from '../../../shared/ui/Avatar/ui/Avatar';
+import { Dropdown } from '../../../shared/ui/Popups';
 
 interface IAvatarDropdownProps {
-    className?: string
+    className?: string;
 }
 
 export const AvatarDropdown: FC<IAvatarDropdownProps> = () => {
-    const userAuthData = useSelector(userAuthDataSelector)
+    const userAuthData = useSelector(userAuthDataSelector);
 
-    const isAdmin = useSelector(isUserAdminSelector)
-    const isManager = useSelector(isUserManagerSelector)
+    const isAdmin = useSelector(isUserAdminSelector);
+    const isManager = useSelector(isUserManagerSelector);
 
-    const isAvailableAdminPage = isAdmin || isManager
+    const isAvailableAdminPage = isAdmin || isManager;
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const options = [
         {
             label: 'Item под номером 1',
             value: 'Item под номером 1',
-            onClick: () => {
-
-            }
+            onClick: () => {},
         },
         {
             label: 'Item под номером 2',
             value: 'Item под номером 2',
-            onClick: () => {
-
-            }
+            onClick: () => {},
         },
         ...(isAvailableAdminPage
             ? [
-                {
-                    label: 'Админка',
-                    value: 'Админка',
-                    onClick: () => {
-                        navigate(getRouteAdmin())
-                    }
-                }
-            ]
-            : [])
-    ]
+                  {
+                      label: 'Админка',
+                      value: 'Админка',
+                      onClick: () => {
+                          navigate(getRouteAdmin());
+                      },
+                  },
+              ]
+            : []),
+    ];
 
     const onClick = (newOptionValue: string) => {
-        options.find((option) => option.value === newOptionValue)?.onClick()
-    }
+        options.find((option) => option.value === newOptionValue)?.onClick();
+    };
+
     return (
         <Dropdown
             options={options}
@@ -67,5 +58,5 @@ export const AvatarDropdown: FC<IAvatarDropdownProps> = () => {
                 image={userAuthData?.avatar}
             />
         </Dropdown>
-    )
-}
+    );
+};

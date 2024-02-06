@@ -1,36 +1,32 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import {
-    mockArticle
-} from '../../../../entities/Article'
+import type { Meta, StoryObj } from '@storybook/react';
+import { mockArticle } from '../../../../entities/Article';
 
-import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
-import { RuntimeStatuses } from '../../../../shared/constants/common'
-import ArticleDetailsPage from './ArticleDetailsPage'
+import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator';
+import { RuntimeStatuses } from '../../../../shared/constants/common';
+import ArticleDetailsPage from './ArticleDetailsPage';
 
 const meta = {
     title: 'pages/ArticleDetailsPage',
     component: ArticleDetailsPage,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {}
+    argTypes: {},
+} satisfies Meta<typeof ArticleDetailsPage>;
 
-} satisfies Meta<typeof ArticleDetailsPage>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {}
-}
+    args: {},
+};
 
-Default.decorators = [storeDecorator({
-    articleDetails: {
-        status: RuntimeStatuses.Ready,
-        data: mockArticle
-    }
-})]
+Default.decorators = [
+    storeDecorator({
+        articleDetails: {
+            status: RuntimeStatuses.Ready,
+            data: mockArticle,
+        },
+    }),
+];

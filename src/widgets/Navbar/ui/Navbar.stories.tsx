@@ -1,31 +1,27 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator'
-import { Theme } from '../../../shared/enums'
-import { Navbar } from './Navbar'
+import type { Meta, StoryObj } from '@storybook/react';
+import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator';
+import { Theme } from '../../../shared/enums';
+import { Navbar } from './Navbar';
 
 const meta = {
     title: 'widgets/Navbar',
     component: Navbar,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {}
+    argTypes: {},
+} satisfies Meta<typeof Navbar>;
 
-} satisfies Meta<typeof Navbar>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Dark: Story = {
-    args: {}
-}
+    args: {},
+};
 
 export const Light: Story = {
-    args: {}
-}
+    args: {},
+};
 
-Light.decorators = [themeDecorator(Theme.Light)]
+Light.decorators = [themeDecorator(Theme.Light)];

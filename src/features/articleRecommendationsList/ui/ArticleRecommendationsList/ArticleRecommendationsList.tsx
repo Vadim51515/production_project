@@ -1,28 +1,26 @@
-import React, { type FC } from 'react'
-import { ArticleList } from '../../../../entities/Article'
-import { articleDetailsCommentsActions } from '../../../../pages/ArticleDetailsPage/model/actions'
-import { useActions } from '../../../../shared/hooks/useActions'
-import { useInitialEffect } from '../../../../shared/hooks/useInitialEffect'
-import { Text } from '../../../../shared/ui/Text'
-import { useGetArticleRecommendationListQuery } from '../../api/articleRecommendationsListApi'
-import styles from './ArticleRecommendationsList.module.scss'
+import React, { type FC } from 'react';
+import { ArticleList } from '../../../../entities/Article';
+import { articleDetailsCommentsActions } from '../../../../pages/ArticleDetailsPage/model/actions';
+import { useActions } from '../../../../shared/hooks/useActions';
+import { useInitialEffect } from '../../../../shared/hooks/useInitialEffect';
+import { Text } from '../../../../shared/ui/Text';
+import { useGetArticleRecommendationListQuery } from '../../api/articleRecommendationsListApi';
+import styles from './ArticleRecommendationsList.module.scss';
 
 interface IArticleRecommendationsListProps {
-    className?: string
+    className?: string;
 }
 
 export const ArticleRecommendationsList: FC<IArticleRecommendationsListProps> = () => {
-    const { data } = useGetArticleRecommendationListQuery(3)
+    const { data } = useGetArticleRecommendationListQuery(3);
 
-    const {
-        fetchArticleRecommendations
-    } = useActions(articleDetailsCommentsActions)
+    const { fetchArticleRecommendations } = useActions(articleDetailsCommentsActions);
 
     useInitialEffect(() => {
-        fetchArticleRecommendations()
-    })
+        fetchArticleRecommendations();
+    });
 
-    if (!data) return null
+    if (!data) return null;
 
     return (
         <div data-testid={'ArticleRecommendationsList'}>
@@ -34,6 +32,5 @@ export const ArticleRecommendationsList: FC<IArticleRecommendationsListProps> = 
                 target={'_blank'}
             />
         </div>
-
-    )
-}
+    );
+};

@@ -1,7 +1,7 @@
-import { type IUser } from '../../User'
+import { type IUser } from '../../User';
 
 export interface IComment {
-    id: string
-    user: IUser
-    text: string
+    id: string;
+    user: IUser;
+    text: string;
 }

@@ -1,6 +1,6 @@
-import { type ISharedState } from '../../../app/providers/StoreProvider'
+import { type ISharedState } from '../../../app/providers/StoreProvider';
 
 export interface ICommentFormState extends ISharedState {
-    text?: string
-    error?: string
+    text?: string;
+    error?: string;
 }

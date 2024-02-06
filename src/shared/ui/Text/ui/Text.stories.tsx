@@ -1,25 +1,23 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Text } from './Text'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Text } from './Text';
 
 const meta = {
     title: 'shared/Text',
     component: Text,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-    }
+    argTypes: {},
+} satisfies Meta<typeof Text>;
 
-} satisfies Meta<typeof Text>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 // TODO Дописать для всех тегов Stories
 
 export const P: Story = {
     args: {
-        children: 'Test text'
-    }
-}
+        children: 'Test text',
+    },
+};

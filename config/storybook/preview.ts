@@ -1,8 +1,8 @@
-import { Theme } from '@/shared/enums'
-import { withThemeByClassName } from '@storybook/addon-themes'
-import type { Preview } from '@storybook/react'
-import { routerDecorator } from '../../src/shared/config/storybook/decorators/routerDecorator'
-import { styleDecorator } from '../../src/shared/config/storybook/decorators/styleDecorator'
+import { Theme } from '@/shared/enums';
+import { withThemeByClassName } from '@storybook/addon-themes';
+import type { Preview } from '@storybook/react';
+import { routerDecorator } from '../../src/shared/config/storybook/decorators/routerDecorator';
+import { styleDecorator } from '../../src/shared/config/storybook/decorators/styleDecorator';
 
 const preview: Preview = {
     decorators: [
@@ -18,22 +18,21 @@ const preview: Preview = {
             themes: {
                 light: `app ${Theme.Light}`,
                 dark: `app ${Theme.Dark}`,
-                red: `app ${Theme.Red}`
+                red: `app ${Theme.Red}`,
             },
-            defaultTheme: 'light'
-        })
+            defaultTheme: 'light',
+        }),
     ],
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
         controls: {
             matchers: {
                 color: /(background|color)$/i,
-                date: /Date$/i
-            }
+                date: /Date$/i,
+            },
         },
-        layout: 'fullscreen'
-    }
+        layout: 'fullscreen',
+    },
+};
 
-}
-
-export default preview
+export default preview;

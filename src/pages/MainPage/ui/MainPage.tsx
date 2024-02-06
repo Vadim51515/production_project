@@ -1,16 +1,16 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
-import { Counter } from '@/entities/Counter'
-import { Rating } from '../../../entities/Rating'
-import { Page } from '../../../widgets/Page'
-import { Text } from '../../../shared/ui/Text'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Counter } from '@/entities/Counter';
+import { Rating } from '../../../entities/Rating';
+import { Page } from '../../../widgets/Page';
+import { Text } from '../../../shared/ui/Text';
 
 const MainPage = () => {
-    const { t } = useTranslation('main')
+    const { t } = useTranslation('main');
 
     return (
         <Page dataTestId={'MainPage'}>
-            <Text tag='h1'>{t('Главная страница')}</Text>
+            <Text tag="h1">{t('Главная страница')}</Text>
 
             <Counter />
 
@@ -22,6 +22,6 @@ const MainPage = () => {
                 hasFeedback
             />
         </Page>
-    )
-}
-export default MainPage
+    );
+};
+export default MainPage;

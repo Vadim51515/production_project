@@ -1,5 +1,5 @@
 export interface IRating {
-    id: string
-    rate: number
-    feedback: string
+    id: string;
+    rate: number;
+    feedback: string;
 }

@@ -1,23 +1,19 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { AppImage } from './AppImage'
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppImage } from './AppImage';
 
 const meta = {
     title: 'example_test/AppImage',
     component: AppImage,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {}
+    argTypes: {},
+} satisfies Meta<typeof AppImage>;
 
-} satisfies Meta<typeof AppImage>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {}
-}
+    args: {},
+};

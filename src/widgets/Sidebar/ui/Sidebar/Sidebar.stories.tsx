@@ -1,54 +1,47 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import type { IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
-import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
-import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator'
-import { RuntimeStatuses } from '../../../../shared/constants/common'
-import { Theme } from '../../../../shared/enums'
-import { Sidebar } from './Sidebar'
+import type { Meta, StoryObj } from '@storybook/react';
+import type { IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema';
+import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator';
+import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator';
+import { RuntimeStatuses } from '../../../../shared/constants/common';
+import { Theme } from '../../../../shared/enums';
+import { Sidebar } from './Sidebar';
 
 const meta = {
     title: 'widgets/Sidebar',
     component: Sidebar,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {}
+    argTypes: {},
+} satisfies Meta<typeof Sidebar>;
 
-} satisfies Meta<typeof Sidebar>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 const state: DeepPartial<IStateSchema> = {
     login: {
         status: RuntimeStatuses.Ready,
         username: 'admin',
-        password: '123'
-    }
-}
+        password: '123',
+    },
+};
 
 export const Dark: Story = {
-    args: {}
-}
+    args: {},
+};
 
-Dark.decorators = [storeDecorator(state)]
+Dark.decorators = [storeDecorator(state)];
 
 export const Light: Story = {
-    args: {}
-}
+    args: {},
+};
 
-Light.decorators = [
-    themeDecorator(Theme.Light),
-    storeDecorator(state)
-]
+Light.decorators = [themeDecorator(Theme.Light), storeDecorator(state)];
 
 export const isAuth: Story = {
-    args: {}
-}
+    args: {},
+};
 
 isAuth.decorators = [
     themeDecorator(Theme.Light),
@@ -57,8 +50,8 @@ isAuth.decorators = [
         user: {
             authData: {
                 username: 'test',
-                id: '1'
-            }
-        }
-    })
-]
+                id: '1',
+            },
+        },
+    }),
+];

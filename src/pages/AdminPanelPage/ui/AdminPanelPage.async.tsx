@@ -1,3 +1,3 @@
-import { lazy } from 'react'
+import { lazy } from 'react';
 
-export const LazyAdminPanelPage = lazy(async () => await import('./AdminPanelPage'))
+export const LazyAdminPanelPage = lazy(async () => await import('./AdminPanelPage'));

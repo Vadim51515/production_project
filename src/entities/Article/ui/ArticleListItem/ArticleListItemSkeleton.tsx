@@ -1,36 +1,24 @@
-import { classNames } from '../../../../shared/lib/classNames/classNames'
-import { Card } from '../../../../shared/ui/Card/Card'
-import { Skeleton } from '../../../../shared/ui/Skeleton/ui/Skeleton'
-import type { TArticleViewType } from '../../model/types'
-import styles from './ArticleListItem.module.scss'
-import React from 'react'
+import { classNames } from '../../../../shared/lib/classNames/classNames';
+import { Card } from '../../../../shared/ui/Card/Card';
+import { Skeleton } from '../../../../shared/ui/Skeleton/ui/Skeleton';
+import type { TArticleViewType } from '../../model/types';
+import styles from './ArticleListItem.module.scss';
+import React from 'react';
 interface ArticleListItemSkeletonProps {
-    className?: string
-    view: TArticleViewType
+    className?: string;
+    view: TArticleViewType;
 }
 
 export const ArticleListItemSkeleton = (props: ArticleListItemSkeletonProps) => {
-    const {
-        className,
-        view
-    } = props
+    const { className, view } = props;
 
     if (view === 'tile') {
         return (
-            <div
-                className={classNames(
-                    styles.ArticleListItem,
-                    {},
-                    [
-                        className,
-                        styles[view]
-                    ]
-                )}
-            >
+            <div className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}>
                 <Card className={styles.card}>
                     <div className={styles.header}>
                         <Skeleton
-                            borderRadius='50%'
+                            borderRadius="50%"
                             height={30}
                             width={30}
                             marginBottom={10}
@@ -67,20 +55,11 @@ export const ArticleListItemSkeleton = (props: ArticleListItemSkeletonProps) => 
                     </div>
                 </Card>
             </div>
-        )
+        );
     }
 
     return (
-        <div
-            className={classNames(
-                styles.ArticleListItem,
-                {},
-                [
-                    className,
-                    styles[view]
-                ]
-            )}
-        >
+        <div className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}>
             <Card className={styles.card}>
                 <div className={styles.imageWrapper}>
                     <Skeleton
@@ -104,5 +83,5 @@ export const ArticleListItemSkeleton = (props: ArticleListItemSkeletonProps) => 
                 />
             </Card>
         </div>
-    )
-}
+    );
+};

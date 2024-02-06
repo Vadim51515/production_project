@@ -21,8 +21,8 @@ export enum RuntimeStatuses {
 
 export const ErrorsStatuses = {
     FieldRequired: 'Поле обязательно для заполнения',
-    ServerError: 'Серверная ошибка'
-}
+    ServerError: 'Серверная ошибка',
+};
 
 export enum AppRoutes {
     Main = 'main',
@@ -34,15 +34,15 @@ export enum AppRoutes {
     ArticleCreate = 'article_create',
     ArticleEdit = 'article_edit',
     AdminPanel = 'admin_panel',
-    Forbidden = 'forbidden'
+    Forbidden = 'forbidden',
 }
 
-export const getRouteMain = () => '/'
-export const getRouteAbout = () => '/about'
-export const getRouteProfile = (id: string) => `/profile/${id}`
-export const getRouteArticles = () => '/articles'
-export const getRouteArticleDetails = (id: string) => `/articles/${id}`
-export const getRouteArticleCreate = () => '/articles/new'
-export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`
-export const getRouteAdmin = () => '/admin'
-export const getRouteForbidden = () => '/forbidden'
+export const getRouteMain = () => '/';
+export const getRouteAbout = () => '/about';
+export const getRouteProfile = (id: string) => `/profile/${id}`;
+export const getRouteArticles = () => '/articles';
+export const getRouteArticleDetails = (id: string) => `/articles/${id}`;
+export const getRouteArticleCreate = () => '/articles/new';
+export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
+export const getRouteAdmin = () => '/admin';
+export const getRouteForbidden = () => '/forbidden';

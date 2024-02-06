@@ -1,48 +1,38 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type IThunkConfig } from '@/app/providers/StoreProvider'
-import {
-    ArticleType,
-    type IArticle
-} from '../../../../entities/Article'
-import { addQueryParams } from '../../../../shared/lib/url/addQueryParams'
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { type IThunkConfig } from '@/app/providers/StoreProvider';
+import { ArticleType, type IArticle } from '../../../../entities/Article';
+import { addQueryParams } from '../../../../shared/lib/url/addQueryParams';
 import {
     articlesPageOrderSelector,
     articlesPagePaginationLimitSelector,
     articlesPagePaginationPageSelector,
     articlesPageSearchSelector,
     articlesPageSortFieldNameSelector,
-    articlesPageTypeSelector
-} from '../selectors/articlesPage'
+    articlesPageTypeSelector,
+} from '../selectors/articlesPage';
 
 interface IFetchArticleListProps {
-    hasReplace?: boolean
+    hasReplace?: boolean;
 }
 
 export const fetchArticleList = createAsyncThunk<IArticle[], IFetchArticleListProps, IThunkConfig<string>>(
     'articlesPage/fetchArticleList',
-    async (
-        _,
-        {
-            extra,
-            rejectWithValue,
-            getState
-        }
-    ) => {
+    async (_, { extra, rejectWithValue, getState }) => {
         try {
-            const state = getState()
+            const state = getState();
 
-            const limit = articlesPagePaginationLimitSelector(state)
-            const order = articlesPageOrderSelector(state)
-            const sortFieldName = articlesPageSortFieldNameSelector(state)
-            const search = articlesPageSearchSelector(state)
-            const type = articlesPageTypeSelector(state)
-            const page = articlesPagePaginationPageSelector(state)
+            const limit = articlesPagePaginationLimitSelector(state);
+            const order = articlesPageOrderSelector(state);
+            const sortFieldName = articlesPageSortFieldNameSelector(state);
+            const search = articlesPageSearchSelector(state);
+            const type = articlesPageTypeSelector(state);
+            const page = articlesPagePaginationPageSelector(state);
             addQueryParams({
                 sortFieldName,
                 order,
                 search,
-                type
-            })
+                type,
+            });
 
             const response = await extra.api.get<IArticle[]>('/articles', {
                 params: {
@@ -52,17 +42,17 @@ export const fetchArticleList = createAsyncThunk<IArticle[], IFetchArticleListPr
                     _sort: sortFieldName,
                     _order: order,
                     q: search,
-                    type: type === ArticleType.All ? undefined : type
-                }
-            })
+                    type: type === ArticleType.All ? undefined : type,
+                },
+            });
 
             if (!response.data) {
-                throw new Error()
+                throw new Error();
             }
 
-            return response.data
+            return response.data;
         } catch (e) {
-            return rejectWithValue('')
+            return rejectWithValue('');
         }
-    }
-)
+    },
+);

@@ -1,32 +1,28 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator'
-import { Theme } from '../../../shared/enums'
-import { ThemeSwitcher } from './ThemeSwitcher'
+import type { Meta, StoryObj } from '@storybook/react';
+import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator';
+import { Theme } from '../../../shared/enums';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
-export default { component: ThemeSwitcher }
+export default { component: ThemeSwitcher };
 const meta = {
     title: 'shared/AppLink',
     component: ThemeSwitcher,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
     argTypes: {},
-    args: {}
+    args: {},
+} satisfies Meta<typeof ThemeSwitcher>;
 
-} satisfies Meta<typeof ThemeSwitcher>
-
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Dark: Story = {
-    args: {}
-}
+    args: {},
+};
 
 export const Light: Story = {
-    args: {}
-}
+    args: {},
+};
 
-Light.decorators = [themeDecorator(Theme.Light)]
+Light.decorators = [themeDecorator(Theme.Light)];

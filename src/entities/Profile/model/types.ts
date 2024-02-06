@@ -1,4 +1,4 @@
 export interface ISetFormFieldPayload {
-    fieldKey: string
-    value: string
+    fieldKey: string;
+    value: string;
 }

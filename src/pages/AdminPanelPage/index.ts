@@ -1,1 +1,1 @@
-export { LazyAdminPanelPage as AdminPanelPage } from './ui/AdminPanelPage.async'
+export { LazyAdminPanelPage as AdminPanelPage } from './ui/AdminPanelPage.async';

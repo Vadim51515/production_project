@@ -1,9 +1,9 @@
 export const updateProfile = (firstname: string, lastname: string) => {
-    cy.getByTestId('ProfileEditBtn').click()
-    cy.getByTestId('firstNameInput').clear().type(firstname)
-    cy.getByTestId('surnameInput').clear().type(lastname)
-    cy.getByTestId('ProfileSaveBtn').click()
-}
+    cy.getByTestId('ProfileEditBtn').click();
+    cy.getByTestId('firstNameInput').clear().type(firstname);
+    cy.getByTestId('surnameInput').clear().type(lastname);
+    cy.getByTestId('ProfileSaveBtn').click();
+};
 
 export const resetProfile = (profileId: string) => {
     return cy.request({
@@ -19,17 +19,17 @@ export const resetProfile = (profileId: string) => {
             country: 'Russia',
             city: 'Екатеринбург',
             username: 'inhellim',
-            avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg'
-        }
-    })
-}
+            avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg',
+        },
+    });
+};
 
 declare global {
     // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace Cypress {
         interface Chainable {
-            updateProfile(firstname: string, lastname: string): Chainable<void>
-            resetProfile(profileId: string): Chainable<void>
+            updateProfile(firstname: string, lastname: string): Chainable<void>;
+            resetProfile(profileId: string): Chainable<void>;
         }
     }
 }

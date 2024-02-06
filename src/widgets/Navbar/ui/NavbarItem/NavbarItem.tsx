@@ -1,40 +1,29 @@
-import React, {
-    type FC,
-    memo,
-    useCallback
-} from 'react'
-import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { AppLink } from '../../../../shared/ui/AppLink/AppLink'
-import { type INavbarItem } from '../../model/items'
-import styles from './NavbarItem.module.scss'
+import React, { type FC, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '../../../../shared/ui/AppLink/AppLink';
+import { type INavbarItem } from '../../model/items';
+import styles from './NavbarItem.module.scss';
 
 interface INavbarItemProps {
-    className?: string
-    item: INavbarItem
-    isCollapsedNavbar?: boolean
+    className?: string;
+    item: INavbarItem;
+    isCollapsedNavbar?: boolean;
 }
 
-export const NavbarItem: FC<INavbarItemProps> = memo(({
-    item,
-    isCollapsedNavbar
-}) => {
-    const {
-        icon,
-        path,
-        text
-    } = item
+export const NavbarItem: FC<INavbarItemProps> = memo(({ item, isCollapsedNavbar }) => {
+    const { icon, path, text } = item;
 
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     const getActiveItem = useCallback(() => {
-        return '/' + location.pathname.split('/')[1] === path
-    }, [location.pathname])
+        return '/' + location.pathname.split('/')[1] === path;
+    }, [location.pathname]);
 
     const modsContent = {
         animationHideText: isCollapsedNavbar,
-        animationShowText: !isCollapsedNavbar
-    }
+        animationShowText: !isCollapsedNavbar,
+    };
 
     return (
         <AppLink
@@ -44,6 +33,7 @@ export const NavbarItem: FC<INavbarItemProps> = memo(({
             pattern={'button'}
             prefix={icon}
         >
-            {t(text)}</AppLink>
-    )
-})
+            {t(text)}
+        </AppLink>
+    );
+});

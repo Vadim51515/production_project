@@ -1,102 +1,83 @@
-import React, {
-    memo,
-    type ReactNode,
-    useCallback,
-    useEffect
-} from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { useTheme } from '../../../../app/providers/ThemeProvider'
-import {
-    type CFC,
-    type Func
-} from '../../../../app/types'
-import { useModal } from '../../../hooks/useModal'
-import {
-    AnimationProvider,
-    useAnimationLibs
-} from '../../../lib/components/AnimationProvider'
-import { Overlay } from '../../Overlay/ui/Overlay'
-import { Portal } from '../../Portal/ui/Portal'
-import styles from './Drawer.module.scss'
+import React, { memo, type ReactNode, useCallback, useEffect } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTheme } from '../../../../app/providers/ThemeProvider';
+import { type CFC, type Func } from '../../../../app/types';
+import { useModal } from '../../../hooks/useModal';
+import { AnimationProvider, useAnimationLibs } from '../../../lib/components/AnimationProvider';
+import { Overlay } from '../../Overlay/ui/Overlay';
+import { Portal } from '../../Portal/ui/Portal';
+import styles from './Drawer.module.scss';
 
 interface IDrawerProps {
-    className?: string
-    isOpen: boolean
-    closeOnOutsideClick?: boolean
-    onClose: Func<[]>
+    className?: string;
+    isOpen: boolean;
+    closeOnOutsideClick?: boolean;
+    onClose: Func<[]>;
 }
 
-const height = window.innerHeight - 100
+const height = window.innerHeight - 100;
 
-const DrawerContent: CFC<IDrawerProps> = ({
-    className,
-    isOpen,
-    children,
-    onClose
-}) => {
-    const { theme } = useTheme()
+const DrawerContent: CFC<IDrawerProps> = ({ className, isOpen, children, onClose }) => {
+    const { theme } = useTheme();
     useModal({
         onClose,
-        isOpen
-    })
-    console.log('DrawerContent')
+        isOpen,
+    });
+    console.log('DrawerContent');
 
-    const { Spring, Gesture } = useAnimationLibs()
-    const [{ y }, api] = Spring.useSpring(() => ({ y: height }))
+    const { Spring, Gesture } = useAnimationLibs();
+    const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
 
     const openDrawer = useCallback(() => {
-        api.start({ y: 0, immediate: false })
-    }, [api])
+        api.start({ y: 0, immediate: false });
+    }, [api]);
 
     useEffect(() => {
         if (isOpen) {
-            openDrawer()
+            openDrawer();
         }
-    }, [api, isOpen, openDrawer])
+    }, [api, isOpen, openDrawer]);
 
     const close = (velocity = 0) => {
         api.start({
             y: height,
             immediate: false,
             config: { ...Spring.config.stiff, velocity },
-            onResolve: onClose
-        })
-    }
+            onResolve: onClose,
+        });
+    };
 
     const bind = Gesture.useDrag(
-        ({
-            last,
-            velocity: [, vy],
-            direction: [, dy],
-            movement: [, my],
-            cancel
-        }) => {
-            if (my < -70) cancel()
+        ({ last, velocity: [, vy], direction: [, dy], movement: [, my], cancel }) => {
+            if (my < -70) cancel();
 
             if (last) {
                 if (my > height * 0.5 || (vy > 0.5 && dy > 0)) {
-                    close()
+                    close();
                 } else {
-                    openDrawer()
+                    openDrawer();
                 }
             } else {
-                api.start({ y: my, immediate: true })
+                api.start({ y: my, immediate: true });
             }
         },
         {
-            from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true
-        }
-    )
+            from: () => [0, y.get()],
+            filterTaps: true,
+            bounds: { top: 0 },
+            rubberband: true,
+        },
+    );
 
-    const display = y.to((py) => (py < height ? 'block' : 'none'))
+    const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     if (!isOpen) {
-        return null
+        return null;
     }
 
     return (
         <Portal>
-            <div className={classNames(styles.drawer, { }, [className, theme, 'app_drawer'])}>
+            <div className={classNames(styles.drawer, {}, [className, theme, 'app_drawer'])}>
                 <Overlay className={styles.overlay}>
                     <Spring.a.div
                         className={styles.sheet}
@@ -106,27 +87,26 @@ const DrawerContent: CFC<IDrawerProps> = ({
                         {children}
                     </Spring.a.div>
                 </Overlay>
-
             </div>
         </Portal>
-    )
-}
+    );
+};
 
 const DrawerAsync: CFC<IDrawerProps> = (props) => {
-    const { isLoaded } = useAnimationLibs()
-    console.log('DrawerAsync isLoaded', isLoaded)
+    const { isLoaded } = useAnimationLibs();
+    console.log('DrawerAsync isLoaded', isLoaded);
 
     if (!isLoaded) {
-        return null
+        return null;
     }
 
-    return <DrawerContent {...props} />
-}
+    return <DrawerContent {...props} />;
+};
 
-export const Drawer = memo <IDrawerProps & { children: ReactNode }>((props) => {
+export const Drawer = memo<IDrawerProps & { children: ReactNode }>((props) => {
     return (
         <AnimationProvider>
             <DrawerAsync {...props} />
         </AnimationProvider>
-    )
-})
+    );
+});

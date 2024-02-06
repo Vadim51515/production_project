@@ -1,5 +1,5 @@
-import { addCommentSliceActions } from './slices/addCommentFormSlice'
+import { addCommentSliceActions } from './slices/addCommentFormSlice';
 
 export const addCommentActions = {
-    ...addCommentSliceActions
-}
+    ...addCommentSliceActions,
+};

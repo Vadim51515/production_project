@@ -1,40 +1,38 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import type { IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema'
-import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
-import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator'
-import { RuntimeStatuses } from '../../../../shared/constants/common'
-import { Theme } from '../../../../shared/enums'
-import { LoginModal } from './LoginModal'
+import type { Meta, StoryObj } from '@storybook/react';
+import type { IStateSchema } from '../../../../app/providers/StoreProvider/config/stateSchema';
+import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator';
+import { themeDecorator } from '../../../../shared/config/storybook/decorators/themeDecorator';
+import { RuntimeStatuses } from '../../../../shared/constants/common';
+import { Theme } from '../../../../shared/enums';
+import { LoginModal } from './LoginModal';
 
 const meta = {
     title: 'features/LoginModal',
     component: LoginModal,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-    }
+    argTypes: {},
+} satisfies Meta<typeof LoginModal>;
 
-} satisfies Meta<typeof LoginModal>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 const state: DeepPartial<IStateSchema> = {
     login: {
         status: RuntimeStatuses.Ready,
         username: 'admin',
-        password: '123'
-    }
-}
+        password: '123',
+    },
+};
 export const Dark: Story = {
-    args: {}
-}
+    args: {},
+};
 
-Dark.decorators = [storeDecorator(state)]
+Dark.decorators = [storeDecorator(state)];
 
 export const Light: Story = {
-    args: {}
-}
+    args: {},
+};
 
-Light.decorators = [themeDecorator(Theme.Light), storeDecorator(state)]
+Light.decorators = [themeDecorator(Theme.Light), storeDecorator(state)];

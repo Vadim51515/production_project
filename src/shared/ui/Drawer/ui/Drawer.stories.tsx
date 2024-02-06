@@ -1,26 +1,22 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { Drawer } from './Drawer'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Drawer } from './Drawer';
 
 const meta = {
     title: 'shared/Drawer',
     component: Drawer,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {}
+    argTypes: {},
+} satisfies Meta<typeof Drawer>;
 
-} satisfies Meta<typeof Drawer>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
         isOpen: true,
-        children: null
-    }
-}
+        children: null,
+    },
+};

@@ -1,28 +1,25 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type IThunkConfig } from '@/app/providers/StoreProvider'
-import { type IComment } from '../../../../../entities/Comment'
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { type IThunkConfig } from '@/app/providers/StoreProvider';
+import { type IComment } from '../../../../../entities/Comment';
 
 export const fetchCommentsByArticleId = createAsyncThunk<IComment[], string, IThunkConfig<string>>(
     'articleDetails/fetchCommentsByArticleId',
-    async (
-        articleId,
-        { extra, rejectWithValue }
-    ) => {
+    async (articleId, { extra, rejectWithValue }) => {
         try {
             const response = await extra.api.get<IComment[]>('/comments', {
                 params: {
                     articleId,
-                    _expand: 'user'
-                }
-            })
+                    _expand: 'user',
+                },
+            });
 
             if (!response.data) {
-                throw new Error()
+                throw new Error();
             }
 
-            return response.data
+            return response.data;
         } catch (e) {
-            return rejectWithValue(e as string)
+            return rejectWithValue(e as string);
         }
-    }
-)
+    },
+);

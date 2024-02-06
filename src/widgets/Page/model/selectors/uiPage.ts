@@ -1,9 +1,6 @@
-import type { IStateSchema } from '@/app/providers/StoreProvider/config/stateSchema'
-import { RuntimeStatuses } from '../../../../shared/constants/common'
+import type { IStateSchema } from '@/app/providers/StoreProvider/config/stateSchema';
+import { RuntimeStatuses } from '../../../../shared/constants/common';
 
-export const uiPageLoadingSelector = (state: IStateSchema) => (
-    state.uiPage?.status === RuntimeStatuses.Loading)
+export const uiPageLoadingSelector = (state: IStateSchema) => state.uiPage?.status === RuntimeStatuses.Loading;
 
-export const uiPageScrollByPathSelector = (state: IStateSchema, path: string) => (
-    state.uiPage.scroll[path] || 0
-)
+export const uiPageScrollByPathSelector = (state: IStateSchema, path: string) => state.uiPage.scroll[path] || 0;

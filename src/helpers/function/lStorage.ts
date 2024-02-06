@@ -1,46 +1,40 @@
 export const lStorage = (() => {
     // TODO Заменить везде localStorage на lStorage
-    let is = true
+    let is = true;
     try {
-        is = !!localStorage
+        is = !!localStorage;
     } catch (e) {
-        is = false
+        is = false;
     }
 
     return {
-        dispatchEvent (
-            key: string,
-            oldValue: string | null,
-            newValue: string
-        ) {
+        dispatchEvent(key: string, oldValue: string | null, newValue: string) {
             const event = new StorageEvent('storage', {
                 bubbles: true,
                 cancelable: false,
                 key,
                 oldValue,
-                newValue
-            })
+                newValue,
+            });
 
-            window.dispatchEvent(event)
+            window.dispatchEvent(event);
         },
 
-        get (key: string): string | null {
-            if (!is) return null
+        get(key: string): string | null {
+            if (!is) return null;
 
-            return localStorage.getItem(key)
+            return localStorage.getItem(key);
         },
 
-        set (key: string, value: any): void {
-            if (!is) return
-            const oldValue = this.get(key)
+        set(key: string, value: any): void {
+            if (!is) return;
+            const oldValue = this.get(key);
 
-            const newValue = typeof value === 'string'
-                ? value
-                : JSON.stringify(value)
+            const newValue = typeof value === 'string' ? value : JSON.stringify(value);
 
-            localStorage.setItem(key, newValue)
+            localStorage.setItem(key, newValue);
 
-            this.dispatchEvent(key, oldValue, newValue)
-        }
-    }
-})()
+            this.dispatchEvent(key, oldValue, newValue);
+        },
+    };
+})();

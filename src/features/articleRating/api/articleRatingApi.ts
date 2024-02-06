@@ -1,16 +1,16 @@
-import { type IRating } from '../../../entities/Rating'
-import { rtkApi } from '../../../shared/api'
+import { type IRating } from '../../../entities/Rating';
+import { rtkApi } from '../../../shared/api';
 
 interface IGetArticleArg {
-    userId: string
-    profileId: string
+    userId: string;
+    profileId: string;
 }
 
 interface IRateArticleArg {
-    userId: string
-    profileId: string
-    rate: number
-    feedback?: string
+    userId: string;
+    profileId: string;
+    rate: number;
+    feedback?: string;
 }
 
 const articleRatingApi = rtkApi.injectEndpoints({
@@ -20,20 +20,20 @@ const articleRatingApi = rtkApi.injectEndpoints({
                 url: '/article-ratings',
                 params: {
                     userId,
-                    profileId
-                }
-            })
+                    profileId,
+                },
+            }),
         }),
 
         rateArticle: build.mutation<IRating[], IRateArticleArg>({
             query: (arg) => ({
                 url: '/article-ratings',
                 method: 'POST',
-                body: arg
-            })
-        })
-    })
-})
+                body: arg,
+            }),
+        }),
+    }),
+});
 
-export const useGetArticleRatingQuery = articleRatingApi.useGetArticleRatingQuery
-export const useRateArticleMutation = articleRatingApi.useRateArticleMutation
+export const useGetArticleRatingQuery = articleRatingApi.useGetArticleRatingQuery;
+export const useRateArticleMutation = articleRatingApi.useRateArticleMutation;

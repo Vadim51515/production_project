@@ -1,9 +1,5 @@
-import type { IStateSchema } from '../../app/providers/StoreProvider/config/stateSchema'
-import {
-    Contry,
-    Currency,
-    RuntimeStatuses
-} from './common'
+import type { IStateSchema } from '../../app/providers/StoreProvider/config/stateSchema';
+import { Contry, Currency, RuntimeStatuses } from './common';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
@@ -19,7 +15,7 @@ export const mockStore: IStateSchema = {
             avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg',
             country: Contry.Russia,
             currency: Currency.RUB,
-            id: '1'
+            id: '1',
         },
         form: {
             firstName: 'Вадим',
@@ -29,14 +25,14 @@ export const mockStore: IStateSchema = {
             avatar: 'https://illustrators.ru/uploads/illustration/image/1509699/kas.jpg',
             country: Contry.Russia,
             currency: Currency.RUB,
-            id: '1'
-        }
+            id: '1',
+        },
     },
     user: {
         isInit: true,
         authData: {
             id: '1',
-            username: 'inhellim 123'
-        }
-    }
-}
+            username: 'inhellim 123',
+        },
+    },
+};

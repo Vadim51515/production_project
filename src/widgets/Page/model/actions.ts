@@ -1,5 +1,5 @@
-import { uiPageSliceActions } from './slices/uiPageSlice'
+import { uiPageSliceActions } from './slices/uiPageSlice';
 
 export const uiPageActions = {
-    ...uiPageSliceActions
-}
+    ...uiPageSliceActions,
+};

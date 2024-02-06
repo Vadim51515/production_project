@@ -1,28 +1,25 @@
-import React, { type FC } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Skeleton } from '../../../../shared/ui/Skeleton/ui/Skeleton'
-import { VStack } from '../../../../shared/ui/Stack'
-import { useGetNotificationQuery } from '../../api/notificationApi'
-import { NotificationItem } from '../NotificationItem/NotificationItem'
+import React, { type FC } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Skeleton } from '../../../../shared/ui/Skeleton/ui/Skeleton';
+import { VStack } from '../../../../shared/ui/Stack';
+import { useGetNotificationQuery } from '../../api/notificationApi';
+import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 interface INotificationListProps {
-    className?: string
+    className?: string;
 }
 
 export const NotificationList: FC<INotificationListProps> = ({ className }) => {
-    const {
-        data,
-        isLoading
-    } = useGetNotificationQuery(null, {
-        pollingInterval: 5000
-    })
+    const { data, isLoading } = useGetNotificationQuery(null, {
+        pollingInterval: 5000,
+    });
 
     const content = data?.map((item) => (
         <NotificationItem
             key={item.id}
             item={item}
         />
-    ))
+    ));
 
     const loadingContent = (
         <>
@@ -42,13 +39,14 @@ export const NotificationList: FC<INotificationListProps> = ({ className }) => {
                 height={'80px'}
             />
         </>
-    )
+    );
 
     return (
-        <VStack gap={'10'} className={classNames('', {}, [className])}>
-            {isLoading
-                ? loadingContent
-                : content}
+        <VStack
+            gap={'10'}
+            className={classNames('', {}, [className])}
+        >
+            {isLoading ? loadingContent : content}
         </VStack>
-    )
-}
+    );
+};

@@ -1,11 +1,14 @@
-import { type CFC } from '../../../../app/types'
-import { Flex, type IFlexProps } from '../Flex/Flex'
-import React from 'react'
+import { type CFC } from '../../../../app/types';
+import { Flex, type IFlexProps } from '../Flex/Flex';
+import React from 'react';
 
-type TVStackProps = Omit<IFlexProps, 'direction'>
+type TVStackProps = Omit<IFlexProps, 'direction'>;
 
 export const VStack: CFC<TVStackProps> = (props) => {
     return (
-        <Flex {...props} direction="column" />
-    )
-}
+        <Flex
+            {...props}
+            direction="column"
+        />
+    );
+};

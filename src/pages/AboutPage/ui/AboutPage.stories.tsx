@@ -1,32 +1,28 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator'
-import { Theme } from '../../../shared/enums'
-import { AboutPage } from '../index'
+import type { Meta, StoryObj } from '@storybook/react';
+import { themeDecorator } from '../../../shared/config/storybook/decorators/themeDecorator';
+import { Theme } from '../../../shared/enums';
+import { AboutPage } from '../index';
 
-export default { component: AboutPage }
+export default { component: AboutPage };
 const meta = {
     title: 'pages/AboutPage',
     component: AboutPage,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
     argTypes: {},
-    args: {}
+    args: {},
+} satisfies Meta<typeof AboutPage>;
 
-} satisfies Meta<typeof AboutPage>
-
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Dark: Story = {
-    args: {}
-}
+    args: {},
+};
 
 export const Light: Story = {
-    args: {}
-}
+    args: {},
+};
 
-Light.decorators = [themeDecorator(Theme.Light)]
+Light.decorators = [themeDecorator(Theme.Light)];

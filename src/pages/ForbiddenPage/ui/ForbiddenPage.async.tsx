@@ -1,3 +1,3 @@
-import { lazy } from 'react'
+import { lazy } from 'react';
 
-export const LazyForbiddenPage = lazy(async () => await import('./ForbiddenPage'))
+export const LazyForbiddenPage = lazy(async () => await import('./ForbiddenPage'));

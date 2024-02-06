@@ -1,42 +1,30 @@
-import React, {
-    useEffect,
-    useMemo,
-    useState
-} from 'react'
-import { LOCAL_STORAGE_THEME_KEY } from '../../../../shared/constants/localStorage'
-import { Theme } from '../../../../shared/enums'
-import { type CFC } from '../../../types'
-import {
-    ThemeContext
-} from '../../../../shared/lib/context/ThemeContext'
+import React, { useEffect, useMemo, useState } from 'react';
+import { LOCAL_STORAGE_THEME_KEY } from '../../../../shared/constants/localStorage';
+import { Theme } from '../../../../shared/enums';
+import { type CFC } from '../../../types';
+import { ThemeContext } from '../../../../shared/lib/context/ThemeContext';
 
-const defaultItem = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme ?? Theme.Dark
+const defaultItem = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ?? Theme.Dark;
 
 interface IThemeProvider {
-    initialTheme?: Theme
+    initialTheme?: Theme;
 }
 const ThemeProvider: CFC<IThemeProvider> = ({ children, initialTheme }) => {
-    const [theme, setTheme] = useState<Theme>(initialTheme || defaultItem)
+    const [theme, setTheme] = useState<Theme>(initialTheme || defaultItem);
 
     const defaultProps = useMemo(
         () => ({
             theme,
-            setTheme
+            setTheme,
         }),
-        [
-            theme
-        ]
-    )
+        [theme],
+    );
 
     useEffect(() => {
-        document.body.className = theme
-    }, [theme])
+        document.body.className = theme;
+    }, [theme]);
 
-    return (
-        <ThemeContext.Provider value={defaultProps}>
-            {children}
-        </ThemeContext.Provider>
-    )
-}
+    return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>;
+};
 
-export default ThemeProvider
+export default ThemeProvider;

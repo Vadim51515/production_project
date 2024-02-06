@@ -1,26 +1,20 @@
-import {
-    type RefObject,
-    useCallback,
-    useEffect,
-    useRef,
-    useState
-} from 'react'
-import { type Func } from '../../app/types'
-import { useClickOutside } from './useClickOutside'
+import { type RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { type Func } from '../../app/types';
+import { useClickOutside } from './useClickOutside';
 
 interface IUseModalProps {
-    onClose: Func
-    isOpen?: boolean
-    animationDelay?: number
-    closeOnPressEsc?: boolean
-    closeOnOutsideClick?: boolean
+    onClose: Func;
+    isOpen?: boolean;
+    animationDelay?: number;
+    closeOnPressEsc?: boolean;
+    closeOnOutsideClick?: boolean;
 }
 
 interface IUseModalResult {
-    isClosing: boolean
-    isMounted: boolean
-    close: Func<[Func]>
-    refForContent: RefObject<HTMLDivElement>
+    isClosing: boolean;
+    isMounted: boolean;
+    close: Func<[Func]>;
+    refForContent: RefObject<HTMLDivElement>;
 }
 
 export const useModal: Func<[IUseModalProps], IUseModalResult> = ({
@@ -28,49 +22,53 @@ export const useModal: Func<[IUseModalProps], IUseModalResult> = ({
     isOpen,
     onClose,
     closeOnOutsideClick = true,
-    closeOnPressEsc = true
+    closeOnPressEsc = true,
 }) => {
-    const [isClosing, setIsClosing] = useState(false)
-    const [isMounted, setIsMounted] = useState(false)
+    const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
-    const timerRef = useRef<ReturnType<typeof setTimeout>>()
+    const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
-    const closeHandler = useCallback((callback = onClose) => {
-        setIsClosing(true)
-        timerRef.current = setTimeout(() => {
-            callback()
-            setIsClosing(false)
-        }, animationDelay)
-    }, [onClose])
+    const closeHandler = useCallback(
+        (callback = onClose) => {
+            setIsClosing(true);
+            timerRef.current = setTimeout(() => {
+                callback();
+                setIsClosing(false);
+            }, animationDelay);
+        },
+        [onClose],
+    );
 
-    const onKeyDown = useCallback((event: KeyboardEvent) => {
-        if (event.key === 'Escape') closeHandler()
-    }, [closeHandler])
+    const onKeyDown = useCallback(
+        (event: KeyboardEvent) => {
+            if (event.key === 'Escape') closeHandler();
+        },
+        [closeHandler],
+    );
 
     useEffect(() => {
         if (isOpen && closeOnPressEsc) {
-            window.addEventListener('keydown', onKeyDown)
+            window.addEventListener('keydown', onKeyDown);
         }
 
         return () => {
-            clearTimeout(timerRef.current)
-            window.removeEventListener('keydown', onKeyDown)
-        }
-    }, [closeOnPressEsc, isOpen, onKeyDown])
+            clearTimeout(timerRef.current);
+            window.removeEventListener('keydown', onKeyDown);
+        };
+    }, [closeOnPressEsc, isOpen, onKeyDown]);
 
     useEffect(() => {
-        if (isOpen) setIsMounted(true)
-    }, [isOpen])
+        if (isOpen) setIsMounted(true);
+    }, [isOpen]);
 
-    const isUseClickOutside = isOpen && closeOnOutsideClick
+    const isUseClickOutside = isOpen && closeOnOutsideClick;
 
-    const refForContent = useClickOutside(isUseClickOutside
-        ? closeHandler
-        : () => {})
+    const refForContent = useClickOutside(isUseClickOutside ? closeHandler : () => {});
     return {
         isClosing,
         isMounted,
         refForContent,
-        close: closeHandler
-    }
-}
+        close: closeHandler,
+    };
+};

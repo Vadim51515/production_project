@@ -1,30 +1,24 @@
-import { type Nullable } from '@vitest/utils'
-import { type TFormErrors } from '../../../../app/types'
-import { ErrorsStatuses } from '../../../../shared/constants/common'
-import {
-    type IProfile,
-    type TKeysProfile
-} from '../../types'
+import { type Nullable } from '@vitest/utils';
+import { type TFormErrors } from '../../../../app/types';
+import { ErrorsStatuses } from '../../../../shared/constants/common';
+import { type IProfile, type TKeysProfile } from '../../types';
 
 export const validateProfileData = (profile: Nullable<Partial<IProfile>>) => {
     if (!profile) {
-        return {}
+        return {};
     }
 
-    const {
-        firstName,
-        surname
-    } = profile
+    const { firstName, surname } = profile;
 
-    const formErrors: TFormErrors<TKeysProfile> = { }
+    const formErrors: TFormErrors<TKeysProfile> = {};
 
     if (!firstName) {
-        formErrors.firstName = ErrorsStatuses.FieldRequired
+        formErrors.firstName = ErrorsStatuses.FieldRequired;
     }
 
     if (!surname) {
-        formErrors.surname = ErrorsStatuses.FieldRequired
+        formErrors.surname = ErrorsStatuses.FieldRequired;
     }
 
-    return formErrors
-}
+    return formErrors;
+};

@@ -1,3 +1,3 @@
-export type { ILoginState } from './model/types'
+export type { ILoginState } from './model/types';
 // export { loginReducer } from './model/slice/loginSlice'
-export { LoginModal } from './ui/LoginModal/LoginModal'
+export { LoginModal } from './ui/LoginModal/LoginModal';

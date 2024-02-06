@@ -1,22 +1,18 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { CommentCard } from './CommentCard'
+import type { Meta, StoryObj } from '@storybook/react';
+import { CommentCard } from './CommentCard';
 
 const meta = {
     title: 'entities/Comment/CommentCard',
     component: CommentCard,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {}
+    argTypes: {},
+} satisfies Meta<typeof CommentCard>;
 
-} satisfies Meta<typeof CommentCard>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
@@ -26,8 +22,8 @@ export const Default: Story = {
             user: {
                 id: '1',
                 avatar: '',
-                username: 'inhellim-Test'
-            }
-        }
-    }
-}
+                username: 'inhellim-Test',
+            },
+        },
+    },
+};

@@ -1,1 +1,1 @@
-export { userActions } from './slices/userSlice'
+export { userActions } from './slices/userSlice';

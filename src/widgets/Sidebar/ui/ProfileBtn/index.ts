@@ -1,1 +1,1 @@
-export { ProfileBtn } from './ui/ProfileBtn'
+export { ProfileBtn } from './ui/ProfileBtn';

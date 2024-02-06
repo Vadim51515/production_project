@@ -1,27 +1,23 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator'
-import { mockStore } from '../../../../shared/constants/mockStore'
-import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader'
+import type { Meta, StoryObj } from '@storybook/react';
+import { storeDecorator } from '../../../../shared/config/storybook/decorators/storeDecorator';
+import { mockStore } from '../../../../shared/constants/mockStore';
+import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 const meta = {
     title: 'pages/ArticleDetailsPage/ArticleDetailsPageHeader',
     component: ArticleDetailsPageHeader,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {}
+    argTypes: {},
+} satisfies Meta<typeof ArticleDetailsPageHeader>;
 
-} satisfies Meta<typeof ArticleDetailsPageHeader>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {}
-}
+    args: {},
+};
 
-Default.decorators = (storeDecorator(mockStore))
+Default.decorators = storeDecorator(mockStore);

@@ -1,25 +1,19 @@
-import {
-    createSlice,
-    type PayloadAction
-} from '@reduxjs/toolkit'
-import { RuntimeStatuses } from '../../../../shared/constants/common'
-import { type ICommentFormState } from '../types'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { RuntimeStatuses } from '../../../../shared/constants/common';
+import { type ICommentFormState } from '../types';
 
 const initialState: ICommentFormState = {
-    status: RuntimeStatuses.BeforeInitial
-}
+    status: RuntimeStatuses.BeforeInitial,
+};
 
-export const {
-    reducer: addCommentReducer,
-    actions: addCommentSliceActions
-} = createSlice({
+export const { reducer: addCommentReducer, actions: addCommentSliceActions } = createSlice({
     name: 'addCommentForm',
     initialState,
     reducers: {
-        setText  (state, { payload }: PayloadAction<string>) {
-            state.text = payload
-        }
-    }
+        setText(state, { payload }: PayloadAction<string>) {
+            state.text = payload;
+        },
+    },
     // extraReducers: (builder) => {
     //     builder
     //         .addCase(loginByUsername.pending, (state) => {
@@ -35,4 +29,4 @@ export const {
     //             state.error = payload as string
     //         })
     // }
-})
+});

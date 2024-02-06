@@ -3,8 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from 'jest'
-import path from 'path'
+import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
     // All imported modules in your tests should be mocked automatically
@@ -26,63 +26,50 @@ const config: Config = {
     // testEnvironment: 'jest-environment-jsdom,
 
     // An array of regexp pattern strings used to skip coverage collection
-    coveragePathIgnorePatterns: [
-        '/node_modules/'
-    ],
+    coveragePathIgnorePatterns: ['/node_modules/'],
 
     // An array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: ['node_modules', '<rootDir>'],
 
-    modulePaths: [
-        '<rootDir>src'
-    ],
+    modulePaths: ['<rootDir>src'],
 
     // An array of file extensions your modules use
-    moduleFileExtensions: [
-        'js',
-        'mjs',
-        'cjs',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node'
-    ],
+    moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
     // The root directory that Jest should scan for tests and modules within
     rootDir: '../../',
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
     // The glob patterns Jest uses to detect test files
-    testMatch: [
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
-    ],
+    testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     moduleNameMapper: {
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-            '<rootDir>/__mocks__/fileMock.js',
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/__mocks__/fileMock.js',
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-        '^@/(.*)$': '<rootDir>/src/$1'
+        '^@/(.*)$': '<rootDir>/src/$1',
     },
     // A set of global variables that need to be available in all test environments
     globals: {
         __IS_DEV__: true,
         __API__: '',
-        __PROJECT__: 'jest'
+        __PROJECT__: 'jest',
     },
 
     // Use this configuration option to add custom reporters to Jest
     reporters: [
         'default',
-        ['jest-html-reporters', {
-            publicPath: '<rootDir>/reports/unit',
-            filename: 'report.html',
-            // openReport: true,
-            inlineSource: true
-        }]
-    ]
+        [
+            'jest-html-reporters',
+            {
+                publicPath: '<rootDir>/reports/unit',
+                filename: 'report.html',
+                // openReport: true,
+                inlineSource: true,
+            },
+        ],
+    ],
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
@@ -217,6 +204,6 @@ const config: Config = {
 
     // Whether to use watchman for file crawling
     // watchman: true,
-}
+};
 
-export default config
+export default config;

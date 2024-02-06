@@ -1,14 +1,14 @@
-import { rtkApi } from '../../../shared/api'
-import { type INotification } from '../model/types'
+import { rtkApi } from '../../../shared/api';
+import { type INotification } from '../model/types';
 
 const notificationApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({
         getNotification: build.query<INotification[], null>({
             query: () => ({
-                url: '/notifications'
-            })
-        })
-    })
-})
+                url: '/notifications',
+            }),
+        }),
+    }),
+});
 
-export const useGetNotificationQuery = notificationApi.useGetNotificationQuery
+export const useGetNotificationQuery = notificationApi.useGetNotificationQuery;

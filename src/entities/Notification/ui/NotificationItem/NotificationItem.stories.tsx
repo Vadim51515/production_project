@@ -1,22 +1,18 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { NotificationItem } from './NotificationItem'
+import type { Meta, StoryObj } from '@storybook/react';
+import { NotificationItem } from './NotificationItem';
 
 const meta = {
     title: 'entities/Notification/NotificationItem',
     component: NotificationItem,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {}
+    argTypes: {},
+} satisfies Meta<typeof NotificationItem>;
 
-} satisfies Meta<typeof NotificationItem>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
@@ -24,7 +20,7 @@ export const Default: Story = {
             id: '1',
             title: 'title',
             description: 'title',
-            userId: '1'
-        }
-    }
-}
+            userId: '1',
+        },
+    },
+};

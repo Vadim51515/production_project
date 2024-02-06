@@ -1,34 +1,30 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { mockArticle } from '../../model/constants'
-import { ArticleListItem } from './ArticleListItem'
+import type { Meta, StoryObj } from '@storybook/react';
+import { mockArticle } from '../../model/constants';
+import { ArticleListItem } from './ArticleListItem';
 
 const meta = {
     title: 'entities/ArticleListItem',
     component: ArticleListItem,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {}
+    argTypes: {},
+} satisfies Meta<typeof ArticleListItem>;
 
-} satisfies Meta<typeof ArticleListItem>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const ListFormatComponent: Story = {
     args: {
         view: 'list',
-        article: mockArticle
-    }
-}
+        article: mockArticle,
+    },
+};
 
 export const TileFormatComponent: Story = {
     args: {
         view: 'tile',
-        article: mockArticle
-    }
-}
+        article: mockArticle,
+    },
+};

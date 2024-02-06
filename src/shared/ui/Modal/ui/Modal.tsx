@@ -1,15 +1,13 @@
-import React from 'react'
-import { useModal } from '../../../hooks/useModal'
-import { classNames } from '../../../lib/classNames/classNames'
-import {
-    type CFC
-} from '../../../../app/types'
-import { Overlay } from '../../Overlay/ui/Overlay'
-import { Portal } from '../../Portal/ui/Portal'
-import { type IModalProps } from '../types'
-import styles from './Modal.module.scss'
-import { ModalFooter } from './ModalFooter'
-import { ModalHeader } from './ModalHeader'
+import React from 'react';
+import { useModal } from '../../../hooks/useModal';
+import { classNames } from '../../../lib/classNames/classNames';
+import { type CFC } from '../../../../app/types';
+import { Overlay } from '../../Overlay/ui/Overlay';
+import { Portal } from '../../Portal/ui/Portal';
+import { type IModalProps } from '../types';
+import styles from './Modal.module.scss';
+import { ModalFooter } from './ModalFooter';
+import { ModalHeader } from './ModalHeader';
 
 export const Modal: CFC<IModalProps> = ({
     className,
@@ -19,26 +17,21 @@ export const Modal: CFC<IModalProps> = ({
     footerProps,
     headerProps,
     isLazy,
-    dataTestId
+    dataTestId,
 }) => {
-    const {
-        close,
-        isClosing,
-        isMounted,
-        refForContent
-    } = useModal({
+    const { close, isClosing, isMounted, refForContent } = useModal({
         onClose,
-        isOpen
-    })
+        isOpen,
+    });
 
     const mods = {
         [styles.opened]: isOpen,
-        [styles.closing]: isClosing
-    }
+        [styles.closing]: isClosing,
+    };
 
-    if (isLazy && !isMounted) return null
+    if (isLazy && !isMounted) return null;
 
-    console.log('close', close)
+    console.log('close', close);
 
     return (
         <Portal>
@@ -48,14 +41,21 @@ export const Modal: CFC<IModalProps> = ({
                         ref={refForContent}
                         className={classNames(styles.container, {}, [className])}
                     >
-                        <ModalHeader onCloseModal={close} {...headerProps} />
-                        <div className={styles.content}>
-                            {children}
-                        </div>
-                        {footerProps && <ModalFooter dataTestId={dataTestId} onCloseModal={close} {...footerProps} />}
+                        <ModalHeader
+                            onCloseModal={close}
+                            {...headerProps}
+                        />
+                        <div className={styles.content}>{children}</div>
+                        {footerProps && (
+                            <ModalFooter
+                                dataTestId={dataTestId}
+                                onCloseModal={close}
+                                {...footerProps}
+                            />
+                        )}
                     </div>
                 </Overlay>
             </div>
         </Portal>
-    )
-}
+    );
+};

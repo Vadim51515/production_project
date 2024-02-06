@@ -1,19 +1,19 @@
-import React, { type FC } from 'react'
-import { useTranslation } from 'react-i18next'
-import { CURRENCIES } from '../../../../app/constans'
-import { Text } from '../../../../shared/ui/Text'
-import { ProfileField } from '../ProfileField/ProfileField'
+import React, { type FC } from 'react';
+import { useTranslation } from 'react-i18next';
+import { CURRENCIES } from '../../../../app/constans';
+import { Text } from '../../../../shared/ui/Text';
+import { ProfileField } from '../ProfileField/ProfileField';
 
 interface IProfileSettingsProps {
-    className?: string
+    className?: string;
 }
 
 export const ProfileSettings: FC<IProfileSettingsProps> = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     return (
         <div>
-            <Text tag='h2'>{t('Настройки профиля')}</Text>
+            <Text tag="h2">{t('Настройки профиля')}</Text>
             <div className={'row'}>
                 <ProfileField
                     fieldName={'username'}
@@ -34,5 +34,5 @@ export const ProfileSettings: FC<IProfileSettingsProps> = () => {
                 />
             </div>
         </div>
-    )
-}
+    );
+};

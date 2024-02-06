@@ -1,22 +1,18 @@
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react'
-import { CommentList } from './CommentList'
+import type { Meta, StoryObj } from '@storybook/react';
+import { CommentList } from './CommentList';
 
 const meta = {
     title: 'entities/CommentList',
     component: CommentList,
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {}
+    argTypes: {},
+} satisfies Meta<typeof CommentList>;
 
-} satisfies Meta<typeof CommentList>
-
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
@@ -24,20 +20,20 @@ export const Default: Story = {
             {
                 id: '1',
                 text: 'hello world',
-                user: { id: '1', username: 'Vasya' }
+                user: { id: '1', username: 'Vasya' },
             },
             {
                 id: '2',
                 text: 'Comment 2',
-                user: { id: '1', username: 'Petya' }
-            }
-        ]
-    }
-}
+                user: { id: '1', username: 'Petya' },
+            },
+        ],
+    },
+};
 
 export const Loading: Story = {
     args: {
         isLoading: true,
-        comments: []
-    }
-}
+        comments: [],
+    },
+};
