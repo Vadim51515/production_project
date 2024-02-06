@@ -39,7 +39,8 @@ export const ArticleList: FC<IArticleListProps> = ({
     target
 }) => {
     const renderArticle = (index: number) => (
-        <div style={{ paddingBottom: 20 }}>
+
+        <div data-testid={'ArticleListItem'} style={{ paddingBottom: 20 }}>
             <ArticleListItem
                 target={target}
                 key={articles[index].id}
@@ -53,6 +54,7 @@ export const ArticleList: FC<IArticleListProps> = ({
     return (
         <div>
             <VirtuosoGrid
+                data-testid={'ArticleList'}
                 style={{ height: 500 }}
                 useWindowScroll
                 totalCount={articles.length}

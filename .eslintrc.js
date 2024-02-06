@@ -98,7 +98,7 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
             },
         ],
-
+        "@typescript-eslint/method-signature-style": "off"
         // "import/order": ["error", {
         //     "newlines-between": "always"
         // }]

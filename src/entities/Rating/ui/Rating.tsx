@@ -67,6 +67,7 @@ export const Rating: FC<IRatingProps> = ({
 
     const modalContent = (
         <Field
+            dataTestId={'RatingCardModal'}
             fieldType={'input'}
             fieldName={'modalReviewInput'}
             label={t('Ваш отзыв')}
@@ -76,13 +77,15 @@ export const Rating: FC<IRatingProps> = ({
     )
 
     return (
-        <Card className={classNames('', {}, [className])}>
+        <Card className={classNames('', {}, [className])} data-testid={'RatingCard'}>
             <VStack gap={'16'}>
                 <Text tag={'h3'}>{starsCount ? t('Cпасибо за оценку') + '!' : title}</Text>
+
                 <StarRating selectedStars={starsCount} onSelect={onSelectStars} />
             </VStack>
             <BrowserView>
                 <Modal
+                    dataTestId={'RatingCardModal'}
                     isOpen={isModalOpen}
                     onClose={onCancelHandler}
                     isLazy

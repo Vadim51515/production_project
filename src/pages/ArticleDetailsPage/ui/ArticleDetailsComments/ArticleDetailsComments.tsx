@@ -31,7 +31,7 @@ export const ArticleDetailsComments: FC<IArticleDetailsCommentsProps> = ({
     })
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <div data-testid={'ArticleDetailsComments'} className={classNames('', {}, [className])}>
             <AddCommentForm sendComment={addCommentForArticle} />
             <CommentList
                 isLoading={isLoading}

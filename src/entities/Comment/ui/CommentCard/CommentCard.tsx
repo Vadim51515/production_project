@@ -24,7 +24,7 @@ export const CommentCard: FC<ICommentCardProps> = ({
 }) => {
     if (isLoading) {
         return (
-            <div className={classNames(styles.CommentCard, {}, [className])}>
+            <div className={classNames(styles.CommentCard, {}, [className])} data-testid={'LoadingCommentCard'}>
                 <div className={styles.header}>
                     <Skeleton
                         width={30}
@@ -51,7 +51,7 @@ export const CommentCard: FC<ICommentCardProps> = ({
     }
 
     return (
-        <div className={classNames(styles.commentCard, {}, [className])}>
+        <div className={classNames(styles.commentCard, {}, [className])} data-testid={'CommentCard'}>
             <AppLink to={getRouteProfile(comment.user.id)}>
 
                 <div className={styles.header}>

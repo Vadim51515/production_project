@@ -26,7 +26,10 @@ const initialReducers: TReducersList = {
     addCommentForm: addCommentReducer
 }
 
-const AddCommentForm: FC<IAddCommentFormProps> = ({ className, sendComment }) => {
+const AddCommentForm: FC<IAddCommentFormProps> = ({
+    className,
+    sendComment
+}) => {
     useAsyncReducer(initialReducers, true)
 
     const text = useSelector(addCommentFormTextSelector)
@@ -45,9 +48,13 @@ const AddCommentForm: FC<IAddCommentFormProps> = ({ className, sendComment }) =>
     }
 
     return (
-        <div className={classNames(styles.addCommentForm, {}, [className])}>
+        <div
+            className={classNames(styles.addCommentForm, {}, [className])}
+            data-testid={'AddCommentForm'}
+        >
             <Field
                 fieldType={'input'}
+                dataTestId={'NewComment'}
                 fieldName={'newComment'}
                 value={text}
                 label={t('Введите текст комментария')}
@@ -55,7 +62,12 @@ const AddCommentForm: FC<IAddCommentFormProps> = ({ className, sendComment }) =>
                 withEventChange
                 className={styles.input}
             />
-            <Button className={styles.submitBtn} onClick={onSendComment}>{t('Отправить')}</Button>
+
+            <Button
+                data-testid={'AddNewCommentBtn'}
+                className={styles.submitBtn}
+                onClick={onSendComment}
+            >{t('Отправить')}</Button>
         </div>
     )
 }

@@ -17,13 +17,21 @@ export const ModalFooter: FC<IFooterProps> = memo(({
     onConfirm,
     cancelText = 'Отмена',
     onCancel,
-    onCloseModal
+    onCloseModal,
+    dataTestId
 }) => {
-    console.log('onCloseModal', onCloseModal)
     return (
         <div className={classNames(styles.footer, {}, [])}>
-            {onCancel && <Button onClick={() => { onCloseModal(onCancel) }} pattern='outline'>{cancelText}</Button>}
-            {onConfirm && <Button onClick={() => { onCloseModal(onConfirm) }}>{confirmText}</Button>}
+            {onCancel && <Button
+                data-testid={`${dataTestId}OnCancel`}
+                onClick={() => { onCloseModal(onCancel) }}
+                pattern='outline'
+            >{cancelText}</Button>}
+
+            {onConfirm && <Button
+                data-testid={`${dataTestId}OnConfirm`}
+                onClick={() => { onCloseModal(onConfirm) }}
+            >{confirmText}</Button>}
         </div>
     )
 })

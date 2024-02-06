@@ -600,6 +600,110 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Node.js",
+      "subtitle": "А дойдут ли руки до него?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+      "views": 1876,
+      "createdAt": "13.01.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "AR5nJ_C"
+    },
+    {
+      "title": "Node.js",
+      "subtitle": "А дойдут ли руки до него?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+      "views": 1876,
+      "createdAt": "13.01.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "AVlLNRY"
+    },
+    {
+      "title": "Node.js",
+      "subtitle": "А дойдут ли руки до него?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+      "views": 1876,
+      "createdAt": "13.01.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "5a7JxYd"
+    },
+    {
+      "title": "Node.js",
+      "subtitle": "А дойдут ли руки до него?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+      "views": 1876,
+      "createdAt": "13.01.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "flTsxPm"
+    },
+    {
+      "title": "Node.js",
+      "subtitle": "А дойдут ли руки до него?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+      "views": 1876,
+      "createdAt": "13.01.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "7oyCFHD"
+    },
+    {
+      "title": "Node.js",
+      "subtitle": "А дойдут ли руки до него?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+      "views": 1876,
+      "createdAt": "13.01.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "HzhqY6I"
+    },
+    {
+      "title": "Node.js",
+      "subtitle": "А дойдут ли руки до него?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+      "views": 1876,
+      "createdAt": "13.01.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "eBEngb8"
+    },
+    {
+      "title": "Node.js",
+      "subtitle": "А дойдут ли руки до него?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+      "views": 1876,
+      "createdAt": "13.01.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "PZ-ipun"
     }
   ],
   "comments": [
@@ -656,6 +760,12 @@
       "userId": "2",
       "text": "qwe",
       "id": "RXeliWc"
+    },
+    {
+      "articleId": "HzhqY6I",
+      "userId": "1",
+      "text": "text",
+      "id": "JwfseIc"
     }
   ],
   "users": [
@@ -711,70 +821,6 @@
       "avatar": "https://img.freepik.com/premium-photo/a-drawing-of-a-panda-holding-a-plant-with-the-words-panda-on-it_655090-70488.jpg"
     }
   ],
-  "article-ratings": [
-    {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "1",
-      "articleId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 3,
-      "feedback": "Нормальная статья",
-      "userId": "1",
-      "articleId": "2"
-    },
-    {
-      "id": "3",
-      "rate": 5,
-      "feedback": "Отличная статья",
-      "userId": "1",
-      "articleId": "3"
-    },
-    {
-      "userId": "1",
-      "articleId": "4",
-      "rate": 4,
-      "feedback": "123456",
-      "id": "qQYYvGG"
-    },
-    {
-      "userId": "1",
-      "articleId": "5",
-      "rate": 3,
-      "id": "pgVZmAK"
-    }
-  ],
-  "profile-ratings": [
-    {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "1",
-      "profileId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 3,
-      "feedback": "Нормальная статья",
-      "userId": "1",
-      "profileId": "2"
-    },
-    {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "1",
-      "profileId": "1"
-    },
-    {
-      "userId": "2",
-      "profileId": "1",
-      "rate": 5,
-      "feedback": "asdfasdf",
-      "id": "mXkwPGo"
-    }
-  ]
+  "article-ratings": [],
+  "profile-ratings": []
 }

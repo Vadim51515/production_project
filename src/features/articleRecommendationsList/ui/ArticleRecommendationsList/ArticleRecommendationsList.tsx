@@ -25,7 +25,7 @@ export const ArticleRecommendationsList: FC<IArticleRecommendationsListProps> = 
     if (!data) return null
 
     return (
-        <>
+        <div data-testid={'ArticleRecommendationsList'}>
             <Text>{'Рекомендуемые:'}</Text>
             <ArticleList
                 articles={data}
@@ -33,7 +33,7 @@ export const ArticleRecommendationsList: FC<IArticleRecommendationsListProps> = 
                 className={styles.recommendationsContainer}
                 target={'_blank'}
             />
-        </>
+        </div>
 
     )
 }

@@ -18,7 +18,8 @@ export const Modal: CFC<IModalProps> = ({
     isOpen,
     footerProps,
     headerProps,
-    isLazy
+    isLazy,
+    dataTestId
 }) => {
     const {
         close,
@@ -51,7 +52,7 @@ export const Modal: CFC<IModalProps> = ({
                         <div className={styles.content}>
                             {children}
                         </div>
-                        {footerProps && <ModalFooter onCloseModal={close} {...footerProps} />}
+                        {footerProps && <ModalFooter dataTestId={dataTestId} onCloseModal={close} {...footerProps} />}
                     </div>
                 </Overlay>
             </div>
