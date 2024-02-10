@@ -123,4 +123,5 @@ jobs:
         if: always()
       - name: linting css
         run: npm run lint:scss
+Скоро на этом месте будет оценка: Скоро на этом месте будет оценка
 

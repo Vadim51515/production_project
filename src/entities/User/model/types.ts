@@ -1,4 +1,5 @@
 import { type IFeaturesFlag } from '../../../shared/types';
+import { type IJsonSettings } from './jsonSettings';
 
 export enum UserRole {
     Admin = 'admin',
@@ -12,6 +13,7 @@ export interface IUser {
     avatar?: string;
     roles?: UserRole[];
     features?: IFeaturesFlag;
+    jsonSettings: IJsonSettings;
 }
 
 export interface IUserState {
