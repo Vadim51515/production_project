@@ -1,5 +1,6 @@
 import React, { type FC } from 'react';
 import { useSelector } from 'react-redux';
+import { ArticlePageGreeting } from '../../../../features/articlePageGreeting';
 
 import { useActions } from '../../../../shared/hooks/useActions';
 import { type TReducersList, useAsyncReducer } from '../../../../shared/hooks/useAsyncReducer';
@@ -35,6 +36,7 @@ const ArticlesPage: FC<IArticlesPageProps> = () => {
         >
             <ArticlesPageFilters />
             <ArticleInfinityList />
+            <ArticlePageGreeting />
         </Page>
     );
 };
