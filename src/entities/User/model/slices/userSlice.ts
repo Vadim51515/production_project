@@ -1,5 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { USER_LOCAL_STORAGE_KEY } from '../../../../shared/constants/localStorage';
+import { setFeatureFlags } from '../../../../shared/lib/features';
 import { type IUser, type IUserState } from '../types';
 
 const initialState: IUserState = {
@@ -12,12 +13,15 @@ export const { reducer: userReducer, actions: userActions } = createSlice({
     reducers: {
         setAuthData(state, { payload }: PayloadAction<IUser>) {
             state.authData = payload;
+            setFeatureFlags(payload.features);
         },
 
         initAuthData(state) {
             const user = localStorage.getItem(USER_LOCAL_STORAGE_KEY);
             if (user) {
-                state.authData = JSON.parse(user);
+                const parseUser = JSON.parse(user) as IUser;
+                state.authData = parseUser;
+                setFeatureFlags(parseUser.features);
             }
             state.isInit = true;
         },

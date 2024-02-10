@@ -6,6 +6,7 @@ import { ArticleRating } from '../../../../features/articleRating';
 import { ArticleRecommendationsList } from '../../../../features/articleRecommendationsList';
 import { type TReducersList, useAsyncReducer } from '../../../../shared/hooks/useAsyncReducer';
 import { classNames } from '../../../../shared/lib/classNames/classNames';
+import { getFeatureFlag } from '../../../../shared/lib/features';
 import { Page } from '../../../../widgets/Page';
 import { Text } from '../../../../shared/ui/Text';
 
@@ -25,6 +26,8 @@ const initialReducers: TReducersList = {
 const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
     useAsyncReducer(initialReducers, true);
 
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+
     const { t } = useTranslation('article-details');
 
     const { id } = useParams<{ id: string }>();
@@ -38,7 +41,7 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
         >
             <ArticleDetailsPageHeader />
             <ArticleDetails id={id ?? ''} />
-            <ArticleRating articleId={id ?? ''} />
+            {isArticleRatingEnabled && <ArticleRating articleId={id ?? ''} />}
             <ArticleRecommendationsList />
             <ArticleDetailsComments id={id ?? ''} />
         </Page>

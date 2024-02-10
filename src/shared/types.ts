@@ -16,3 +16,8 @@ export type TAppRoutesProps = RouteProps & {
 export interface ITestProps {
     dataTestId?: string;
 }
+
+export interface IFeaturesFlag {
+    isArticleRatingEnabled?: boolean;
+    isCounterEnabled?: boolean;
+}
