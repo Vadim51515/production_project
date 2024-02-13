@@ -24,12 +24,7 @@ export const ArticleBlocks: FC<IArticleBlocksProps> = () => {
                         />
                     );
                 case ArticleBlockTypes.CODE:
-                    return (
-                        <ArticleCodeBlock
-                            key={block.id}
-                            block={block}
-                        />
-                    );
+                    return <ArticleCodeBlock key={block.id} />;
                 case ArticleBlockTypes.IMAGE:
                     return (
                         <ArticleImageBlock

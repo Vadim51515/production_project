@@ -45,7 +45,12 @@ describe('AppRouter', () => {
         componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {
-                user: { _inited: true, authData: {} },
+                user: {
+                    authData: {
+                        username: 'test',
+                        id: '1',
+                    },
+                },
             },
         });
 
@@ -57,7 +62,12 @@ describe('AppRouter', () => {
         componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
-                user: { _inited: true, authData: {} },
+                user: {
+                    authData: {
+                        username: 'test',
+                        id: '1',
+                    },
+                },
             },
         });
 
@@ -69,7 +79,13 @@ describe('AppRouter', () => {
         componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
-                user: { _inited: true, authData: { roles: [UserRole.Admin] } },
+                user: {
+                    authData: {
+                        username: 'test',
+                        id: '1',
+                        roles: [UserRole.Admin],
+                    },
+                },
             },
         });
 
