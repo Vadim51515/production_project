@@ -31,6 +31,7 @@ export const mockStore: IStateSchema = {
     user: {
         isInit: true,
         authData: {
+            jsonSettings: {},
             id: '1',
             username: 'inhellim 123',
         },

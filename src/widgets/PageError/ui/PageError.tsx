@@ -14,7 +14,12 @@ export const PageError: FC<IPageErrorProps> = ({ className }) => {
 
     return (
         <div className={classNames(styles.pageError, {}, [className])}>
-            <Text>{t('Произошла непредвиденная ошибка')}</Text>
+            <Text
+                tag={'h1'}
+                withMarginBottom
+            >
+                {t('Произошла непредвиденная ошибка')}
+            </Text>
             <Button
                 onClick={() => {
                     location.reload();

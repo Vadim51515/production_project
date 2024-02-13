@@ -3,14 +3,15 @@ import { rtkApi } from '../../../shared/api';
 
 interface IGetArticleArg {
     userId: string;
-    profileId: string;
+    profileId?: string;
+    articleId?: string;
 }
 
 interface IRateArticleArg {
     userId: string;
-    profileId: string;
     rate: number;
     feedback?: string;
+    articleId: string;
 }
 
 const articleRatingApi = rtkApi.injectEndpoints({
@@ -35,5 +36,5 @@ const articleRatingApi = rtkApi.injectEndpoints({
     }),
 });
 
-export const useGetArticleRatingQuery = articleRatingApi.useGetArticleRatingQuery;
-export const useRateArticleMutation = articleRatingApi.useRateArticleMutation;
+export const { useGetArticleRatingQuery } = articleRatingApi;
+export const { useRateArticleMutation } = articleRatingApi;

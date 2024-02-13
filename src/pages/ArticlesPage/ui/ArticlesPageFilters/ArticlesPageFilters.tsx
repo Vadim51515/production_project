@@ -1,4 +1,5 @@
 import React, { type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { type IOption, type TSortOrder } from '../../../../app/types';
@@ -23,6 +24,7 @@ interface IArticlesPageFiltersProps {
 }
 
 export const ArticlesPageFilters: FC<IArticlesPageFiltersProps> = ({ className }) => {
+    const { t } = useTranslation();
     const view = useSelector(articlesPageViewSelector);
     const order = useSelector(articlesPageOrderSelector);
     const sortFieldName = useSelector(articlesPageSortFieldNameSelector);
@@ -77,7 +79,7 @@ export const ArticlesPageFilters: FC<IArticlesPageFiltersProps> = ({ className }
             <Input
                 className={styles.search}
                 onChange={onChangeSearch}
-                placeholder={'Поиск'}
+                placeholder={t('Поиск')}
                 value={search}
             />
             <ArticleTypeTabs />

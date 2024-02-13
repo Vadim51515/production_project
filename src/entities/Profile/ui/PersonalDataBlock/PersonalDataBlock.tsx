@@ -34,24 +34,29 @@ export const PersonalDataBlock: FC<IPersonalDataBlockProps> = ({ className }) =>
                     <div className={styles.nameContainer}>
                         <ProfileField
                             fieldName={'firstName'}
-                            label={'Имя'}
+                            label={t('Имя')}
                             isRequired
                         />
 
                         <ProfileField
                             fieldName={'surname'}
-                            label={'Фамилия'}
+                            label={t('Фамилия')}
                             isRequired
+                        />
+
+                        <ProfileField
+                            fieldName={'patronymic'}
+                            label={t('Отчество')}
                         />
                     </div>
                     <div className={styles.nameContainer}>
                         <ProfileField
                             fieldName={'age'}
-                            label={'Возраст'}
+                            label={t('Возраст')}
                         />
 
                         <ProfileField
-                            fieldName={'currency'}
+                            fieldName={'country'}
                             fieldType={'select'}
                             label={t('Страна')}
                             options={COUNTRIES}
@@ -59,7 +64,7 @@ export const PersonalDataBlock: FC<IPersonalDataBlockProps> = ({ className }) =>
 
                         <ProfileField
                             fieldName={'city'}
-                            label={'Город'}
+                            label={t('Город')}
                         />
                     </div>
                 </div>

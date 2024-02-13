@@ -3,7 +3,7 @@ import MainIcon from '@/shared/assets/icons/MainIcon.svg?react';
 import AboutIcon from '@/shared/assets/icons/AboutIcon.svg?react';
 import ArticleIcon from '@/shared/assets/icons/Article.svg?react';
 
-import { getRouteAbout, getRouteArticleCreate, getRouteArticles, getRouteMain } from '../../../shared/constants/common';
+import { getRouteAbout, getRouteArticles, getRouteMain } from '../../../shared/constants/common';
 export interface INavbarItem {
     path: string;
     text: string;
@@ -26,9 +26,9 @@ export const navbarItemsList: INavbarItem[] = [
         icon: <ArticleIcon />,
         text: 'Статьи',
     },
-    {
-        path: getRouteArticleCreate(),
-        icon: <ArticleIcon />,
-        text: 'Создать статью',
-    },
+    // {
+    //     path: getRouteArticleCreate(),
+    //     icon: <ArticleIcon />,
+    //     text: 'Создать статью',
+    // },
 ];

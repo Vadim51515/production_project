@@ -24,12 +24,14 @@ const ArticleRating: FC<IArticleRatingProps> = ({ articleId }) => {
     const handleRateArticle = useCallback(
         (starsCount: number, feedback?: string) => {
             try {
-                rateArticle({
-                    userId: authData?.id ?? '',
-                    articleId,
-                    rate: starsCount,
-                    feedback,
-                });
+                if (articleId) {
+                    rateArticle({
+                        userId: authData?.id ?? '',
+                        articleId,
+                        rate: starsCount,
+                        feedback,
+                    });
+                }
             } catch (e) {
                 // handle error
                 console.log(e);
@@ -71,7 +73,7 @@ const ArticleRating: FC<IArticleRatingProps> = ({ articleId }) => {
             rate={rating?.rate}
             className={styles.articleRating}
             title={t('Оцените статью')}
-            feedbackTitle={t('Оставте обратную связь')}
+            feedbackTitle={t('Оставьте обратную связь')}
         />
     );
 };

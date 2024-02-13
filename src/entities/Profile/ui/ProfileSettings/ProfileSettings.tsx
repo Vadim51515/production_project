@@ -1,6 +1,7 @@
 import React, { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CURRENCIES } from '../../../../app/constans';
+import { classNames } from '../../../../shared/lib/classNames/classNames';
 import { Text } from '../../../../shared/ui/Text';
 import { ProfileField } from '../ProfileField/ProfileField';
 
@@ -12,7 +13,7 @@ export const ProfileSettings: FC<IProfileSettingsProps> = () => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <div className={classNames('', {}, ['box'])}>
             <Text tag="h2">{t('Настройки профиля')}</Text>
             <div className={'row'}>
                 <ProfileField

@@ -13,7 +13,7 @@ export interface IUser {
     avatar?: string;
     roles?: UserRole[];
     features?: IFeaturesFlag;
-    jsonSettings: IJsonSettings;
+    jsonSettings?: IJsonSettings;
 }
 
 export interface IUserState {

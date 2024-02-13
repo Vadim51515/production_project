@@ -52,7 +52,10 @@ export const CommentCard: FC<ICommentCardProps> = ({ className, comment, isLoadi
             className={classNames(styles.commentCard, {}, [className])}
             data-testid={'CommentCard'}
         >
-            <AppLink to={getRouteProfile(comment.user.id)}>
+            <AppLink
+                className={styles.commentHeader}
+                to={getRouteProfile(comment.user.id)}
+            >
                 <div className={styles.header}>
                     <Avatar
                         image={comment.user.avatar}

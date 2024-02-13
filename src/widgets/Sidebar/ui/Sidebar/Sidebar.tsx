@@ -1,6 +1,5 @@
 import React, { type FC, memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { BugButton } from '@/app/providers/ErrorBoundary/ui/BugButton';
 import { userAuthDataSelector } from '../../../../entities/User/model/selectors/selectors';
 import { LoginModal } from '../../../../features/AuthByUsername';
 import { useParamSelector } from '../../../../shared/hooks/useParamSelector';
@@ -31,9 +30,10 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }) => {
                 }}
             />
             <Navbar isCollapsedNavbar={!isOpen} />
-            <LangSwitcher isShortName={!isOpen} />
-            <BugButton />
+            {/* Тестовая кнопка для вызова ошибки */}
+            {/* <BugButton /> */}
             <div className={styles.bottomBlock}></div>
+            <LangSwitcher />
             {userAuthData ? <ProfileBtn isCollapsedNavbar={!isOpen} /> : <LoginModal />}
         </aside>
     );

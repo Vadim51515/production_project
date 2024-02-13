@@ -66,7 +66,7 @@ export const Rating: FC<IRatingProps> = ({ className, title, feedbackTitle, hasF
             data-testid={'RatingCard'}
         >
             <VStack gap={'16'}>
-                <Text tag={'h3'}>{starsCount ? t('Cпасибо за оценку') + '!' : title}</Text>
+                <Text tag={'h3'}>{starsCount ? t('Спасибо за оценку') + '!' : title}</Text>
 
                 <StarRating
                     selectedStars={starsCount}

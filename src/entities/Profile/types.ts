@@ -6,6 +6,7 @@ export interface IProfile {
     id: string;
     firstName?: string;
     surname?: string;
+    patronymic?: string;
     age?: number;
     currency?: Currency;
     country?: Contry;

@@ -8,7 +8,7 @@ export const validateProfileData = (profile: Nullable<Partial<IProfile>>) => {
         return {};
     }
 
-    const { firstName, surname } = profile;
+    const { firstName, surname, username } = profile;
 
     const formErrors: TFormErrors<TKeysProfile> = {};
 
@@ -18,6 +18,10 @@ export const validateProfileData = (profile: Nullable<Partial<IProfile>>) => {
 
     if (!surname) {
         formErrors.surname = ErrorsStatuses.FieldRequired;
+    }
+
+    if (!username) {
+        formErrors.username = ErrorsStatuses.FieldRequired;
     }
 
     return formErrors;

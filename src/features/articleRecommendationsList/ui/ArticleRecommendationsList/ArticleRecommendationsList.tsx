@@ -1,4 +1,5 @@
 import React, { type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArticleList } from '../../../../entities/Article';
 import { articleDetailsCommentsActions } from '../../../../pages/ArticleDetailsPage/model/actions';
 import { useActions } from '../../../../shared/hooks/useActions';
@@ -14,6 +15,8 @@ interface IArticleRecommendationsListProps {
 export const ArticleRecommendationsList: FC<IArticleRecommendationsListProps> = () => {
     const { data } = useGetArticleRecommendationListQuery(3);
 
+    const { t } = useTranslation();
+
     const { fetchArticleRecommendations } = useActions(articleDetailsCommentsActions);
 
     useInitialEffect(() => {
@@ -23,8 +26,12 @@ export const ArticleRecommendationsList: FC<IArticleRecommendationsListProps> = 
     if (!data) return null;
 
     return (
-        <div data-testid={'ArticleRecommendationsList'}>
-            <Text>{'Рекомендуемые:'}</Text>
+        <div
+            className={styles.recommendationsList}
+            data-testid={'ArticleRecommendationsList'}
+        >
+            <Text withMarginBottom>{t('Рекомендуемые') + ':'}</Text>
+
             <ArticleList
                 articles={data}
                 view={'list'}

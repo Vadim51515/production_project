@@ -802,8 +802,7 @@
       "jsonSettings": {
         "theme": "app_red_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false,
-        "isArticlesPageWasOpened": true
+        "settingsPageHasBeenOpen": false
       }
     },
     {
@@ -830,6 +829,7 @@
       "id": "1",
       "firstName": "Вадим",
       "surname": "Пушкин",
+      "patronymic": "Aлександрович",
       "age": "22",
       "currency": "RUB",
       "country": "Russia",
@@ -841,17 +841,19 @@
       "id": "2",
       "firstName": "Алиса",
       "surname": "Мишкина",
+      "patronymic": "Дмитриевна",
       "age": "18",
-      "currency": "Armenia",
-      "country": "Russia",
+      "currency": "RUB",
+      "country": "Armenia",
       "city": "Екатеринбург",
-      "username": "secret_panda",
+      "username": "super_panda",
       "avatar": "https://img.freepik.com/premium-photo/a-drawing-of-a-panda-holding-a-plant-with-the-words-panda-on-it_655090-70488.jpg"
     },
     {
       "id": "3",
       "firstName": "Миша",
       "surname": "Карасов",
+      "patronymic": "Андреевич",
       "age": "25",
       "currency": "Armenia",
       "country": "Russia",

@@ -8,7 +8,7 @@ import { useInitialEffect } from '../../../../shared/hooks/useInitialEffect';
 import { articleDetailsCommentsActions } from '../../model/actions';
 import { articleDetailsCommentsIsLoadingSelector } from '../../model/selectors/comments';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
-
+import styles from './ArticleDetailsComments.module.scss';
 interface IArticleDetailsCommentsProps {
     className?: string;
     id: string;
@@ -29,7 +29,11 @@ export const ArticleDetailsComments: FC<IArticleDetailsCommentsProps> = ({ class
             data-testid={'ArticleDetailsComments'}
             className={classNames('', {}, [className])}
         >
-            <AddCommentForm sendComment={addCommentForArticle} />
+            <AddCommentForm
+                sendComment={addCommentForArticle}
+                className={styles.addCommentsForm}
+            />
+
             <CommentList
                 isLoading={isLoading}
                 comments={comments}

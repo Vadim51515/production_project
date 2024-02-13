@@ -73,7 +73,7 @@ const ProfileRating: FC<IProfileRatingProps> = ({ id: profileId }) => {
             onCancel={onCancel}
             rate={rating?.rate}
             title={t('Оцените статью')}
-            feedbackTitle={t('Оставте обратную связь')}
+            feedbackTitle={t('Оставьте обратную связь')}
         />
     );
 };

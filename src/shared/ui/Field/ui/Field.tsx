@@ -8,7 +8,7 @@ import styles from './Field.module.scss';
 import { type TFieldProps } from '../types';
 
 export const Field: FC<TFieldProps> = ({ fieldType, fieldName, isRequired, ...props }) => {
-    const { className, label, error, dataTestId } = props;
+    const { className, label, error, dataTestId, onChange } = props;
 
     let Component = null;
 
@@ -23,10 +23,15 @@ export const Field: FC<TFieldProps> = ({ fieldType, fieldName, isRequired, ...pr
     const onChangeField = (e: ChangeEvent<HTMLInputElement> | IOption<string>) => {
         switch (fieldType) {
             case 'input':
-                if ('target' in e) props.onChange(fieldName, e.target.value);
+                if ('target' in e) {
+                    console.log(e);
+                    onChange(fieldName, e.target.value);
+                }
                 break;
             case 'select':
-                props.onChange(fieldName, e as IOption<string>);
+                if ('label' in e) {
+                    onChange(fieldName, e.value);
+                }
                 break;
         }
     };
@@ -45,8 +50,7 @@ export const Field: FC<TFieldProps> = ({ fieldType, fieldName, isRequired, ...pr
                     </Text>
                 )}
             </div>
-            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-            {/* @ts-expect-error */}
+
             <Component
                 {...props}
                 withEventChange

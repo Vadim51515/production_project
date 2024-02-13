@@ -51,7 +51,6 @@ const AddCommentForm: FC<IAddCommentFormProps> = ({ className, sendComment }) =>
                 value={text}
                 label={t('Введите текст комментария')}
                 onChange={onChangeInput}
-                withEventChange
                 className={styles.input}
             />
 

@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 import { useSelector } from 'react-redux';
-import { type IOption, type TOptions } from '../../../../app/types';
+import { type TOptions } from '../../../../app/types';
 import { useActions } from '../../../../shared/hooks/useActions';
 import { useParamSelector } from '../../../../shared/hooks/useParamSelector';
 import { type TFieldType } from '../../../../shared/ui/Field';
@@ -35,11 +35,8 @@ export const ProfileField: FC<TProfileFieldProps> = ({ fieldType = 'input', fiel
 
     const { setFormField } = useActions(profileActions);
 
-    const onChangeField = (fieldKey: string, propValue: string | IOption<string>) => {
-        // TODO Пофиксить типы
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
-        const newValue = fieldType === 'select' ? propValue.value : propValue;
+    const onChangeField = (fieldKey: string, propValue: string) => {
+        const newValue = propValue;
 
         setFormField({
             fieldKey,

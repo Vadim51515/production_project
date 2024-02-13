@@ -1,4 +1,3 @@
-import { type Func, type IOption } from '../../../app/types';
 import { type ISharedFieldComponentProps } from '../../types';
 import { type InputPropsWithEvent } from '../Input';
 import { type ISelectProps } from '../Select';
@@ -17,12 +16,14 @@ interface IBaseFieldProps extends ISharedFieldComponentProps {
 interface IFieldInputProps extends Omit<InputPropsWithEvent, 'onChange' | 'withEventChange'> {
     fieldType: 'input';
     value?: string | number;
-    onChange: Func<[string, string]>;
+    // onChange: Func<[string, string]>;
+    onChange: (val_1: string, val_2: string) => void;
 }
 
 interface IFieldSelectProps extends Omit<ISelectProps<string>, 'onChange'> {
     fieldType: 'select';
-    onChange: Func<[string, IOption<string>]>;
+    // onChange: Func<[string, IOption<string>]>;
+    onChange: (val_1: string, val_2: string) => void;
 }
 
 export type TFieldProps = IBaseFieldProps & (IFieldInputProps | IFieldSelectProps);

@@ -49,6 +49,7 @@ isAuth.decorators = [
         ...state,
         user: {
             authData: {
+                jsonSettings: {},
                 username: 'test',
                 id: '1',
             },
