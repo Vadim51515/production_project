@@ -35,7 +35,6 @@ export const Field: FC<TFieldProps> = ({ fieldType, fieldName, isRequired, ...pr
                 break;
         }
     };
-
     return (
         <div className={classNames(styles.fieldContainer, {}, [className])}>
             <div className={styles.labelContainer}>
@@ -51,6 +50,8 @@ export const Field: FC<TFieldProps> = ({ fieldType, fieldName, isRequired, ...pr
                 )}
             </div>
 
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-expect-error */}
             <Component
                 {...props}
                 withEventChange
