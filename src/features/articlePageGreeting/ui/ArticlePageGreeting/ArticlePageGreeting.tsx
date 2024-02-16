@@ -15,7 +15,6 @@ export const ArticlePageGreeting: FC = () => {
     const { isArticlesPageWasOpened } = useJsonSettings();
 
     const { saveJsonSettings } = useActions(userActionsObj);
-    console.log('isArticlesPageWasOpened', isArticlesPageWasOpened);
 
     useEffect(() => {
         if (!isArticlesPageWasOpened && isArticlesPageWasOpened !== undefined) {

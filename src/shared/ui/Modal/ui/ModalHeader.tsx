@@ -12,8 +12,6 @@ interface IHeaderProps extends IModalHeaderProps {
 }
 
 export const ModalHeader: FC<IHeaderProps> = memo(({ title, onCloseModal }) => {
-    console.log('onCloseModal', onCloseModal);
-
     return (
         <div className={classNames(styles.header, {}, [])}>
             <Text

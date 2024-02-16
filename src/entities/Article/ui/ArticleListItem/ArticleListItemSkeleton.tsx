@@ -63,7 +63,7 @@ export const ArticleListItemSkeleton = (props: ArticleListItemSkeletonProps) => 
             <Card className={styles.card}>
                 <div className={styles.imageWrapper}>
                     <Skeleton
-                        width={200}
+                        width={240}
                         height={200}
                         className={styles.img}
                         marginBottom={10}

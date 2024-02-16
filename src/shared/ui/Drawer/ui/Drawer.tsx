@@ -23,7 +23,6 @@ const DrawerContent: CFC<IDrawerProps> = ({ className, isOpen, children, onClose
         onClose,
         isOpen,
     });
-    console.log('DrawerContent');
 
     const { Spring, Gesture } = useAnimationLibs();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
@@ -94,7 +93,6 @@ const DrawerContent: CFC<IDrawerProps> = ({ className, isOpen, children, onClose
 
 const DrawerAsync: CFC<IDrawerProps> = (props) => {
     const { isLoaded } = useAnimationLibs();
-    console.log('DrawerAsync isLoaded', isLoaded);
 
     if (!isLoaded) {
         return null;

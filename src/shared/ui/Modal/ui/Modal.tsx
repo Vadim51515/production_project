@@ -31,8 +31,6 @@ export const Modal: CFC<IModalProps> = ({
 
     if (isLazy && !isMounted) return null;
 
-    console.log('close', close);
-
     return (
         <Portal>
             <div className={classNames(styles.modal, mods)}>

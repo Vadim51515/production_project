@@ -24,7 +24,6 @@ export const Field: FC<TFieldProps> = ({ fieldType, fieldName, isRequired, ...pr
         switch (fieldType) {
             case 'input':
                 if ('target' in e) {
-                    console.log(e);
                     onChange(fieldName, e.target.value);
                 }
                 break;

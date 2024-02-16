@@ -1,5 +1,4 @@
 import React, { type FC } from 'react';
-import { VirtuosoGrid } from 'react-virtuoso';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { type IArticle, type TArticleViewType } from '../../model/types';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -40,16 +39,11 @@ export const ArticleList: FC<IArticleListProps> = ({ className, articles, view =
 
     return (
         <div>
-            <VirtuosoGrid
-                data-testid={'ArticleList'}
-                style={{ height: 500 }}
-                useWindowScroll
-                totalCount={articles.length}
-                itemContent={renderArticle}
-                overscan={5}
-                className={styles.articleList}
-                listClassName={styles[view]}
-            />
+            <div className={styles[view]}>
+                {articles.map((_, index) => {
+                    return renderArticle(index);
+                })}
+            </div>
             {isLoading && (
                 <div className={classNames(styles.articleList, {}, [className, styles[view]])}>{getSkeletons(view)}</div>
             )}
