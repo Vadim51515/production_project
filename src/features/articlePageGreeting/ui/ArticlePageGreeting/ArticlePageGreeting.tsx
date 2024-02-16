@@ -5,7 +5,6 @@ import { userActionsObj } from '../../../../entities/User/model/actions';
 import { useJsonSettings } from '../../../../entities/User/model/selectors/jsonSettingsSelector';
 import { useActions } from '../../../../shared/hooks/useActions';
 import { Modal } from '../../../../shared/ui/Modal';
-import styles from './ArticlePageGreeting.module.scss';
 
 export const ArticlePageGreeting: FC = () => {
     const { t } = useTranslation();
@@ -34,7 +33,7 @@ export const ArticlePageGreeting: FC = () => {
             }}
             onClose={onClose}
             isOpen={isOpen}
-            className={classNames(styles.articlePageGreeting, {}, [])}
+            className={classNames('', {}, [])}
         ></Modal>
     );
 };
